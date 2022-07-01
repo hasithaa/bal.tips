@@ -1,0 +1,52 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $code := default (.Get "code") $.Page.Params.code }}
+{{ $highlightStyle := default "monokai" $.Site.Params.highlightStyle }}
+{{ if ne (len $code) 0 }}
+  {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
+  {{ $key := $.Page.File.UniqueID }}
+  {{ $sources := slice }}
+  {{/*  Read content and process them first  */}}
+  {{ range $name := $code }}
+    {{ $codePath := printf "%s/%s" $baseURL $name }}
+    {{ $codeContent := readFile $codePath }}
+    {{ $codeExt := "" }}
+    {{ $codeKey := printf "%s-%s" $key $name }}
+    {{ if strings.HasSuffix $name ".bal"}}
+      {{ $codeExt = "ballerina" }}
+      {{ $codeContent =  highlight $codeContent "ballerina"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey  ",lineNumbersInTable=true" )}}
+    {{ else if or (strings.HasSuffix $name ".out") (strings.HasSuffix $name ".err")}}
+      {{ $codeExt = "BashSession" }}
+      {{ $codeContent =  highlight $codeContent "BashSession"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey)}}
+    {{ else if strings.HasSuffix $name ".md" }}
+      {{ $codeExt = "plain" }}
+      {{ $codeContent =  markdownify $codeContent }}
+    {{ end }}
+    {{ $codeURL := (printf "%s" $codePath ) | relLangURL }}
+    {{ $sources = $sources | append (dict "name" $name "codeKey" $codeKey "ext" $codeExt "url" $codeURL "body" $codeContent) }}
+  {{ end }}
+  {{/*  Render tab view   */}}
+  <div class="tab-panel">
+    <div class="tab-nav">
+    {{ range $idx, $tab := $sources }}
+        <button
+          data-tab-item="{{ $tab.name }}"
+          data-tab-group="{{ $key }}"
+          class="tab-nav-button btn {{ cond (eq $idx 0) "active" ""}}"
+          onclick="switchTab('{{ $key }}','{{ $tab.name }}')"
+        >{{ $tab.name }}</button>
+    {{ end }}
+    </div>
+    <div class="tab-content">
+        {{ range $idx, $tab := $sources }}
+        <div data-tab-item="{{ $tab.name }}" data-tab-group="{{ $key }}" class="tab-item {{ cond (eq $idx 0) "active" ""}}">
+        {{ if ne $tab.ext "plain"}}
+          <div class="tip-code">{{$tab.body}}</div>
+          <a href="{{ .url }}">View Source ({{$tab.name}})</a>
+        {{else}}
+          {{ $tab.body }}
+        {{end }}
+        </div>
+        {{ end }}
+    </div>
+  </div>
+{{ end }}

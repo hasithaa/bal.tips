@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{if .Content}}
+{{ .Content }}
+{{else }}
+{{ $paginator := .Paginator }}
+
+<div class="extra-pagination inner">
+{{ partial "pagination.html" $paginator }}
+</div>
+
+<div class="tips">
+{{ range $index, $page := $paginator.Pages }}
+   {{ .Render "li" }}
+{{ end }}
+</div>
+
+<div style="margin-bottom:2rem"></div>
+
+{{ partial "pagination.html" $paginator }}
+
+{{end}}
+{{end}}

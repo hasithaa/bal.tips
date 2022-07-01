@@ -1,8 +1,15 @@
 ---
 title : "{{ replace .TranslationBaseName "-" " " | title }}"
 date : {{ .Date }}
-description : ""
+summary : "{{ replace .TranslationBaseName "-" " " | title }}"
 kind : page 
-keywords : []
+tags : []
 weight : 0
 ---
+
+<!-- Add page summary here -->
+
+<!--more-->
+
+
+{{< includeTip >}}

@@ -14,3 +14,7 @@ unsafe = true
 custom_css = ["css/tips-theme.css", "css/tips.css","css/variant-teal.css"]
 custom_js = ["js/tips-theme.js"]
 themeStyle = "original"
+highlightStyle = "friendly"
+
+[taxonomies]
+tags = 'tags'
