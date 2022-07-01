@@ -1,0 +1,9 @@
+# Things related to Hugo
+/resources/
+/public/
+
+# Things related to test suite
+.gradle
+.idea
+
+examples/**/*.jar
