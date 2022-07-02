@@ -1,0 +1,34 @@
+{{ define "main" }}
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
+</span>
+<h1>{{.Site.Home.Title}}</h1>
+
+{{.Site.Home.Content}}
+
+<h3 id="collections">Collections <i class="fa fa-book"></i></h3>
+{{ $AllPages := .Site.Pages.ByDate.Reverse}}
+{{ $Pages := first 6 (where $AllPages "Params.Kind" "==" "collection") }}
+<div class="tips">
+  {{ range $Pages}}
+    {{ .Render "li" }}
+  {{ end }}
+</div>
+
+<h3 id="latest-posts">Latest Posts <i class="fa fa-file-text-o"></i></h3>
+{{ $Pages := first 6 (where $AllPages "Params.Kind" "==" "page") }}
+<div class="tips">
+  {{ range $Pages}}
+    {{ .Render "li" }}
+  {{ end }}
+</div>
+
+{{ $Tips := first 6 (where  $AllPages "Params.Kind" "==" "tip") }}
+<h3 id="latest-tips">Latest Tips <i class="fa fa-lightbulb-o"></i></h3>
+<div class="tips">
+  {{ range $Tips}}
+    {{ .Render "tip" }}
+  {{end}}
+</div>
+
+{{ end }}

@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "Ballerina Tips"
 
 theme = "docdock"
+enableGitInfo = true
+copyright = "© Hasitha Aravinda"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
