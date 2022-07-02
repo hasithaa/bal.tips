@@ -6,7 +6,7 @@
 
 {{.Site.Home.Content}}
 
-<h3 id="collections">Collections <i class="fa fa-book"></i></h3>
+<h4 id="collections">Collections <i class="fa fa-book"></i></h4>
 {{ $AllPages := .Site.Pages.ByDate.Reverse}}
 {{ $Pages := first 6 (where $AllPages "Params.Kind" "==" "collection") }}
 <div class="tips">
@@ -15,7 +15,7 @@
   {{ end }}
 </div>
 
-<h3 id="latest-posts">Latest Posts <i class="fa fa-file-text-o"></i></h3>
+<h4 id="latest-posts">Latest Posts <i class="fa fa-file-text-o"></i></h4>
 {{ $Pages := first 6 (where $AllPages "Params.Kind" "==" "page") }}
 <div class="tips">
   {{ range $Pages}}
@@ -24,7 +24,7 @@
 </div>
 
 {{ $Tips := first 6 (where  $AllPages "Params.Kind" "==" "tip") }}
-<h3 id="latest-tips">Latest Tips <i class="fa fa-lightbulb-o"></i></h3>
+<h4 id="latest-tips">Latest Tips <i class="fa fa-lightbulb-o"></i></h4>
 <div class="tips">
   {{ range $Tips}}
     {{ .Render "tip" }}

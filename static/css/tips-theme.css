@@ -86,10 +86,27 @@
   border-style: none;
 }
 
-#footer h4 {
- color: var(--SIDE-FOCUS-FORE-color);
+#sidebar ul li a {
+  font-size: medium;
 }
 
-#header a{
+#footer h4 {
+  color: var(--SIDE-FOCUS-FORE-color);
+  font-size: large;
+}
+
+#footer ul li a {
+  font-size: medium;
+}
+
+#footer ul li a:hover{
+  color: var(--MAIN-HOVER-color);
+}
+
+.tagscloud a {
+  font-size: medium;
+}
+
+#header a {
   font-size: x-large;
 }

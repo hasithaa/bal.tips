@@ -1,0 +1,4 @@
+{{ $tags := $.Site.Taxonomies.tags.Alphabetical }}
+{{ range $tags }}
+<a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ .Name | urlize }}/">{{ .Name }} ({{ .Count }})</a>
+{{end}}
