@@ -1,0 +1,112 @@
+/* Override theme */
+.page-footer {
+  bottom: 0;
+  width: inherit;
+  color: var(--FOOT-MAIN-TXT-COLOR);
+  background-color: var(--FOOT-MAIN-color);
+}
+
+#sidebar ul li.active>div>a {
+  background: var(--SIDE-FOCUS-FORE-color);
+  color: black !important;
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-right: 0rem;
+  width: 85%;
+}
+
+.center-txt {
+  text-align: center;
+}
+
+#body .tab-nav-button {
+  border-width: 1px 1px 1px 1px !important;
+  border-color: #ccc !important;
+  border-radius: 4px 4px 0 0 !important;
+  background-color: #ddd !important;
+  float: left;
+  display: block;
+  position: relative;
+  margin-left: 4px;
+  bottom: -1px;
+
+}
+
+#body .tab-nav-button:first-child {
+  margin-left: 0px;
+}
+
+#body .tab-nav-button.btn {
+  color: #000 !important;
+}
+
+#body .tab-nav-button.active {
+  background-color: var(--TAB-COLOR) !important;
+  color: var(--TAB-TXT-COLOR) !important;
+  font-weight: bold !important;
+  border-bottom-color: var(--TAB-COLOR) !important;
+}
+
+#body .tab-panel {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+#body .tab-content {
+  display: block;
+  clear: both;
+  padding: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+}
+
+#body .tab-content .tab-item {
+  display: none;
+}
+
+#body .tab-content .tab-item.active {
+  display: block;
+}
+
+#body .tab-item pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.tip-code code {
+  font-size: 17px !important;
+}
+
+.tip-code tbody tr td pre {
+  padding-top: 5px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  padding-bottom: 5px !important;
+  border-style: none;
+}
+
+#sidebar ul li a {
+  font-size: medium;
+}
+
+#footer h4 {
+  color: var(--SIDE-FOCUS-FORE-color);
+  font-size: large;
+}
+
+#footer ul li a {
+  font-size: medium;
+}
+
+#footer ul li a:hover{
+  color: var(--MAIN-HOVER-color);
+}
+
+.tagscloud a {
+  font-size: medium;
+}
+
+#header a {
+  font-size: x-large;
+}

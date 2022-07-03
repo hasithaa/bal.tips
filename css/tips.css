@@ -1,0 +1,27 @@
+/* Content related */
+
+.tips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.round-box {
+  border-radius: 25px;
+  border-color: #ccc;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+}
+
+.small-box {
+  min-width: 450px;
+  max-width: 450px;
+}
+
+.large-box {
+  min-width: 900px;
+  max-width: 900px;
+}
