@@ -3,7 +3,7 @@ title : "Thank you"
 type : page
 ---
 
-When I built this website, I inspired from multiple hugo themes and I built this re-using and modifying some of the Hugo themes content. Thank you original authors for their hard work and making this website simple, clean and beautiful. 
+When I built this website, I was inspired by multiple Hugo themes. I built this re-using and modifying some of the Hugo themes content. Thank you original authors for their hard work and for making this website simple, clean, and beautiful.
 
 - Primary Theme - [hugo-theme-docdock](https://github.com/vjeantet/hugo-theme-docdock) by [vjeantet](https://github.com/vjeantet) MIT license. 
 - Short Codes inspirations
