@@ -41,7 +41,9 @@
         <div data-tab-item="{{ $tab.name }}" data-tab-group="{{ $key }}" class="tab-item {{ cond (eq $idx 0) "active" ""}}">
         {{ if ne $tab.ext "plain"}}
           <div class="tip-code">{{$tab.body}}</div>
-          <a href="{{ .url }}">View Source ({{$tab.name}})</a>
+          <div style="text-align: right;">
+            <a href="{{ .url }}" style="font-size: x-small;">View Source ({{$tab.name}})</a>
+          </div>
         {{else}}
           {{ $tab.body }}
         {{end }}
