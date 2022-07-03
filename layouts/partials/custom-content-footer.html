@@ -1,10 +1,19 @@
 <footer class="footline page-footer">
-	{{with .Params.LastModifierDisplayName}}
-	<i class='fa fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a> {{with $.Date}} <i
-		class='fa fa-calendar'></i> {{ .Format "02/01/2006" }}{{end}}
+	{{ if or (eq $.Params.kind "tip") (eq $.Params.kind "page")}}
+	{{with .GitInfo}}
+	<div>
+	<p> 
+		Author : <i class='fa fa-user'></i> <a href="mailto:{{ .AuthorEmail }}">{{ .AuthorName }}</a>
+		{{ if ne (.AuthorDate.Format "02/01/2006") ($.Params.lastmod.Format "02/01/2006")}} 
+		, Modified on : <i class='fa fa-calendar'></i> {{with $.Params.lastmod}}{{ .Format "Mon, 02 Jan 2006 15:04 MST" }}{{end}}
+		{{else}} 
+		, Created on : <i class='fa fa-calendar'></i> {{with .AuthorDate}}{{ .Format "Mon, 02 Jan 2006 15:04 MST" }}{{end}}
+		{{end}}
+		</p>
 	</div>
 	{{end}}
-	<div class="page-footer">
+	{{end}}
+	<div class="page-footer"  style="text-align: right;">
 		{{ if .Site.GetPage "page" "_footer.md" }}
 			{{(.Site.GetPage "page" "_footer.md").Content}}
 		{{end}}
