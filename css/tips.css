@@ -1,4 +1,27 @@
 /* Content related */
+.tips .tip {
+  font-size: medium !important;
+}
+
+.tip {
+  font-size: large !important;
+}
+
+.tip-code {
+  overflow: auto;
+}
+
+.tip-code pre code {
+  white-space: pre !important;
+}
+
+.tip-code tbody tr td pre {
+  padding-top: 5px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  padding-bottom: 5px !important;
+  border-style: none;
+}
 
 .tips {
   display: flex;
@@ -17,11 +40,11 @@
 }
 
 .small-box {
-  min-width: 450px;
-  max-width: 450px;
+  min-width: 350px;
+  max-width: 350px;
 }
 
 .large-box {
-  min-width: 900px;
-  max-width: 900px;
+  min-width: 350px;
+  max-width: 600px;
 }
