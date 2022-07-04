@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    {{if .Site.Params.themeStyle}}
+      {{ partial (printf "%s/head.html" .Site.Params.themeStyle) . }}
+    {{else}}
+      {{ partial "flex/head.html" . }}
+    {{end}}
+  </head>
+  <body data-url="{{ .RelPermalink }}">
+    {{if .Site.Params.themeStyle}}
+      {{ partial (printf "%s/body-beforecontent.html" .Site.Params.themeStyle) . }}
+    {{else}}
+      {{ partial "flex/body-beforecontent.html" . }}
+    {{end}}
+    
+	<h1>{{T "title-404"}}</h1>
+	<p>
+	</p>
+	<p><img src="{{"images/3804949.jpg" | relURL}}" style="width:25%"></img></p>
+  <p>
+    <a href="{{.Site.BaseURL}}">
+      <i class="fa fa-home" style="font-size:xx-large"></i> Go to Home
+    </a>
+  </p>
+  <p>
+    <a href="{{ printf "https://github.com/hasithaa/bal.tips/issues/new?title=%s&body=%s" "Page not Found" .Permalink | safeURL }}" target="_blank">
+      <i class="fa fa-wrench" style="font-size:xx-large"></i> Help me to fix it.
+    </a>
+  </p>
+  <p style="font-size: small; text-align: center;">
+    Image from : <a href="https://www.freepik.com/vectors/server-error">Server error vector created by storyset - www.freepik.com</a>
+  </p>    
+    {{if .Site.Params.themeStyle}}
+      {{ partial (printf "%s/body-aftercontent.html" .Site.Params.themeStyle) . }}
+    {{else}}
+      {{ partial "flex/body-aftercontent.html" . }}
+    {{ end }}
+
+    {{ block "footer" . }}
+    {{ end }}
+
+    {{ partial "custom-footer.html" . }}
+  </body>
+</html>
+
+

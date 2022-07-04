@@ -7,6 +7,6 @@ kind : collection
 tags : ["hello-world"]
 ---
 
-This Collection contains various *Hello World* examples written in Ballerina 
+This Collection contains various *Hello, World!* examples written in Ballerina 
 
 {{< includeTip >}}
