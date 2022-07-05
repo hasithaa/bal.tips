@@ -4,10 +4,10 @@
 	<div>
 	<p> 
 		Author : <i class='fa fa-user'></i> <a href="mailto:{{ .AuthorEmail }}">{{ .AuthorName }}</a>
-		{{ if ne (.AuthorDate.Format "02/01/2006") ($.Params.lastmod.Format "02/01/2006")}} 
+		{{ if ne ($.Params.Date.Format "02/01/2006") ($.Params.lastmod.Format "02/01/2006")}} 
 		, Modified on : <i class='fa fa-calendar'></i> {{with $.Params.lastmod}}{{ .Format "Mon, 02 Jan 2006 15:04 MST" }}{{end}}
 		{{else}} 
-		, Created on : <i class='fa fa-calendar'></i> {{with .AuthorDate}}{{ .Format "Mon, 02 Jan 2006 15:04 MST" }}{{end}}
+		, Created on : <i class='fa fa-calendar'></i> {{with $.Params.Date}}{{ .Format "Mon, 02 Jan 2006 15:04 MST" }}{{end}}
 		{{end}}
 		</p>
 	</div>
