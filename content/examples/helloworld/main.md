@@ -6,7 +6,8 @@ kind : tip
 tags : ["hello-world", "io:println"] 
 code : ["main.bal", "main.out"] 
 weight  : 0000000001 
-size : "small" 
+size : "small"
+disableNavChevron : true    
 ---
 Writing a simple *Hello, World* is easy...! Let's write something to *stdout* first.
 

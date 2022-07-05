@@ -1,6 +1,6 @@
 ---
 title : "Hexadecimal Integer Literal"
-date : 2022-07-01T21:20:51+05:30
+date : 2022-07-05T16:46:55+05:30
 summary : "Writing a hexadecimal integer literal"
 kind : tip 
 tags : ["literal", "int", "hex"]

@@ -1,6 +1,6 @@
 ---
 title : "Nil Literal"
-date : 2022-07-05T15:59:48+05:30
+date : 2022-07-05T16:12:28+05:30
 summary : "Writing an nil value"
 kind : tip 
 tags : ["literal", "nil", "null"] 

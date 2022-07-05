@@ -1,11 +1,11 @@
 ---
 title : "Integer Literal"
-date : 2022-07-05T10:10:27+05:30
+date : 2022-07-05T16:30:10+05:30
 summary : "Writing an integer literal"
 kind : tip 
 tags : ["literal", "int"] 
 code : ["int-literal.bal", "int-literal.out"] 
-weight  : 06-05-03-00-01 
+weight : 06-05-03-00-01 
 size : "small"
 disableNavChevron : true   
 ---

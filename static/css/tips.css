@@ -44,6 +44,11 @@
   max-width: 350px;
 }
 
+.medium-box {
+  min-width: 350px;
+  max-width: 450px;
+}
+
 .large-box {
   min-width: 350px;
   max-width: 600px;

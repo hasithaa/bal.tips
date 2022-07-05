@@ -6,7 +6,8 @@ kind : tip
 tags : ["hello-world", "http:service"] 
 code : ["service.bal"] 
 weight  : 1000000001 
-size : "large" 
+size : "large"
+disableNavChevron : true    
 ---
 
 Let's create a *Hello, World* HTTP API. This API will accept HTTP get request at `http://localhost:8080/greeting`. I will use `ballerina/http` module to implement this API.
