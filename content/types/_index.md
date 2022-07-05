@@ -1,13 +1,13 @@
 ---
-title : "Ballerina Syntax Guide"
-date : 2022-07-01T22:17:58+05:30
-summary : "Learn Ballerina Syntax"
+title : "Ballerina Type Guide"
+summary : "Learn Ballerina Type System"
+date : 2022-07-05T22:59:26+05:30
+weight : 10
 kind : collection 
 tags : []
-weight : 50
 ---
 
-In this series, Let's see various Ballerina syntax.
+This series covers Ballerina type system.
 
 {{< children style="card" depth="5" description="true" sort="Weight" >}}
 
