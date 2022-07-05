@@ -5,7 +5,7 @@ summary : "Writing a hexadecimal integer literal"
 kind : tip 
 tags : ["literal", "int", "hex"]
 code : ["int-literal-hex.bal", "int-literal-hex.out"] 
-weight : 06-05-04-00-01  
+weight : 0605040001  
 size : "small"
 disableNavChevron : true   
 ---

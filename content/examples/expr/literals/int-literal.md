@@ -5,7 +5,7 @@ summary : "Writing an integer literal"
 kind : tip 
 tags : ["literal", "int"] 
 code : ["int-literal.bal", "int-literal.out"] 
-weight : 06-05-03-00-01 
+weight : 0605030001 
 size : "small"
 disableNavChevron : true   
 ---

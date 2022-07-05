@@ -5,7 +5,7 @@ summary : "Writing an nil value"
 kind : tip 
 tags : ["literal", "nil", "null"] 
 code : ["nil-literal.bal","nil-literal.out"] 
-weight : 06-05-01-00-01 
+weight : 0605010001 
 size : "medium" 
 disableNavChevron : true      
 ---
