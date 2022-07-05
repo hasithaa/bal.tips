@@ -1,5 +1,5 @@
 ---
-title : "Hello World"
+title : "Hello, World!"
 date : 2022-07-03T01:01:27+05:30
 summary : "Writing a Simple Hello World"
 kind : tip 
@@ -9,7 +9,7 @@ weight  : 0000000001
 size : "small"
 disableNavChevron : true    
 ---
-Writing a simple *Hello, World* is easy...! Let's write something to *stdout* first.
+Writing a simple *Hello, World!* is easy...! Let's write something to *stdout* first.
 
 {{< gencode >}}
 
