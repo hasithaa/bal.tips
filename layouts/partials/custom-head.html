@@ -1,6 +1,7 @@
 {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
+{{ if ne hugo.Environment "development" }}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RRFJG0BQS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,3 +10,4 @@
 
   gtag('config', 'G-0RRFJG0BQS');
 </script>
+{{ end }}
