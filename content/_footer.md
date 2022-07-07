@@ -1,1 +1,1 @@
-[Bal.tips](https://bal.tips) - A Blog by [**Hasitha Aravinda**](https://twitter.com/hasithaaravinda).
+[Bal.tips]({{<ref "/">}}) {{% icon fa-copyright %}} {{< year >}} [**Hasitha Aravinda**](https://twitter.com/hasithaaravinda). Built using [docdock](https://github.com/vjeantet/hugo-theme-docdock) and [Hugo](https://gohugo.io/)

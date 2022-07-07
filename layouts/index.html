@@ -8,24 +8,24 @@
 
 <h4 id="collections">Collections <i class="fa fa-book"></i></h4>
 {{ $AllPages := .Site.Pages.ByDate.Reverse}}
-{{ $Pages := first 6 (where $AllPages "Params.Kind" "==" "collection") }}
-<div class="tips">
+{{ $Pages := first 8 (where $AllPages "Params.Kind" "==" "collection") }}
+<div class="tips home-view">
   {{ range $Pages}}
     {{ .Render "li" }}
   {{ end }}
 </div>
 
 <h4 id="latest-posts">Latest Posts <i class="fa fa-file-text-o"></i></h4>
-{{ $Pages := first 6 (where $AllPages "Params.Kind" "==" "page") }}
-<div class="tips">
+{{ $Pages := first 8 (where $AllPages "Params.Kind" "==" "page") }}
+<div class="tips home-view">
   {{ range $Pages}}
     {{ .Render "li" }}
   {{ end }}
 </div>
 
-{{ $Tips := first 6 (where  $AllPages "Params.Kind" "==" "tip") }}
+{{ $Tips := first 12 (where  $AllPages "Params.Kind" "==" "tip") }}
 <h4 id="latest-tips">Latest Tips <i class="fa fa-lightbulb-o"></i></h4>
-<div class="tips">
+<div class="tips home-view">
   {{ range $Tips}}
     {{ .Render "tip" }}
   {{end}}
