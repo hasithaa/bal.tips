@@ -5,6 +5,7 @@
 
 .tip {
   font-size: large !important;
+  position: relative;
 }
 
 .tip-code {
@@ -59,4 +60,13 @@
 .home-view .medium-box , .home-view .large-box {
   min-width: 350px;
   max-width: 350px;
+}
+
+.tip img.tip-c-fill{
+  width:100px;
+  height:100px;
+  max-width: fit-content;
+  margin: 0 !important;
+  position: absolute;
+  bottom: 25px; right: 25px;
 }
