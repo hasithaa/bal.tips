@@ -26,8 +26,10 @@
 .tips {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   gap: 20px;
-  justify-content: center;
+  align-items: stretch;
+  align-content: flex-end;
   margin-bottom: 20px;
 }
 
@@ -52,4 +54,9 @@
 .large-box {
   min-width: 350px;
   max-width: 600px;
+}
+
+.home-view .medium-box , .home-view .large-box {
+  min-width: 350px;
+  max-width: 350px;
 }
