@@ -34,3 +34,22 @@ function switchTab(tabGroup, tabId) {
     }
   }
 }
+
+var fillMascot =  function() {
+  var m_count = 0;
+  $('.tip').each(function() {
+      var t = $(this);
+      var tc = t.children('.tip-c');
+      var needed_height = tc.height();
+      var actual_height = t.height();
+      var diff = actual_height - needed_height;
+      console.log(t.attr('id') + "--" + diff);
+      if (diff > 125) {
+          tc.after('<img class="tip-c-fill" src="/images/mascot/0'+ (m_count%6) + '.jpg"></img>');
+          m_count += 1;
+      }
+  });  
+}
+
+$(document).ready(fillMascot);
+window.addEventListener('resize', fillMascot);

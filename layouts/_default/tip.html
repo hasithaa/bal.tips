@@ -1,4 +1,5 @@
 <div class="tip round-box {{ .Params.size }}-box" id="{{ .Title | safeURL}}">
+  <div class="tip-c">
   <h4><span class="fa fa-lightbulb-o"></span> <a href="{{.Permalink}}" > {{.Title}}</a></h4>
   <div class="" >  
     {{if .Params.tags }}  
@@ -8,4 +9,5 @@
     {{end}}
   </div>
   {{ .Content }}
+</div>
 </div>
