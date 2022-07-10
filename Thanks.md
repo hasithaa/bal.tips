@@ -1,1 +1,1 @@
-See [here](./content/thank-you.md)
+See [here](./content/thankyou.md)
