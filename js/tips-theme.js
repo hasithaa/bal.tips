@@ -43,7 +43,6 @@ var fillMascot =  function() {
       var needed_height = tc.height();
       var actual_height = t.height();
       var diff = actual_height - needed_height;
-      console.log(t.attr('id') + "--" + diff);
       if (diff > 125) {
           tc.after('<img class="tip-c-fill" src="/images/mascot/0'+ (m_count%6) + '.png"></img>');
           m_count += 1;
