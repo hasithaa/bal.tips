@@ -1,5 +1,5 @@
 ---
-title : "Numbers are Immutable"
+title : "Numbers Are Immutable"
 date : 2022-07-08T21:27:59+05:30
 summary : "Numbers don't have a storage identity."
 kind : tip 

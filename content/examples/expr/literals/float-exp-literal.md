@@ -1,9 +1,9 @@
 ---
-title : "Float Literal With Exponent"
+title : "Floating Point Literal With Exponent"
 date : 2022-07-05T20:49:35+05:30
 summary : "Writing a float literal in scientific notation"
 kind : tip 
-tags : ["literal", "float", "exponent"] 
+tags : ["literal", "float", "decimal",  "exponent"] 
 code : ["float-exp-literal.bal", "float-exp-literal.out"] 
 weight : 0502040102
 size : "small"
