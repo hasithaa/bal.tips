@@ -8,7 +8,7 @@
 
 <h4 id="collections">Collections <i class="fa fa-book"></i></h4>
 {{ $AllPages := .Site.Pages.ByDate.Reverse}}
-{{ $Pages := first 8 (where $AllPages "Params.Kind" "==" "collection") }}
+{{ $Pages := first 8 (sort (where $AllPages "Params.Kind" "==" "collection") "Weight" ) }}
 <div class="tips home-view">
   {{ range $Pages}}
     {{ .Render "li" }}

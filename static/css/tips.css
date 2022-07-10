@@ -57,7 +57,7 @@
   max-width: 600px;
 }
 
-.home-view .medium-box , .home-view .large-box {
+.home-view .small-box, .home-view .medium-box , .home-view .large-box {
   min-width: 350px;
   max-width: 350px;
 }
