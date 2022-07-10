@@ -1,0 +1,44 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2022 Hasitha Aravinda. All rights reserved.
+ * 
+ * This work is licensed under the terms of the MIT license.  
+ * For a copy, see <https://opensource.org/licenses/MIT>.
+ */
+
+plugins {
+    id 'java'
+}
+
+
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://maven.pkg.github.com/ballerina-platform/plugin-gradle'
+        credentials {
+            username System.getenv("packageUser")
+            password System.getenv("packagePAT")
+        }
+    }
+}
+
+dependencies {
+    implementation group: 'org.ballerinalang', name: 'ballerina-lang', version: "${ballerinaLangVersion}"
+    testImplementation 'org.testng:testng:7.3.0'
+}
+
+tasks.named('test') {
+    // Use TestNG for unit tests.
+    useTestNG(){
+        includeGroups 'output'
+        testLogging.showStandardStreams = false
+    }
+}
+
+processResources {
+    include("$rootDir/../content/**/*.bal")
+    include("$rootDir/../content/**/*.out")
+    include("$rootDir/../content/**/*.err")
+}
