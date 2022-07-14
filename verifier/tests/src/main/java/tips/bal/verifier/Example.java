@@ -52,7 +52,8 @@ public class Example {
      * @since 1.0.0
      */
     public static class Error extends Example {
-        public List<int[]> pos = new ArrayList<>();
+        public List<int[]> errorPos = new ArrayList<>();
+        public int errorCount;
 
         private Error() {
         }
@@ -69,6 +70,7 @@ public class Example {
      * @since 1.0.0
      */
     public static class Service extends Example {
+        public Path test;
 
         private Service() {
         }

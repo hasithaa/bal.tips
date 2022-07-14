@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 import static tips.bal.verifier.Consts.DIR_DISTRO;
@@ -33,7 +34,6 @@ import static tips.bal.verifier.Consts.DOT_JAR;
 import static tips.bal.verifier.Consts.EXAMPLES;
 import static tips.bal.verifier.Consts.PATH_BAL_BUILD;
 import static tips.bal.verifier.Consts.PATH_BAL_HOME;
-import static tips.bal.verifier.Consts.PATH_BAL_TIP;
 
 /**
  * Util Class to compile Ballerina source.
@@ -44,16 +44,14 @@ import static tips.bal.verifier.Consts.PATH_BAL_TIP;
  */
 public class CompilerUtils {
 
-    public static Project compile(String sourcePathStr) {
-        return compile(sourcePathStr, getActiveDistribution());
+    public static Project compile(Path sourcePath) {
+        return compile(sourcePath, getActiveDistribution());
     }
 
-    public static Project compile(String sourcePathStr, Path balHome) {
+    public static Project compile(Path sourcePath, Path balHome) {
 
         Environment env = EnvironmentBuilder.getBuilder().setBallerinaHome(balHome).build();
         ProjectEnvironmentBuilder projEnvBuilder = ProjectEnvironmentBuilder.getBuilder(env);
-
-        Path sourcePath = PATH_BAL_TIP.resolve(Paths.get(sourcePathStr));
         return ProjectLoader.loadProject(sourcePath, projEnvBuilder);
     }
 
@@ -160,10 +158,16 @@ public class CompilerUtils {
 
     public static String run(BuildResult buildResult) throws IOException, InterruptedException {
 
+        return run(buildResult, 10, TimeUnit.SECONDS);
+    }
+
+    public static String run(BuildResult buildResult, int timeOut, TimeUnit unit)
+            throws IOException, InterruptedException {
+
         final ProcessBuilder balCommandBuilder = getBalCommandBuilder(buildResult.jarFilePath.getParent(),
                 "bal", "run", buildResult.jarFilePath.toString());
         Process runCmd = balCommandBuilder.start();
-        runCmd.waitFor(1, TimeUnit.MINUTES);
+        runCmd.waitFor(timeOut, unit);
 
         StringBuilder runOutputSB = new StringBuilder();
         try (BufferedReader outReader = new BufferedReader(new InputStreamReader(runCmd.getInputStream()))) {
@@ -174,6 +178,50 @@ public class CompilerUtils {
         }
         runCmd.destroy();
         return runOutputSB.toString();
+    }
+
+    /**
+     * Result Container for Async invocation
+     *
+     * @since 1.0.0
+     */
+    public static class RunAsyncResult {
+        public String output;
+
+        public RunAsyncResult() {
+        }
+
+        public RunAsyncResult(String output) {
+            this.output = output;
+        }
+    }
+
+    public static CompletableFuture<RunAsyncResult> runAsync(BuildResult buildResult) throws IOException {
+        return runAsync(buildResult, 30, TimeUnit.SECONDS);
+    }
+
+    public static CompletableFuture<RunAsyncResult> runAsync(BuildResult buildResult, int timeOut, TimeUnit unit)
+            throws IOException {
+
+        final ProcessBuilder balCommandBuilder = getBalCommandBuilder(buildResult.jarFilePath.getParent(),
+                "bal", "run", buildResult.jarFilePath.toString());
+        final Process runCmd = balCommandBuilder.start();
+        CompletableFuture<RunAsyncResult> result = new CompletableFuture<>();
+        result.completeOnTimeout(new RunAsyncResult(), timeOut, unit)
+                .thenAccept(v -> {
+                    StringBuilder runOutputSB = new StringBuilder();
+                    try (BufferedReader outReader = new BufferedReader(new InputStreamReader(runCmd.getInputStream()))) {
+                        String string;
+                        while ((string = outReader.readLine()) != null) {
+                            runOutputSB.append(string).append("\n");
+                        }
+                    } catch (IOException e) {
+                        throw new IllegalStateException();
+                    }
+                    runCmd.destroy();
+                    v.output = runOutputSB.toString();
+                });
+        return result;
     }
 
     private static ProcessBuilder getBalCommandBuilder(Path dir, String... cmd) {

@@ -8,14 +8,13 @@
  */
 package tips.bal.verifier;
 
-import tips.bal.verifier.validators.ErrorValidator;
-
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 import static tips.bal.verifier.Consts.PATH_BAL_TIP;
@@ -36,33 +35,42 @@ public class ExampleLoader {
         return examples;
     }
 
-    public static LinkedHashMap<Example.Kind, ArrayList<? extends Example>> filterBalFiles(ArrayList<Path> examples) {
-        LinkedHashMap<Example.Kind, ArrayList<? extends Example>> result = new LinkedHashMap<>();
-        ArrayList<Example.Output> outputs = new ArrayList<>();
-        ArrayList<Example.Error> errors = new ArrayList<>();
-        ArrayList<Example.Service> services = new ArrayList<>();
-
-        result.put(Example.Kind.Output, outputs);
-        result.put(Example.Kind.Error, errors);
-        result.put(Example.Kind.Service, services);
+    public static ArrayList<Example> filterBalFiles(ArrayList<Path> examples) {
+        ArrayList<Example> examplesList = new ArrayList<>();
 
         for (Path path : examples) {
             final String fileName = path.getFileName().toString();
             if (!fileName.endsWith(".bal")) {
                 continue;
-            }
-            if (fileName.endsWith("-error.bal")) {
+            } else if (fileName.endsWith("-error.bal")) {
                 final Example.Error err = new Example.Error(path);
-                errors.add(err);
-                ErrorValidator.parseErrorBalFile(err);
+                examplesList.add(err);
+            } else if (fileName.endsWith("service-test.bal")) {
+                continue;
             } else if (fileName.endsWith("service.bal")) {
-                services.add(new Example.Service(path));
+                final Example.Service service = new Example.Service(path);
+                service.test = path.resolve(Paths.get(path.toString().replace("service.bal", "service-test.bal")));
+                examplesList.add(service);
             } else if (fileName.endsWith(".bal")) {
                 final Example.Output output = new Example.Output(path);
                 output.output = path.resolve(Paths.get(path.toString().replace(".bal", ".out")));
-                outputs.add(output);
+                examplesList.add(output);
             }
         }
-        return result;
+        return examplesList;
+    }
+
+    public static String readTxtFile(Path txtFilePath) throws IOException {
+        final File txtFile = txtFilePath.toFile();
+        if (!txtFile.exists()) {
+            return null;
+        }
+        StringBuilder txtBuilder = new StringBuilder();
+        try (Scanner reader = new Scanner(txtFile)) {
+            while (reader.hasNextLine()) {
+                txtBuilder.append(reader.nextLine()).append("\n");
+            }
+        }
+        return txtBuilder.toString();
     }
 }
