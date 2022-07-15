@@ -37,7 +37,7 @@ public class VerifierTests {
         return ExampleLoader.filterBalFiles(ExampleLoader.loadExamples()).toArray();
     }
 
-    @Test(groups = "output", dataProvider = "validateOutputProvider")
+    @Test(groups = "output", dataProvider = "validateOutputProvider", timeOut = 120000)
     public void verifyOutput(Example example) throws IOException, InterruptedException {
         switch (example.kind) {
             case Output:

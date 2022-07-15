@@ -8,10 +8,6 @@
  */
 package tips.bal.verifier;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 /**
  * Consts.
  *
@@ -33,14 +29,5 @@ public abstract class Consts {
     public static final String DIR_BAL_TIP = "../../" + DIR_CONTENT + "/";
     public static final String DIR_BAL_BUILD = "build/jars/";
     public static final String TESTS_YAML = "../../data/tests.yaml";
-
-    public static final String ENV_BALLERINA_HOME = System.getenv(BALLERINA_HOME);
-    public static final String ENV_USER_DIR = System.getProperty(USER_DIR);
-    public static final String ENV_OS_NAME = System.getProperty(OS_NAME, "generic");
-
-    public static final Path PATH_BAL_HOME = Paths.get((new File(ENV_BALLERINA_HOME)).toURI()).toAbsolutePath().normalize();
-    public static final Path PATH_BAL_TIP = Path.of(ENV_USER_DIR).resolve(DIR_BAL_TIP).toAbsolutePath().normalize();
-    public static final Path PATH_BAL_BUILD = Path.of(ENV_USER_DIR).resolve(DIR_BAL_BUILD).toAbsolutePath().normalize();
-    public static final Path PATH_TEST_YAML = Path.of(ENV_USER_DIR).resolve(Consts.TESTS_YAML);
 
 }

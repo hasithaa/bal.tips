@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import static tips.bal.verifier.Consts.PATH_BAL_TIP;
+import static tips.bal.verifier.Consts.DIR_BAL_TIP;
+import static tips.bal.verifier.Consts.USER_DIR;
 
 /**
  * Load Ballerina Examples from content directory
@@ -29,7 +30,8 @@ public class ExampleLoader {
     public static ArrayList<Path> loadExamples() throws IOException {
 
         ArrayList<Path> examples = new ArrayList<>();
-        try (Stream<Path> paths = Files.walk(PATH_BAL_TIP)) {
+        Path pathBalTip = Path.of(System.getProperty(USER_DIR)).resolve(DIR_BAL_TIP).toAbsolutePath().normalize();
+        try (Stream<Path> paths = Files.walk(pathBalTip)) {
             paths.filter(Files::isRegularFile).forEach(examples::add);
         }
         return examples;

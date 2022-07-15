@@ -28,12 +28,13 @@ import java.util.Scanner;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
+import static tips.bal.verifier.Consts.BALLERINA_HOME;
+import static tips.bal.verifier.Consts.DIR_BAL_BUILD;
 import static tips.bal.verifier.Consts.DIR_DISTRO;
+import static tips.bal.verifier.Consts.DIR_EXAMPLES;
 import static tips.bal.verifier.Consts.DOT_BAL;
 import static tips.bal.verifier.Consts.DOT_JAR;
-import static tips.bal.verifier.Consts.DIR_EXAMPLES;
-import static tips.bal.verifier.Consts.PATH_BAL_BUILD;
-import static tips.bal.verifier.Consts.PATH_BAL_HOME;
+import static tips.bal.verifier.Consts.USER_DIR;
 
 /**
  * Util Class to compile Ballerina source.
@@ -56,7 +57,8 @@ public class CompilerUtils {
     }
 
     public static Path getActiveDistribution() {
-        return getActiveDistribution(PATH_BAL_HOME);
+
+        return getActiveDistribution(Paths.get((new File(System.getenv(BALLERINA_HOME))).toURI()));
     }
 
     public static Path getActiveDistribution(Path ballerinaHome) {
@@ -126,7 +128,8 @@ public class CompilerUtils {
         final BuildResult buildResult;
         String sourcePathStr = sourcePath.toString();
         String relSourcePath = sourcePathStr.substring(sourcePathStr.indexOf(DIR_EXAMPLES));
-        Path jarFilePath = PATH_BAL_BUILD.resolve(Paths.get(relSourcePath.replace(DOT_BAL, DOT_JAR)));
+        Path jarFilePath = Path.of(System.getProperty(USER_DIR)).resolve(DIR_BAL_BUILD).toAbsolutePath().normalize()
+                .resolve(Paths.get(relSourcePath.replace(DOT_BAL, DOT_JAR)));
         if (!sourcePath.toFile().exists()) {
             buildResult = new BuildResult(BuildStatus.INVALID, null, jarFilePath);
             return buildResult;
@@ -182,7 +185,9 @@ public class CompilerUtils {
 
     public static String balVersion() throws IOException, InterruptedException {
 
-        final ProcessBuilder balCommandBuilder = getBalCommandBuilder(PATH_BAL_BUILD, "bal", "version");
+        final ProcessBuilder balCommandBuilder = getBalCommandBuilder(
+                Path.of(System.getProperty(USER_DIR)).resolve(DIR_BAL_BUILD).toAbsolutePath().normalize(),
+                "bal", "version");
         Process runCmd = balCommandBuilder.start();
         runCmd.waitFor(10, TimeUnit.SECONDS);
 

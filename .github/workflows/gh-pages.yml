@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +20,31 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
+
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+
+      - name: Setup Ballerina
+        uses: hasithaa/setup-ballerina@main
+      - run: bal version  
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Execute Gradle build
+        run: ./gradlew build
+        working-directory: verifier
+        env:
+          packageUser: ${{ github.actor }}
+          packagePAT: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-result
+          path: verifier/tests/build/reports/tests/test/
 
       - name: Build
         run: hugo --minify

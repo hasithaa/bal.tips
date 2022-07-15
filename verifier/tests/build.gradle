@@ -33,10 +33,11 @@ dependencies {
 tasks.named('test') {
     // Use TestNG for unit tests.
     useTestNG() {
-        testLogging.events = ["started", "passed", "skipped", "failed"]
+        testLogging.events = ["started", "passed", "skipped", "failed", "STANDARD_ERROR", "STANDARD_OUT"]
         testLogging.showCauses = true
         testLogging.showExceptions = true
-        testLogging.showStandardStreams = false
+        testLogging.showStackTraces = true
+        testLogging.showStandardStreams = true
         suites 'output-testng.xml'
     }
 }

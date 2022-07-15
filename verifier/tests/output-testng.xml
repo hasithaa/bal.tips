@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Validator Test Suite">
+<suite name="Validator Test Suite" configfailurepolicy="skip">
     <test name="Output">
         <packages>
             <package name="tips.bal.verifier"/>

@@ -15,12 +15,15 @@ import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.LinkedHashMap;
 import java.util.SimpleTimeZone;
 
 import static tips.bal.verifier.CompilerUtils.balVersion;
 import static tips.bal.verifier.Consts.DIR_EXAMPLES;
+import static tips.bal.verifier.Consts.OS_NAME;
+import static tips.bal.verifier.Consts.USER_DIR;
 
 /**
  * Yaml test report generator.
@@ -70,10 +73,10 @@ public class YamlReporter extends TestListenerAdapter {
         } catch (IOException | InterruptedException e) {
             throw new IllegalStateException(e);
         }
-        result.os = Consts.ENV_OS_NAME;
+        result.os = System.getProperty(OS_NAME, "generic");
         ObjectMapper om = new ObjectMapper(new YAMLFactory());
         try {
-            om.writeValue(Consts.PATH_TEST_YAML.toFile(), result);
+            om.writeValue(Path.of(System.getProperty(USER_DIR)).resolve(Consts.TESTS_YAML).toFile(), result);
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
