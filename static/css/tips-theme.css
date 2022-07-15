@@ -86,7 +86,7 @@
   font-size: medium;
 }
 
-#footer ul li a:hover{
+#footer ul li a:hover {
   color: var(--MAIN-HOVER-color);
 }
 
@@ -100,4 +100,20 @@
 
 body {
   background-color: #f5f5f5;
+}
+
+span.test-data-short {
+  display: none;
+}
+
+span.test-data-long {
+  display: inline;
+}
+
+.tips span.test-data-short {
+  display: inline;
+}
+
+.tips span.test-data-long {
+  display: none;
 }

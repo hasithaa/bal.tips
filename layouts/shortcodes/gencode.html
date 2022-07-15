@@ -7,7 +7,7 @@
   {{ $sources := slice }}
   {{/*  Read content and process them first  */}}
   {{ range $name := $code }}
-    {{ $codePath := printf "%s/%s" $baseURL $name }}
+    {{ $codePath := printf "%s%s" $baseURL $name }}
     {{ $codeContent := readFile $codePath }}
     {{ $codeExt := "" }}
     {{ $codeKey := printf "%s-%s" $key $name }}
@@ -22,7 +22,7 @@
       {{ $codeContent =  markdownify $codeContent }}
     {{ end }}
     {{ $codeURL := (printf "%s" $codePath ) | relLangURL }}
-    {{ $sources = $sources | append (dict "name" $name "codeKey" $codeKey "ext" $codeExt "url" $codeURL "body" $codeContent) }}
+    {{ $sources = $sources | append (dict "name" $name "codeKey" $codeKey "ext" $codeExt "url" $codeURL "body" $codeContent "codePath" $codePath) }}
   {{ end }}
   {{/*  Render tab view   */}}
   <div class="tab-panel">
@@ -41,8 +41,25 @@
         <div data-tab-item="{{ $tab.name }}" data-tab-group="{{ $key }}" class="tab-item {{ cond (eq $idx 0) "active" ""}}">
         {{ if ne $tab.ext "plain"}}
           <div class="tip-code">{{$tab.body}}</div>
-          <div style="text-align: right;">
-            <a href="{{ .url }}" style="font-size: x-small;">View Source ({{$tab.name}})</a>
+          <div style="text-align: center; font-size: x-small;">
+            <a href="{{ .url }}"><span class="fa fa-external-link" aria-hidden="true"></span> Source</a>
+            {{ if isset $.Site.Data.tests.tests $tab.codePath }}
+            ,
+              {{ with (index $.Site.Data.tests.tests $tab.codePath)}}
+                {{ $tests := $.Site.Data.tests }}
+                {{ $longText := printf "Test %s, Version: %s, OS : %s, Date : %s" .status $tests.balVersion $tests.os $tests.endAt}}
+                {{ if eq .status "Passed" }}
+                  <span style="color: green;" class="fa fa-check-circle" aria-hidden="true"></span>
+                {{ else if eq .status "Failed "}}
+                  <span style="color: red;" class="fa fa-times-circle" aria-hidden="true"></span>
+                {{else}}
+                  <span style="color: darkgoldenrod;" class="fa fa-question-circle" aria-hidden="true"></span>
+                {{end}}
+                <span class="test-data-short" title="{{$longText}}"> {{$tests.balVersion}}</span>
+                <span class="test-data-long">{{$longText}}</span>
+              {{end}}
+            {{ end }}
+          
           </div>
         {{else}}
           {{ $tab.body }}

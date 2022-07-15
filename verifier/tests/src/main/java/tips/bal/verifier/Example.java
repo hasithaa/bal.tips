@@ -37,9 +37,6 @@ public class Example {
     public static class Output extends Example {
         public Path output;
 
-        private Output() {
-        }
-
         Output(Path path) {
             this.kind = Kind.Output;
             this.path = path;
@@ -55,9 +52,6 @@ public class Example {
         public List<int[]> errorPos = new ArrayList<>();
         public int errorCount;
 
-        private Error() {
-        }
-
         Error(Path path) {
             this.kind = Kind.Error;
             this.path = path;
@@ -71,9 +65,6 @@ public class Example {
      */
     public static class Service extends Example {
         public Path test;
-
-        private Service() {
-        }
 
         Service(Path path) {
             this.kind = Kind.Service;

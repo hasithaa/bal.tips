@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 import static tips.bal.verifier.Consts.DIR_DISTRO;
 import static tips.bal.verifier.Consts.DOT_BAL;
 import static tips.bal.verifier.Consts.DOT_JAR;
-import static tips.bal.verifier.Consts.EXAMPLES;
+import static tips.bal.verifier.Consts.DIR_EXAMPLES;
 import static tips.bal.verifier.Consts.PATH_BAL_BUILD;
 import static tips.bal.verifier.Consts.PATH_BAL_HOME;
 
@@ -125,7 +125,7 @@ public class CompilerUtils {
 
         final BuildResult buildResult;
         String sourcePathStr = sourcePath.toString();
-        String relSourcePath = sourcePathStr.substring(sourcePathStr.indexOf(EXAMPLES));
+        String relSourcePath = sourcePathStr.substring(sourcePathStr.indexOf(DIR_EXAMPLES));
         Path jarFilePath = PATH_BAL_BUILD.resolve(Paths.get(relSourcePath.replace(DOT_BAL, DOT_JAR)));
         if (!sourcePath.toFile().exists()) {
             buildResult = new BuildResult(BuildStatus.INVALID, null, jarFilePath);
@@ -180,6 +180,24 @@ public class CompilerUtils {
         return runOutputSB.toString();
     }
 
+    public static String balVersion() throws IOException, InterruptedException {
+
+        final ProcessBuilder balCommandBuilder = getBalCommandBuilder(PATH_BAL_BUILD, "bal", "version");
+        Process runCmd = balCommandBuilder.start();
+        runCmd.waitFor(10, TimeUnit.SECONDS);
+
+        StringBuilder runOutputSB = new StringBuilder();
+        try (BufferedReader outReader = new BufferedReader(
+                new InputStreamReader(runCmd.getInputStream()))) {
+            String string;
+            while ((string = outReader.readLine()) != null) {
+                runOutputSB.append(string).append("\n");
+            }
+        }
+        runCmd.destroy();
+        return runOutputSB.toString();
+    }
+
     /**
      * Result Container for Async invocation
      *
@@ -191,9 +209,6 @@ public class CompilerUtils {
         public RunAsyncResult() {
         }
 
-        public RunAsyncResult(String output) {
-            this.output = output;
-        }
     }
 
     public static CompletableFuture<RunAsyncResult> runAsync(BuildResult buildResult) throws IOException {
@@ -210,7 +225,8 @@ public class CompilerUtils {
         result.completeOnTimeout(new RunAsyncResult(), timeOut, unit)
                 .thenAccept(v -> {
                     StringBuilder runOutputSB = new StringBuilder();
-                    try (BufferedReader outReader = new BufferedReader(new InputStreamReader(runCmd.getInputStream()))) {
+                    try (BufferedReader outReader = new BufferedReader(
+                            new InputStreamReader(runCmd.getInputStream()))) {
                         String string;
                         while ((string = outReader.readLine()) != null) {
                             runOutputSB.append(string).append("\n");

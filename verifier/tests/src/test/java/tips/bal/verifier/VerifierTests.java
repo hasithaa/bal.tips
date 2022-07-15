@@ -8,7 +8,6 @@
  */
 package tips.bal.verifier;
 
-
 import io.ballerina.projects.DiagnosticResult;
 import io.ballerina.projects.PackageCompilation;
 import io.ballerina.projects.Project;
@@ -25,10 +24,6 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.CompletableFuture;
 
-import static tips.bal.verifier.ExampleLoader.filterBalFiles;
-import static tips.bal.verifier.ExampleLoader.loadExamples;
-import static tips.bal.verifier.ExampleLoader.readTxtFile;
-
 /**
  * Test cases validating ballerina source files.
  *
@@ -39,7 +34,7 @@ public class VerifierTests {
     @DataProvider(parallel = true)
     public Object[] validateOutputProvider() throws IOException {
 
-        return filterBalFiles(loadExamples()).toArray();
+        return ExampleLoader.filterBalFiles(ExampleLoader.loadExamples()).toArray();
     }
 
     @Test(groups = "output", dataProvider = "validateOutputProvider")
@@ -64,7 +59,7 @@ public class VerifierTests {
             Assert.fail(buildResult.status + " - " + buildResult.errorOut);
         }
         final String actual = CompilerUtils.run(buildResult);
-        final String expected = readTxtFile(example.output);
+        final String expected = ExampleLoader.readTxtFile(example.output);
         checkDifference(actual, expected);
     }
 
@@ -78,7 +73,7 @@ public class VerifierTests {
             Assert.fail("No Compilation errors found");
         }
         if (diagnosticResult.errorCount() < example.errorCount) {
-            Assert.fail(String.format("Too many errors, found %1, expected %2",
+            Assert.fail(String.format("Too many errors, found %s, expected %s",
                     diagnosticResult.errorCount(), example.errorCount));
         }
         for (int[] pos : example.errorPos) {

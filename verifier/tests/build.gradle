@@ -11,8 +11,6 @@ plugins {
     id 'java'
 }
 
-
-
 repositories {
     mavenCentral()
     maven {
@@ -27,14 +25,19 @@ repositories {
 dependencies {
     implementation group: 'org.ballerinalang', name: 'ballerina-lang', version: "${ballerinaLangVersion}"
     implementation group: 'org.ballerinalang', name: 'ballerina-tools-api', version: "${ballerinaLangVersion}"
+    testImplementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.13.3'
+    testImplementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
     testImplementation 'org.testng:testng:7.3.0'
 }
 
 tasks.named('test') {
     // Use TestNG for unit tests.
-    useTestNG(){
-        includeGroups 'output'
+    useTestNG() {
+        testLogging.events = ["started", "passed", "skipped", "failed"]
+        testLogging.showCauses = true
+        testLogging.showExceptions = true
         testLogging.showStandardStreams = false
+        suites 'output-testng.xml'
     }
 }
 

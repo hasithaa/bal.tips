@@ -7,3 +7,4 @@
 .idea
 
 examples/**/*.jar
+data/tests.yaml

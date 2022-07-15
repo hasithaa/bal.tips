@@ -1,7 +1,9 @@
 import ballerina/http;
+import ballerina/lang.runtime;
 import ballerina/io;
 
 public function main() returns error? {
+  runtime:sleep(2);
   http:Client cl = check new ("http://localhost:8080/");
 
   json res1 = check cl->get("greeting");
