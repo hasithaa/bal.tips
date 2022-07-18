@@ -21,6 +21,8 @@ public class Example {
     public Path path;
     public Kind kind;
 
+    public CompilerUtils.BuildResult buildResult;
+
     private Example() {
     }
 
@@ -65,6 +67,7 @@ public class Example {
      */
     public static class Service extends Example {
         public Path test;
+        public CompilerUtils.BuildResult testBuildResult;
 
         Service(Path path) {
             this.kind = Kind.Service;

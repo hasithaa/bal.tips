@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 import static tips.bal.verifier.Consts.BALLERINA_HOME;
@@ -203,46 +202,14 @@ public class CompilerUtils {
         return runOutputSB.toString();
     }
 
-    /**
-     * Result Container for Async invocation
-     *
-     * @since 1.0.0
-     */
-    public static class RunAsyncResult {
-        public String output;
-
-        public RunAsyncResult() {
-        }
-
-    }
-
-    public static CompletableFuture<RunAsyncResult> runAsync(BuildResult buildResult) throws IOException {
-        return runAsync(buildResult, 30, TimeUnit.SECONDS);
-    }
-
-    public static CompletableFuture<RunAsyncResult> runAsync(BuildResult buildResult, int timeOut, TimeUnit unit)
-            throws IOException {
-
-        final ProcessBuilder balCommandBuilder = getBalCommandBuilder(buildResult.jarFilePath.getParent(),
+    public static Process runAsync(BuildResult buildResult) throws IOException {
+        final ProcessBuilder builder = getBalCommandBuilder(buildResult.jarFilePath.getParent(),
                 "bal", "run", buildResult.jarFilePath.toString());
-        final Process runCmd = balCommandBuilder.start();
-        CompletableFuture<RunAsyncResult> result = new CompletableFuture<>();
-        result.completeOnTimeout(new RunAsyncResult(), timeOut, unit)
-                .thenAccept(v -> {
-                    StringBuilder runOutputSB = new StringBuilder();
-                    try (BufferedReader outReader = new BufferedReader(
-                            new InputStreamReader(runCmd.getInputStream()))) {
-                        String string;
-                        while ((string = outReader.readLine()) != null) {
-                            runOutputSB.append(string).append("\n");
-                        }
-                    } catch (IOException e) {
-                        throw new IllegalStateException();
-                    }
-                    runCmd.destroy();
-                    v.output = runOutputSB.toString();
-                });
-        return result;
+        return builder.start();
+    }
+
+    public static void killProcess(Process process) {
+        process.destroyForcibly();
     }
 
     private static ProcessBuilder getBalCommandBuilder(Path dir, String... cmd) {

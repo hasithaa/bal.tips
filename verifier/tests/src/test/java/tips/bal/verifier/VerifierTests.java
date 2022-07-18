@@ -15,14 +15,16 @@ import io.ballerina.tools.diagnostics.Diagnostic;
 import io.ballerina.tools.diagnostics.Location;
 import io.ballerina.tools.text.LineRange;
 import org.testng.Assert;
+import org.testng.SkipException;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.CompletableFuture;
 
 /**
  * Test cases validating ballerina source files.
@@ -31,39 +33,76 @@ import java.util.concurrent.CompletableFuture;
  */
 public class VerifierTests {
 
-    @DataProvider(parallel = true)
-    public Object[] validateOutputProvider() throws IOException {
+    // Quick and Dirty Implementation, clean up this later.
+    Example[] examples = new Example[0];
 
-        return ExampleLoader.filterBalFiles(ExampleLoader.loadExamples()).toArray();
+    @BeforeClass(groups = "output")
+    public void setup() throws IOException {
+        examples = ExampleLoader.filterBalFiles(ExampleLoader.loadExamples()).toArray(new Example[0]);
     }
 
-    @Test(groups = "output", dataProvider = "validateOutputProvider", timeOut = 120000)
-    public void verifyOutput(Example example) throws IOException, InterruptedException {
-        switch (example.kind) {
-            case Output:
-                testOutput((Example.Output) example);
-                break;
-            case Error:
-                testError((Example.Error) example);
-                break;
-            case Service:
-                testService((Example.Service) example);
-                break;
+    @DataProvider(parallel = true)
+    public Object[] getExamples() {
+        return examples;
+    }
+
+    @DataProvider(parallel = true)
+    public Object[] getRunnableExamples() {
+        return Arrays.stream(examples).filter(e -> e.kind != Example.Kind.Error).toArray();
+    }
+
+    @Test(groups = "output", dataProvider = "getExamples")
+    public void testCompile(Example example) throws IOException {
+        try {
+            switch (example.kind) {
+                case Output:
+                    compileOutput((Example.Output) example);
+                    break;
+                case Error:
+                    compileError((Example.Error) example);
+                    break;
+                case Service:
+                    compileService((Example.Service) example);
+                    break;
+            }
+        } catch (InterruptedException e) {
+            throw new SkipException("Timeout");
+        }
+    }
+
+    @Test(groups = "output", dataProvider = "getRunnableExamples", dependsOnMethods = "testCompile")
+    public void verifyOutput(Example example) throws IOException {
+        try {
+            switch (example.kind) {
+                case Output:
+                    testOutput((Example.Output) example);
+                    break;
+                case Service:
+                    testService((Example.Service) example);
+                    break;
+            }
+        } catch (InterruptedException e) {
+            throw new SkipException("Timeout");
+        }
+    }
+
+    public void compileOutput(Example.Output example) throws IOException, InterruptedException {
+
+        final CompilerUtils.BuildResult buildResult = CompilerUtils.build(example.path);
+        example.buildResult = buildResult;
+        if (buildResult.status != CompilerUtils.BuildStatus.SUCCESS) {
+            Assert.fail(buildResult.status + " - " + buildResult.errorOut);
         }
     }
 
     public void testOutput(Example.Output example) throws IOException, InterruptedException {
 
-        final CompilerUtils.BuildResult buildResult = CompilerUtils.build(example.path);
-        if (buildResult.status != CompilerUtils.BuildStatus.SUCCESS) {
-            Assert.fail(buildResult.status + " - " + buildResult.errorOut);
-        }
-        final String actual = CompilerUtils.run(buildResult);
+        final String actual = CompilerUtils.run(example.buildResult);
         final String expected = ExampleLoader.readTxtFile(example.output);
         checkDifference(actual, expected);
     }
 
-    public void testError(Example.Error example) throws IOException {
+    public void compileError(Example.Error example) throws IOException {
 
         final Project project = CompilerUtils.compile(example.path);
         final PackageCompilation compilation = project.currentPackage().getCompilation();
@@ -93,21 +132,25 @@ public class VerifierTests {
         }
     }
 
-    public void testService(Example.Service service) throws IOException, InterruptedException {
-
+    public void compileService(Example.Service service) throws IOException, InterruptedException {
         final CompilerUtils.BuildResult buildResult = CompilerUtils.build(service.path);
+        service.buildResult = buildResult;
         if (buildResult.status != CompilerUtils.BuildStatus.SUCCESS) {
             Assert.fail(service + " [" + buildResult.status + "] - " + buildResult.errorOut);
         }
 
         final CompilerUtils.BuildResult buildTestResult = CompilerUtils.build(service.test);
+        service.testBuildResult = buildTestResult;
         if (buildTestResult.status != CompilerUtils.BuildStatus.SUCCESS) {
             Assert.fail(service + "-test [" + buildTestResult.status + "] - " + buildTestResult.errorOut);
         }
+    }
 
-        final CompletableFuture<CompilerUtils.RunAsyncResult> async = CompilerUtils.runAsync(buildResult);
-        final String testResult = CompilerUtils.run(buildTestResult);
-        async.complete(new CompilerUtils.RunAsyncResult());
+    public void testService(Example.Service service) throws IOException, InterruptedException {
+
+        final Process srvProcess = CompilerUtils.runAsync(service.buildResult);
+        final String testResult = CompilerUtils.run(service.testBuildResult);
+        CompilerUtils.killProcess(srvProcess);
         checkDifference(testResult, "Done\n");
     }
 
