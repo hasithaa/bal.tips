@@ -7,4 +7,4 @@
 .idea
 
 examples/**/*.jar
-data/tests.yaml
+data/tests*.yaml

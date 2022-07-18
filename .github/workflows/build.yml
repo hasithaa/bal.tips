@@ -1,0 +1,40 @@
+name: Build Test Cases
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+      - name: Setup Ballerina
+        uses: hasithaa/setup-ballerina@main
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Execute Gradle build
+        id: build
+        run: ./gradlew build
+        working-directory: verifier
+        env:
+          packageUser: ${{ github.actor }}
+          packagePAT: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v3
+        if: failure() && steps.integrationTests.outcome == 'failure'
+        with:
+          name: test-result
+          path: verifier/tests/build/reports/tests/test/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tests-${{ matrix.os }}-yaml
+          path: data/tests.yaml
