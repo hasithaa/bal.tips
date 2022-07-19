@@ -40,6 +40,8 @@ tasks.named('test') {
         testLogging.showStandardStreams = true
         suites 'output-testng.xml'
     }
+
+    outputs.file("$rootDir/../data/tests.yaml")
 }
 
 processResources {

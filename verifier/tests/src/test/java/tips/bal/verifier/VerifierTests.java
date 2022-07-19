@@ -52,17 +52,17 @@ public class VerifierTests {
     }
 
     @Test(groups = "output", dataProvider = "getExamples")
-    public void testCompile(Example example) throws IOException {
+    public void checkOutput(Example example) throws IOException {
         try {
             switch (example.kind) {
                 case Output:
-                    compileOutput((Example.Output) example);
+                    compileAndRunOutput((Example.Output) example);
                     break;
                 case Error:
                     compileError((Example.Error) example);
                     break;
                 case Service:
-                    compileService((Example.Service) example);
+                    compileAndRunService((Example.Service) example);
                     break;
             }
         } catch (InterruptedException e) {
@@ -70,32 +70,13 @@ public class VerifierTests {
         }
     }
 
-    @Test(groups = "output", dataProvider = "getRunnableExamples", dependsOnMethods = "testCompile")
-    public void verifyOutput(Example example) throws IOException {
-        try {
-            switch (example.kind) {
-                case Output:
-                    testOutput((Example.Output) example);
-                    break;
-                case Service:
-                    testService((Example.Service) example);
-                    break;
-            }
-        } catch (InterruptedException e) {
-            throw new SkipException("Timeout");
-        }
-    }
-
-    public void compileOutput(Example.Output example) throws IOException, InterruptedException {
+    public void compileAndRunOutput(Example.Output example) throws IOException, InterruptedException {
 
         final CompilerUtils.BuildResult buildResult = CompilerUtils.build(example.path);
         example.buildResult = buildResult;
         if (buildResult.status != CompilerUtils.BuildStatus.SUCCESS) {
             Assert.fail(buildResult.status + " - " + buildResult.errorOut);
         }
-    }
-
-    public void testOutput(Example.Output example) throws IOException, InterruptedException {
 
         final String actual = CompilerUtils.run(example.buildResult);
         final String expected = ExampleLoader.readTxtFile(example.output);
@@ -132,7 +113,7 @@ public class VerifierTests {
         }
     }
 
-    public void compileService(Example.Service service) throws IOException, InterruptedException {
+    public void compileAndRunService(Example.Service service) throws IOException, InterruptedException {
         final CompilerUtils.BuildResult buildResult = CompilerUtils.build(service.path);
         service.buildResult = buildResult;
         if (buildResult.status != CompilerUtils.BuildStatus.SUCCESS) {
@@ -144,9 +125,6 @@ public class VerifierTests {
         if (buildTestResult.status != CompilerUtils.BuildStatus.SUCCESS) {
             Assert.fail(service + "-test [" + buildTestResult.status + "] - " + buildTestResult.errorOut);
         }
-    }
-
-    public void testService(Example.Service service) throws IOException, InterruptedException {
 
         final Process srvProcess = CompilerUtils.runAsync(service.buildResult);
         final String testResult = CompilerUtils.run(service.testBuildResult);
