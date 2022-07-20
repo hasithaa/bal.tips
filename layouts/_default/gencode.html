@@ -1,10 +1,10 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-{{ $code := default (.Get "code") $.Page.Params.code }}
-{{/*  Bellow logic is same as _default/gencode.html  */}}
+{{ $code := default slice .Params.Code }}
+{{/*  Bellow logic is same as shortcodes/gencode.html  */}}
 {{ $highlightStyle := default "monokai" $.Site.Params.highlightStyle }}
 {{ if ne (len $code) 0 }}
-  {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
-  {{ $key := $.Page.File.UniqueID }}
+  {{ $baseURL := replace $.File.Dir "\\" "/"  }}
+  {{ $key := $.File.UniqueID }}
   {{ $sources := slice }}
   {{/*  Read content and process them first  */}}
   {{ range $name := $code }}
@@ -64,4 +64,4 @@
         {{ end }}
     </div>
   </div>
-{{ end }}
+{{end}}

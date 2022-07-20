@@ -1,5 +1,6 @@
 <div class="tip round-box small-box">
-    <h4>
+    <div class="tip-c">
+    <h5>
         {{if eq $.Params.kind "tip"}}
         <span class="fa fa-lightbulb-o"></span>
         {{else if eq $.Params.kind "collection"}}
@@ -8,7 +9,12 @@
         <span class="fa fa-file-text-o"></span>
         {{end}}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h4>
+    </h5>
+    <p>{{ .Summary }}</p>
+    <p style="text-align: right;">
+        <a href="{{ .RelPermalink }}">Read More... <span class="fa fa-external-link" aria-hidden="true"></span></a>
+    </p> 
+    {{ .Render "gencode" }}
     <div class="" >
         {{if .Params.tags }}  
             {{ range $index, $tag := .Params.tags }}
@@ -16,5 +22,5 @@
             {{ end }}
         {{end}}
     </div>
-    <p>{{ .Summary }}</p>
+</div>
 </div>

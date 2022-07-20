@@ -40,7 +40,7 @@ public class Example {
         public Path output;
 
         Output(Path path) {
-            this.kind = Kind.Output;
+            this.kind = Kind.OUTPUT;
             this.path = path;
         }
     }
@@ -55,7 +55,7 @@ public class Example {
         public int errorCount;
 
         Error(Path path) {
-            this.kind = Kind.Error;
+            this.kind = Kind.ERROR;
             this.path = path;
         }
     }
@@ -70,14 +70,14 @@ public class Example {
         public CompilerUtils.BuildResult testBuildResult;
 
         Service(Path path) {
-            this.kind = Kind.Service;
+            this.kind = Kind.SERVICE;
             this.path = path;
         }
     }
 
     enum Kind {
-        Output,
-        Error,
-        Service,
+        OUTPUT,
+        ERROR,
+        SERVICE,
     }
 }

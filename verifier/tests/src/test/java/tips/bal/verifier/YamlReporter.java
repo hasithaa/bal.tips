@@ -40,17 +40,17 @@ public class YamlReporter extends TestListenerAdapter {
 
     @Override
     public void onTestSuccess(ITestResult tr) {
-        transformTestResult(tr, "Passed");
+        transformTestResult(tr, "PASS");
     }
 
     @Override
     public void onTestFailure(ITestResult tr) {
-        transformTestResult(tr, "Failed");
+        transformTestResult(tr, "FAIL");
     }
 
     @Override
     public void onTestSkipped(ITestResult tr) {
-        transformTestResult(tr, "Skipped");
+        transformTestResult(tr, "SKIP");
     }
 
     @Override
@@ -69,7 +69,7 @@ public class YamlReporter extends TestListenerAdapter {
         result.endAt = sdf.format(testContext.getEndDate());
         try {
             result.balVersion = balVersion();
-            result.balVersion = result.balVersion.substring(0, result.balVersion.indexOf("\n"));
+            result.balVersion = result.balVersion.substring(0, result.balVersion.indexOf("("));
         } catch (IOException | InterruptedException e) {
             throw new IllegalStateException(e);
         }
@@ -93,6 +93,7 @@ public class YamlReporter extends TestListenerAdapter {
         exampleTest.name = example.path.getFileName().toString();
         exampleTest.path = path.substring(path.lastIndexOf(DIR_EXAMPLES)).replace("\\", "/");
         exampleTest.kind = example.kind.name();
+        exampleTest.compilation = example.buildResult != null ? example.buildResult.status.name() : "";
         exampleTest.status = status;
         exampleTest.time = result.getEndMillis() - result.getStartMillis();
         exampleTest.data = String.valueOf(result.getThrowable());
@@ -118,6 +119,7 @@ public class YamlReporter extends TestListenerAdapter {
         public String name;
         public String path;
         public String kind;
+        public String compilation;
         public String status;
         public String data;
         public long time;

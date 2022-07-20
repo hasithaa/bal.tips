@@ -116,10 +116,10 @@ public class CompilerUtils {
      * @since 1.0.0
      */
     public enum BuildStatus {
-        SUCCESS,
-        ERROR,
-        FAILED,
-        INVALID
+        SUCCESS, // Compilation success
+        ERROR,  // Compilation contains errors
+        FAILED, // Build crashed
+        INVALID // Example broken
     }
 
     public static BuildResult build(Path sourcePath) throws IOException, InterruptedException {

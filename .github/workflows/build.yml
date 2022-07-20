@@ -14,27 +14,46 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: recursive  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 1    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
       - uses: actions/setup-java@v3
         with:
           distribution: temurin
           java-version: 11
       - name: Setup Ballerina
         uses: hasithaa/setup-ballerina@main
+        with:
+          version: 2201.1.1
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
         id: build
-        run: ./gradlew build
+        run: ./gradlew build --continue
         working-directory: verifier
         env:
           packageUser: ${{ github.actor }}
           packagePAT: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v3
+      - name: Upload Gradle Test Results
+        uses: actions/upload-artifact@v3
         if: failure() && steps.integrationTests.outcome == 'failure'
         with:
           name: test-result
           path: verifier/tests/build/reports/tests/test/
-      - uses: actions/upload-artifact@v3
+
+      - name: Build Website
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: matrix.os == 'ubuntu-latest' && github.ref == 'refs/heads/main'
         with:
-          name: tests-${{ matrix.os }}-yaml
-          path: data/tests.yaml
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

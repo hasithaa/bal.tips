@@ -48,20 +48,20 @@ public class VerifierTests {
 
     @DataProvider(parallel = true)
     public Object[] getRunnableExamples() {
-        return Arrays.stream(examples).filter(e -> e.kind != Example.Kind.Error).toArray();
+        return Arrays.stream(examples).filter(e -> e.kind != Example.Kind.ERROR).toArray();
     }
 
     @Test(groups = "output", dataProvider = "getExamples")
     public void checkOutput(Example example) throws IOException {
         try {
             switch (example.kind) {
-                case Output:
+                case OUTPUT:
                     compileAndRunOutput((Example.Output) example);
                     break;
-                case Error:
+                case ERROR:
                     compileError((Example.Error) example);
                     break;
-                case Service:
+                case SERVICE:
                     compileAndRunService((Example.Service) example);
                     break;
             }
@@ -90,8 +90,10 @@ public class VerifierTests {
         parseBalFileErrors(example);
         final DiagnosticResult diagnosticResult = compilation.diagnosticResult();
         if (diagnosticResult.errorCount() <= 0) {
+            example.buildResult = new CompilerUtils.BuildResult(CompilerUtils.BuildStatus.INVALID, null, null);
             Assert.fail("No Compilation errors found");
         }
+        example.buildResult = new CompilerUtils.BuildResult(CompilerUtils.BuildStatus.ERROR, null, null);
         if (diagnosticResult.errorCount() < example.errorCount) {
             Assert.fail(String.format("Too many errors, found %s, expected %s",
                     diagnosticResult.errorCount(), example.errorCount));
