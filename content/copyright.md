@@ -1,6 +1,7 @@
 ---
 title : "Copyright"
 type : page
+disableNavChevron : true
 ---
 
 ### Content 

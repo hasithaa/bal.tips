@@ -1,16 +1,17 @@
 ---
 title : "Floating Point Literal"
 date : 2022-07-05T20:49:35+05:30
-summary : "Writing a float literal"
 kind : tip 
 tags : ["literal", "float", "decimal"] 
 code : ["float-literal.bal", "float-literal.out", "decimal-literal.bal", "decimal-literal.out"] 
 weight : 0502040001
 size : "small"
-disableNavChevron : true   
+disableNavChevron : true
 ---
 
 There are two floating point types, `float` and `decimal`. Both use the same decimal number (Base 10 number) literal syntax.  
+
+<!--more-->
 
 You can write floating point values using a set of digits of the decimal system (Base 10 number) numbers, by using a dot `.` as the radix character to separate *integer-part* and *fractional-part*.
 

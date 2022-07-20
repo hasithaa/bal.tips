@@ -1,18 +1,23 @@
 <div class="tip round-box small-box">
     <div class="tip-c">
-    <h5>
-        {{if eq $.Params.kind "tip"}}
-        <span class="fa fa-lightbulb-o"></span>
-        {{else if eq $.Params.kind "collection"}}
-        <span class="fa fa-book"></span>
-        {{else}}
-        <span class="fa fa-file-text-o"></span>
-        {{end}}
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h5>
+    {{if eq $.Params.kind "tip"}}
+        <h5 id="{{.LinkTitle}}"><a href="{{ .RelPermalink }}">💡&nbsp;&nbsp;{{ .Title }}</a></h5>
+    {{else}}
+        <h4 id="{{.LinkTitle}}">
+            <a href="{{ .RelPermalink }}">{{
+                if eq $.Params.kind "collection"}}📗{{else}}📃{{end}}&nbsp;&nbsp;{{ .Title }}
+            </a>
+        </h4>
+    {{end}}
+
     <p>{{ .Summary }}</p>
     <p style="text-align: right;">
-        <a href="{{ .RelPermalink }}">Read More... <span class="fa fa-external-link" aria-hidden="true"></span></a>
+        {{ if eq (default true .Params.seeMore) true}}
+        <a href="{{ .RelPermalink }}">
+            <span class="fa fa-hand-o-right" aria-hidden="true"></span>
+            &nbsp;See more
+        </a>
+        {{end}}
     </p> 
     {{ .Render "gencode" }}
     <div class="" >

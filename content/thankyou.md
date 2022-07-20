@@ -1,6 +1,7 @@
 ---
 title : "Thank you"
 type : page
+disableNavChevron : true
 ---
 
 When I built this website, I was inspired by multiple Hugo themes. I built this re-using and modifying some of the Hugo themes content. Thank you original authors for their hard work and for making this website simple, clean, and beautiful.

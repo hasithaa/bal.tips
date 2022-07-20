@@ -1,16 +1,19 @@
 ---
 title : "Hello World API"
 date : 2022-07-04T01:05:24+05:30
-summary : "Writing a Simple HTTP Hello World API"
 kind : tip 
 tags : ["hello-world", "http:service"] 
 code : ["service.bal"] 
 weight  : 1000000001 
 size : "large"
-disableNavChevron : true    
+disableNavChevron : true
 ---
 
-Let's create a *Hello, World* HTTP API. This API will accept HTTP get request at `http://localhost:8080/greeting`. I will use `ballerina/http` module to implement this API.
+Let's create a *Hello, World* HTTP API. This API will accept HTTP get request at `http://localhost:8080/greeting`.
+
+<!--more-->
+
+I will use `ballerina/http` module to implement this API.
 
 {{< gencode >}}
 

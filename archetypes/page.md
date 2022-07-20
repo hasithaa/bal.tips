@@ -1,12 +1,11 @@
 ---
 title : "{{ replace .TranslationBaseName "-" " " | title }}"
 date : {{ .Date }}
-summary : "{{ replace .TranslationBaseName "-" " " | title }}"
 kind : page 
 tags : []
 weight : 0
 ---
-
+{{ replace .TranslationBaseName "-" " " | title }}
 <!-- Add page summary here -->
 
 <!--more-->

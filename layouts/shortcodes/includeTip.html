@@ -1,6 +1,15 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 {{ $Pages := where (where .Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" .Page.Params.tags}}
 <div class="tips page-view">
+  <div class="tip round-box small-box">
+    <h5>Related Tips</h5>
+    <p></p>
+    <div class="children children-div">
+    {{ range $Pages.ByWeight }}
+      <div><a href="#{{.LinkTitle}}">💡&nbsp;{{.Title}}</a></div>
+    {{end}}
+    </div>
+  </div>
   {{ range $Pages.ByWeight}}
     {{ .Render "li" }}
   {{ end }}

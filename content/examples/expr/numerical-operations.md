@@ -1,16 +1,16 @@
 ---
 title : "Numerical Operations"
 date : 2022-07-09T18:22:30+05:30
-summary : "Numerical Operations."
 kind : tip 
 tags : [int, float, decimal, expr]
 code : [] 
 weight : 0601000001 
 size : "small" 
-disableNavChevron : true      
+disableNavChevron : true
+seeMore : false
 ---
 
-*int*,*float*,*decimal* values support multiple operators, Here are some
+*int*,*float*,*decimal* values support multiple operators;
 
 * Multiplicative ( `*`, `/`, `%` )
 * Additive (`+`, `-`)
@@ -28,3 +28,4 @@ See each section for more tips.
 {{% notice info %}}
 Runtime will panic on integer overflow or on division by zero.
 {{% /notice %}}
+<!--more-->

@@ -1,14 +1,14 @@
 ---
 title : "Ballerina Type Guide"
-summary : "Learn Ballerina Type System"
 date : 2022-07-05T22:59:26+05:30
 weight : 10
 kind : collection 
 tags : []
 ---
 
-This series covers Ballerina type system.
+This collection covers Ballerina type system.
 
+<!--more-->
 {{< children style="card" depth="5" description="true" sort="Weight" >}}
 
 {{% notice note %}}
