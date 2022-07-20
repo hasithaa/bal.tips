@@ -1,1 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>expr on Ballerina Tips</title><link>https://bal.tips/tags/expr/</link><description>Recent content in expr on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Sat, 09 Jul 2022 18:22:30 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/expr/index.xml" rel="self" type="application/rss+xml"/><item><title>Numerical Operations</title><link>https://bal.tips/examples/expr/numerical-operations/</link><pubDate>Sat, 09 Jul 2022 18:22:30 +0530</pubDate><guid>https://bal.tips/examples/expr/numerical-operations/</guid><description>Numerical Operations.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>expr on Ballerina Tips</title><link>https://bal.tips/tags/expr/</link><description>Recent content in expr on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Sat, 09 Jul 2022 18:22:30 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/expr/index.xml" rel="self" type="application/rss+xml"/><item><title>Numerical Operations</title><link>https://bal.tips/examples/expr/numerical-operations/</link><pubDate>Sat, 09 Jul 2022 18:22:30 +0530</pubDate><guid>https://bal.tips/examples/expr/numerical-operations/</guid><description>&lt;p>&lt;em>int&lt;/em>,&lt;em>float&lt;/em>,&lt;em>decimal&lt;/em> values support multiple operators;&lt;/p>
+&lt;ul>
+&lt;li>Multiplicative ( &lt;code>*&lt;/code>, &lt;code>/&lt;/code>, &lt;code>%&lt;/code> )&lt;/li>
+&lt;li>Additive (&lt;code>+&lt;/code>, &lt;code>-&lt;/code>)&lt;/li>
+&lt;li>Relational Operations ( &lt;code>&amp;lt;&lt;/code>, &lt;code>&amp;gt;&lt;/code>, &lt;code>&amp;lt;=&lt;/code>, &lt;code>&amp;gt;=&lt;/code>)&lt;/li>
+&lt;li>Equality ( &lt;code>==&lt;/code>, &lt;code>!=&lt;/code>, &lt;code>===&lt;/code>, &lt;code>!===&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;p>Additionally, &lt;em>int&lt;/em> type supports following operations&lt;/p>
+&lt;ul>
+&lt;li>Shift Operations ( &lt;code>&amp;lt;&amp;lt;&lt;/code>,&lt;code>&amp;gt;&amp;gt;&lt;/code>, &lt;code>&amp;gt;&amp;gt;&amp;gt;&lt;/code>)&lt;/li>
+&lt;li>Binary bitwise (&lt;code>&amp;amp;&lt;/code>, &lt;code>^&lt;/code>, &lt;code>|&lt;/code>)&lt;/li>
+&lt;li>Range Operator ( &lt;code>x ... y&lt;/code> )&lt;/li>
+&lt;/ul>
+&lt;p>See each section for more tips.&lt;/p>
+&lt;div class="notices info" >&lt;p>&lt;p>Runtime will panic on integer overflow or on division by zero.&lt;/p>
+&lt;/p>&lt;/div></description></item></channel></rss>
