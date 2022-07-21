@@ -8,9 +8,11 @@ public function main() {
   io:println("b:", b);
 
   // Using JSON value as expr
-  json tom = {"name" : "tom", "job" : null};
+  json tom = 
+   {"name" : "tom", "job" : null};
 
-  json bob = {"name" : "bob", "job" : ()};
+  json bob = 
+   {"name" : "bob", "job" : ()};
   io:println("person:", tom);
   io:println("person:", bob);
 }

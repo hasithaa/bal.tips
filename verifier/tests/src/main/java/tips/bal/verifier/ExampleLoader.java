@@ -55,7 +55,7 @@ public class ExampleLoader {
                 examplesList.add(service);
             } else if (fileName.endsWith(".bal")) {
                 final Example.Output output = new Example.Output(path);
-                output.output = path.resolve(Paths.get(path.toString().replace(".bal", ".out")));
+                output.output = path.resolve(Paths.get(path + ".out"));
                 examplesList.add(output);
             }
         }
