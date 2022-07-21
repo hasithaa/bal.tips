@@ -33,7 +33,7 @@ h5 {
   position: relative;
   margin-left: 4px;
   bottom: -1px;
-
+  font-size: small !important;
 }
 
 #body .tab-nav-button:first-child {
@@ -104,6 +104,16 @@ h5 {
 
 body {
   background-color: #f5f5f5;
+}
+
+.px-5 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.py-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .cred {

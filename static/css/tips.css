@@ -75,3 +75,8 @@
   max-height: 350px;
   /* overflow: scroll; */
 }
+
+.tip-code-status {
+  text-align: center !important;
+  font-size: x-small !important;
+}

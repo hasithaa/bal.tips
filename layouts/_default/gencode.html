@@ -48,11 +48,11 @@
         <div data-tab-item="{{ $tab.name }}" data-tab-group="{{ $key }}" class="tab-item {{ cond (eq $idx 0) "active" ""}}">
         {{ if ne $tab.ext "plain"}}
           <div class="tip-code">{{$tab.body}}</div>
+          <div class="py-5"><span class="fa fa-terminal"></span><code>bal run {{$tab.name}}</code></div>
           {{ if ne $tab.out ""}}
-          <div><span class="fa fa-terminal"></span><code>bal run {{$tab.name}}</code></div>
           <div class="tip-code">{{$tab.out}}</div>
           {{ end }}
-          <div style="text-align: center; font-size: x-small;">
+          <div class="tip-code-status">
             {{ if isset $.Site.Data.tests.tests $tab.codePath }}
               {{ $tests := $.Site.Data.tests }}           
               {{ with (index $.Site.Data.tests.tests $tab.codePath)}}
