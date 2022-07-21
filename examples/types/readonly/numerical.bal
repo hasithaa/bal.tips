@@ -8,9 +8,9 @@ public function main() {
   readonly r2 = f;
   readonly r3 = d;
 
-  io:println(i is readonly); // true
-  io:println(f is readonly); // true
-  io:println(d is readonly); // true
+  io:println(i is readonly);
+  io:println(f is readonly);
+  io:println(d is readonly);
   io:println(r1);
   io:println(r2);
   io:println(r3);
