@@ -3,7 +3,7 @@ title : "Hello, World!"
 date : 2022-07-03T01:01:27+05:30
 kind : tip 
 tags : ["hello-world", "io:println"] 
-code : ["main.bal", "main.out"] 
+code : ["main.bal"] 
 weight  : 0000000001 
 size : "small"
 disableNavChevron : true

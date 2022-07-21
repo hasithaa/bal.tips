@@ -3,8 +3,8 @@
 {{/*  Bellow logic is same as shortcodes/gencode.html  */}}
 {{ $highlightStyle := default "monokai" $.Site.Params.highlightStyle }}
 {{ if ne (len $code) 0 }}
-  {{ $baseURL := replace $.File.Dir "\\" "/"  }}
-  {{ $key := $.File.UniqueID }}
+  {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
+  {{ $key := $.Page.File.UniqueID }}
   {{ $sources := slice }}
   {{/*  Read content and process them first  */}}
   {{ range $name := $code }}
@@ -12,18 +12,24 @@
     {{ $codeContent := readFile $codePath }}
     {{ $codeExt := "" }}
     {{ $codeKey := printf "%s-%s" $key $name }}
+    {{ $codeOut := "" }}
     {{ if strings.HasSuffix $name ".bal"}}
       {{ $codeExt = "ballerina" }}
       {{ $codeContent =  highlight $codeContent "ballerina"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey  ",lineNumbersInTable=true" )}}
-    {{ else if or (strings.HasSuffix $name ".out") (strings.HasSuffix $name ".err")}}
-      {{ $codeExt = "BashSession" }}
-      {{ $codeContent =  highlight $codeContent "BashSession"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey)}}
+      {{ if or (or (strings.HasSuffix $name "service.bal") (strings.HasSuffix $name "-error.bal")) (strings.HasSuffix $name "-test.bal") }}
+        {{ $codeOut = "" }}
+      {{else}}
+       {{ $codeOut = highlight (readFile (print $codePath ".out")) "BashSession" (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" (print $codeKey ".out" ))}} 
+      {{end}}
     {{ else if strings.HasSuffix $name ".md" }}
       {{ $codeExt = "plain" }}
       {{ $codeContent =  markdownify $codeContent }}
+    {{ else }}
+      {{ $codeExt = "plain" }}
+      {{ $codeContent =  highlight $codeContent "ballerina"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey  ",lineNumbersInTable=true,guessSyntax=true") }}
     {{ end }}
     {{ $codeURL := (printf "%s" $codePath ) | relLangURL }}
-    {{ $sources = $sources | append (dict "name" $name "codeKey" $codeKey "ext" $codeExt "url" $codeURL "body" $codeContent "codePath" $codePath) }}
+    {{ $sources = $sources | append (dict "name" $name "codeKey" $codeKey "ext" $codeExt "url" $codeURL "body" $codeContent "codePath" $codePath "out" $codeOut) }}
   {{ end }}
   {{/*  Render tab view   */}}
   <div class="code-view tab-panel">
@@ -42,6 +48,10 @@
         <div data-tab-item="{{ $tab.name }}" data-tab-group="{{ $key }}" class="tab-item {{ cond (eq $idx 0) "active" ""}}">
         {{ if ne $tab.ext "plain"}}
           <div class="tip-code">{{$tab.body}}</div>
+          {{ if ne $tab.out ""}}
+          <div><span class="fa fa-terminal"></span><code>bal run {{$tab.name}}</code></div>
+          <div class="tip-code">{{$tab.out}}</div>
+          {{ end }}
           <div style="text-align: center; font-size: x-small;">
             {{ if isset $.Site.Data.tests.tests $tab.codePath }}
               {{ $tests := $.Site.Data.tests }}           
@@ -64,4 +74,4 @@
         {{ end }}
     </div>
   </div>
-{{end}}
+{{ end }}

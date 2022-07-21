@@ -4,7 +4,6 @@ public function main() {
     decimal f1 = 12.345;
     decimal f2 = -5.678;
     decimal f3 = .5678;
-
     decimal f4 = 123.456d;
     decimal f5 = 567.8901D;
     decimal f6 = 505d;

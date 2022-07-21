@@ -3,7 +3,7 @@ title : "Boolean Literal"
 date : 2022-07-05T20:29:45+05:30
 kind : tip 
 tags : ["literal", "boolean"] 
-code : ["boolean-literal.bal", "boolean-literal.out"] 
+code : ["boolean-literal.bal"] 
 weight : 0502020001 
 size : "small"
 disableNavChevron : true
