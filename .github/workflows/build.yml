@@ -5,6 +5,10 @@ on:
     branches:
       - main  # Set a branch to deploy
   pull_request:
+  workflow_dispatch:
+    inputs:
+      balVersion:
+        default: 2201.1.1
 
 jobs:
   build:
@@ -31,7 +35,7 @@ jobs:
       - name: Setup Ballerina
         uses: hasithaa/setup-ballerina@main
         with:
-          version: 2201.1.1
+          version: ${{ github.event.inputs.balVersion }}
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
