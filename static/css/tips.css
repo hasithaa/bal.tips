@@ -70,3 +70,8 @@
   position: absolute;
   bottom: 25px; right: 25px;
 }
+
+.home-view .tip-code {
+  max-height: 350px;
+  /* overflow: scroll; */
+}
