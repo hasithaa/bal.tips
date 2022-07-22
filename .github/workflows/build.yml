@@ -17,6 +17,16 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Set env
+        run: |-
+          echo "balVersion=$(
+          if [[${{ github.event.inputs.balVersion }}]]; then
+            echo ${{ github.event.inputs.balVersion }}
+          else
+            echo 2201.1.1
+          fi
+          )" >> $GITHUB_ENV
+        shell: bash
       - uses: actions/checkout@v2
         with:
           submodules: recursive  # Fetch Hugo themes (true OR recursive)
@@ -35,7 +45,7 @@ jobs:
       - name: Setup Ballerina
         uses: hasithaa/setup-ballerina@main
         with:
-          version: ${{ github.event.inputs.balVersion }}
+          version: ${{ env.balVersion }}
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
