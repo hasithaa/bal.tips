@@ -1,6 +1,6 @@
 baseURL = "https://bal.tips/"
 languageCode = "en-us"
-title = "Ballerina Tips"
+title = "Ballerina Coding Tips"
 
 theme = "docdock"
 enableGitInfo = true
