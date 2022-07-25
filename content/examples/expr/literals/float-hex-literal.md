@@ -2,7 +2,7 @@
 title : "Hexadecimal Float Literal"
 date : 2022-07-10T09:16:26+05:30
 kind : tip 
-tags : [float, hex, literal]
+tags : [literal, float, hex]
 code : ["float-hex-literal.bal"]
 weight : 0502040103 
 size : "small"
