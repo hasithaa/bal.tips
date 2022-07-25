@@ -10,6 +10,7 @@ package tips.bal.verifier;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -68,7 +69,7 @@ public class ExampleLoader {
             return null;
         }
         StringBuilder txtBuilder = new StringBuilder();
-        try (Scanner reader = new Scanner(txtFile)) {
+        try (Scanner reader = new Scanner(txtFile, StandardCharsets.UTF_8)) {
             while (reader.hasNextLine()) {
                 txtBuilder.append(reader.nextLine()).append("\n");
             }

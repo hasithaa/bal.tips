@@ -16,9 +16,9 @@ import io.ballerina.projects.environment.EnvironmentBuilder;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -78,11 +78,11 @@ public class CompilerUtils {
         }
         // Read current distribution
         StringBuilder sb = new StringBuilder();
-        try (Scanner reader = new Scanner(balVersionFile)) {
+        try (Scanner reader = new Scanner(balVersionFile, StandardCharsets.UTF_8)) {
             while (reader.hasNextLine()) {
                 sb.append(reader.nextLine()).append("\n");
             }
-        } catch (FileNotFoundException e) { // Ignore
+        } catch (IOException e) { // Ignore
         }
 
         String version = sb.toString().trim();
@@ -172,7 +172,8 @@ public class CompilerUtils {
         runCmd.waitFor(timeOut, unit);
 
         StringBuilder runOutputSB = new StringBuilder();
-        try (BufferedReader outReader = new BufferedReader(new InputStreamReader(runCmd.getInputStream()))) {
+        try (BufferedReader outReader = new BufferedReader(new InputStreamReader(runCmd.getInputStream(),
+                StandardCharsets.UTF_8))) {
             String string;
             while ((string = outReader.readLine()) != null) {
                 runOutputSB.append(string).append("\n");
