@@ -12,11 +12,11 @@ This section covers [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.
 
 Type | Description | Example
 ---|---|---
-*nil-literal* | Writing a *nil* value | `()`
-*boolean-literal* | Writing a *boolean* value | `true` or `false`
-*numeric-literal* | Write a number, such as *int*, *float*, *decimal* | `123`, `456.78`
-*string-literal* | Write a string value | `"Hello, World!"`
-*byte-array-literal* | Write a *byte[]* array value | ``base64 `AB1234` `` 
+[*nil-literal*](/tags/nil-literal/) | Writing a *nil* value | `()`
+[*boolean-literal*](/tags/boolean-literal/) | Writing a *boolean* value | `true` or `false`
+[*numeric-literal*](/tags/numeric-literal/) | Write a number, such as *int*, *float*, *decimal* | `123`, `456.78`
+[*string-literal*](/tags/string-literal/) | Write a string value | `"Hello, World!"`
+[*byte-array-literal*](/tags/byte-array-literal/) | Write a *byte[]* array value | ``base64 `AB1234` `` 
 
 <br/>
 

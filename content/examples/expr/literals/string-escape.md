@@ -2,7 +2,7 @@
 title : "String Escape Chars"
 date : 2022-07-25T21:54:33+05:30
 kind : tip 
-tags : ["literal", "string", "StringEscape", "NumericEscape"] 
+tags : ["literal", "string-literal", "string", "StringEscape", "NumericEscape"] 
 code : ["string-escape.bal", "numeric-escape.bal"] 
 weight : 0503010002 
 size : "small" 

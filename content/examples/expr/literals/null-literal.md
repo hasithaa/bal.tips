@@ -2,7 +2,7 @@
 title : "Null Literal"
 date : 2022-07-05T16:12:28+05:30
 kind : tip 
-tags : ["literal", "nil", "null"] 
+tags : ["literal", "nil-literal", "nil", "null"] 
 code : ["null-literal.bal"] 
 weight : 0502010002 
 size : "small" 

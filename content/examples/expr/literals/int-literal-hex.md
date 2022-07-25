@@ -2,7 +2,7 @@
 title : "Hexadecimal Integer Literal"
 date : 2022-07-05T16:46:55+05:30
 kind : tip 
-tags : ["literal", "int", "hex"]
+tags : ["literal", "numeric-literal", "int", "hex"]
 code : ["int-literal-hex.bal"] 
 weight : 0502030002  
 size : "small"
