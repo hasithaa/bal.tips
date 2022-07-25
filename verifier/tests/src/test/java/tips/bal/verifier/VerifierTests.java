@@ -21,8 +21,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -141,10 +141,10 @@ public class VerifierTests {
         Assert.fail(String.format("Output diff. Expected [[\n%s]] Actual [[\n%s]]", expected, actual));
     }
 
-    private void parseBalFileErrors(Example.Error err) throws FileNotFoundException {
+    private void parseBalFileErrors(Example.Error err) throws IOException {
         final File outFile = err.path.toFile();
         int lineNumber = -1; // Line numbers are zero based
-        try (Scanner reader = new Scanner(outFile)) {
+        try (Scanner reader = new Scanner(outFile, StandardCharsets.UTF_8)) {
             while (reader.hasNextLine()) {
                 lineNumber++;
                 final String line = reader.nextLine();
