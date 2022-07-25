@@ -2,7 +2,7 @@
 title : "String Literal"
 date : 2022-07-25T21:54:41+05:30
 kind : tip 
-tags : ["literal", "string", "DoubleQuotedStringLiteral"] 
+tags : ["literal", "string-literal", "string", "DoubleQuotedStringLiteral"] 
 code : ["string-literal.bal"] 
 weight : 0503010001 
 size : "small" 

@@ -2,7 +2,7 @@
 title : "Floating Point Literal"
 date : 2022-07-05T20:49:35+05:30
 kind : tip 
-tags : ["literal", "float", "decimal"] 
+tags : ["literal", "numeric-literal", "float", "decimal"] 
 code : ["float-literal.bal", "decimal-literal.bal"] 
 weight : 0502040001
 size : "small"
