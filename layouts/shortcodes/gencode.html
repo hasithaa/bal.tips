@@ -1,7 +1,6 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 {{ $code := default (.Get "code") $.Page.Params.code }}
 {{/*  Bellow logic is same as _default/gencode.html  */}}
-{{/*  Bellow logic is same as shortcodes/gencode.html  */}}
 {{ $highlightStyle := default "monokai" $.Site.Params.highlightStyle }}
 {{ if ne (len $code) 0 }}
   {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
@@ -48,10 +47,10 @@
         {{ range $idx, $tab := $sources }}
         <div data-tab-item="{{ $tab.name }}" data-tab-group="{{ $key }}" class="tab-item {{ cond (eq $idx 0) "active" ""}}">
         {{ if ne $tab.ext "plain"}}
-          <div class="tip-code">{{$tab.body}}</div>
+          <div class="tip-code round-box">{{$tab.body}}</div>
           <div class="py-3"><span class="fa fa-terminal"></span><code>bal run {{$tab.name}}</code></div>
           {{ if ne $tab.out ""}}
-          <div class="tip-code">{{$tab.out}}</div>
+          <div class="tip-code round-box">{{$tab.out}}</div>
           {{ end }}
           <div class="tip-code-status py-5">
             {{ if isset $.Site.Data.tests.tests $tab.codePath }}

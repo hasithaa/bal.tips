@@ -1,1 +1,3 @@
-{{ .Inner | markdownify }}
+<div class="{{.Get "class"}}" style="{{.Get "style" | safeCSS}}">
+  {{ .Inner | markdownify }}
+</div>
