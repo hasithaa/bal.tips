@@ -4,7 +4,7 @@ date : 2022-07-25T22:52:46+05:30
 kind : tip 
 tags : ["literal", "byte-array-literal", "byte", "Base64Literal"]
 code : ["Base64Literal.bal"]
-weight : 0605120002
+weight : 0605050002
 size : "small"
 disableNavChevron : true 
 seeMore : true
