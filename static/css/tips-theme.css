@@ -6,8 +6,36 @@
   background-color: var(--FOOT-MAIN-color);
 }
 
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
 h5 {
- font-size: large;
+  font-size: 18px;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-size: 14px !important;
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+}
+
+pre code {
+  font-size: 14px;
 }
 
 #sidebar ul li.active>div>a {
@@ -21,6 +49,11 @@ h5 {
 
 .center-txt {
   text-align: center;
+}
+
+.center-ele {
+  margin: 0 auto;
+  overflow: auto;
 }
 
 #body .tab-nav-button {
@@ -52,7 +85,7 @@ h5 {
 }
 
 #body .tab-panel {
-  margin-top: 32px;
+  margin-top: 10px;
 }
 
 #body .tab-content {
@@ -95,15 +128,11 @@ h5 {
 }
 
 .tagscloud a {
-  font-size: medium;
+  font-size: small;
 }
 
 #header a {
   font-size: x-large;
-}
-
-body {
-  background-color: #f5f5f5;
 }
 
 .px-5 {

@@ -1,15 +1,23 @@
 /* Content related */
 .tips .tip {
-  font-size: medium !important;
+  font-size: 13px !important;
+}
+
+.tips pre code {
+  font-size: 12px;
 }
 
 .tip {
-  font-size: large !important;
+  font-size: 14px !important;
   position: relative;
 }
 
 .tip-code {
   overflow: auto;
+}
+
+.tip-code td pre {
+  display: flex !important;
 }
 
 .tip-code pre code {
@@ -79,4 +87,17 @@
 .tip-code-status {
   text-align: center !important;
   font-size: x-small !important;
+}
+
+.tip-data{
+  border: 1px solid #585A5E;
+  border-collapse: collapse;
+  font-size: small;
+  white-space: nowrap;
+  max-width: 600px
+}
+
+.tip-data th, .tip-data td{
+  border: 1px solid #585A5E;
+  border-collapse: collapse;
 }
