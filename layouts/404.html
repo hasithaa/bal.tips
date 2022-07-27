@@ -14,7 +14,9 @@
     {{else}}
       {{ partial "flex/body-beforecontent.html" . }}
     {{end}}
-	<p><img src="{{"images/mascot/404.png" | relURL}}" style="width:25%"></img></p>
+	<p style="font-size: 3.25rem; font-weight: 200; text-align: center;">
+    🤷
+  </p>
   <p>
     <a href="{{.Site.BaseURL}}">
       <i class="fa fa-home" style="font-size:xx-large"></i> Go to Home
@@ -24,10 +26,7 @@
     <a href="{{ printf "https://github.com/hasithaa/bal.tips/issues/new?title=%s&body=%s" "Page not Found" .Permalink | safeURL }}" target="_blank">
       <i class="fa fa-wrench" style="font-size:xx-large"></i> Help me to fix it.
     </a>
-  </p>
-  <p style="font-size: small; text-align: center;">
-    Image from : <a href="https://www.freepik.com/vectors/robot-chatbot">Robot chatbot vector created by upklyak - www.freepik.com</a>
-  </p>    
+  </p>  
     {{if .Site.Params.themeStyle}}
       {{ partial (printf "%s/body-aftercontent.html" .Site.Params.themeStyle) . }}
     {{else}}
