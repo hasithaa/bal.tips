@@ -1,1 +1,7 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{htmlUnescape .Text | safeHTML }}</a>
+{{if strings.HasPrefix .Destination "http" }}
+<a href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }} target="_blank">{{ .Text | safeHTML }}</a>
+{{else if strings.HasPrefix .Destination "/tags" }}
+<a class="label label-default" href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{else}}
+<a href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{end}}

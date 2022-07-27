@@ -4,7 +4,7 @@ date : 2022-07-25T22:52:46+05:30
 kind : tip 
 tags : ["literal", "byte-array-literal", "byte", "Base16Literal"]
 code : ["Base16Literal.bal"]
-weight : 0605120001
+weight : 0605050001
 size : "small"
 disableNavChevron : true 
 seeMore : true
@@ -18,10 +18,10 @@ You can use Base16 Byte Array Literal syntax to represent bytes in Hex textual f
   - In regex form, `A..F` | `a..f` | `0..9`
 - You need two Hex digits to represent a byte.
   - One hex digits represent 4 bits. i.e . `0` -> `0000`, `9` -> `1001`, `A` -> `1010`, F -> `1111`
-  - So `0A` in hex means `0000 1010` which equals to byte value 10. Similarly `11` -> `0001 0001`(17), `AB` -> `1010 1011`(171) 
-- You can have any white-space in between two Hex Digits. 
+  - So `0A` in hex means `0000 1010` which equals byte value 10. Similarly `11` -> `0001 0001`(17), `AB` -> `1010 1011`(171) 
+- You can have any white space in between two Hex Digits. 
   - Group Hex Digits to improve the readability of your code. 
-  - Writing Hex digits in pairs or even numbers is a good options. 
+  - Writing Hex digits in pairs or even numbers is a good option. 
 
 {{< gencode >}}
 

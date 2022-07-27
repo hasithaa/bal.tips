@@ -17,7 +17,7 @@ Type | Description | Example
 [*boolean-literal*](/tags/boolean-literal/) | Writing a *boolean* value | `true` or `false`
 [*numeric-literal*](/tags/numeric-literal/) | Write a number, such as *int*, *float*, *decimal* | `123`, `456.78`
 [*string-literal*](/tags/string-literal/) | Write a string value | `"Hello, World!"`
-[*byte-array-literal*](/tags/byte-array-literal/) | Write a *byte[]* array value | ``base16 `AB 12 34` `` 
+[*byte-array-literal*](/tags/byte-array-literal/) | Write a *byte[]* array value | ``base16 `AB 12 34` ``
 {{</md>}}
 <br/>
 
