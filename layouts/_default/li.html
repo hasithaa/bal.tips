@@ -9,22 +9,21 @@
             </a>
         </h4>
     {{end}}
-
-    <p>{{ .Summary }}</p>
-    <p style="text-align: right;">
-        {{ if eq (default true .Params.seeMore) true}}
-        <a href="{{ .RelPermalink }}">
-            <span class="fa fa-hand-o-right" aria-hidden="true"></span>
-            &nbsp;See more
-        </a>
-        {{end}}
-    </p> 
+    <p>{{ .Summary }}</p> 
     {{ .Render "gencode" }}
     <div class="" >
         {{if .Params.tags }}  
             {{ range $index, $tag := .Params.tags }}
                 <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
             {{ end }}
+        {{end}}
+    </div>
+    <div style="text-align: right;">
+        {{ if eq (default true .Params.seeMore) true}}
+        <a href="{{ .RelPermalink }}">
+            <span class="fa fa-hand-o-right" aria-hidden="true"></span>
+            &nbsp;See more
+        </a>
         {{end}}
     </div>
 </div>
