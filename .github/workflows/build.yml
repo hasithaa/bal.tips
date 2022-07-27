@@ -50,14 +50,14 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
         id: build
-        run: ./gradlew build --continue
+        run: ./gradlew build --rerun-tasks --no-build-cache --continue
         working-directory: verifier
         env:
           packageUser: ${{ github.actor }}
           packagePAT: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Gradle Test Results
         uses: actions/upload-artifact@v3
-        if: failure() && steps.integrationTests.outcome == 'failure'
+        if: failure() && steps.build.outcome == 'failure'
         with:
           name: test-result
           path: verifier/tests/build/reports/tests/test/

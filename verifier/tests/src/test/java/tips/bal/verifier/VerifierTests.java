@@ -51,7 +51,7 @@ public class VerifierTests {
         return Arrays.stream(examples).filter(e -> e.kind != Example.Kind.ERROR).toArray();
     }
 
-    @Test(groups = "output", dataProvider = "getExamples")
+    @Test(groups = "output", dataProvider = "getExamples", retryAnalyzer = RetryAnalyzer.class)
     public void checkOutput(Example example) throws IOException {
         try {
             switch (example.kind) {
