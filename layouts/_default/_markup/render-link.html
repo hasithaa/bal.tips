@@ -1,5 +1,5 @@
 {{if strings.HasPrefix .Destination "http" }}
-<a href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }} target="_blank">{{ .Text | safeHTML }}</a>
+<a href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }} target="_blank">{{ .Text | safeHTML }}&nbsp;<span class="fa fa-external-link" style="font-size: 75%"aria-hidden="true"></span></a>
 {{else if strings.HasPrefix .Destination "/tags" }}
 <a class="label label-default" href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
 {{else}}

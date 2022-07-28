@@ -50,7 +50,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
         id: build
-        run: ./gradlew build --rerun-tasks --no-build-cache --continue
+        run: ./gradlew build --continue
         working-directory: verifier
         env:
           packageUser: ${{ github.actor }}

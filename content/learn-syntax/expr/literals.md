@@ -6,7 +6,7 @@ tags : ["literal"]
 weight : 06-05-00-00-00
 ---
 
-This section covers [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) section of the Ballerina Language spec.
+This section covers the [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) section of the Ballerina Language spec.
 
 <!--more-->
 

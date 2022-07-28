@@ -18,7 +18,7 @@ For example, the type of literal `10` is integer 10, and its broad type is `int`
 
 {{< gencode >}}
 
-When determining the broad type of a literal following algorithm is used. 
+When determining the broad type of a literal following [algorithm](https://ballerina.io/spec/lang/master/#numeric-literal) is used.
 
 
 {{<mermaid>}}
