@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>byte on Ballerina Coding Tips</title><link>https://bal.tips/tags/byte/</link><description>Recent content in byte on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Tue, 26 Jul 2022 08:20:35 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/byte/index.xml" rel="self" type="application/rss+xml"/><item><title>Byte</title><link>https://bal.tips/types/subtypes/byte/</link><pubDate>Mon, 25 Jul 2022 22:51:15 +0530</pubDate><guid>https://bal.tips/types/subtypes/byte/</guid><description>&lt;p>&lt;em>byte&lt;/em> type is built-in union type, that includes &lt;em>int&lt;/em> values between 0 and 255 inclusive. (0 ≤ values ≤ 255).&lt;/p></description></item><item><title>Base16 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base16literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base16literal/</guid><description>&lt;p>You can use Base16 Byte Array Literal syntax to represent bytes in Hex textual form.&lt;/p></description></item><item><title>Base64 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base64literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base64literal/</guid><description>&lt;p>You can use Base64 Byte Array Literal syntax to represent bytes in Base64 encoded form.&lt;/p></description></item><item><title>Byte - Ballerina vs Java</title><link>https://bal.tips/examples/types/byte/java/</link><pubDate>Tue, 26 Jul 2022 08:20:35 +0530</pubDate><guid>https://bal.tips/examples/types/byte/java/</guid><description>&lt;p>Ballerina byte type vs Java byte Comparison&lt;/p>
+&lt;div class="center-ele center-txt tip-data" style="">
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>Ballerina&lt;/th>
+&lt;th>Java&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Type&lt;/td>
+&lt;td>&lt;em>byte&lt;/em>&lt;/td>
+&lt;td>&lt;em>byte&lt;/em> or &lt;em>java.lang.Byte&lt;/em>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Signed&lt;/td>
+&lt;td>Unsigned&lt;/td>
+&lt;td>Signed**&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Max value&lt;/td>
+&lt;td>255&lt;/td>
+&lt;td>127&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Min value&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>-128&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>0000 0000&lt;/code>&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>0000 0001&lt;/code>&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>0111 1111&lt;/code>&lt;/td>
+&lt;td>127&lt;/td>
+&lt;td>127&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>1000 0000&lt;/code>&lt;/td>
+&lt;td>128&lt;/td>
+&lt;td>-128&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>1000 0001&lt;/code>&lt;/td>
+&lt;td>129&lt;/td>
+&lt;td>-127 (= -128 + 1)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>1111 1111&lt;/code>&lt;/td>
+&lt;td>255&lt;/td>
+&lt;td>-1 (= -128 + 127)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;p>** Read
+&lt;a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">Two&amp;rsquo;s Complement&lt;/a>
+&lt;/p></description></item></channel></rss>
