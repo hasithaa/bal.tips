@@ -18,39 +18,77 @@ For example, the type of literal `10` is integer 10, and its broad type is `int`
 
 {{< gencode >}}
 
-When determining the broad type of a literal following [algorithm](https://ballerina.io/spec/lang/master/#numeric-literal) is used.
-
+When determining the broad type of a literal, following 3 steps [algorithm](https://ballerina.io/spec/lang/master/#numeric-literal) is used.
 
 {{<mermaid>}}
-graph TD;
+flowchart TB
+ subgraph Step1 [Step 1: Check Syntactic Form]
+  direction TB
+  CheckLiteral(Check Numeric Literal)
+  CheckFloat{Ends With<br><code>f</code>/<code>F</code>?}
+  CheckFloatHex{Floating<br>Point<br>Hex<br>Literal?}
+  CheckDecimal{Ends With<br><code>d</code>/<code>D</code>?}
+  CheckFloatingLiteral{Floating<br>Point<br> Literal?}
+  CF[Only Candidate<br><code>float</code>]
+  CD[Only Candidate<br><code>decimal</code>]
+  CFD[Candidates Are<br><code>float</code>,<code>decimal</code>]
+  CIFD[Candidates are<br> <code>int</code>,<code>float</code>,<code>decimal</code>]
+  CandidateList[/Create Possible<br>Candidates List /]
 
- subgraph Step 1: Check syntactic form
-  CheckLiteral(Check Numeric Literal) --> CheckFloat{Ends with 'f'/'F'?}
-  CheckFloat --> |No|CheckFloatHex{Floating Hex Literal?}
-  CheckFloatHex --> |No|CheckDecimal{Ends with 'd'/'D'?}
-  CheckFloat --> |Yes|F1[float]
-  CheckFloatHex --> |Yes|F1
-  CheckDecimal --> |No|CheckFloatingLiteral{Floating point literal?}
-  CheckDecimal --> |Yes|D1[decimal]
-  CheckFloatingLiteral --> |Yes|FD[Candidates are float or decimal]
-  CheckFloatingLiteral --> |No|IFD[Candidates are int, float or decimal]
-  FD-->Candidates(Possible Candidates - N)
-  IFD-->Candidates
+  CheckLiteral --> CheckFloat
+  CheckFloat --> |No| CheckFloatHex  
+  CheckFloatHex --> |No| CheckDecimal  
+  CheckDecimal --> |No| CheckFloatingLiteral
+  CheckFloat --> |Yes| CF
+  CheckFloatHex --> |Yes| CF
+  CheckDecimal --> |Yes| CD
+  CheckFloatingLiteral --> |Yes| CFD
+  CheckFloatingLiteral --> |No| CIFD
+  CF-->CandidateList
+  CD-->CandidateList
+  CFD-->CandidateList
+  CIFD-->CandidateList
+ end 
+ subgraph Step2 [Step 2: Check With Contextually Expected Type]
+  direction TB
+  CandidateList1(Possible Candidates List)
+  Foreach[/For Each Candidate /]
+  Candidate("Possible Candidate<br>(N)")
+  CheckContextType[/"Check Contextually<br> Expected Type<br>(T)"/]
+  Intersect[/Check Intersection<br>T & N/]
+  Empty{Empty?}
+  Remove[/Remove Candidate<br>From The List/]
+  CheckNext{Has<br>Next<br>Candidate?}
+
+  CandidateList1-->Foreach
+  Foreach-->Candidate
+  CheckContextType-->Intersect
+  Candidate-->Intersect
+  Intersect-->Empty
+  Empty-->|Yes|Remove
+  Remove-->CheckNext
+  Empty-->|No| CheckNext
+  CheckNext-->|Yes|Foreach
+  CheckNext-->|No|Continue
  end
- subgraph Step 2: Check Contextually expected type
-  CheckContextType(Check contextually expected type T)-->Intersect(Intersection T & N)
-  Candidates-->Intersect
-  Intersect-->MultipleCandidates{Multiple Candidates?}
-  MultipleCandidates-->|No|SingleCandidates{Single Candidates?}
-  SingleCandidates-->|int|I2[int]
-  SingleCandidates-->|float|F2[float]
-  SingleCandidates-->|decimal|D2[decimal]
-  SingleCandidates-->|Empty|Error((Error))
-  MultipleCandidates-->|yes|HasInt{Has int?}
-  HasInt-->|No|HasFloat{Has float?}
-  HasInt-->|Yes|I2
-  HasFloat-->|Yes|F2
-  HasFloat-->|No|D2
-end
+ subgraph Step3 [Step 3: Check Updated Candidate List]
+  direction TB
+  EmptyCandidates{No<br>Possible<br>Candidates}
+  HasInt{Has int?}
+  HasFloat{Has float?}
+  Int((<code>int</code>))
+  Float((<code>float</code>))
+  Decimal((<code>decimal</code>))
+  Stop((Error))
+
+  EmptyCandidates-->|Yes|Stop
+  EmptyCandidates-->|No|HasInt
+  HasInt-->|Yes|Int
+  HasInt-->|No|HasFloat
+  HasFloat-->|Yes|Float
+  HasFloat-->|No|Decimal
+ end
+ Step1 --> Step2
+ Step2 --> Step3
 
  {{</mermaid>}}
