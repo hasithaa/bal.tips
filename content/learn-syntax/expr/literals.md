@@ -6,9 +6,11 @@ tags : ["literal"]
 weight : 06-05-00-00-00
 ---
 
-This section covers the [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) section of the Ballerina Language spec.
+Let's see what are the literals supported. Check the [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) section of the Ballerina Language spec too.
 
 <!--more-->
+
+Here is the summary.
 
 {{<md class="center-ele center-txt tip-data">}}
 Type | Description | Example
