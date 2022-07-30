@@ -21,7 +21,7 @@ There are certain code points, that are not allowed inside a string literal. You
 
 Here is the summary.
 
-<table>
+<table class="center-ele tip-data" style="overflow: scroll;">
 <tr>
 <th>Name</th>
 <th>Code Points</th>
@@ -31,13 +31,13 @@ Here is the summary.
 <tr>
   <td>Line feed - LF, New Line</td>
   <td>0xA</td>
-  <td>{{<md>}}
+  <td style="min-width:200px;">{{<md>}}
   ```
   string s = "
 ";
   ```
   {{</md>}}</td>
-  <td>{{<md>}}
+  <td style="min-width:200px;">{{<md>}}
   ```
   string s1 = "\n";
   string s2 = "\u{A}";
