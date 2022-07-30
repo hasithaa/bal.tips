@@ -146,7 +146,7 @@ pre code {
 }
 
 .cred {
- color: red !important;
+  color: red !important;
 }
 
 .cgreen {
@@ -155,4 +155,8 @@ pre code {
 
 .cdarkgoldenrod {
   color: darkgoldenrod !important;
+}
+
+.mermaid svg {
+  height: auto;
 }
