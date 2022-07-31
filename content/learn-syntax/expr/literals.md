@@ -3,10 +3,10 @@ title : "Literals"
 date : 2022-07-01T22:19:42+05:30
 kind : page 
 tags : ["literal"]
-weight : 06-05-00-00-00
+weight : 0605000000
 ---
 
-Let's see what are the literals supported. Check the [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) section of the Ballerina Language spec too.
+Ballerina Language Specification defines several [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) syntaxes.
 
 <!--more-->
 
