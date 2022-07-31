@@ -1,5 +1,14 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-{{ $Pages := where (where .Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" .Page.Params.tags}}
+{{ $filter := default "intersect" (.Get "filter")}}
+{{ $Pages := slice }}
+{{ if eq $filter "intersect"}}
+  {{ $Pages = where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" .Page.Params.tags}}
+{{else if eq $filter "union" }}
+  {{ range $key, $tag := .Page.Params.tags }}
+    {{ $Pages = $Pages | append (where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" (slice $tag)) }}
+  {{ end }}
+{{end}}
+{{$Pages = uniq $Pages}}
 <div class="tips page-view">
   <div class="tip round-box small-box">
     <h5>Related Tips</h5>
