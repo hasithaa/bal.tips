@@ -44,8 +44,10 @@ tasks.named('test') {
     outputs.file("$rootDir/../data/tests.yaml")
 }
 
-processResources {
+processTestResources  {
     include("$rootDir/../content/**/*.bal")
-    include("$rootDir/../content/**/*.out")
-    include("$rootDir/../content/**/*.err")
+}
+
+processResources  {
+    include("$rootDir/../content/**/*.bal")
 }
