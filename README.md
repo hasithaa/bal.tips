@@ -35,7 +35,7 @@ This website contains the following content types.
   - Any other pages.
 
 
-```marmaid
+```mermaid
 erDiagram
   Bal-Tips ||--|{ Collections : ""
   Bal-Tips ||--|{ Pages : ""
