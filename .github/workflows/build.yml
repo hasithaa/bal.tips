@@ -9,7 +9,10 @@ on:
     inputs:
       balVersion:
         default: 2201.1.1
-
+      fullBuild:
+        type: boolean
+        description: "Run full Gradle build without cache"
+        default: true
 jobs:
   build:
     strategy:
@@ -24,6 +27,13 @@ jobs:
             echo ${{ github.event.inputs.balVersion }}
           else
             echo 2201.1.1
+          fi
+          )" >> $GITHUB_ENV
+          echo "balBuild=$(
+          if [[${{ github.event.inputs.fullBuild }}]]; then
+            echo "--rerun-tasks --no-build-cache"
+          else
+            echo ""
           fi
           )" >> $GITHUB_ENV
         shell: bash
@@ -50,7 +60,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Execute Gradle build
         id: build
-        run: ./gradlew build --continue
+        run: ./gradlew build --continue ${{ env.balBuild }}
         working-directory: verifier
         env:
           packageUser: ${{ github.actor }}

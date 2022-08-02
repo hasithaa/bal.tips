@@ -20,7 +20,7 @@ Type | Description | Example
 [*raw template*](#) | Constructs object values<br> that subtype of<br> `object:RawTemplate` | 🚧 Coming Soon...
 {{</md>}}
 
-👉 Template Expression uses interpolated expressions. Let's say the expression you want to interpolate is `expr`, then interpolated expression is written as `${expr}`. The semantics of the interpolated expression depend on each Template kind. See each kind for more details. 
+👉 Template Expression uses interpolated expressions. Let's say the expression you want to interpolate is `expr`, then interpolated expression is written as `${expr}`. The semantics of the interpolated expression depend on each template kind. See each kind for more details. 
 
 👉 [*byte-array-literal*](/tags/byte-array-literal/) Syntax uses the same syntax as the Template expression, But it doesn't support interpolated expressions and is always a constant expression. Because of these reasons, it is more like a literal, than a template expression.   
 <br/>

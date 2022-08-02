@@ -23,8 +23,12 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Scanner;
+
+import static tips.bal.verifier.CompilerUtils.balVersion;
+import static tips.bal.verifier.Consts.USER_DIR;
 
 /**
  * Test cases validating ballerina source files.
@@ -37,8 +41,27 @@ public class VerifierTests {
     Example[] examples = new Example[0];
 
     @BeforeClass(groups = "output")
-    public void setup() throws IOException {
+    public void setup() throws IOException, InterruptedException {
         examples = ExampleLoader.filterBalFiles(ExampleLoader.loadExamples()).toArray(new Example[0]);
+
+        String expectedBalVersion = System.getenv("balVersion");
+        if (expectedBalVersion == null || expectedBalVersion.isEmpty()) {
+            Path balVersionPath = Path.of(System.getProperty(USER_DIR))
+                    .resolve("../../config/balVersion.txt").toAbsolutePath().normalize();
+            expectedBalVersion = ExampleLoader.readTxtFile(balVersionPath);
+        }
+
+        if (expectedBalVersion == null || expectedBalVersion.isEmpty()) {
+            Assert.fail("balVersion env variable is required.");
+        }
+
+        String balVersion = balVersion();
+        balVersion = balVersion.substring(0, balVersion.indexOf("("));
+        System.out.println(balVersion);
+        System.out.println(expectedBalVersion);
+        if (!balVersion.trim().contains(expectedBalVersion.trim())) {
+            Assert.fail("Ballerina Version Mis-match");
+        }
     }
 
     @DataProvider(parallel = true)
@@ -150,9 +173,9 @@ public class VerifierTests {
                 final String line = reader.nextLine();
                 if (line.trim().startsWith("//") && line.contains("Error")) {
                     err.errorCount += 1;
-                    if (!line.contains("//~")) {    // Ignore Token
+                    if (!line.contains("//~")) { // Ignore Token
                         int column = line.indexOf("^");
-                        err.errorPos.add(new int[]{lineNumber - 1, column}); // -1 because comments are in next line
+                        err.errorPos.add(new int[] { lineNumber - 1, column }); // -1 because comments are in next line
                     }
                 }
             }

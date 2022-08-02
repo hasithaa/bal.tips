@@ -44,10 +44,16 @@ tasks.named('test') {
     outputs.file("$rootDir/../data/tests.yaml")
 }
 
-processTestResources  {
-    include("$rootDir/../content/**/*.bal")
-}
+sourceSets {
+    test {
+        resources {
+            srcDir "$rootDir/../content"
+            include "**/*.bal"
+            include "**/*.out"
+            exclude "**/*.md"
 
-processResources  {
-    include("$rootDir/../content/**/*.bal")
+            srcDir "$rootDir/../config"
+            include "balVersion.txt"
+        }
+    }
 }

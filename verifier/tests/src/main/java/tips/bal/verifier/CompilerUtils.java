@@ -186,7 +186,7 @@ public class CompilerUtils {
     public static String balVersion() throws IOException, InterruptedException {
 
         final ProcessBuilder balCommandBuilder = getBalCommandBuilder(
-                Path.of(System.getProperty(USER_DIR)).resolve(DIR_BAL_BUILD).toAbsolutePath().normalize(),
+                Path.of(System.getProperty(USER_DIR)).toAbsolutePath().normalize(),
                 "bal", "version");
         Process runCmd = balCommandBuilder.start();
         runCmd.waitFor(10, TimeUnit.SECONDS);
