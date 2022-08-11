@@ -1,0 +1,16 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
+{{ $codePath := printf "%s%s" $baseURL (.Get "file") }}
+{{ $codeContent := readFile $codePath }}
+{{ $method := default "hljs" (.Get "method")}}
+{{if eq $method "hljs" }}
+  <pre data-auto-animate
+  {{with .Get "data-id"}}data-id="{{.}}"{{end}}
+  {{with .Get "data-line-numbers"}}data-line-numbers="{{.}}"{{end}}
+  {{with .Get "data-ln-start-from"}}data-ln-start-from="{{.}}"{{end}}
+  >
+  <code class="hljs" data-trim data-noescape>{{$codeContent}}</code>
+  </pre>
+{{else if eq $method "hugo"}}
+  {{ highlight $codeContent "" ""}}
+{{end}}

@@ -1,0 +1,31 @@
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{{"reveal_js/dist/reveal.css"|relURL}}">
+		<link rel="stylesheet" href="{{"reveal_js/dist/reset.css"|relURL}}">
+		<link rel="stylesheet" href="{{"reveal_js/dist/theme/"|relURL}}{{.Params.theme}}.css" id="theme">
+		<link rel="stylesheet" href="{{"reveal_js/plugin/highlight/github.css"|relURL}}">
+	</head>
+	<body>
+	<div class="reveal">
+		<div class="slides">
+				{{ .Content }}
+		</div>
+	</div>
+	<script src="{{"reveal_js/dist/reveal.js"|relURL}}"></script>
+	<script src="{{"reveal_js/plugin/zoom/zoom.js"|relURL}}"></script>
+	<script src="{{"reveal_js/plugin/notes/notes.js"|relURL}}"></script>
+	<script src="{{"reveal_js/plugin/search/search.js"|relURL}}"></script>
+	<script src="{{"reveal_js/plugin/markdown/markdown.js"|relURL}}"></script>
+	<script src="{{"reveal_js/plugin/highlight/highlight.js"|relURL}}"></script>
+	<script>
+		Reveal.initialize({
+		      	embedded : true,
+		        {{ range $key, $value := .Params.revealoptions }}
+		        {{ $key | safeHTML}}:{{$value }},
+		        {{ end }}
+						slideNumber: 'c/t',
+						showNotes: 'separate-page',
+		        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+		      });
+	</script>
+ </body>
