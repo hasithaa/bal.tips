@@ -1,0 +1,16 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{/*  See https://revealjs.com/fragments/  */}}
+{{ $element := default "div" (.Get "element")}}
+{{if eq $element "span"}}
+<span class='fragment {{ .Get "class" }}' {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
+  {{ .Inner | markdownify }}
+</span>
+{{else if eq $element "p"}}
+<p class='fragment {{ .Get "class" }}' {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
+  {{ .Inner | markdownify }}
+</p>
+{{else}}
+<div class='fragment {{ .Get "class" }}' {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
+  {{ .Inner | markdownify }}
+ </div>
+{{end}}

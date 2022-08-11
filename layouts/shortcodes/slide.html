@@ -1,0 +1,5 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<section data-auto-animate
+  {{with .Get "data-auto-animate-id"}}data-auto-animate-id="{{.}}"{{end}}>
+    {{ .Inner }}
+</section>
