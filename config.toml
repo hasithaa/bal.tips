@@ -20,3 +20,6 @@ highlightStyle = "friendly"
 
 [taxonomies]
 tags = 'tags'
+
+[markup.highlight]
+codeFences = false
