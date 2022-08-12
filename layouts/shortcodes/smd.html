@@ -1,8 +1,0 @@
-{{ $_hugo_config := `{ "version": 1 }` }}
-<section data-markdown data-auto-animate 
- {{with .Get "data-auto-animate-id"}}data-auto-animate-id="{{.}}"{{end}}
- data-separator="^---"
- data-separator-vertical="^___"
- data-separator-notes="^Note:">
-    {{ .Inner }}
-</section>
