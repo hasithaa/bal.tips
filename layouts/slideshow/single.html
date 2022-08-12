@@ -4,9 +4,6 @@
 		<meta name="revised" content="{{ now.Format "2006-01-02T15:04:05 MST" }}">
 		<title>{{ .Title }} :: {{ .Site.Title }}</title>
 		<link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
-		<link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
-		<link href="{{"css/hybrid.css" | relURL}}" rel="stylesheet">
-		<link rel="stylesheet" href="{{"css/bootstrap.min.css" | relURL}}">
 		<style type="text/css">
 			:root #header + #content > #left > #rlblock_left {
 				display:none !important;
@@ -61,10 +58,11 @@
 	</div>
 	<script src="{{"reveal_js/dist/reveal.js"|relURL}}"></script>
 	<script src="{{"reveal_js/plugin/zoom/zoom.js"|relURL}}"></script>
-	<script src="{{"reveal_js/plugin/notes/notes.js"|relURL}}"></script>
+	{{/*  <script src="{{"reveal_js/plugin/notes/notes.js"|relURL}}"></script>  */}}
 	<script src="{{"reveal_js/plugin/search/search.js"|relURL}}"></script>
 	<script src="{{"reveal_js/plugin/markdown/markdown.js"|relURL}}"></script>
 	<script src="{{"reveal_js/plugin/highlight/highlight.js"|relURL}}"></script>
+	<script src="{{"reveal_js/plugin/menu/menu.js"|relURL}}"></script>
 	<script>
 		Reveal.initialize({
 		      	embedded : true,
@@ -73,7 +71,16 @@
 		        {{ end }}
 						slideNumber: 'c/t',
 						showNotes: 'separate-page',
-		        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+		        plugins: [ RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu ],
+						menu: {
+							custom: [
+								{
+									title: 'Go To',
+									icon: '<i class="fa fa-paper-plane">',
+									src: '/slidelink.html'
+								}
+							]
+						}
 		      });
 	</script>
  </body>
