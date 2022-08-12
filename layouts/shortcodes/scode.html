@@ -1,16 +1,13 @@
 {{ $method := default "hljs" (.Get "method")}}
 {{if eq $method "hljs" }}
-   <pre data-auto-animate
-   {{with .Get "data-id"}}data-id="{{.}}"{{end}}
-   {{with .Get "data-line-numbers"}}data-line-numbers="{{.}}"{{end}}
-   {{with .Get "data-ln-start-from"}}data-ln-start-from="{{.}}"{{end}}
-   >
-   <code class="hljs" data-trim>
+   <pre data-auto-animate {{with .Get "did"}}data-id="{{.}}"{{end}}>
+   <code data-trim data-noescape
+      {{with .Get "lines"}}data-line-numbers="{{.}}"{{end}}>
       <script type="text/template">
          {{.Inner}}
       </script>
    </code>
    </pre>
 {{else if eq $method "hugo"}}
-  {{ highlight (trim .Inner "\n") "" ""}}
+  {{ highlight (trim .Inner "\n") "" (default "" (.Get "hlconfig"))}}
 {{end}}

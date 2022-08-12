@@ -74,3 +74,59 @@ Content "E:\\baltipv3\\content\\examples\\expr\\string_template\\string-template
   * Output - Programs that write to stdout.
     * All other Ballerina programs are considered Output programs.
     * Must have `.out` file with stdout result. 
+
+
+### SlideShow
+
+Include following front matter for a slide show page.
+
+```
++++
+title = "Some title"
+type = "slideshow"
+kind = "slide"
+theme = "league"
+[revealOptions]
+transition= 'concave'
+controls= true
+progress= true
+history= true
+center= true
++++
+```
+
+Use
+- `-->>>--` for slide break.
+- `--vvv--` for vertical break.
+
+#### Writing fragment 
+
+```
+{{% sfragTxt txt="# your text" [class="value1 value2"] [index="1"] [element="div|p|span"] %}}
+
+{{% sfrag [class="value1 value2"] [index="1"] [element="div|p|span"] %}}
+  # Markdown Content
+
+  - item1
+  - item2
+  - item3
+{{% /sfrag %}}
+```
+
+#### Code reference
+
+- Use `did` attribute to link related content.
+
+```
+{{<scode [did="a1"] [method="hljs|hugo"] [lines="1-3,5 or 1-3|5"]>}}
+import ballerina/io;
+
+public function main() {
+  io:println("Hello");
+}
+{{</scode>}}
+```
+
+```
+{{%scodef file="int-float-error.bal" [did="a1"] [method="hljs|hugo"] [lines="1-3,5 or 1-3|5"] %}}
+```

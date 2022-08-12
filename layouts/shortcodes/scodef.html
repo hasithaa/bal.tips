@@ -4,13 +4,10 @@
 {{ $codeContent := readFile $codePath }}
 {{ $method := default "hljs" (.Get "method")}}
 {{if eq $method "hljs" }}
-  <pre data-auto-animate
-  {{with .Get "data-id"}}data-id="{{.}}"{{end}}
-  {{with .Get "data-line-numbers"}}data-line-numbers="{{.}}"{{end}}
-  {{with .Get "data-ln-start-from"}}data-ln-start-from="{{.}}"{{end}}
-  >
-  <code class="hljs" data-trim data-noescape>{{$codeContent}}</code>
+  <pre data-auto-animate {{with .Get "did"}}data-id="{{.}}"{{end}}>
+    <code class="hljs" data-trim data-noescape
+    {{with .Get "lines"}}data-line-numbers="{{.}}"{{end}}>{{$codeContent}}</code>
   </pre>
 {{else if eq $method "hugo"}}
-  {{ highlight $codeContent "" ""}}
+  {{ highlight $codeContent "" (default "" (.Get "hlconfig"))}}
 {{end}}
