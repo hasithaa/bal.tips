@@ -1,0 +1,11 @@
+{{ $page := $.Page.GetPage (.Get "url")}}
+{{ if ne $page.Type "slideshow"}}
+  {{ errorf "The Slide Short Code requires a slideshow"}}
+{{end }}
+
+<iframe height="500px" width="100%" marginheight="0" marginwidth="0" src="{{$page.RelPermalink}}">
+  Fallback text here for unsupporting browsers, of which there are scant few.
+</iframe>
+<div class="center-txt">
+  <a href="{{$page.RelPermalink}}"> <i class="fa fa-arrows-alt"></i> Open Slides</a>
+</div>

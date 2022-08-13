@@ -7,10 +7,14 @@ code : ["main.bal"]
 weight  : 0000000001 
 size : "small"
 disableNavChevron : true
+summary : "Let's write 'Hello, World!' to *stdout*."
 ---
-Writing a simple *Hello, World!* is easy...! Let's write something to *stdout* first.
 
-<!--more-->
+{{< slide url="main-slide" >}}
+
+---
+
+### Source Code
 
 {{< gencode >}}
 
