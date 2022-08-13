@@ -6,4 +6,6 @@ weight : 100
 disableNavChevron : true
 ---
 
-{{< children style="div" depth="5" sort="Weight" >}}
+<div class="rowList">
+{{< listpages kind="tips" style="div" class="column2List">}}
+</div>

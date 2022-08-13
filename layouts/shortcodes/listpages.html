@@ -1,0 +1,52 @@
+{{- $style :=  .Get "style" | default "li" }}
+{{- $limit :=  .Get "limit" | default 0 }}
+{{- $sort :=  .Get "sort" | default "weight" }}
+{{- $kind :=  .Get "kind" }}
+{{- $class :=  .Get "class" }}
+
+{{ $AllPages := slice}}
+{{ $result := slice }}
+{{ $icon := "" }}
+{{ if eq $sort "date" }}
+  {{ $AllPages = .Site.Pages.ByDate.Reverse }}
+{{ else if eq $sort "weight" }}
+  {{ $AllPages = .Site.Pages.ByWeight }}
+{{ end }}
+
+{{ if eq $kind "tips" }}
+  {{ $result = where  $AllPages "Params.Kind" "==" "tip"}}
+  {{ $icon = "💡" }}
+{{ else if eq $kind "page" }}
+  {{ $result = where  $AllPages "Params.Kind" "==" "page"}}
+  {{ $icon = "📄" }}
+{{ else if eq $kind "slide" }}
+  {{ $result = where  $AllPages "Params.type" "==" "slideshow"}}
+  {{ $icon = "🎬" }}
+{{ else if eq $kind "collection" }}
+  {{ $result = where  $AllPages "Params.Kind" "==" "collection"}}
+  {{ $icon = "📚" }}
+{{ end }}
+
+{{ if .Get "limit"}}
+  {{$result = first $limit $result}}
+{{end}} 
+
+{{ range $result }}
+  {{ if eq $style "div"}}
+  <div id="{{.LinkTitle | safeHTMLAttr}}" {{ with $class}}class="{{.}}"{{end}}>
+    <a href="{{ .RelPermalink }}">{{ $icon}}&nbsp;&nbsp;{{ .Title }}</a>
+  </div>
+  {{ else if eq $style "p"}}
+  <p id="{{.LinkTitle | safeHTMLAttr}}" {{ with $class}}class="{{.}}"{{end}}>
+    <a href="{{ .RelPermalink }}">{{ $icon}}&nbsp;&nbsp;{{ .Title }}</a>
+  </p>
+  {{ else if eq $style "li"}}
+  <li id="{{.LinkTitle | safeHTMLAttr}}" {{ with $class}}class="{{.}}"{{end}}>
+    <a href="{{ .RelPermalink }}">{{ $icon}}&nbsp;&nbsp;{{ .Title }}</a>
+  </li>
+  {{ else if eq $style "span"}}
+  <span id="{{.LinkTitle | safeHTMLAttr}}" {{ with $class}}class="{{.}}"{{end}}>
+    <a href="{{ .RelPermalink }}">{{ $icon}}&nbsp;&nbsp;{{ .Title }}</a>
+  </span>
+  {{end}}
+{{end}}

@@ -34,25 +34,11 @@
 						{{ $vSlides := split . "--vvv--"}}
 						<section data-auto-animate>
 						{{range $vSlides}}
-							{{ $siteAtr := "" }}
-							{{ if and (in . "<!-- .slide:") (in . "-->")}}
-								{{ $siteAtr = index (findRE  ".*<!-- \\.slide:(.*)-->.*" .) 0 }}
-						 		{{ $siteAtr = replaceRE  ".*<!-- \\.slide:(.*)-->.*" "$1" $siteAtr }}
-							{{ end }}
-							<section data-auto-animate {{print $siteAtr | safeHTMLAttr}}>
-								{{ markdownify .}}
-							</section>
+							{{template "section" .}}
 						{{end}}
 						</section>
 					{{else}}
-						{{ $siteAtr := "" }}
-						{{ if and (in . "<!-- .slide:") (in . "-->")}}
-							{{ $siteAtr = index (findRE  ".*<!-- \\.slide:(.*)-->.*" .) 0 }}
-							{{ $siteAtr = replaceRE  ".*<!-- \\.slide:(.*)-->.*" "$1" $siteAtr }}
-				 		{{ end }}
-						<section data-auto-animate {{print $siteAtr | safeHTMLAttr}}>
-							{{ markdownify .}}
-						</section>
+						{{template "section" .}}
 					{{end}}
 				{{end}}
 		</div>
@@ -93,3 +79,13 @@
 		      });
 	</script>
  </body>
+ {{ define "section" }}
+ {{ $siteAtr := "" }}
+ {{ if and (in . "<!-- .slide:") (in . "-->")}}
+	 {{ $siteAtr = index (findRE  ".*<!-- \\.slide:(.*)-->.*" .) 0 }}
+	 {{ $siteAtr = replaceRE  ".*<!-- \\.slide:(.*)-->.*" "$1" $siteAtr }}
+	{{ end }}
+ <section data-auto-animate {{print $siteAtr | safeHTMLAttr}}>
+	 {{ markdownify .}}
+ </section>
+ {{end}}

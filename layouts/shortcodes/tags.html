@@ -1,0 +1,7 @@
+{{ $tags := $.Site.Taxonomies.tags.Alphabetical }}
+{{ range $tags }}
+{{ $pagePath := printf "tags/%s/" (.Name | urlize) }}
+<span>
+  <a href="{{$.Site.BaseURL}}{{$pagePath}}" style="font-size: calc(12px + {{ .Count }}px);">🔖 {{ with $.Site.GetPage $pagePath }}{{ .Title }}{{ end }} ({{ .Count }})</a>
+</span>
+{{end}}
