@@ -65,6 +65,14 @@
 	<script src="{{"reveal_js/plugin/highlight/highlight.js"|relURL}}"></script>
 	<script src="{{"reveal_js/plugin/menu/menu.js"|relURL}}"></script>
 	<script>
+		function inIframe () {
+			try {
+					return window.self !== window.top;
+			} catch (e) {
+					return true;
+			}
+		}
+
 		Reveal.initialize({
 		      	embedded : true,
 		        {{ range $key, $value := .Params.revealoptions }}
@@ -74,13 +82,13 @@
 						showNotes: 'separate-page',
 		        plugins: [ RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu ],
 						menu: {
-							custom: [
+							custom: !inIframe() ? [ 
 								{
 									title: 'Go To',
 									icon: '<i class="fa fa-paper-plane">',
 									src: '/slidelink.html'
-								}
-							]
+								} 
+							] : []
 						}
 		      });
 	</script>
