@@ -1,0 +1,47 @@
+<head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=revised content="2022-08-13T06:10:59 UTC"><title>Let's Write a Hello, World! :: Ballerina Coding Tips</title><link rel="shortcut icon" href=/images/favicon.png type=image/x-icon><style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-0RRFJG0BQS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0RRFJG0BQS")</script><link rel=stylesheet href=/css/slide.css><link rel=stylesheet href=/reveal_js/dist/reveal.css><link rel=stylesheet href=/reveal_js/dist/reset.css><link rel=stylesheet href=/reveal_js/dist/theme/league.css id=theme><link rel=stylesheet href=/reveal_js/plugin/highlight/github.css></head><body><div class=reveal><div class=slides><section data-auto-animate><h2 id=hello-world>Hello, World!</h2></section><section data-auto-animate><h3 id=create-mainbal>Create <em><code>main.bal</code></em></h3><p>Create <em><code>main.bal</code></em> file and Open it.</p><pre data-auto-animate data-id=main.bal>
+   <code data-trim data-noescape>
+      <script type=text/template>
+         
+      </script>
+   </code>
+   </pre><div class='fragment details'>💡 Use VSCode with Ballerina Extension.</div></section><section data-auto-animate><h3 id=add-main-function>Add <em><code>main</code></em> function</h3><pre data-auto-animate data-id=main.bal>
+    <code class=hljs data-trim data-noescape>public function main() {
+}
+</code>
+  </pre><div class='fragment details'><ul><li>The <em><code>main</code></em> function is the program entry point.</li><li>The <em><code>public</code></em> keyword is required to make it visible outside.</li></ul></div></section><section data-auto-animate><h3 id=import-ballerinaio-module>Import <em><code>ballerina/io</code></em> module</h3><pre data-auto-animate data-id=main.bal>
+    <code class=hljs data-trim data-noescape data-line-numbers=1>import ballerina/io;
+
+public function main() {
+}
+</code>
+  </pre><div class='fragment details'><ul><li>A module is a collection of Ballerina codes.</li><li>Refer a module using an organization (eg: <em><code>ballerina</code></em>) name and a module name (eg: <em><code>io</code></em>).</li></ul></div></section><section data-auto-animate><h3 id=call-ioprintln-function>Call <em><code>io:println</code></em> function</h3><pre data-auto-animate data-id=main.bal>
+    <code class=hljs data-trim data-noescape data-line-numbers=4>import ballerina/io;
+
+public function main() {
+  io:println(&#34;Hello, World...!&#34;);
+}
+</code>
+  </pre><div class='fragment details'><ul><li>Imported module name works as a prefix, i.e <em><code>io:</code></em></li><li>We use the <em><code>io</code></em> module&rsquo;s <em><code>println</code></em> function to write to the <em><code>stdout</code></em>.</li><li>Let&rsquo;s pass a string value <em><code>"Hello, World!"</code></em> to the function.</li></ul></div></section><section data-auto-animate><h3 id=lets-add-one-more-line>Let&rsquo;s add one more line</h3><pre data-auto-animate data-id=main.bal>
+    <code class=hljs data-trim data-noescape>import ballerina/io;
+
+public function main() {
+  io:println(&#34;👋🌏&#34;);
+  io:println(&#34;Hello, World...!&#34;);
+}
+</code>
+  </pre><div class='fragment details'>😊 string type supports unicode code points too.</div></section><section data-auto-animate><h3 id=run-mainbal>Run <em><code>main.bal</code></em></h3><p>Open the terminal and execute.</p><pre data-auto-animate>
+   <code data-trim data-noescape>
+      <script type=text/template>
+         bal run main.bal
+      </script>
+   </code>
+   </pre><div class=fragment><pre tabindex=0><code>👋🌏
+Hello, World...!
+</code></pre></div></section></div></div><script src=/reveal_js/dist/reveal.js></script>
+<script src=/reveal_js/plugin/zoom/zoom.js></script>
+<script src=/reveal_js/plugin/search/search.js></script>
+<script src=/reveal_js/plugin/markdown/markdown.js></script>
+<script src=/reveal_js/plugin/highlight/highlight.js></script>
+<script src=/reveal_js/plugin/menu/menu.js></script>
+<script>Reveal.initialize({embedded:!0,center:!0,controls:!0,history:!0,progress:!0,transition:"concave",slideNumber:"c/t",showNotes:"separate-page",plugins:[RevealZoom,RevealSearch,RevealMarkdown,RevealHighlight,RevealMenu],menu:{custom:[{title:"Go To",icon:'<i class="fa fa-paper-plane">',src:"/slidelink.html"}]}})</script></body>
