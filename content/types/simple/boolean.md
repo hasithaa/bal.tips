@@ -12,5 +12,3 @@ The **boolean** basic data type represents Boolean values; `true`, `false`.
 <!--more-->
 
 In programming, boolean data type is useful to represent a binary state like, `1`/`0`, `On`/`Off`, `Yes`/`No` or `True`/`False` etc.
-
-{{< includeTip >}}

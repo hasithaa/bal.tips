@@ -10,5 +10,3 @@ weight : 0502010001
 The nil basic data type represents A single value, that represents absence of any other value.
 
 <!--more-->
-
-{{< includeTip >}}

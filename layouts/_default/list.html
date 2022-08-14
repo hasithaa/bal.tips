@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{if .Content}}
-{{ .Content }}
+   {{ .Content }} 
+   {{ .Render "includeTips" }}
 {{else }}
 {{ $paginator := .Paginator }}
 

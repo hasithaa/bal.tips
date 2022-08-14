@@ -10,5 +10,3 @@ weight : 0502040101
 The **float** basic data type represents *64-bit IEEE 754-2008 binary floating point numbers*.
 
 <!--more-->
-
-{{< includeTip >}}

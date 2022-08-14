@@ -10,5 +10,3 @@ weight : 0502030001
 The **int** basic data type represents 64-bit signed integer values.
 
 <!--more-->
-
-{{< includeTip >}}

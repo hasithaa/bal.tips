@@ -79,7 +79,7 @@
 		      });
 	</script>
  </body>
- {{ define "section" }}
+{{ define "section" }}
  {{ $siteAtr := "" }}
  {{ if and (in . "<!-- .slide:") (in . "-->")}}
 	 {{ $siteAtr = index (findRE  ".*<!-- \\.slide:(.*)-->.*" .) 0 }}
@@ -88,4 +88,4 @@
  <section data-auto-animate {{print $siteAtr | safeHTMLAttr}}>
 	 {{ markdownify .}}
  </section>
- {{end}}
+{{end}}
