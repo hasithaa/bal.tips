@@ -24,5 +24,3 @@ Type | Description | Example
 
 👉 [*byte-array-literal*](/tags/byte-array-literal/) Syntax uses the same syntax as the Template expression, But it doesn't support interpolated expressions and is always a constant expression. Because of these reasons, it is more like a literal, than a template expression.   
 <br/>
-
-{{< includeTip >}}

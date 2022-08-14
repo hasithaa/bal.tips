@@ -1,0 +1,29 @@
+{{ $showTips := default true .Page.Params.showTips}}
+{{ if and $showTips (or (eq .Page.Params.kind "page") (eq .Page.Params.kind "collection")) }}
+  {{ $filter := default "intersect" (.Page.Params.tipFilter)}}
+  {{ $Pages := slice }}
+  {{ if eq $filter "intersect"}}
+    {{ $Pages = where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" .Page.Params.tags}}
+  {{else if eq $filter "union" }}
+    {{ range $key, $tag := .Page.Params.tags }}
+      {{ $Pages = $Pages | append (where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" (slice $tag)) }}
+    {{ end }}
+  {{end}}
+  {{$Pages = uniq $Pages}}
+  {{ if gt (len $Pages) 0}}
+    <div class="tips page-view">
+      <div class="tip round-box small-box">
+        <h5>Related Tips</h5>
+        <p></p>
+        <div class="children children-div">
+        {{ range $Pages.ByWeight }}
+          <div><a href="#{{.LinkTitle}}">💡&nbsp;{{.Title}}</a></div>
+        {{end}}
+        </div>
+      </div>
+      {{ range $Pages.ByWeight}}
+        {{ .Render "li" }}
+      {{ end }}
+    </div>
+  {{end}}
+{{end}}

@@ -22,5 +22,3 @@ Type | Description | Example
 [*byte-array-literal*](/tags/byte-array-literal/) | Write a *byte[]* array value | ``base16 `AB 12 34` ``
 {{</md>}}
 <br/>
-
-{{< includeTip >}}

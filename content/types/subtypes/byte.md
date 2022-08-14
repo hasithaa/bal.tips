@@ -13,4 +13,3 @@ weight : 0506120001
 - Type byte's value space contains only *int* values, it is a subtype of the *int*
 - Type *byte* and built-in subtype *int:Unsigned8* are equivalent.
 
-{{< includeTip >}}

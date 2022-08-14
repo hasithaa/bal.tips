@@ -10,5 +10,3 @@ weight : 0503010001
 The `string` data type represents sequence of zero of more unicode characters. 
 
 <!--more-->
-
-{{< includeTip >}}
