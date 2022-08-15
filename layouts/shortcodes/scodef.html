@@ -4,8 +4,7 @@
 {{ $method := default "hljs" (.Get "method")}}
 {{if eq $method "hljs" }}
   <pre data-auto-animate {{with .Get "class"}}class="{{.}}"{{end}} {{with .Get "did"}}data-id="{{.}}"{{end}}>
-    <code class="hljs" data-trim data-noescape
-    {{with .Get "lines"}}data-line-numbers="{{.}}"{{end}}>{{$codeContent}}</code>
+    <code data-line-numbers{{with .Get "lines"}}="{{.}}"{{end}}>{{$codeContent}}</code>
   </pre>
 {{else if eq $method "hugo"}}
   {{ highlight $codeContent "" (default "" (.Get "hlconfig"))}}

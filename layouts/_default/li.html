@@ -1,7 +1,7 @@
 <div class="tip round-box small-box">
     <div class="tip-c">
     {{if eq $.Params.kind "tip"}}
-        <h5 id="{{.LinkTitle}}"><a href="{{ .RelPermalink }}">💡&nbsp;&nbsp;{{ .Title }}</a></h5>
+        <h5 id="{{.LinkTitle}}"><a href="{{ .RelPermalink }}">{{ if .Store.Get "hasSlide" }}🎬{{else}}💡{{ end }}&nbsp;&nbsp;{{ .Title }}</a></h5>
     {{else}}
         <h4 id="{{.LinkTitle}}">
             <a href="{{ .RelPermalink }}">{{
@@ -9,21 +9,21 @@
             </a>
         </h4>
     {{end}}
-    <p>{{ .Summary }}</p> 
-    {{ .Render "gencode" }}
-    <div class="" >
-        {{if .Params.tags }}  
-            {{ range $index, $tag := .Params.tags }}
-                <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
-            {{ end }}
-        {{end}}
-    </div>
+    <p>{{ .Summary }}</p>
     <div style="text-align: right;">
         {{ if eq (default true .Params.seeMore) true}}
         <a href="{{ .RelPermalink }}">
             <span class="fa fa-hand-o-right" aria-hidden="true"></span>
             &nbsp;See more
         </a>
+        {{end}}
+    </div> 
+    {{ .Render "gencode" }}
+    <div class="" >
+        {{if .Params.tags }}  
+            {{ range $index, $tag := .Params.tags }}
+                <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+            {{ end }}
         {{end}}
     </div>
 </div>

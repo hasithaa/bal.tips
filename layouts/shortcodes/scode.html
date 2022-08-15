@@ -1,8 +1,7 @@
 {{ $method := default "hljs" (.Get "method")}}
 {{if eq $method "hljs" }}
    <pre data-auto-animate {{with .Get "did"}}data-id="{{.}}"{{end}}>
-   <code data-trim data-noescape
-      {{with .Get "lines"}}data-line-numbers="{{.}}"{{end}}>
+   <code data-trim data-noescape data-line-numbers{{with .Get "lines"}}="{{.}}"{{end}}>
       <script type="text/template">
          {{.Inner}}
       </script>
