@@ -4,6 +4,7 @@ date = 2022-08-13T01:06:51+05:30
 type = "slideshow"
 kind = "slide"
 theme = "league"
+weight = "1100000000"
 summary = "Let's learn how to write a 'Hello, World!' program."
 [revealOptions]
 transition= 'concave'
