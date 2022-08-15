@@ -2,15 +2,15 @@
 {{/*  See https://revealjs.com/fragments/  */}}
 {{ $element := default "div" (.Get "element")}}
 {{if eq $element "span"}}
-<span class='fragment {{ .Get "class" }}' {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
+<span class='fragment {{ .Get "class" }}' {{with .Get "did"}}data-id="{{.}}"{{end}} {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
   {{ .Get "txt" | markdownify }}
 </span>
 {{else if eq $element "p"}}
-<p class='fragment {{ .Get "class" }}' {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
+<p class='fragment {{ .Get "class" }}' {{with .Get "did"}}data-id="{{.}}"{{end}} {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
   {{ .Get "txt" | markdownify }}
 </p>
 {{else}}
-<div class='fragment {{ .Get "class" }}' {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
+<div class='fragment {{ .Get "class" }}' {{with .Get "did"}}data-id="{{.}}"{{end}} {{ with .Get "index" }}data-fragment-index='{{ . }}'{{ end }}>
   {{ .Get "txt" | markdownify }}
  </div>
 {{end}}

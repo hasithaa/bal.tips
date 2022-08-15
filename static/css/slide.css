@@ -1,3 +1,15 @@
 .details {
   font-size: x-large;
 }
+
+td.hljs-ln-code {
+	white-space: pre-wrap;
+}
+
+code {
+  color: aqua;
+}
+
+.nav-link {
+  cursor: pointer;
+}

@@ -1,91 +1,102 @@
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta name="revised" content="{{ now.Format "2006-01-02T15:04:05 MST" }}">
-		<title>{{ .Title }} :: {{ .Site.Title }}</title>
-		<link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
-		<style type="text/css">
-			:root #header + #content > #left > #rlblock_left {
-				display:none !important;
-			}
-		</style>
-		{{ if ne hugo.Environment "development" }}
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-0RRFJG0BQS"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-		
-			gtag('config', 'G-0RRFJG0BQS');
-		</script>
-		{{ end }}
-		<link rel="stylesheet" href="{{"css/slide.css"|relURL}}">
-		<link rel="stylesheet" href="{{"reveal_js/dist/reveal.css"|relURL}}">
-		<link rel="stylesheet" href="{{"reveal_js/dist/reset.css"|relURL}}">
-		<link rel="stylesheet" href="{{"reveal_js/dist/theme/"|relURL}}{{.Params.theme}}.css" id="theme">
-		<link rel="stylesheet" href="{{"reveal_js/plugin/highlight/github.css"|relURL}}">
-	</head>
-	<body>
-	<div class="reveal">
-		<div class="slides">
-				{{ $slides := split .RawContent "-->>>--"}}
-				{{range $slides}}
-					{{if in . "--vvv--"}}
-						{{ $vSlides := split . "--vvv--"}}
-						<section data-auto-animate>
-						{{range $vSlides}}
-							{{template "section" .}}
-						{{end}}
-						</section>
-					{{else}}
-						{{template "section" .}}
-					{{end}}
-				{{end}}
-		</div>
-	</div>
-	<script src="{{"reveal_js/dist/reveal.js"|relURL}}"></script>
-	<script src="{{"reveal_js/plugin/zoom/zoom.js"|relURL}}"></script>
-	{{/*  <script src="{{"reveal_js/plugin/notes/notes.js"|relURL}}"></script>  */}}
-	<script src="{{"reveal_js/plugin/search/search.js"|relURL}}"></script>
-	<script src="{{"reveal_js/plugin/markdown/markdown.js"|relURL}}"></script>
-	<script src="{{"reveal_js/plugin/highlight/highlight.js"|relURL}}"></script>
-	<script src="{{"reveal_js/plugin/menu/menu.js"|relURL}}"></script>
-	<script>
-		function inIframe () {
-			try {
-					return window.self !== window.top;
-			} catch (e) {
-					return true;
-			}
-		}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="revised" content="{{ now.Format "2006-01-02T15:04:05 MST" }}">
+    <title>{{ .Title }} :: {{ .Site.Title }}</title>
+    <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+    {{ if ne hugo.Environment "development" }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RRFJG0BQS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-0RRFJG0BQS');
+    </script>
+    {{ end }}
+    <link rel="stylesheet" href="{{"css/slide.css"|relURL}}">
+    <link rel="stylesheet" href="{{"reveal_js/dist/reveal.css"|relURL}}">
+    <link rel="stylesheet" href="{{"reveal_js/dist/reset.css"|relURL}}">
+    <link rel="stylesheet" href="{{"reveal_js/dist/theme/"|relURL}}{{.Params.theme}}.css" id="theme">
+    <link rel="stylesheet" href="{{"reveal_js/plugin/highlight/github.css"|relURL}}">
+  </head>
+  <body>
+  <div class="reveal">
+    <div id="tipslide" class="slides">
+        {{ $slides := split .RawContent "-->>>--"}}
+        {{range $slides}}
+          {{if in . "--vvv--"}}
+            {{ $vSlides := split . "--vvv--"}}
+            <section data-auto-animate>
+            {{range $vSlides}}
+              {{template "section" .}}
+            {{end}}
+            </section>
+          {{else}}
+            {{template "section" .}}
+          {{end}}
+        {{end}}
+    </div>
+  </div>
+  <script src="{{"reveal_js/dist/reveal.js"|relURL}}"></script>
+  <script src="{{"reveal_js/plugin/zoom/zoom.js"|relURL}}"></script>
+  {{/*  <script src="{{"reveal_js/plugin/notes/notes.js"|relURL}}"></script>  */}}
+  <script src="{{"reveal_js/plugin/search/search.js"|relURL}}"></script>
+  <script src="{{"reveal_js/plugin/markdown/markdown.js"|relURL}}"></script>
+  <script src="{{"reveal_js/plugin/highlight/highlight.js"|relURL}}"></script>
+  <script src="{{"reveal_js/plugin/menu/menu.js"|relURL}}"></script>
+  <script>
+    function inIframe () {
+      try {
+          return window.self !== window.top;
+      } catch (e) {
+          return true;
+      }
+    }
 
-		Reveal.initialize({
-		      	embedded : true,
-		        {{ range $key, $value := .Params.revealoptions }}
-		        {{ $key | safeHTML}}:{{$value }},
-		        {{ end }}
-						slideNumber: 'c/t',
-						showNotes: 'separate-page',
-		        plugins: [ RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu ],
-						menu: {
-							custom: !inIframe() ? [ 
-								{
-									title: 'Go To',
-									icon: '<i class="fa fa-paper-plane">',
-									src: '/slidelink.html'
-								} 
-							] : []
-						}
-		      });
-	</script>
+    Reveal.initialize({
+            embedded : true,
+            {{ range $key, $value := .Params.revealoptions }}
+            {{ $key | safeHTML}}:{{$value }},
+            {{ end }}
+            slideNumber: 'c/t',
+            width: 960,
+            height: 700,
+            autoAnimateEasing: 'ease-out',
+            showNotes: 'separate-page',
+            plugins: [ RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu ],
+            menu: {
+              custom: !inIframe() ? [ 
+                {
+                  title: 'Go To',
+                  icon: '<i class="fa fa-paper-plane">',
+                  src: '/slidelink.html'
+                } 
+              ] : []
+            }
+          });
+		{{/*  document.getElementById("tipslide").addEventListener("mousedown", handleClick, false);
+    document.getElementById("tipslide").addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+    
+    function handleClick(e) {
+      e.preventDefault();
+      if(e.button === 0) Reveal.next(); 
+      if(e.button === 2) Reveal.prev(); 
+    }  */}}
+  </script>
  </body>
 {{ define "section" }}
  {{ $siteAtr := "" }}
  {{ if and (in . "<!-- .slide:") (in . "-->")}}
-	 {{ $siteAtr = index (findRE  ".*<!-- \\.slide:(.*)-->.*" .) 0 }}
-	 {{ $siteAtr = replaceRE  ".*<!-- \\.slide:(.*)-->.*" "$1" $siteAtr }}
-	{{ end }}
+   {{ $siteAtr = index (findRE  ".*<!-- \\.slide:(.*)-->.*" .) 0 }}
+   {{ $siteAtr = replaceRE  ".*<!-- \\.slide:(.*)-->.*" "$1" $siteAtr }}
+  {{ end }}
  <section data-auto-animate {{print $siteAtr | safeHTMLAttr}}>
-	 {{ markdownify .}}
+   {{ markdownify .}}
  </section>
 {{end}}

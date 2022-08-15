@@ -13,19 +13,25 @@ history= true
 center= true
 +++
 
-## Hello, World!
+##  `Hello, World!`
+
+Let's learn how to write a simple Ballerina program.
+
+{{< snext txt="Start Learning" >}}
 
 -->>>--
 
-### Create *`main.bal`*
-
-Create *`main.bal`* file and Open it.
+### Create a File
 
 {{< scode did="main.bal" >}}{{< /scode >}}
 
-{{< sfrag class="details">}}
-💡 Use VSCode with Ballerina Extension. 
-{{< /sfrag >}}
+Create *`main.bal`* file and open it.
+
+<div class="details" >
+💡 Use VSCode with Ballerina Extension for the best experience.  
+</div>
+
+  
 
 -->>>--
 
@@ -33,47 +39,76 @@ Create *`main.bal`* file and Open it.
 
 {{< scodef did="main.bal" file="/examples/helloworld/main.bal1">}}
 
-{{< sfrag class="details">}}
+{{< sdown >}}
+
+--vvv--
+
+### *`main`* function Explained
+
+{{<md class="details">}}
+- Functions are building blocks of a program.
+- A function is a code block, written to perform specific tasks.  
 - The *`main`* function is the program entry point.
 - The *`public`* keyword is required to make it visible outside.
-{{< /sfrag >}}
+{{</md >}}
 
+{{< scodef did="main.bal" file="/examples/helloworld/main.bal1">}}
+  
 -->>>--
 
 ### Import *`ballerina/io`* module
 
 {{< scodef did="main.bal" file="/examples/helloworld/main.bal2" lines="1">}}
+{{< sdown >}}
 
-{{< sfrag class="details">}}
-- A module is a collection of Ballerina codes.
-- Refer a module using an organization (eg: *`ballerina`*) name and a module name (eg: *`io`*).
-{{< /sfrag >}}
+--vvv--
 
+### Module Explained
+
+{{< md class="details">}}
+- A module is a collection of Ballerina codes, also it is the unit of the compilation.
+- A module can contain one or more source files. Here `main.bal` work as a module.
+- Modules are sharable and reusable. 
+- Import a module using an organization name and a module name.
+  - Here organization name is *`ballerina`*, the module name is *`io`*
+{{< /md >}}
+
+{{< scodef did="main.bal" file="/examples/helloworld/main.bal2" lines="1">}}
+  
 -->>>--
 
 ### Call *`io:println`* function
 
 {{< scodef did="main.bal" file="/examples/helloworld/main.bal3" lines="4">}}
+{{< sdown >}}
 
-{{< sfrag class="details">}}
-- Imported module name works as a prefix, i.e *`io:`*
-- We use the *`io`* module's *`println`* function to write to the *`stdout`*.
-- Let's pass a string value *`"Hello, World!"`* to the function.
-{{< /sfrag >}}
+--vvv--
+
+### *`io:println`* function call explained
+
+{{< md class="details">}}
+- The last part of the imported module name works as a prefix, i.e., *`io:`*
+  - Or define the prefix using the syntax `import ballerina/io as bio;`
+
+- Use the *`io`* module's *`println`* function to write to the *`stdout`*.
+- A string value *`"Hello, World!"`* is passed to the function.
+{{< /md >}}
+
+{{< scodef did="main.bal" file="/examples/helloworld/main.bal3" lines="4">}}
 
 -->>>--
 
 ### Let's add one more line
 
 {{< scodef did="main.bal" file="/examples/helloworld/main.bal">}}
-
-{{< sfrag class="details">}}
-😊 string type supports unicode code points too. 
-{{< /sfrag >}}
+  
+{{< md class="details">}}
+😊 string type supports Unicode code points too. 
+{{< /md >}}
 
 -->>>--
 
-### Run *`main.bal`*
+### Compile and Run
 
 Open the terminal and execute.
 
@@ -81,4 +116,8 @@ Open the terminal and execute.
 
 {{< sfrag >}}
 {{< scodef did="main.bal" file="/examples/helloworld/main.bal.out" method="hugo">}}
+
+{{<md class="details">}}
+[🔁Start Over](#/0) or [💡 Learn More Tips](/)
+{{</md>}}
 {{< /sfrag >}}
