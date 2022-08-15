@@ -4,7 +4,7 @@ date : 2022-07-05T16:12:28+05:30
 kind : tip 
 tags : ["literal", "nil-literal", "nil"] 
 code : ["nil-literal.bal"] 
-weight : 0502010001 
+weight : 10502010001 
 size : "small" 
 disableNavChevron : true
 ---

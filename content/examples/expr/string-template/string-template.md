@@ -4,7 +4,7 @@ date : 2022-07-31T07:56:53+05:30
 kind : tip 
 tags : ["template", "string-template", "string"]
 code : ["template.bal", "template-special.bal"] 
-weight : 0606010001
+weight : 10606010001
 size : "small"
 disableNavChevron : true 
 seeMore : true

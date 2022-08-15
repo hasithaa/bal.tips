@@ -3,7 +3,7 @@ title : "Template Expressions"
 date : 2022-07-31T07:56:53+05:30
 kind : page 
 tags : ["template"]
-weight : 0606000000
+weight : 10606000000
 ---
 
 Template Syntax uses two `` ` `` backtick letters to enclose a string with interpolated expressions. There are several variations of the [Template Expressions](https://ballerina.io/spec/lang/2022R1/#section_6.6) defined in the Language Specification. 

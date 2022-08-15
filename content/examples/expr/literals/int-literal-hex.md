@@ -4,7 +4,7 @@ date : 2022-07-05T16:46:55+05:30
 kind : tip 
 tags : ["literal", "numeric-literal", "int", "hex"]
 code : ["int-literal-hex.bal"] 
-weight : 0502030002  
+weight : 10502030002  
 size : "small"
 disableNavChevron : true
 ---

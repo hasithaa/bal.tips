@@ -4,7 +4,7 @@ date : 2022-07-08T20:57:17+05:30
 kind : tip 
 tags : [int, float, decimal] 
 code : ["int-float-error.bal", "int-decimal-error.bal", "float-decimal-error.bal"] 
-weight : 0603000001 
+weight : 10603000001 
 size : "small" 
 disableNavChevron : true
 ---

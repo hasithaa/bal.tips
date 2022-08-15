@@ -4,7 +4,7 @@ date : 2022-07-03T01:01:27+05:30
 kind : tip 
 tags : ["hello-world", "io:println"] 
 code : ["main.bal"] 
-weight  : 0000000001 
+weight  : 10000000001 
 size : "small"
 disableNavChevron : true
 summary : "Let's write 'Hello, World!' to *stdout*."

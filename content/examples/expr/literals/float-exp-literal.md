@@ -4,7 +4,7 @@ date : 2022-07-05T20:49:35+05:30
 kind : tip 
 tags : ["literal", "numeric-literal", "float", "decimal",  "exponent"] 
 code : ["float-exp-literal.bal","decimal-exp-literal.bal"] 
-weight : 0502040102
+weight : 10502040102
 size : "small"
 disableNavChevron : true 
 seeMore : false

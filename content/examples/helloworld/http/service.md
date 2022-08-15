@@ -4,7 +4,7 @@ date : 2022-07-04T01:05:24+05:30
 kind : tip 
 tags : ["hello-world", "http:service"] 
 code : ["service.bal"] 
-weight  : 1000000001 
+weight  : 11000000001 
 size : "large"
 disableNavChevron : true
 ---

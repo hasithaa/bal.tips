@@ -4,7 +4,7 @@ date : 2022-07-05T20:49:35+05:30
 kind : tip 
 tags : ["literal", "numeric-literal", "float", "decimal"] 
 code : ["float-literal.bal", "decimal-literal.bal"] 
-weight : 0502040001
+weight : 10502040001
 size : "small"
 disableNavChevron : true
 ---

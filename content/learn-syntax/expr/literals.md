@@ -3,7 +3,7 @@ title : "Literals"
 date : 2022-07-01T22:19:42+05:30
 kind : page 
 tags : ["literal"]
-weight : 0605000000
+weight : 10605000000
 ---
 
 Ballerina Language Specification defines several [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) syntaxes.

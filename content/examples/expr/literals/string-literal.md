@@ -4,7 +4,7 @@ date : 2022-07-25T21:54:41+05:30
 kind : tip 
 tags : ["literal", "string-literal", "string", "DoubleQuotedStringLiteral"] 
 code : ["string-literal.bal"] 
-weight : 0503010001 
+weight : 10503010001 
 size : "small" 
 disableNavChevron : true
 seeMore : false
