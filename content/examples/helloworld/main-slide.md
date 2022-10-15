@@ -119,6 +119,6 @@ Open the terminal and execute.
 {{< scodef did="main.bal" file="/examples/helloworld/main.bal.out" method="hugo">}}
 
 {{<md class="details">}}
-[🔁Start Over](#/0) or [💡 Learn More Tips](/)
+[🔁Start Over](#/0)
 {{</md>}}
 {{< /sfrag >}}
