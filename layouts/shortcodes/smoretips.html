@@ -1,0 +1,3 @@
+{{ $name := "" }}
+<a class="details" style="font-size:small" href="{{if .Get "tags"}}{{$name = .Get "tags"}}{{ ref . (print "/tags/" $name)}}{{end}}"
+target="_blank">↗️ See more {{$name}} tips💡</a>

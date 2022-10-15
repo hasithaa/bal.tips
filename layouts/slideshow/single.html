@@ -50,6 +50,7 @@
   <script src="{{"reveal_js/plugin/markdown/markdown.js"|relURL}}"></script>
   <script src="{{"reveal_js/plugin/highlight/highlight.js"|relURL}}"></script>
   <script src="{{"reveal_js/plugin/menu/menu.js"|relURL}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin"></script>
   <script>
     function inIframe () {
       try {
@@ -69,7 +70,7 @@
             height: 700,
             autoAnimateEasing: 'ease-out',
             showNotes: 'separate-page',
-            plugins: [ RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu ],
+            plugins: [ RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu, RevealMermaid ],
             menu: {
               custom: !inIframe() ? [ 
                 {
@@ -97,6 +98,14 @@
    {{ $siteAtr = replaceRE  ".*<!-- \\.slide:(.*)-->.*" "$1" $siteAtr }}
   {{ end }}
  <section data-auto-animate {{print $siteAtr | safeHTMLAttr}}>
-   {{ markdownify .}}
+   {{ $details := split . "-----"}}
+   {{range $id, $data := $details}}
+    {{ $boxAtr := "" }}
+    {{ $boxAtr = index (findRE  ".*<!-- \\.box:(.*)-->.*" .) 0 }}
+    {{ $boxAtr = replaceRE  ".*<!-- \\.box:(.*)-->.*" "$1" $boxAtr }}
+    <div {{print $boxAtr | safeHTMLAttr}}>
+      {{ markdownify $data}}
+    </div>
+   {{end}}
  </section>
 {{end}}
