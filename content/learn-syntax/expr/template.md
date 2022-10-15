@@ -16,8 +16,8 @@ Here is the summary.
 Type | Description | Example
 ---|---|---
 [*string template*](/tags/string-template/) | Constructs String values | ``string `Hello, ${name}` ``
-[*xml template*](#) | Constructs XML values | ``xml `<name>${name}</name>` ``
-[*raw template*](#) | Constructs object values<br> that subtype of<br> `object:RawTemplate` | 🚧 Coming Soon...
+[*xml template*](/tags/xml-template/) | Constructs XML values | ``xml `<name>${name}</name>` ``
+[*raw template*](/tags/raw-template/) | Constructs object values<br> that subtype of<br> `object:RawTemplate` | `` `.. ${varA} ..` `` 
 {{</md>}}
 
 👉 Template Expression uses interpolated expressions. Let's say the expression you want to interpolate is `expr`, then interpolated expression is written as `${expr}`. The semantics of the interpolated expression depend on each template kind. See each kind for more details. 
