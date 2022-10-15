@@ -3,9 +3,9 @@
   {{ $filter := default "intersect" (.Page.Params.tipFilter)}}
   {{ $Pages := slice }}
   {{ if eq $filter "intersect"}}
-    {{ $Pages = where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" .Page.Params.tags}}
+    {{ $Pages = where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" .Page.Params.tips}}
   {{else if eq $filter "union" }}
-    {{ range $key, $tag := .Page.Params.tags }}
+    {{ range $key, $tag := .Page.Params.tips }}
       {{ $Pages = $Pages | append (where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" (slice $tag)) }}
     {{ end }}
   {{end}}

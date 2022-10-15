@@ -2,7 +2,8 @@
 title : "Template Expressions"
 date : 2022-07-31T07:56:53+05:30
 kind : page 
-tags : ["template"]
+tags : ["expressions", "template"]
+tips : ["template"]
 weight : 10606000000
 ---
 
