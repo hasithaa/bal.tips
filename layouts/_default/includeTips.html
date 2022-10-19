@@ -1,4 +1,5 @@
 {{ $showTips := default true .Page.Params.showTips}}
+{{ $tiplist := default true .Page.Params.tiplist}}
 {{ if and $showTips (or (eq .Page.Params.kind "page") (eq .Page.Params.kind "collection")) }}
   {{ $filter := default "intersect" (.Page.Params.tipFilter)}}
   {{ $Pages := slice }}
@@ -12,6 +13,7 @@
   {{$Pages = uniq $Pages}}
   {{ if gt (len $Pages) 0}}
     <div class="tips page-view">
+      {{ if eq $tiplist true}}
       <div class="tip round-box small-box">
         <h5>What's on this Page</h5>
         <p></p>
@@ -27,6 +29,7 @@
         {{end}}
         </div>
       </div>
+      {{end}}
       {{ range $key, $page := $Pages.ByWeight}}
         {{ if ne $.Page.Permalink $page.Permalink }}
             {{ .Render "li" }}

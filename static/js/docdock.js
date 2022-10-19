@@ -161,7 +161,7 @@ jQuery(document).ready(function() {
         var code = $(this),
             text = code.text();
 
-        if (text.length > 10 && !text.startsWith(" 1\n 2\n")) {
+        if (text.length > 20 && !text.startsWith(" 1\n 2\n")) {
             if (!clipInit) {
                 var text, clip = new Clipboard('.copy-to-clipboard', {
                     text: function(trigger) {

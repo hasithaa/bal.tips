@@ -2,7 +2,7 @@
 title : "Literals"
 date : 2022-07-01T22:19:42+05:30
 kind : page 
-tags : ["expressions", "literal"]
+tags : ["expr", "literal"]
 tips : ["literal"]
 view : card
 weight : 10605000000
@@ -18,4 +18,4 @@ weight : 10605000000
 
 <!--more-->
 
-Ballerina Language Specification defines [Literals](https://ballerina.io/spec/lang/2022R1/#section_6.5) syntaxes. Let's see these syntaxes in more details.
+Let's see these syntaxes in more details.

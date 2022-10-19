@@ -13,23 +13,18 @@
         {{end}}
     {{end}}
     <p>{{ .Summary }}</p>
+    {{ if .Truncated }}
+        <a href="{{ .RelPermalink }}">Read More ...</a>
+    {{ end }}
     <div style="text-align: right;">
-        {{ if eq (default true .Params.seeMore) true}}
-        <a href="{{ .RelPermalink }}">
-            <span class="fa fa-hand-o-right" aria-hidden="true"></span>
-            &nbsp;See more
-        </a>
-        {{end}}
-    </div>
-    {{if eq $view "tip" }} 
-        {{ .Render "gencode" }}
-        <div class="" >
-            {{if .Params.tags }}  
+        {{if eq $view "tip" }}{{if .Params.tags }}  
                 {{ range $index, $tag := .Params.tags }}
                     <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
                 {{ end }}
-            {{end}}
-        </div>
+        {{end}}{{end}}
+    </div>
+    {{if eq $view "tip" }} 
+        {{ .Render "gencode" }}
     {{end}}
 </div>
 </div>

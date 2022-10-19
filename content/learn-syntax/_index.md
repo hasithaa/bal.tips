@@ -3,6 +3,8 @@ title : "Ballerina Syntax Guide"
 date : 2022-07-01T22:17:58+05:30
 kind : collection 
 tags : []
+tips : [expr, stmt]
+tiplist : false
 weight : 50
 ---
 
