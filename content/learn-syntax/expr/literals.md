@@ -10,11 +10,11 @@ weight : 10605000000
 
 |Literals||
 |---|---|
-|`()`                                               |[*nil literal*](/tags/nil-literal/ "Writing a *nil* value") |
-|`true` or `false`                                  |[*boolean literal*](/tags/boolean-literal/ "Writing a *boolean* value")  |
-|`123`, `456.78`                                    |[*numeric literal*](/tags/numeric-literal/ "Write a number, such as *int*, *float*, *decimal*")    |
-|`"Hello, World!"`                                  |[*string literal*](/tags/string-literal/ "Write a string value") |
-| ``base16 `AB 12 34` `` <br/>  ``base64 `A1z+` ``  |[*byte array literal*](/tags/byte-array-literal/ "Write a *byte[]* array value") |
+|`()`                                               |{{< tag name="nil literal" tip="Writing a *nil* value">}} |
+|`true` or `false`                                  |{{< tag name="boolean literal" tip="Writing a *boolean* value">}}  |
+|`123`, `456.78`                                    |{{< tag name="numeric literal" tip="Write a number, such as *int*, *float*, *decimal*">}}    |
+|`"Hello, World!"`                                  |{{< tag name="string literal" tip="Write a string value">}} |
+| ``base16 `AB 12 34` `` <br/>  ``base64 `A1z+` ``  |{{< tag name="byte array literal" tip="Write a *byte[]* array value">}} |
 
 <!--more-->
 

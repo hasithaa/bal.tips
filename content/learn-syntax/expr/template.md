@@ -10,10 +10,10 @@ weight : 10606000000
 
 |Template Expressions||
 |---|---|
-|``string `Hello ${a}` ``   |[*string template*](/tags/string-template/ "Constructs String values")|
-|`` xml `<a>${b}</a>` ``    |[*xml template*](/tags/xml-template/ "Constructs XML values")|
-|``re `A.*?` ``             |[*tagged data template*](/tags/tagged-data-template/ "Constructs tagged data values") |
-|`` `.. ${varA} ..` ``      |[*raw template*](/tags/raw-template/ "Constructs object values that subtype of **object:RawTemplate**")|
+|``string `Hello ${a}` ``   |{{< tag name="string template" tip="Constructs String values">}}|
+|`` xml `<a>${b}</a>` ``    |{{< tag name="xml template" tip="Constructs XML values">}}|
+|``re `A.*?` ``             |{{< tag name="tagged data template" tip="Constructs tagged data values">}} |
+|`` `.. ${varA} ..` ``      |{{< tag name="raw template" tip="Constructs object values that subtype of **object:RawTemplate**">}}|
 
 <!--more-->
 

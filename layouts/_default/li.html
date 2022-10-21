@@ -19,7 +19,7 @@
     <div style="text-align: right;">
         {{if eq $view "tip" }}{{if .Params.tags }}  
                 {{ range $index, $tag := .Params.tags }}
-                    <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+                    <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag | humanize | safeHTML}}</a>
                 {{ end }}
         {{end}}{{end}}
     </div>

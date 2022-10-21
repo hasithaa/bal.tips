@@ -1,0 +1,7 @@
+{{ $pagePath := printf "tags/%s/" (.Get "name" | urlize)}}
+{{ if (.Site.GetPage $pagePath) }}
+<a class="label label-default" href="{{$.Site.BaseURL}}{{$pagePath}}" 
+    {{with .Get "tip"}}title="{{.}}"{{end}}> {{.Get "name" | humanize | safeHTML}}</a>
+{{else}}
+  <span class="label label-default" {{with .Get "tip"}}title="{{.}}"{{end}}>{{.Get "name" | humanize}}</span>
+{{end}}
