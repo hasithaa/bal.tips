@@ -7,14 +7,16 @@ type Employee record {
 };
 
 public function main() {
-  Employee emp = { name : "Bob", id : 2, salary: 45000};
+  //tip-start--
+  Employee emp =
+     { name : "Bob", id : 2, salary: 45000};
   string department = "IT";
 
   string s = string `Hello, ${emp.name}!`;
   string s2 = string `Your id is ${emp.id}
 Your department is ${department}
 Your salary is ${emp.salary}`;
-
+  //tip-end
   io:println(s);
   io:println(s2);
 }

@@ -22,10 +22,10 @@ Additionally, *int* type supports following operations
 * Shift Operations ( `<<`,`>>`, `>>>`)
 * Binary bitwise (`&`, `^`, `|`)
 * Range Operator ( `x ... y` )
-  
+
+<!--more-->
 See each section for more tips.
 
 {{% notice info %}}
 Runtime will panic on integer overflow or on division by zero.
 {{% /notice %}}
-<!--more-->

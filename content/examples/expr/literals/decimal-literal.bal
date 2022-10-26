@@ -1,8 +1,10 @@
 import ballerina/io;
 
 public function main() {
+  //tip-start--
   decimal f1 = 12.345;
   decimal f2 = -5.678;
+  //tip-end--
   decimal f3 = .5678;
   decimal f4 = 123.456d;
   decimal f5 = 567.8901D;

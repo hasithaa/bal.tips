@@ -1,5 +1,5 @@
 import ballerina/http;
-
+//tip-start--
 service on new http:Listener(8080) {
   resource function get greeting(string? name) returns json { 
     if name == () {
@@ -9,3 +9,4 @@ service on new http:Listener(8080) {
     return {"content": content};
   }
 }
+//tip-end--

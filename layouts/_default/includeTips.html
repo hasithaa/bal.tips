@@ -12,24 +12,26 @@
   {{end}}
   {{$Pages = uniq $Pages}}
   {{ if gt (len $Pages) 0}}
-    <div class="tips page-view">
-      {{ if eq $tiplist true}}
-      <div class="tip round-box small-box">
-        <h5>What's on this Page</h5>
-        <p></p>
-        <div class="children children-div">
-        {{ range $key, $page := $Pages.ByWeight }}
-          {{ if ne $.Page.Permalink $page.Permalink }}
-            {{  if eq  $page.Params.Kind "tip" }}
-            <div><a href="#{{.LinkTitle}}">💡&nbsp;{{$page.Title}}</a></div>
-            {{ else }}
-            <div><a href="#{{.LinkTitle}}">📃&nbsp;{{$page.Title}}</a></div>
-            {{end}}
+    <br>
+    {{ if eq $tiplist true}}
+    <div >
+      <h5>About {{.Title}}</h5>
+      <br>
+      <div class="rowList">
+      {{ range $key, $page := $Pages.ByWeight }}
+        {{ if ne $.Page.Permalink $page.Permalink }}
+          {{  if eq  $page.Params.Kind "tip" }}
+          <div class="column2List"><a href="#{{.LinkTitle}}">💡&nbsp;{{$page.Title}}</a></div>
+          {{ else }}
+          <div class="column2List"><a href="#{{.LinkTitle}}">📃&nbsp;{{$page.Title}}</a></div>
           {{end}}
         {{end}}
-        </div>
-      </div>
       {{end}}
+      </div>
+    </div>
+    {{end}}
+    <br>
+    <div class="tips page-view">
       {{ range $key, $page := $Pages.ByWeight}}
         {{ if ne $.Page.Permalink $page.Permalink }}
             {{ .Render "li" }}

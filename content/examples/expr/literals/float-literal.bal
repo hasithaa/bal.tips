@@ -1,8 +1,10 @@
 import ballerina/io;
 
 public function main() {
+  //tip-start--
   float f1 = 12.345;
   float f2 = -5.678;
+  //tip-end--
   float f3 = .5678;
   float f4 = 123.456f;
   float f5 = 567.8901F;

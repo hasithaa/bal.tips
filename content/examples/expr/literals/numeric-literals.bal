@@ -3,13 +3,14 @@ import ballerina/io;
 const int TEN = 10;
 
 public function main() {
+  //tip-start--
   var a1 = 10;
   TEN a2 = 10;
   float a3 = 10;
   decimal a4 = 10;
   float|decimal a5 = 10;
   var a6 = 10.0;
-  
+  //tip-end
   io:println(a1 is int);
   io:println(a2 is TEN);
   io:println(a3);

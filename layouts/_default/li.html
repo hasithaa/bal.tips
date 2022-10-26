@@ -13,18 +13,18 @@
         {{end}}
     {{end}}
     <p>{{ .Summary }}</p>
+    {{if eq $view "tip" }} 
+        {{ .Render "genHighlight" }}
+    {{end}}
     {{ if .Truncated }}
-        <a href="{{ .RelPermalink }}">Read More ...</a>
+    <p><a href="{{ .RelPermalink }}">Read More ...</a></p>
     {{ end }}
-    <div style="text-align: right;">
+    <p style="text-align: right;">
         {{if eq $view "tip" }}{{if .Params.tags }}  
                 {{ range $index, $tag := .Params.tags }}
                     <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag | humanize | safeHTML}}</a>
                 {{ end }}
         {{end}}{{end}}
-    </div>
-    {{if eq $view "tip" }} 
-        {{ .Render "gencode" }}
-    {{end}}
+    </p>
 </div>
 </div>

@@ -8,28 +8,34 @@
   {{ $sources := slice }}
   {{/*  Read content and process them first  */}}
   {{ range $name := $code }}
-    {{ $codePath := printf "%s%s" $baseURL $name }}
-    {{ $codeContent := readFile $codePath }}
-    {{ $codeExt := "" }}
-    {{ $codeKey := printf "%s-%s" $key $name }}
-    {{ $codeOut := "" }}
     {{ if strings.HasSuffix $name ".bal"}}
-      {{ $codeExt = "ballerina" }}
-      {{ $codeContent =  highlight $codeContent "ballerina"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey  ",lineNumbersInTable=true" )}}
+      {{ $codePath := printf "%s%s" $baseURL $name }}
+      {{ $codeKey := printf "%s-%s" $key $name }}
+      {{ $file := readFile $codePath }}
+      {{ $file = split $file "\n" }}
+      {{ $highlight := slice }}
+      {{ $codeOut := "" }}
+      {{ range $file }}
+        {{ $startWord := trim . " "}}
+        {{ if or (hasPrefix $startWord "//tip-start") (hasPrefix $startWord "//tip-end") }}
+          {{if not (in $startWord "--")}}
+            {{ $highlight = $highlight | append "" }}
+          {{end}}
+        {{ else }}
+          {{ $highlight = $highlight | append . }}
+        {{end}}
+      {{end}}
+      {{ $highlight = delimit $highlight "\n" }}
+      {{ $codeContent :=  highlight $highlight "ballerina"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey  ",lineNumbersInTable=true" )}}
       {{ if or (or (strings.HasSuffix $name "service.bal") (strings.HasSuffix $name "-error.bal")) (strings.HasSuffix $name "-test.bal") }}
         {{ $codeOut = "" }}
       {{else}}
        {{ $codeOut = highlight (readFile (print $codePath ".out")) "BashSession" (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" (print $codeKey ".out" ))}} 
       {{end}}
-    {{ else if strings.HasSuffix $name ".md" }}
-      {{ $codeExt = "plain" }}
-      {{ $codeContent =  markdownify $codeContent }}
-    {{ else }}
-      {{ $codeExt = "plain" }}
-      {{ $codeContent =  highlight $codeContent "ballerina"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $codeKey  ",lineNumbersInTable=true,guessSyntax=true") }}
+    
+      {{ $codeURL := (printf "%s" $codePath ) | relLangURL }}
+      {{ $sources = $sources | append (dict "name" $name "codeKey" $codeKey "url" $codeURL "body" $codeContent "codePath" $codePath "out" $codeOut) }}
     {{ end }}
-    {{ $codeURL := (printf "%s" $codePath ) | relLangURL }}
-    {{ $sources = $sources | append (dict "name" $name "codeKey" $codeKey "ext" $codeExt "url" $codeURL "body" $codeContent "codePath" $codePath "out" $codeOut) }}
   {{ end }}
   {{/*  Render tab view   */}}
   <div class="code-view tab-panel">
@@ -46,7 +52,6 @@
     <div class="tab-content">
         {{ range $idx, $tab := $sources }}
         <div data-tab-item="{{ $tab.name }}" data-tab-group="{{ $key }}" class="tab-item {{ cond (eq $idx 0) "active" ""}}">
-        {{ if ne $tab.ext "plain"}}
           <div class="tip-code">{{$tab.body}}</div>
           <div class="py-3"><span class="fa fa-terminal"></span><code>bal run {{$tab.name}}</code></div>
           {{ if ne $tab.out ""}}
@@ -67,9 +72,6 @@
             {{end}}
             <a href="{{ .url }}">View Source <span class="fa fa-external-link" aria-hidden="true"></span></a>
           </div>
-        {{else}}
-          {{ $tab.body }}
-        {{end }}
         </div>
         {{ end }}
     </div>
