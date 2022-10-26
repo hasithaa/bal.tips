@@ -17,7 +17,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest] # ,windows-latest, macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set env
@@ -45,7 +45,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.104.2'
           extended: true
 
       - uses: actions/setup-java@v3
