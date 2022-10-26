@@ -1,0 +1,20 @@
+{{ $tip := .Get "tip" }}
+{{ $page := .Site.GetPage $tip }}
+<div class="details">
+  {{$page.Summary}}
+</div>
+{{ $code := default slice $page.Params.Code }}
+{{ if gt (len $code) 0 }}
+    {{ $name := index $code 0 }}
+    {{ $baseURL := replace $page.File.Dir "\\" "/"  }}
+    {{ $codePath := printf "%s%s" $baseURL $name }}
+    {{ $codeContent := readFile $codePath }}
+    {{ $method := default "hljs" (.Get "method")}}
+    {{if eq $method "hljs" }}
+      <pre data-auto-animate {{with .Get "class"}}class="{{.}}"{{end}} {{with .Get "did"}}data-id="{{.}}"{{end}}>
+        <code data-line-numbers{{with .Get "lines"}}="{{.}}"{{end}}>{{$codeContent}}</code>
+      </pre>
+    {{else if eq $method "hugo"}}
+      {{ highlight $codeContent "" (default "" (.Get "hlconfig"))}}
+    {{end}}
+{{ end }}

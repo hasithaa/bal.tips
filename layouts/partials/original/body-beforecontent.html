@@ -99,7 +99,7 @@
 {{if .Params.tags }}
   <div id="tags">
     {{ range $index, $tag := .Params.tags }}
-      <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag }}</a>
+      <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}">{{ $tag | humanize | safeHTML }}</a>
     {{ end }}
   </div>
 {{end}}

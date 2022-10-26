@@ -1,28 +1,41 @@
 {{ $showTips := default true .Page.Params.showTips}}
+{{ $tiplist := default true .Page.Params.tiplist}}
 {{ if and $showTips (or (eq .Page.Params.kind "page") (eq .Page.Params.kind "collection")) }}
   {{ $filter := default "intersect" (.Page.Params.tipFilter)}}
   {{ $Pages := slice }}
   {{ if eq $filter "intersect"}}
-    {{ $Pages = where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" .Page.Params.tags}}
+    {{ $Pages = where $.Site.Pages "Page.Params.tags" "intersect" .Page.Params.tips}}
   {{else if eq $filter "union" }}
-    {{ range $key, $tag := .Page.Params.tags }}
-      {{ $Pages = $Pages | append (where (where $.Site.Pages "Params.Kind" "==" "tip") "Page.Params.tags" "intersect" (slice $tag)) }}
+    {{ range $key, $tag := .Page.Params.tips }}
+      {{ $Pages = $Pages | append (where $.Site.Pages "Page.Params.tags" "intersect" (slice $tag)) }}
     {{ end }}
   {{end}}
   {{$Pages = uniq $Pages}}
   {{ if gt (len $Pages) 0}}
-    <div class="tips page-view">
-      <div class="tip round-box small-box">
-        <h5>Related Tips</h5>
-        <p></p>
-        <div class="children children-div">
-        {{ range $Pages.ByWeight }}
-          <div><a href="#{{.LinkTitle}}">💡&nbsp;{{.Title}}</a></div>
+    <br>
+    {{ if eq $tiplist true}}
+    <div >
+      <h5>About {{.Title}}</h5>
+      <br>
+      <div class="rowList">
+      {{ range $key, $page := $Pages.ByWeight }}
+        {{ if ne $.Page.Permalink $page.Permalink }}
+          {{  if eq  $page.Params.Kind "tip" }}
+          <div class="column2List"><a href="#{{.LinkTitle}}">💡&nbsp;{{$page.Title}}</a></div>
+          {{ else }}
+          <div class="column2List"><a href="#{{.LinkTitle}}">📃&nbsp;{{$page.Title}}</a></div>
+          {{end}}
         {{end}}
-        </div>
+      {{end}}
       </div>
-      {{ range $Pages.ByWeight}}
-        {{ .Render "li" }}
+    </div>
+    {{end}}
+    <br>
+    <div class="tips page-view">
+      {{ range $key, $page := $Pages.ByWeight}}
+        {{ if ne $.Page.Permalink $page.Permalink }}
+            {{ .Render "li" }}
+        {{ end }}
       {{ end }}
     </div>
   {{end}}

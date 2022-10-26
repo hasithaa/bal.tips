@@ -1,0 +1,39 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $code := default slice .Params.Code }}
+{{ $highlightStyle := default "monokai" $.Site.Params.highlightStyle }}
+{{ if ne (len $code) 0 }}
+  {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
+  {{ $sources := slice }}
+  {{/*  Read content and process them first  */}}
+  {{ range $name := $code }}
+    {{ if strings.HasSuffix $name ".bal"}}
+      {{ $codePath := printf "%s%s" $baseURL $name }}
+      {{ $file := readFile $codePath }}
+      {{ $file = split $file "\n" }}
+      {{ $highlight := slice }}
+      {{ $highlightStart := false }}
+      {{ range $file }}
+        {{ $startWord := trim . " "}}
+        {{ if hasPrefix $startWord "//tip-start" }}
+          {{ $highlightStart = true }}
+        {{ else if hasPrefix $startWord "//tip-end"}}
+          {{ $highlightStart = false }}
+        {{ else if $highlightStart}}
+          {{ $highlight = $highlight | append . }}
+        {{end}}
+      {{end}}
+      {{ if not $highlightStart}}
+      {{/*  This check will make sure, we add tip-end always */}}
+        {{ $highlight = delimit $highlight "\n" }}
+        {{if ne $highlight ""}}
+          {{ $codeContent :=  highlight $highlight "ballerina"  (print "style=" $highlightStyle ",tabWidth=2" )}}
+          {{ $sources = $sources | append (dict "name" $name "body" $codeContent) }}
+        {{end}}
+      {{ end}}
+    {{ end }}
+  {{ end }}
+  {{/*  Render tab view   */}}
+  {{ range $idx, $tab := $sources }}
+      <div class="tip-highlight">{{$tab.body}}</div>
+  {{ end }}
+{{ end }}

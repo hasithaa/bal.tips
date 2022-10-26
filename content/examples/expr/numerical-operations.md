@@ -2,7 +2,7 @@
 title : "Numerical Operations"
 date : 2022-07-09T18:22:30+05:30
 kind : tip 
-tags : [int, float, decimal, expr]
+tags : [int, float, decimal]
 code : [] 
 weight : 10601000001 
 size : "small" 
@@ -22,10 +22,10 @@ Additionally, *int* type supports following operations
 * Shift Operations ( `<<`,`>>`, `>>>`)
 * Binary bitwise (`&`, `^`, `|`)
 * Range Operator ( `x ... y` )
-  
+
+<!--more-->
 See each section for more tips.
 
 {{% notice info %}}
 Runtime will panic on integer overflow or on division by zero.
 {{% /notice %}}
-<!--more-->

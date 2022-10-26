@@ -2,16 +2,25 @@
 {{- $limit :=  .Get "limit" | default 0 }}
 {{- $sort :=  .Get "sort" | default "weight" }}
 {{- $kind :=  .Get "kind" }}
+{{- $child :=  default false (.Get "child") }}
 {{- $class :=  .Get "class" }}
 
 {{ $AllPages := slice}}
 {{ $result := slice }}
 {{ $icon := "" }}
-{{ if eq $sort "date" }}
-  {{ $AllPages = .Site.Pages.ByDate.Reverse }}
-{{ else if eq $sort "weight" }}
-  {{ $AllPages = .Site.Pages.ByWeight }}
-{{ end }}
+{{ if eq $child false}}
+  {{ if eq $sort "date" }}
+    {{ $AllPages = .Site.Pages.ByDate.Reverse }}
+  {{ else if eq $sort "weight" }}
+    {{ $AllPages = .Site.Pages.ByWeight }}
+  {{ end }}
+{{else}}
+  {{ if eq $sort "date" }}
+    {{ $AllPages = .Page.Pages.ByDate.Reverse }}
+  {{ else if eq $sort "weight" }}
+    {{ $AllPages = .Page.Pages.ByDate.ByWeight }}
+  {{ end }}
+{{end}}
 
 {{ if eq $kind "tips" }}
   {{ $result = where  $AllPages "Params.Kind" "==" "tip"}}

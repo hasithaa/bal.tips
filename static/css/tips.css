@@ -12,6 +12,16 @@
   position: relative;
 }
 
+
+.tip-highlight pre{
+  padding-top: 5px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  padding-bottom: 5px !important;
+  margin: 0rem 0rem !important;
+  border-style: none;
+}
+
 .tip-code {
   overflow: auto;
 }
@@ -30,6 +40,7 @@
   padding-left: 0px !important;
   padding-bottom: 5px !important;
   border-style: none;
+  margin: 5px !important;
 }
 
 .tips {
@@ -77,11 +88,6 @@
   margin: 0 !important;
   position: absolute;
   bottom: 25px; right: 25px;
-}
-
-.home-view .tip-code {
-  max-height: 350px;
-  /* overflow: scroll; */
 }
 
 .tip-code-status {
