@@ -1,8 +1,10 @@
 import ballerina/io;
 
 public function main() {
+  //tip-start--
   string tab = "tab :A\u{9}B";
   string newline = "newline :A\u{A}B";
+  //tip-end--
   string carriageReturn = "carriageReturn :A\u{D}B";
   string backSlash = "backSlash :A\u{5C}B";
   string doubleQuote = "doubleQuote :A\u{22}B";

@@ -11,15 +11,88 @@
 &lt;li>Shift Operations ( &lt;code>&amp;lt;&amp;lt;&lt;/code>,&lt;code>&amp;gt;&amp;gt;&lt;/code>, &lt;code>&amp;gt;&amp;gt;&amp;gt;&lt;/code>)&lt;/li>
 &lt;li>Binary bitwise (&lt;code>&amp;amp;&lt;/code>, &lt;code>^&lt;/code>, &lt;code>|&lt;/code>)&lt;/li>
 &lt;li>Range Operator ( &lt;code>x ... y&lt;/code> )&lt;/li>
-&lt;/ul>
-&lt;p>See each section for more tips.&lt;/p>
-&lt;div class="notices info" >&lt;p>&lt;p>Runtime will panic on integer overflow or on division by zero.&lt;/p>
-&lt;/p>&lt;/div></description></item><item><title>Converting Numerical Values</title><link>https://bal.tips/examples/expr/casts/numerical/</link><pubDate>Fri, 08 Jul 2022 20:57:17 +0530</pubDate><guid>https://bal.tips/examples/expr/casts/numerical/</guid><description>&lt;p>Unlike some programming languages, there is no implicit conversion between Ballerina numerical types.&lt;/p></description></item><item><title>Literals</title><link>https://bal.tips/learn-syntax/expr/literals/</link><pubDate>Fri, 01 Jul 2022 22:19:42 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/literals/</guid><description>&lt;p>Ballerina Language Specification defines several
-&lt;a href="https://ballerina.io/spec/lang/2022R1/#section_6.5" target="_blank">Literals&amp;nbsp;&lt;span class="fa fa-external-link" style="font-size: 75%"aria-hidden="true">&lt;/span>&lt;/a>
-syntaxes.&lt;/p></description></item><item><title>Type of a numeric literal</title><link>https://bal.tips/examples/expr/literals/numeric-literals/</link><pubDate>Thu, 28 Jul 2022 01:28:56 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/numeric-literals/</guid><description>&lt;p>A value written in a numeric-literal always represents a precise type, which is the singleton type that the literal represents. The broad type of the literal always belongs only to one of the basic types int, float, or decimal.&lt;/p>
-&lt;p>For example, the type of literal &lt;code>10&lt;/code> is integer 10, and its broad type is &lt;code>int&lt;/code>. This is not always true. Depending on the context, literal &lt;code>10&lt;/code> can represent floating point value &lt;code>10.0&lt;/code> or decimal value &lt;code>10&lt;/code>.&lt;/p></description></item><item><title>Base16 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base16literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base16literal/</guid><description>&lt;p>You can use Base16 Byte Array Literal syntax to represent bytes in Hex textual form.&lt;/p></description></item><item><title>Base64 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base64literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base64literal/</guid><description>&lt;p>You can use Base64 Byte Array Literal syntax to represent bytes in Base64 encoded form.&lt;/p></description></item><item><title>Template Expressions</title><link>https://bal.tips/learn-syntax/expr/template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/template/</guid><description>&lt;p>Template Syntax uses two &lt;code>`&lt;/code> backtick letters to enclose a string with interpolated expressions. There are several variations of the
-&lt;a href="https://ballerina.io/spec/lang/2022R1/#section_6.6" target="_blank">Template Expressions&amp;nbsp;&lt;span class="fa fa-external-link" style="font-size: 75%"aria-hidden="true">&lt;/span>&lt;/a>
-defined in the Language Specification.&lt;/p></description></item><item><title>String Templates</title><link>https://bal.tips/examples/expr/string-template/string-template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/examples/expr/string-template/string-template/</guid><description>&lt;p>A String template expression constructs a string value using the Template expression. Support interpolation (Syntax &lt;code>${expr}&lt;/code>) and each interpolation expression must have a type that is a subtype of &lt;code>boolean|int|float|decimal|string&lt;/code>. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.&lt;/p></description></item><item><title>Hello World API</title><link>https://bal.tips/examples/helloworld/http/service/</link><pubDate>Mon, 04 Jul 2022 01:05:24 +0530</pubDate><guid>https://bal.tips/examples/helloworld/http/service/</guid><description>&lt;p>Let&amp;rsquo;s create a &lt;em>Hello, World&lt;/em> HTTP API. This API will accept HTTP get request at &lt;code>http://localhost:8080/greeting&lt;/code>.&lt;/p></description></item><item><title>lang.int Lang Library</title><link>https://bal.tips/examples/langlib/int/intro/</link><pubDate>Fri, 08 Jul 2022 20:46:31 +0530</pubDate><guid>https://bal.tips/examples/langlib/int/intro/</guid><description>&lt;p>&lt;code>lang.int&lt;/code> Lang Library provides a set of functions that operates on an integer value. See available operations in
+&lt;/ul></description></item><item><title>Converting Numerical Values</title><link>https://bal.tips/examples/expr/casts/numerical/</link><pubDate>Fri, 08 Jul 2022 20:57:17 +0530</pubDate><guid>https://bal.tips/examples/expr/casts/numerical/</guid><description>&lt;p>Unlike some programming languages, there is no implicit conversion between Ballerina numerical types.&lt;/p></description></item><item><title>Literals</title><link>https://bal.tips/learn-syntax/expr/literals/</link><pubDate>Fri, 01 Jul 2022 22:19:42 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/literals/</guid><description>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Literals&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>()&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/nil-literal/"
+title="Writing a *nil* value"> Nil literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>true&lt;/code> or &lt;code>false&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/boolean-literal/"
+title="Writing a *boolean* value"> Boolean literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>123&lt;/code>, &lt;code>456.78&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/numeric-literal/"
+title="Write a number, such as *int*, *float*, *decimal*"> Numeric literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>&amp;quot;Hello, World!&amp;quot;&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/string-literal/"
+title="Write a string value"> String literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>base16 `AB 12 34` &lt;/code> &lt;br/> &lt;code>base64 `A1z+` &lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/byte-array-literal/"
+title="Write a *byte[]* array value"> Byte array literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Type of a numeric literal</title><link>https://bal.tips/examples/expr/literals/numeric-literals/</link><pubDate>Thu, 28 Jul 2022 01:28:56 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/numeric-literals/</guid><description>&lt;p>A value written in a numeric-literal always represents a precise type, which is the singleton type that the literal represents. The broad type of the literal always belongs only to one of the basic types int, float, or decimal.&lt;/p>
+&lt;p>For example, the type of literal &lt;code>10&lt;/code> is integer 10, and its broad type is &lt;code>int&lt;/code>. This is not always true. Depending on the context, literal &lt;code>10&lt;/code> can represent floating point value &lt;code>10.0&lt;/code> or decimal value &lt;code>10&lt;/code>.&lt;/p></description></item><item><title>Base16 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base16literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base16literal/</guid><description>&lt;p>You can use Base16 Byte Array Literal syntax to represent bytes in Hex textual form.&lt;/p></description></item><item><title>Base64 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base64literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base64literal/</guid><description>&lt;p>You can use Base64 Byte Array Literal syntax to represent bytes in Base64 encoded form.&lt;/p></description></item><item><title>Template Expressions</title><link>https://bal.tips/learn-syntax/expr/template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/template/</guid><description>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Template Expressions&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>string `Hello ${a}` &lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/string-template/"
+title="Constructs String values"> String template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>xml `&amp;lt;a&amp;gt;${b}&amp;lt;/a&amp;gt;`&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/xml-template/"
+title="Constructs XML values"> Xml template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>re `A.*?` &lt;/code>&lt;/td>
+&lt;td>
+&lt;span class="label label-default" title="Constructs tagged data values">Tagged data template&lt;/span>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>`.. ${varA} ..`&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/raw-template/"
+title="Constructs object values that subtype of **object:RawTemplate**"> Raw template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>String Templates</title><link>https://bal.tips/examples/expr/string-template/string-template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/examples/expr/string-template/string-template/</guid><description>&lt;p>A String template expression constructs a string value using the Template expression. Support interpolation (Syntax &lt;code>${expr}&lt;/code>) and each interpolation expression must have a type that is a subtype of &lt;code>boolean|int|float|decimal|string&lt;/code>. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.&lt;/p></description></item><item><title>XML Template Expression</title><link>https://bal.tips/examples/expr/xml-template/xml-template/</link><pubDate>Tue, 20 Sep 2022 22:05:54 +0530</pubDate><guid>https://bal.tips/examples/expr/xml-template/xml-template/</guid><description>&lt;p>You can use XML template expression to construct an XML value.&lt;/p></description></item><item><title>Raw Template Expression</title><link>https://bal.tips/examples/expr/raw-template/raw-template/</link><pubDate>Tue, 20 Sep 2022 22:05:45 +0530</pubDate><guid>https://bal.tips/examples/expr/raw-template/raw-template/</guid><description>&lt;p>Raw Template expression constructs an object belongs to &lt;code>object:RawTemplate&lt;/code> object type.&lt;/p></description></item><item><title>Hello World API</title><link>https://bal.tips/examples/helloworld/http/service/</link><pubDate>Mon, 04 Jul 2022 01:05:24 +0530</pubDate><guid>https://bal.tips/examples/helloworld/http/service/</guid><description>&lt;p>Let&amp;rsquo;s create a &lt;em>Hello, World&lt;/em> HTTP API. This API will accept HTTP get request at &lt;code>http://localhost:8080/greeting&lt;/code>.&lt;/p></description></item><item><title>lang.int Lang Library</title><link>https://bal.tips/examples/langlib/int/intro/</link><pubDate>Fri, 08 Jul 2022 20:46:31 +0530</pubDate><guid>https://bal.tips/examples/langlib/int/intro/</guid><description>&lt;p>&lt;code>lang.int&lt;/code> Lang Library provides a set of functions that operates on an integer value. See available operations in
 &lt;a href="https://ballerina.io/spec/lang/master/#lang.int" target="_blank">ballerina/lang.int&amp;nbsp;&lt;span class="fa fa-external-link" style="font-size: 75%"aria-hidden="true">&lt;/span>&lt;/a>
 module.&lt;/p></description></item><item><title>Let's Write a Hello, World!</title><link>https://bal.tips/examples/helloworld/main-slide/</link><pubDate>Sat, 13 Aug 2022 01:06:51 +0530</pubDate><guid>https://bal.tips/examples/helloworld/main-slide/</guid><description>Let&amp;rsquo;s learn how to write a &amp;lsquo;Hello, World!&amp;rsquo; program.</description></item><item><title>Byte - Ballerina vs Java</title><link>https://bal.tips/examples/types/byte/java/</link><pubDate>Tue, 26 Jul 2022 08:20:35 +0530</pubDate><guid>https://bal.tips/examples/types/byte/java/</guid><description>&lt;p>Ballerina byte type vs Java byte Comparison&lt;/p>
 &lt;div class="center-ele center-txt tip-data" style="">

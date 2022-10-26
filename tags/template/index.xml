@@ -1,3 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>template on Ballerina Coding Tips</title><link>https://bal.tips/tags/template/</link><description>Recent content in template on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Sun, 31 Jul 2022 07:56:53 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/template/index.xml" rel="self" type="application/rss+xml"/><item><title>Template Expressions</title><link>https://bal.tips/learn-syntax/expr/template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/template/</guid><description>&lt;p>Template Syntax uses two &lt;code>`&lt;/code> backtick letters to enclose a string with interpolated expressions. There are several variations of the
-&lt;a href="https://ballerina.io/spec/lang/2022R1/#section_6.6" target="_blank">Template Expressions&amp;nbsp;&lt;span class="fa fa-external-link" style="font-size: 75%"aria-hidden="true">&lt;/span>&lt;/a>
-defined in the Language Specification.&lt;/p></description></item><item><title>String Templates</title><link>https://bal.tips/examples/expr/string-template/string-template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/examples/expr/string-template/string-template/</guid><description>&lt;p>A String template expression constructs a string value using the Template expression. Support interpolation (Syntax &lt;code>${expr}&lt;/code>) and each interpolation expression must have a type that is a subtype of &lt;code>boolean|int|float|decimal|string&lt;/code>. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>template on Ballerina Coding Tips</title><link>https://bal.tips/tags/template/</link><description>Recent content in template on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Tue, 20 Sep 2022 22:05:54 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/template/index.xml" rel="self" type="application/rss+xml"/><item><title>Template Expressions</title><link>https://bal.tips/learn-syntax/expr/template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/template/</guid><description>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Template Expressions&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>string `Hello ${a}` &lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/string-template/"
+title="Constructs String values"> String template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>xml `&amp;lt;a&amp;gt;${b}&amp;lt;/a&amp;gt;`&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/xml-template/"
+title="Constructs XML values"> Xml template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>re `A.*?` &lt;/code>&lt;/td>
+&lt;td>
+&lt;span class="label label-default" title="Constructs tagged data values">Tagged data template&lt;/span>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>`.. ${varA} ..`&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/raw-template/"
+title="Constructs object values that subtype of **object:RawTemplate**"> Raw template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>String Templates</title><link>https://bal.tips/examples/expr/string-template/string-template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/examples/expr/string-template/string-template/</guid><description>&lt;p>A String template expression constructs a string value using the Template expression. Support interpolation (Syntax &lt;code>${expr}&lt;/code>) and each interpolation expression must have a type that is a subtype of &lt;code>boolean|int|float|decimal|string&lt;/code>. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.&lt;/p></description></item><item><title>XML Template Expression</title><link>https://bal.tips/examples/expr/xml-template/xml-template/</link><pubDate>Tue, 20 Sep 2022 22:05:54 +0530</pubDate><guid>https://bal.tips/examples/expr/xml-template/xml-template/</guid><description>&lt;p>You can use XML template expression to construct an XML value.&lt;/p></description></item><item><title>Raw Template Expression</title><link>https://bal.tips/examples/expr/raw-template/raw-template/</link><pubDate>Tue, 20 Sep 2022 22:05:45 +0530</pubDate><guid>https://bal.tips/examples/expr/raw-template/raw-template/</guid><description>&lt;p>Raw Template expression constructs an object belongs to &lt;code>object:RawTemplate&lt;/code> object type.&lt;/p></description></item></channel></rss>

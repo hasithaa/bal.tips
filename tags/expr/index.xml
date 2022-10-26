@@ -1,16 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>expr on Ballerina Coding Tips</title><link>https://bal.tips/tags/expr/</link><description>Recent content in expr on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Sat, 09 Jul 2022 18:22:30 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/expr/index.xml" rel="self" type="application/rss+xml"/><item><title>Numerical Operations</title><link>https://bal.tips/examples/expr/numerical-operations/</link><pubDate>Sat, 09 Jul 2022 18:22:30 +0530</pubDate><guid>https://bal.tips/examples/expr/numerical-operations/</guid><description>&lt;p>&lt;em>int&lt;/em>,&lt;em>float&lt;/em>,&lt;em>decimal&lt;/em> values support multiple operators;&lt;/p>
-&lt;ul>
-&lt;li>Multiplicative ( &lt;code>*&lt;/code>, &lt;code>/&lt;/code>, &lt;code>%&lt;/code> )&lt;/li>
-&lt;li>Additive (&lt;code>+&lt;/code>, &lt;code>-&lt;/code>)&lt;/li>
-&lt;li>Relational Operations ( &lt;code>&amp;lt;&lt;/code>, &lt;code>&amp;gt;&lt;/code>, &lt;code>&amp;lt;=&lt;/code>, &lt;code>&amp;gt;=&lt;/code>)&lt;/li>
-&lt;li>Equality ( &lt;code>==&lt;/code>, &lt;code>!=&lt;/code>, &lt;code>===&lt;/code>, &lt;code>!===&lt;/code>)&lt;/li>
-&lt;/ul>
-&lt;p>Additionally, &lt;em>int&lt;/em> type supports following operations&lt;/p>
-&lt;ul>
-&lt;li>Shift Operations ( &lt;code>&amp;lt;&amp;lt;&lt;/code>,&lt;code>&amp;gt;&amp;gt;&lt;/code>, &lt;code>&amp;gt;&amp;gt;&amp;gt;&lt;/code>)&lt;/li>
-&lt;li>Binary bitwise (&lt;code>&amp;amp;&lt;/code>, &lt;code>^&lt;/code>, &lt;code>|&lt;/code>)&lt;/li>
-&lt;li>Range Operator ( &lt;code>x ... y&lt;/code> )&lt;/li>
-&lt;/ul>
-&lt;p>See each section for more tips.&lt;/p>
-&lt;div class="notices info" >&lt;p>&lt;p>Runtime will panic on integer overflow or on division by zero.&lt;/p>
-&lt;/p>&lt;/div></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>expr on Ballerina Coding Tips</title><link>https://bal.tips/tags/expr/</link><description>Recent content in expr on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Sun, 31 Jul 2022 07:56:53 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/expr/index.xml" rel="self" type="application/rss+xml"/><item><title>Literals</title><link>https://bal.tips/learn-syntax/expr/literals/</link><pubDate>Fri, 01 Jul 2022 22:19:42 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/literals/</guid><description>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Literals&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>()&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/nil-literal/"
+title="Writing a *nil* value"> Nil literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>true&lt;/code> or &lt;code>false&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/boolean-literal/"
+title="Writing a *boolean* value"> Boolean literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>123&lt;/code>, &lt;code>456.78&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/numeric-literal/"
+title="Write a number, such as *int*, *float*, *decimal*"> Numeric literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>&amp;quot;Hello, World!&amp;quot;&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/string-literal/"
+title="Write a string value"> String literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>base16 `AB 12 34` &lt;/code> &lt;br/> &lt;code>base64 `A1z+` &lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/byte-array-literal/"
+title="Write a *byte[]* array value"> Byte array literal&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Template Expressions</title><link>https://bal.tips/learn-syntax/expr/template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/template/</guid><description>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Template Expressions&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>string `Hello ${a}` &lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/string-template/"
+title="Constructs String values"> String template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>xml `&amp;lt;a&amp;gt;${b}&amp;lt;/a&amp;gt;`&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/xml-template/"
+title="Constructs XML values"> Xml template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>re `A.*?` &lt;/code>&lt;/td>
+&lt;td>
+&lt;span class="label label-default" title="Constructs tagged data values">Tagged data template&lt;/span>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>`.. ${varA} ..`&lt;/code>&lt;/td>
+&lt;td>
+&lt;a class="label label-default" href="https://bal.tips/tags/raw-template/"
+title="Constructs object values that subtype of **object:RawTemplate**"> Raw template&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>

@@ -1,6 +1,7 @@
 import ballerina/io;
 
 public function main() {
+  //tip-start--
   int i = 10;
   float f = 2.1;
 
@@ -11,4 +12,5 @@ public function main() {
   float f1 = i; 
   //         ^ Error
   float f2 = <float> i; // OK
+  //tip-end--
 }

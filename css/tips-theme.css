@@ -110,6 +110,15 @@ pre code {
   margin-top: 0;
 }
 
+#body .padding{
+  padding: 1rem 3rem;
+}
+
+#body .nav {
+  font-size: medium !important;
+  width: 2rem;
+}
+
 #sidebar ul li a {
   font-size: medium;
 }
