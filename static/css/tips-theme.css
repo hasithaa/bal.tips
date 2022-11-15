@@ -169,32 +169,3 @@ pre code {
 .mermaid svg {
   height: auto;
 }
-
-.rowList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.column2List {
-  flex: 50%;
-}
-.column3List {
-  flex: 33%;
-}
-.column4List {
-  flex: 25%;
-}
-
-@media screen and (max-width: 600px) {
-  .column2List {
-    flex: 100%;
-  }
-  .column3List {
-    flex: 100%;
-  }
-  .column4List {
-    flex: 100%;
-  }
-}

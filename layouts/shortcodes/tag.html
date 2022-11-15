@@ -1,8 +1,14 @@
 {{ $pagePath := printf "tags/%s/" (.Get 0 | urlize)}}
 {{ if (.Site.GetPage $pagePath) }}
 {{ $page := .Site.GetPage $pagePath }}
-<a class="label label-default" href="{{$page.Permalink}}" 
-    title="{{index .Site.Data.tags (.Get 0) | markdownify }}"> {{.Get 0 | humanize | safeHTML}}</a>
-{{else}}
-<span title="{{index .Site.Data.tags (.Get 0) | markdownify }}" class="label label-default">{{.Get 0 | humanize}}</span>
+    {{with index .Site.Data.tags (.Get 0)}}
+    <a class="label label-default" href="{{$page.Permalink}}" 
+        title="{{ .summary | markdownify }}">
+        {{ .display | safeHTML}}</a>
+    {{end}}
+{{else if (ne (.Get 0) "")}}
+    {{with index .Site.Data.tags (.Get 0)}}
+    <span title="{{.summary | markdownify }}" class="label label-default">
+        {{.display | safeHTML}}</span>
+    {{end}}
 {{end}}
