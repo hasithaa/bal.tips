@@ -10,11 +10,11 @@ weight : 10605000000
 
 |Literals||
 |---|---|
-|`()`, `null`                                       |{{< tag "nil literal">}}       |
-|`true` or `false`                                  |{{< tag "boolean literal">}}   |
-|`123`, `456.78`                                    |{{< tag "numeric literal">}}   |
-|`"Hello, World!"`                                  |{{< tag "string literal">}}    |
-| ``base16 `AB 12 34` `` <br/>  ``base64 `A1z+` ``  |{{< tag "byte array literal">}}|
+|`()`, `null`                                       |{{< tag "nil-literal">}}       |
+|`true` or `false`                                  |{{< tag "boolean-literal">}}   |
+|`123`, `456.78`                                    |{{< tag "numeric-literal">}}   |
+|`"Hello, World!"`                                  |{{< tag "string-literal">}}    |
+| ``base16 `AB 12 34` `` <br/>  ``base64 `A1z+` ``  |{{< tag "byte-array-literal">}}|
 
 <!--more-->
 

@@ -10,10 +10,10 @@ weight : 10606000000
 
 |Template Expressions||
 |---|---|
-|``string `Hello ${a}` ``   |{{< tag "string template">}}|
-|`` xml `<A>${a}</A>` ``    |{{< tag "xml template">}}|
-|``re `A.*?` ``             |{{< tag "tagged data template">}} |
-|`` `A ${a} B` ``           |{{< tag "raw template">}}|
+|``string `Hello ${a}` ``   |{{< tag "string-template">}}|
+|`` xml `<A>${a}</A>` ``    |{{< tag "xml-template">}}|
+|``re `A.*?` ``             |{{< tag "tagged-data-template">}} |
+|`` `A ${a} B` ``           |{{< tag "raw-template">}}|
 
 <!--more-->
 
