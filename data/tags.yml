@@ -1,4 +1,7 @@
 ---
+annotation:
+  display: Annotation
+  summary: ""
 annotation-access:
   display: Annotation Access
   summary: ""
@@ -8,6 +11,12 @@ boolean-literal:
 byte-array-literal:
   display: Byte Array Literal
   summary: Write a *byte[]* array value
+comment:
+  display: Comment
+  summary: Write a code comment
+documentation:
+  display: Documentation
+  summary: Ballerina Markdown Documentation
 field-access:
   display: Field Access
   summary: ""

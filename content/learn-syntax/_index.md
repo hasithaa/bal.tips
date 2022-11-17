@@ -12,8 +12,8 @@ Let's see various Ballerina syntaxes.
 ## **Basics**
 
 <div class="rowList">
-{{<md tag="span" class="column3List" link="#">}}`identifier` &nbsp; `'key`{{</md>}}
-{{<md tag="span" class="column3List" link="#">}}`// A comment`{{</md>}}
+{{<md tag="span" class="column3List" link="#basic">}}`identifier` &nbsp; `'key`{{</md>}}
+{{<md tag="span" class="column3List" link="learn-syntax/basic/comments.md">}}`// A comment`{{</md>}}
 </div>
 
 ## **Types** 
