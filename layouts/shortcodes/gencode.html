@@ -10,7 +10,7 @@
   {{ range $name := $code }}
     {{ if strings.HasSuffix $name ".bal"}}
       {{ $codePath := printf "%s%s" $baseURL $name }}
-      {{ $codeKey := printf "%s-%s" $key $name }}
+      {{ $codeKey := $name }} {{/* <-- We used to do  printf "%s-%s" $key $name*/}}
       {{ $file := readFile $codePath }}
       {{ $file = split $file "\n" }}
       {{ $highlight := slice }}

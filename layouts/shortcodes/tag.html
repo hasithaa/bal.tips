@@ -1,7 +1,15 @@
-{{ $pagePath := printf "tags/%s/" (.Get "name" | urlize)}}
+{{ $pagePath := printf "tags/%s/" (.Get 0 | urlize)}}
 {{ if (.Site.GetPage $pagePath) }}
-<a class="label label-default" href="{{$.Site.BaseURL}}{{$pagePath}}" 
-    {{with .Get "tip"}}title="{{.}}"{{end}}> {{.Get "name" | humanize | safeHTML}}</a>
-{{else}}
-  <span class="label label-default" {{with .Get "tip"}}title="{{.}}"{{end}}>{{.Get "name" | humanize}}</span>
+{{ $page := .Site.GetPage $pagePath }}
+    {{with index .Site.Data.tags (.Get 0)}}
+    <a class="label label-default" href="{{$page.Permalink}}" 
+        title="{{ .summary | markdownify }}">
+        {{ .display | safeHTML}}</a>
+    {{end}}
+{{else if (ne (.Get 0) "")}}
+    {{with index .Site.Data.tags (.Get 0)}}
+    <span title="{{.summary | markdownify }}" class="label label-default">
+        {{.display | safeHTML}}</span>
+    {{end}}
 {{end}}
+{{/*  Not seeing your tag? Add it in the data file.  */}}

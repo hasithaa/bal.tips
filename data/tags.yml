@@ -1,0 +1,76 @@
+---
+annotation:
+  display: Annotation
+  summary: ""
+annotation-access:
+  display: Annotation Access
+  summary: ""
+boolean-literal:
+  display: Boolean Literal
+  summary: Writing a *boolean* value
+byte-array-literal:
+  display: Byte Array Literal
+  summary: Write a *byte[]* array value
+comment:
+  display: Comment
+  summary: Write a code comment
+documentation:
+  display: Documentation
+  summary: Ballerina Markdown Documentation
+field-access:
+  display: Field Access
+  summary: ""
+function-call:
+  display: Function Call
+  summary: ""
+list-constructor:
+  display: List Constructor
+  summary: ""
+local-variable-reference:
+  display: Local Variable Reference
+  summary: ""
+mapping-constructor:
+  display: Mapping Constructor
+  summary: ""
+new:
+  display: New
+  summary: ""
+nil-literal:
+  display: Nil Literal
+  summary: Writing a *nil* value
+numeric-literal:
+  display: Numeric Literal
+  summary: Write a number, such as *int*, *float*, *decimal*
+object-constructor:
+  display: Object Constructor
+  summary: ""
+optional-field-access:
+  display: Optional Field Access
+  summary: ""
+qualified-variable-reference:
+  display: Qualified Variable Reference
+  summary: ""
+raw-template:
+  display: Raw Template
+  summary: Constructs object values that subtype of **object:RawTemplate**
+string-literal:
+  display: String Literal
+  summary: Write a string value
+string-template:
+  display: String Template
+  summary: Constructs String values
+table-constructor:
+  display: Table Constructor
+  summary: ""
+tagged-data-template:
+  display: Tagged Data Template
+  summary: Constructs tagged data values
+xml-attribute-access:
+  display: XML Attribute Access
+  summary: ""
+xml-qualified-name:
+  display: XML Qualified Name
+  summary: ""
+xml-template:
+  display: XML Template
+  summary: Constructs XML values
