@@ -50,13 +50,13 @@ Let's see various Ballerina syntaxes.
 <div class="rowList">
 {{<md tag="span" class="column2List" link="learn-syntax/expr/literals.md">}}`"Hello"` &nbsp; `123` &nbsp; `45.6` &nbsp; `true` &nbsp; `()`{{</md>}}
 {{<md tag="span" class="column2List" link="learn-syntax/expr/template.md">}}``string `Hello` `` &nbsp; ``xml `<A>B</A>` ``{{</md>}}
-{{<md tag="span" class="column2List" link="learn-syntax/expr/constructors.md">}}`[1,2,3]` &nbsp; `{a : "A", b : "B"}`{{</md>}}
-{{<md tag="span" class="column2List" link="learn-syntax/expr/object-construction.md">}}`object {}` &nbsp; `new` &nbsp; `new T( ... )`{{</md>}}
-{{<md tag="span" class="column2List" link="learn-syntax/expr/object-construction.md">}}`a` &nbsp; `m:a`{{</md>}}
-{{<md tag="span" class="column2List" link="learn-syntax/expr/field-access.md">}}`x.a` &nbsp; `x?.a` &nbsp; `x.@a`{{</md>}}
-{{<md tag="span" class="column2List" link="learn-syntax/expr/member-access.md">}}`x[a]`{{</md>}}
-{{<md tag="span" class="column2List" link="learn-syntax/expr/function-call.md">}}`a()`{{</md>}}
-{{<md tag="span" class="column2List" link="learn-syntax/expr/method-call.md">}}`x.a()`{{</md>}}
+{{<md tag="span" class="column2List" link="#expressions">}}`[1,2,3]` &nbsp; `{a : "A", b : "B"}`{{</md>}}
+{{<md tag="span" class="column2List" link="#expressions">}}`object {}` &nbsp; `new` &nbsp; `new T( ... )`{{</md>}}
+{{<md tag="span" class="column2List" link="#expressions">}}`a` &nbsp; `m:a`{{</md>}}
+{{<md tag="span" class="column2List" link="#expressions">}}`x.a` &nbsp; `x?.a` &nbsp; `x.@a`{{</md>}}
+{{<md tag="span" class="column2List" link="#expressions">}}`x[a]`{{</md>}}
+{{<md tag="span" class="column2List" link="#expressions">}}`a()`{{</md>}}
+{{<md tag="span" class="column2List" link="#expressions">}}`x.a()`{{</md>}}
 {{<md tag="span" class="column2List" link="#expressions">}}`error ()`{{</md>}}
 {{<md tag="span" class="column2List" link="#expressions">}}`function (string a) returns int { return x; }` &nbsp; `() => x`{{</md>}}
 {{<md tag="span" class="column2List" link="#expressions">}}`let int a = 10 in a + x`{{</md>}}
