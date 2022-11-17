@@ -10,27 +10,31 @@
 &lt;td>&lt;code>string `Hello ${a}` &lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/string-template/"
-title="Constructs String values"> String template&lt;/a>
+title="Constructs String values">
+String Template&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>xml `&amp;lt;a&amp;gt;${b}&amp;lt;/a&amp;gt;`&lt;/code>&lt;/td>
+&lt;td>&lt;code>xml `&amp;lt;A&amp;gt;${a}&amp;lt;/A&amp;gt;`&lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/xml-template/"
-title="Constructs XML values"> Xml template&lt;/a>
+title="Constructs XML values">
+XML Template&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>re `A.*?` &lt;/code>&lt;/td>
 &lt;td>
-&lt;span class="label label-default" title="Constructs tagged data values">Tagged data template&lt;/span>
+&lt;span title="Constructs tagged data values" class="label label-default">
+Tagged Data Template&lt;/span>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>`.. ${varA} ..`&lt;/code>&lt;/td>
+&lt;td>&lt;code>`A ${a} B`&lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/raw-template/"
-title="Constructs object values that subtype of **object:RawTemplate**"> Raw template&lt;/a>
+title="Constructs object values that subtype of object:RawTemplate">
+Raw Template&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;/tbody>

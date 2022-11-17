@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic on Ballerina Coding Tips</title><link>https://bal.tips/learn-syntax/basic/</link><description>Recent content in Basic on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Thu, 17 Nov 2022 07:43:46 +0530</lastBuildDate><atom:link href="https://bal.tips/learn-syntax/basic/index.xml" rel="self" type="application/rss+xml"/><item><title>Comments</title><link>https://bal.tips/learn-syntax/basic/comments/</link><pubDate>Thu, 17 Nov 2022 07:43:46 +0530</pubDate><guid>https://bal.tips/learn-syntax/basic/comments/</guid><description>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Comments&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>// A comment.&lt;/code>&lt;/td>
+&lt;td>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You can use comments to provide more details about the code or temporally disable a section of the source code.&lt;/p></description></item></channel></rss>

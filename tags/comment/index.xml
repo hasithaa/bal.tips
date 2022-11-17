@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>comment on Ballerina Coding Tips</title><link>https://bal.tips/tags/comment/</link><description>Recent content in comment on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Thu, 17 Nov 2022 07:53:29 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/comment/index.xml" rel="self" type="application/rss+xml"/><item><title>Comments</title><link>https://bal.tips/learn-syntax/basic/comments/</link><pubDate>Thu, 17 Nov 2022 07:43:46 +0530</pubDate><guid>https://bal.tips/learn-syntax/basic/comments/</guid><description>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Comments&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>// A comment.&lt;/code>&lt;/td>
+&lt;td>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You can use comments to provide more details about the code or temporally disable a section of the source code.&lt;/p></description></item><item><title>How to use Comments</title><link>https://bal.tips/examples/basics/comment/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment/</guid><description>&lt;p>This example shows how you can use comments.&lt;/p></description></item><item><title>No Multiline Comments</title><link>https://bal.tips/examples/basics/comment-tip01/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment-tip01/</guid><description>&lt;p>Multi-line comments are useful when providing large text descriptions or commenting on multiple lines of the code. Many languages use &lt;code>/* */&lt;/code> syntax for multiline comments.&lt;/p>
+&lt;p>&lt;strong>Ballerina doesn&amp;rsquo;t support this syntax&lt;/strong>. Instead, you can use multiple &lt;code>//&lt;/code> comments for the same purpose.&lt;/p></description></item><item><title>Comments, Docs and Metadata!</title><link>https://bal.tips/examples/basics/comment-tip02/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment-tip02/</guid><description>&lt;p>It is common to keep documentation within the source code because it is easy to keep up-to-date documentation with the code changes. In many programming languages, Documentation kept as comments &amp;amp; sometimes formatted in a particular way (e.g.: &lt;code>/** */&lt;/code> syntax in Java).&lt;/p>
+&lt;p>In Ballerina, You can use
+&lt;span title="Ballerina Markdown Documentation" class="label label-default">
+Documentation&lt;/span>
+to document Ballerina constructs. Ballerina
+&lt;span title="Ballerina Markdown Documentation" class="label label-default">
+Documentation&lt;/span>
+starts with &lt;code>#&lt;/code>. It is a common mistake that the developer uses comments (&lt;code>//&lt;/code>) for documentation purposes.&lt;/p></description></item><item><title>Code is read more than it is written</title><link>https://bal.tips/examples/basics/comment-tip03/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment-tip03/</guid><description>&lt;blockquote>
+&lt;blockquote>
+&lt;p>&amp;ldquo;Code never lies, comments sometimes do.&amp;rdquo;
+&lt;em>- Ron Jeffries&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;/blockquote>
+&lt;p>Rarely, you write perfect code and runs forever. Coding is an iterative process; You need to add new features, improve your code, and fix bugs. So you have to continue reading your old code and to know how/where to fix it.&lt;/p>
+&lt;p>So write your code in a self-documenting or understandable way. Put comments if necessary. Don&amp;rsquo;t make updating comments in sync with the source code is an excessive task.&lt;/p></description></item></channel></rss>

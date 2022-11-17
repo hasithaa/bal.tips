@@ -7,38 +7,43 @@
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;code>()&lt;/code>&lt;/td>
+&lt;td>&lt;code>()&lt;/code>, &lt;code>null&lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/nil-literal/"
-title="Writing a *nil* value"> Nil literal&lt;/a>
+title="Writing a nil value">
+Nil Literal&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>true&lt;/code> or &lt;code>false&lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/boolean-literal/"
-title="Writing a *boolean* value"> Boolean literal&lt;/a>
+title="Writing a boolean value">
+Boolean Literal&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>123&lt;/code>, &lt;code>456.78&lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/numeric-literal/"
-title="Write a number, such as *int*, *float*, *decimal*"> Numeric literal&lt;/a>
+title="Write a number, such as int, float, decimal">
+Numeric Literal&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>&amp;quot;Hello, World!&amp;quot;&lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/string-literal/"
-title="Write a string value"> String literal&lt;/a>
+title="Write a string value">
+String Literal&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>base16 `AB 12 34` &lt;/code> &lt;br/> &lt;code>base64 `A1z+` &lt;/code>&lt;/td>
 &lt;td>
 &lt;a class="label label-default" href="https://bal.tips/tags/byte-array-literal/"
-title="Write a *byte[]* array value"> Byte array literal&lt;/a>
+title="Write a byte[] array value">
+Byte Array Literal&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;/tbody>

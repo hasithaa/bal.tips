@@ -1,19 +1,189 @@
-<!doctype html><html><head><title>Ballerina Coding Tips</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=revised content="2022-10-26T17:11:43 UTC"><title>Ballerina Syntax Guide :: Ballerina Coding Tips</title><link rel="shortcut icon" href=/images/favicon.png type=image/x-icon><link href=/css/nucleus.css rel=stylesheet><link href=/css/font-awesome.min.css rel=stylesheet><link href=/css/hybrid.css rel=stylesheet><link href=/css/featherlight.min.css rel=stylesheet><link href=/css/auto-complete.css rel=stylesheet><link href=/theme-original/style.css rel=stylesheet><link rel=stylesheet href=/css/bootstrap.min.css><style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style><link rel=stylesheet href=https://bal.tips/css/tips-theme.css><link rel=stylesheet href=https://bal.tips/css/tips.css><link rel=stylesheet href=https://bal.tips/css/variant-teal.css><script async src="https://www.googletagmanager.com/gtag/js?id=G-0RRFJG0BQS"></script>
+<!doctype html><html><head><title>Ballerina Coding Tips</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=revised content="2022-11-17T04:04:23 UTC"><title>Ballerina Syntax Guide :: Ballerina Coding Tips</title><link rel="shortcut icon" href=/images/favicon.png type=image/x-icon><link href=/css/nucleus.css rel=stylesheet><link href=/css/font-awesome.min.css rel=stylesheet><link href=/css/hybrid.css rel=stylesheet><link href=/css/featherlight.min.css rel=stylesheet><link href=/css/auto-complete.css rel=stylesheet><link href=/theme-original/style.css rel=stylesheet><link rel=stylesheet href=/css/bootstrap.min.css><style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style><link rel=stylesheet href=https://bal.tips/css/tips-theme.css><link rel=stylesheet href=https://bal.tips/css/tips.css><link rel=stylesheet href=https://bal.tips/css/variant-teal.css><script async src="https://www.googletagmanager.com/gtag/js?id=G-0RRFJG0BQS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0RRFJG0BQS")</script></head><body data-url=/learn-syntax/><div id=headermain></div><nav id=sidebar><div class=highlightable><div id=header-wrapper><div id=header><div id=header><a class=baselink href=https://bal.tips/>💡 Ballerina Tips</a></div></div><div class=searchbox><label for=search-by><i class="fa fa-search"></i></label>
 <input data-search-input id=search-by type=text placeholder=Search...>
-<span data-search-clear><i class="fa fa-close"></i></span></div></div><ul class=topics><li data-nav-id=/ class=dd-item><a href=/><i class="fa fa-fw fa-home"></i></a></li><li data-nav-id=https://bal.tips/helloworld/ class=dd-item><div><a href=/helloworld/>Hello, World!</a></div></li><li data-nav-id=https://bal.tips/types/ class="dd-item haschildren"><div><a href=/types/>Ballerina Type Guide</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=https://bal.tips/types/simple/nil/ class=dd-item><div><a href=/types/simple/nil/>Nil - ()</a></div></li><li data-nav-id=https://bal.tips/types/simple/boolean/ class=dd-item><div><a href=/types/simple/boolean/>Boolean</a></div></li><li data-nav-id=https://bal.tips/types/simple/int/ class=dd-item><div><a href=/types/simple/int/>Int</a></div></li><li data-nav-id=https://bal.tips/types/simple/float/ class=dd-item><div><a href=/types/simple/float/>Float</a></div></li><li data-nav-id=https://bal.tips/types/simple/decimal/ class=dd-item><div><a href=/types/simple/decimal/>Decimal</a></div></li><li data-nav-id=https://bal.tips/types/sequence/string/ class=dd-item><div><a href=/types/sequence/string/>String</a></div></li><li data-nav-id=https://bal.tips/types/subtypes/byte/ class=dd-item><div><a href=/types/subtypes/byte/>Byte</a></div></li></ul></li><li data-nav-id=https://bal.tips/learn-syntax/ class="dd-item haschildren"><div><a href=/learn-syntax/>Ballerina Syntax Guide</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=https://bal.tips/learn-syntax/expr/ class="dd-item haschildren"><div><a href=/learn-syntax/expr/>Expressions</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=https://bal.tips/learn-syntax/expr/literals/ class=dd-item><div><a href=/learn-syntax/expr/literals/>Literals</a></div></li><li data-nav-id=https://bal.tips/learn-syntax/expr/template/ class=dd-item><div><a href=/learn-syntax/expr/template/>Template Expressions</a></div></li></ul></li></ul></li><hr><li></li></ul><section id=footer><h4 id=span-classglyphicon-glyphicon-info-aria-hiddentruespan-about><span class="glyphicon glyphicon-info" aria-hidden=true></span> About</h4><ul><li><a href=https://bal.tips/examples/><span class="fa fa-code" aria-hidden=true></span> All Examples</a></li><li><a href=https://bal.tips/thankyou/><span class="fa fa-thumbs-o-up" aria-hidden=true></span> Thank you</a></li><li><a href=https://bal.tips/copyright/><span class="fa fa-copyright" aria-hidden=true></span> Copyright</a></li><li><a href=https://lk.linkedin.com/in/hasithaaravinda target=_blank><span class="fa fa-user-o" aria-hidden=true></span> About Author&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://github.com/hasithaa/bal.tips target=_blank><span class="fa fa-github" aria-hidden=true></span> Website Source&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://github.com/hasithaa/bal.tips/issues/new target=_blank><span class="fa fa-bug" aria-hidden=true></span> Report an Issue&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li></ul><h4 id=span-classfa-fa-external-link-aria-hiddentruespan-links><span class="fa fa-external-link" aria-hidden=true></span> Links</h4><ul><li><a href=https://ballerina.io target=_blank><span class="fa fa-globe" aria-hidden=true></span> Ballerina.io&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://ballerina.io/learn/by-example/ target=_blank><span class="fa fa-globe" aria-hidden=true></span> Ballerina By Examples&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://ballerina.io/spec/lang/master/ target=_blank><span class="fa fa-globe" aria-hidden=true></span> Ballerina Language Specification&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li></ul><br><p><a href=https://bal.tips/>Bal.tips</a>
+<span data-search-clear><i class="fa fa-close"></i></span></div></div><ul class=topics><li data-nav-id=/ class=dd-item><a href=/><i class="fa fa-fw fa-home"></i></a></li><li data-nav-id=https://bal.tips/helloworld/ class=dd-item><div><a href=/helloworld/>Hello, World!</a></div></li><li data-nav-id=https://bal.tips/types/ class="dd-item haschildren"><div><a href=/types/>Ballerina Type Guide</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=https://bal.tips/types/simple/nil/ class=dd-item><div><a href=/types/simple/nil/>Nil - ()</a></div></li><li data-nav-id=https://bal.tips/types/simple/boolean/ class=dd-item><div><a href=/types/simple/boolean/>Boolean</a></div></li><li data-nav-id=https://bal.tips/types/simple/int/ class=dd-item><div><a href=/types/simple/int/>Int</a></div></li><li data-nav-id=https://bal.tips/types/simple/float/ class=dd-item><div><a href=/types/simple/float/>Float</a></div></li><li data-nav-id=https://bal.tips/types/simple/decimal/ class=dd-item><div><a href=/types/simple/decimal/>Decimal</a></div></li><li data-nav-id=https://bal.tips/types/sequence/string/ class=dd-item><div><a href=/types/sequence/string/>String</a></div></li><li data-nav-id=https://bal.tips/types/subtypes/byte/ class=dd-item><div><a href=/types/subtypes/byte/>Byte</a></div></li></ul></li><li data-nav-id=https://bal.tips/learn-syntax/ class="dd-item haschildren"><div><a href=/learn-syntax/>Ballerina Syntax Guide</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=https://bal.tips/learn-syntax/basic/ class="dd-item haschildren"><div><a href=/learn-syntax/basic/>Basic</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=https://bal.tips/learn-syntax/basic/comments/ class=dd-item><div><a href=/learn-syntax/basic/comments/>Comments</a></div></li></ul></li><li data-nav-id=https://bal.tips/learn-syntax/expr/ class="dd-item haschildren"><div><a href=/learn-syntax/expr/>Expressions</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=https://bal.tips/learn-syntax/expr/literals/ class=dd-item><div><a href=/learn-syntax/expr/literals/>Literals</a></div></li><li data-nav-id=https://bal.tips/learn-syntax/expr/template/ class=dd-item><div><a href=/learn-syntax/expr/template/>Template Expressions</a></div></li></ul></li></ul></li><hr><li></li></ul><section id=footer><h4 id=span-classglyphicon-glyphicon-info-aria-hiddentruespan-about><span class="glyphicon glyphicon-info" aria-hidden=true></span> About</h4><ul><li><a href=https://bal.tips/examples/><span class="fa fa-code" aria-hidden=true></span> All Examples</a></li><li><a href=https://bal.tips/thankyou/><span class="fa fa-thumbs-o-up" aria-hidden=true></span> Thank you</a></li><li><a href=https://bal.tips/copyright/><span class="fa fa-copyright" aria-hidden=true></span> Copyright</a></li><li><a href=https://lk.linkedin.com/in/hasithaaravinda target=_blank><span class="fa fa-user-o" aria-hidden=true></span> About Author&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://github.com/hasithaa/bal.tips target=_blank><span class="fa fa-github" aria-hidden=true></span> Website Source&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://github.com/hasithaa/bal.tips/issues/new target=_blank><span class="fa fa-bug" aria-hidden=true></span> Report an Issue&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li></ul><h4 id=span-classfa-fa-external-link-aria-hiddentruespan-links><span class="fa fa-external-link" aria-hidden=true></span> Links</h4><ul><li><a href=https://ballerina.io target=_blank><span class="fa fa-globe" aria-hidden=true></span> Ballerina.io&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://ballerina.io/learn/by-example/ target=_blank><span class="fa fa-globe" aria-hidden=true></span> Ballerina By Examples&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li><li><a href=https://ballerina.io/spec/lang/master/ target=_blank><span class="fa fa-globe" aria-hidden=true></span> Ballerina Language Specification&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></li></ul><br><p><a href=https://bal.tips/>Bal.tips</a>
 - A Blog by
 <a href=https://twitter.com/hasithaaravinda target=_blank><strong>Hasitha Aravinda</strong>&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a>
 .</p></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fa fa-bars"></i></a></span>
 <span id=toc-menu><i class="fa fa-list-alt"></i></span>
-<span class=links><a href=https://bal.tips/>💡 Ballerina Coding Tips</a> > Ballerina Syntax Guide</span></div><div class=progress><div class=wrapper><nav id=TableOfContents></nav></div></div></div><br><div id=body-inner><h1>Ballerina Syntax Guide</h1><p>Let&rsquo;s see various Ballerina syntaxes.</p><ul><li><a href=https://bal.tips/learn-syntax/expr/>Expressions</a></li></ul><footer class="footline page-footer"><div class=page-footer style=text-align:right><p><a href=https://bal.tips/>Bal.tips</a>
+<span class=links><a href=https://bal.tips/>💡 Ballerina Coding Tips</a> > Ballerina Syntax Guide</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#basics><strong>Basics</strong></a></li><li><a href=#types><strong>Types</strong></a></li><li><a href=#expressions><strong>Expressions</strong></a></li><li><a href=#actions><strong>Actions</strong></a></li><li><a href=#statements><strong>Statements</strong></a></li><li><a href=#functions><strong>Functions</strong></a></li><li><a href=#module-level-declarations><strong>Module level declarations</strong></a></li></ul></nav></div></div></div><br><div id=body-inner><h1>Ballerina Syntax Guide</h1><p>Let&rsquo;s see various Ballerina syntaxes.</p><h2 id=basics><strong>Basics</strong></h2><div class=rowList><span class=column3List><a href=#basic><code>identifier</code>   <code>'key</code></a></span>
+<span class=column3List><a href=/learn-syntax/basic/comments/><code>// A comment</code></a></span></div><h2 id=types><strong>Types</strong></h2><div class=rowList><span class=column2List><a href=#types><code>()</code>   <code>boolean</code>   <code>int</code>   <code>float</code>   <code>decimal</code></a></span>
+<span class=column2List><a href=#types><code>string</code>   <code>xml</code></a></span>
+<span class=column2List><a href=#types><code>T[]</code>   <code>[T, R...]</code></a></span>
+<span class=column2List><a href=#types><code>map&lt;T></code>   <code>record{ T a; R b; }</code>   <code>record{| T a; R...; |}</code></a></span>
+<span class=column2List><a href=#types><code>table &lt;T></code>   <code>table &lt;T> key (a, b)</code></a></span>
+<span class=column2List><a href=#types><code>error &lt;T></code></a></span>
+<span class=column2List><a href=#types><code>function</code>   <code>function (T a) returns R</code></a></span>
+<span class=column2List><a href=#types><code>object { }</code>   <code>object { T a; function b (R c) returns S; }</code></a></span>
+<span class=column2List><a href=#types><code>future</code>   <code>future &lt;T></code></a></span>
+<span class=column2List><a href=#types><code>typedesc</code>   <code>typedesc &lt;T></code></a></span>
+<span class=column2List><a href=#types><code>stream &lt;T></code></a></span>
+<span class=column2List><a href=#types><code>T</code>   <code>m:T</code></a></span>
+<span class=column2List><a href=#types><code>"Hello"</code>   <code>123</code>   <code>45.6</code>   <code>true</code></a></span>
+<span class=column2List><a href=#types><code>any</code>   <code>never</code>   <code>readonly</code></a></span>
+<span class=column2List><a href=#types><code>T | R</code></a></span>
+<span class=column2List><a href=#types><code>T & R</code></a></span>
+<span class=column2List><a href=#types><code>T?</code></a></span>
+<span class=column2List><a href=#types><code>distinct T</code></a></span>
+<span class=column2List><a href=#types><code>anydata</code>   <code>json</code>   <code>byte</code></a></span>
+<span class=column2List><a href=#types><code>handle</code></a></span></div><p><code>a</code>   <code>b</code> and <code>c</code> are identifiers,
+<code>T</code>   <code>R</code> and <code>S</code> are types,
+<code>m</code> is a module prefix.</p><h2 id=expressions><strong>Expressions</strong></h2><div class=rowList><span class=column2List><a href=/learn-syntax/expr/literals/><code>"Hello"</code>   <code>123</code>   <code>45.6</code>   <code>true</code>   <code>()</code></a></span>
+<span class=column2List><a href=/learn-syntax/expr/template/><code>string `Hello`</code>   <code>xml `&lt;A>B&lt;/A>`</code></a></span>
+<span class=column2List><a href=#expressions><code>[1,2,3]</code>   <code>{a : "A", b : "B"}</code></a></span>
+<span class=column2List><a href=#expressions><code>object {}</code>   <code>new</code>   <code>new T( ... )</code></a></span>
+<span class=column2List><a href=#expressions><code>a</code>   <code>m:a</code></a></span>
+<span class=column2List><a href=#expressions><code>x.a</code>   <code>x?.a</code>   <code>x.@a</code></a></span>
+<span class=column2List><a href=#expressions><code>x[a]</code></a></span>
+<span class=column2List><a href=#expressions><code>a()</code></a></span>
+<span class=column2List><a href=#expressions><code>x.a()</code></a></span>
+<span class=column2List><a href=#expressions><code>error ()</code></a></span>
+<span class=column2List><a href=#expressions><code>function (string a) returns int { return x; }</code>   <code>() => x</code></a></span>
+<span class=column2List><a href=#expressions><code>let int a = 10 in a + x</code></a></span>
+<span class=column2List><a href=#expressions><code>&lt;T> x</code></a></span>
+<span class=column2List><a href=#expressions><code>typeof x</code></a></span>
+<span class=column2List><a href=#expressions><code>+ x</code>   <code>- x</code>   <code>~ x</code>   <code>! x</code></a></span>
+<span class=column2List><a href=#expressions><code>x * y</code>   <code>x / y</code>   <code>x % y</code></a></span>
+<span class=column2List><a href=#expressions><code>x + y</code>   <code>x - y</code></a></span>
+<span class=column2List><a href=#expressions><code>x &lt;&lt; y</code>   <code>x >> y</code>   <code>x >>> y</code></a></span>
+<span class=column2List><a href=#expressions><code>x ... y</code>   <code>x ..&lt; y</code></a></span>
+<span class=column2List><a href=#expressions><code>x &lt; y</code>   <code>x > y</code>   <code>x &lt;= y</code>   <code>x >= y</code></a></span>
+<span class=column2List><a href=#expressions><code>x is T</code>   <code>x !is T</code></a></span>
+<span class=column2List><a href=#expressions><code>x == y</code>   <code>x != y</code>   <code>x === y</code>   <code>x !== y</code></a></span>
+<span class=column2List><a href=#expressions><code>x & y</code>   <code>x ^ y</code>   <code>x | y</code></a></span>
+<span class=column2List><a href=#expressions><code>x | y</code>   <code>x && y</code>   <code>x || y</code></a></span>
+<span class=column2List><a href=#expressions><code>x ? y : z</code>   <code>x ?: y</code></a></span>
+<span class=column2List><a href=#expressions><code>check x</code>   <code>checkpanic x</code></a></span>
+<span class=column2List><a href=#expressions><code>trap x</code></a></span>
+<span class=column2List><a href=#expressions><code>from var a in x select y</code></a></span>
+<span class=column2List><a href=#expressions><code>x.&lt;*></code></a></span>
+<span class=column2List><a href=#expressions><code>transactional</code></a></span></div><p><code>a</code> and <code>b</code> are identifiers,
+<code>T</code> is a type,
+<code>x</code>   <code>y</code> and <code>z</code> are expressions,
+<code>m</code> is a module prefix.
+<a href=/learn-syntax/expr/>Read more &#187;</a></p><h2 id=actions><strong>Actions</strong></h2><div class=rowList><span class=column2List><a href=#actions><code>x->a()</code></a></span>
+<span class=column2List><a href=#actions><code>x->/a/b</code>   <code>x->/a/b.c()</code>   <code>x->/a/[y]/b()</code></a></span>
+<span class=column2List><a href=#actions><code>start a()</code></a></span>
+<span class=column2List><a href=#actions><code>wait x</code>   <code>wait { a : x, b : y}</code>   <code>wait x|y</code></a></span>
+<span class=column2List><a href=#actions><code>x ->> w</code>   <code>x -> w</code>   <code>x ->> function</code>   <code>x -> function</code></a></span>
+<span class=column2List><a href=#actions><code>&lt;- w</code>   <code>&lt;- function</code>   <code>&lt;- {w, v}</code>   <code>&lt;- {a : w, b : v}</code></a></span>
+<span class=column2List><a href=#actions><code>flush w</code></a></span>
+<span class=column2List><a href=#actions><code>from var a in x do { stmt }</code></a></span></div><p><code>a</code>   <code>b</code> and <code>c</code> are identifiers,
+<code>w</code> and <code>v</code> are worker name identifiers,
+<code>x</code> and <code>y</code> are expressions,
+<code>stmt</code> is zero or more statements.</p><h2 id=statements><strong>Statements</strong></h2><div class=rowList><span class=column2List><a href=#statements><code>T a = x;</code>   <code>T a;</code></a></span>
+<span class=column2List><a href=#statements><code>ex;</code></a></span>
+<span class=column2List><a href=#statements><code>a();</code>   <code>x.a();</code></a></span>
+<span class=column2List><a href=#statements><code>x = ex;</code>   <code>x.a = ex;</code>   <code>x[y] = ex;</code></a></span>
+<span class=column2List><a href=#statements><code>x += ex;</code>   <code>x -= ex;</code>   <code>x *= ex;</code> &mldr;</a></span>
+<span class=column2List><a href=#statements><code>_ = ex;</code>   <code>[a, b] = ex;</code>   <code>{ a, b } = ex;</code> &mldr;</a></span>
+<span class=column2List><a href=#statements><code>check ex;</code>   <code>checkpanic ex;</code></a></span>
+<span class=column2List><a href=#statements><code>trap ex;</code></a></span>
+<span class=column2List><a href=#statements><pre><code>if x {
+  stmt
+} else if y {
+  stmt
+} else {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>match ex {
+  &quot;Hello&quot; =&gt; { stmt}
+  var [a,b, ...c] =&gt; { stmt}
+  var {a, b, ...c} =&gt; { stmt}
+  [var a, var b, ... var c] =&gt; { stmt}
+  {a : var b, ... var c} =&gt; { stmt}
+  var a =&gt; { stmt}
+  _ =&gt; { stmt}
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>foreach T a in ex {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>while x {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><code>continue;</code></a></span>
+<span class=column2List><a href=#statements><code>break;</code></a></span>
+<span class=column2List><a href=#statements><pre><code>do {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>lock {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>do {
+  stmt
+} on fail T a {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>retry &lt;T&gt; (R a, S b) {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>transaction {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><pre><code>retry &lt;T&gt; (R a, S b) transaction {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#statements><code>fail x;</code></a></span>
+<span class=column2List><a href=#statements><code>commit;</code></a></span>
+<span class=column2List><a href=#statements><code>rollback x;</code></a></span>
+<span class=column2List><a href=#statements><code>panic x;</code></a></span>
+<span class=column2List><a href=#statements><code>return ex;</code></a></span>
+<span class=column2List><a href=#statements><code>xmlns "www.example.com" as a</code></a></span>
+<span class=column2List><a href=#statements><pre><code>fork {
+  worker w {
+    stmt
+  }
+  worker v {
+    stmt
+  }
+}
+</code></pre></a></span></div><p><code>a</code>   <code>b</code> and <code>c</code> are identifiers,
+<code>w</code> and <code>v</code> are worker name identifiers,
+<code>T</code>   <code>R</code> and <code>S</code> are types,
+<code>x</code>, <code>y</code> and <code>z</code> are expressions,
+<code>ex</code> is an action or expression,
+<code>stmt</code> is zero or more statements.</p><h2 id=functions><strong>Functions</strong></h2><div class=rowList><span class=column2List><a href=#functions><pre><code>function name (T a, R b) returns S {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#functions><pre><code>public isolated function name (T a, R b) returns S {
+  stmt
+}
+</code></pre></a></span><span class=column2List><a href=#functions><pre><code>function a (T a, R b) returns S =&gt; expr
+</code></pre></a></span><span class=column2List><a href=#functions><pre><code>function a (T a, R b) returns S =&gt; external
+</code></pre></a></span><span class=column2List><a href=#functions><pre><code>function a () {
+  stmt
+  worker b returns T {
+    stmt
+  }
+  stmt
+}
+</code></pre></a></span></div><p><code>a</code>   <code>b</code> and <code>name</code> are identifiers,
+<code>T</code>   <code>R</code> and <code>S</code> are types,
+<code>expr</code> is an expression.
+<code>stmt</code> is zero or more statements,</p><h2 id=module-level-declarations><strong>Module level declarations</strong></h2><div class=rowList><span class=column2List><a href=#module-level-declarations><code>import org/name;</code>   <code>import org/name as a;</code>   <code>import org/name as _;</code></a></span>
+<span class=column2List><a href=#module-level-declarations><code>listener T a = expr</code></a></span>
+<span class=column2List><a href=#module-level-declarations><code>T a = expr</code></a></span>
+<span class=column2List><a href=#module-level-declarations><code>configurable T a = expr</code>   <code>configurable T a = ?</code></a></span>
+<span class=column2List><a href=#module-level-declarations><code>const a = expr</code></a></span>
+<span class=column2List><a href=#module-level-declarations><code>type a T;</code></a></span>
+<span class=column2List><a href=#module-level-declarations><pre><code>service /a/b on expr {
+}
+</code></pre></a></span><span class=column2List><a href=#module-level-declarations><pre><code>class name {
+}
+</code></pre></a></span><span class=column2List><a href=#module-level-declarations><pre><code>enum name {
+  a,
+  b
+}
+</code></pre></a></span><span class=column2List><a href=#module-level-declarations><code>xmlns "www.example.com" as a</code></a></span></div><p><code>a</code>   <code>b</code>   <code>org</code> and <code>name</code> are identifiers,
+<code>T</code>   <code>R</code> and <code>S</code> are types,
+<code>expr</code> is an expression.</p><footer class="footline page-footer"><div class=page-footer style=text-align:right><p><a href=https://bal.tips/>Bal.tips</a>
 <span class="fa fa-copyright" aria-hidden=true></span> 2022
 <a href=https://twitter.com/hasithaaravinda target=_blank><strong>Hasitha Aravinda</strong>&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a>
 . Built using
 <a href=https://github.com/vjeantet/hugo-theme-docdock target=_blank>docdock&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a>
 and
 <a href=https://gohugo.io/ target=_blank>Hugo&nbsp;<span class="fa fa-external-link" style=font-size:75% aria-hidden=true></span></a></p></div></footer></div></div><div id=navigation><a class="nav nav-prev" href=/types/subtypes/byte/ title=Byte><i class="fa fa-chevron-left"></i><label>Byte</label></a>
-<a class="nav nav-next" href=/learn-syntax/expr/ title=Expressions style=margin-right:0><label>Expressions</label><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/js/jquery-2.x.min.js></script>
+<a class="nav nav-next" href=/learn-syntax/basic/ title=Basic style=margin-right:0><label>Basic</label><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/js/jquery-2.x.min.js></script>
 <script type=text/javascript>var baseurl="https://bal.tips/"</script><script src=/js/clipboard.min.js></script>
 <script src=/js/featherlight.min.js></script>
 <script src=/js/html5shiv-printshiv.min.js></script>
