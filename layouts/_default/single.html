@@ -1,0 +1,38 @@
+{{ define "main" }}
+	<main class="main">
+		{{ partial "breadcrumb.html" . }}
+		<div class="single block" {{ if (default false .Page.Params.skipsearch)}}data-pagefind-ignore="all"{{end}}>
+			<article class="entry">
+				{{- partial "entry/featured.html" (dict "page" . "IsSingle" true) }}
+				{{- partial "entry/meta.html" (dict "page" . "class" "mb") }}
+				<h1 class="entry__title" {{ if not (default false .Page.Params.skipsearch)}}data-pagefind-meta="title"{{end}}>{{ .Title }}</h1>
+				{{- partial "entry/toc.html" . }}
+				{{- if eq .Draft true }}
+				<div class="note warning">
+					<p>🛠 A draft content. The page content may change in the future including the structure. Refer with caution.</p>		 
+				</div>
+				{{- end }}
+				<div class="entry__content" {{- if eq .Draft false }}{{ if not (default false .Page.Params.skipsearch)}}data-pagefind-body{{end}}{{end}}>{{ .Content }}</div>
+				{{ if or (.Param "share") (isset $.Params "tags") }}
+				<footer class="entry__footer">
+					{{ partial "entry/tags.html" . }}
+					{{ partial "entry/share.html" . }}
+				</footer>
+				{{ end }}
+				{{ if not (default false .Page.Params.skipsearch)}}
+				{{- if eq .Draft false }}
+				<div hidden data-pagefind-body><p>Tags :</p>
+					{{ with .Page.Params.btype }}{{range .}}{{ with (index $.Site.Data.Filters.btype .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+					{{ with .Page.Params.blang }}{{range .}}{{ with (index $.Site.Data.Filters.blang .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+					{{ with .Page.Params.bfeature }}{{range .}}{{ with (index $.Site.Data.Filters.bfeature .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+					{{ with .Page.Params.bmodule }}{{range .}}{{ with (index $.Site.Data.Filters.bmodule .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+				</div>
+				{{- end }}
+				{{end}}
+			</article>
+		</div>
+	</main>
+	{{ partial "authorbox.html" . }}
+	{{ partial "related.html" . }}
+	{{ partial "comments.html" . }}
+{{ end }}

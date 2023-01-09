@@ -1,0 +1,37 @@
+{{- $isPosts := eq .RelPermalink "/posts/" }}
+
+<h2>Posts</h2>
+{{- $pages:= where site.RegularPages.ByWeight "Section" "==" "post" }}
+
+{{- $published:= where $pages "Draft" "==" false}}
+<h3> 📢 Published Posts ({{len $published}}).</h3>
+<p>Post Published.</p>
+<ul>
+  {{ range $published }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a> - ({{ .Weight }})
+  </li>
+  {{ end }}
+</ul>
+
+{{- $draft:= where $pages "Draft" "==" true}}
+<h3> 🏗 Draft Posts ({{len $draft}}).</h3>
+<p>Here are the posts I am in the process of writing.</p>
+<ul>
+  {{ range $draft }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .Weight }})
+  </li>
+  </li>
+  {{ end }}
+</ul>
+
+{{- $pages = where site.RegularPages.ByWeight "Section" "!=" "post" }}
+<h2> Pages ({{len $pages}})</h2>
+<ul>
+  {{ range $pages }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a> - ({{ .Weight }}) {{- if .Draft}}- Draft {{- end }}
+  </li>
+  {{ end }}
+</ul>

@@ -1,0 +1,13 @@
+# Build Steps
+
+1. Build Website
+  `hugo`
+2. Build Search Index
+   `npx pagefind --source public`
+
+
+# Built Using
+
+* [Hugo](https://gohugo.io/)
+* [PageFind](https://pagefind.app/)
+* [Binario Theme](https://github.com/Vimux/Binario)

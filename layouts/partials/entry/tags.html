@@ -1,0 +1,63 @@
+{{- $taxo := "tags" -}}
+{{- $path := $.Page.File.Path}}
+<div class="entry__tags">
+	{{- with .Param $taxo }}
+		{{- range . }}
+			{{- $url := urls.Parse (. | urlize) -}}
+			{{- $path := $url.Path -}}
+			{{- with $.Site.GetPage (printf "/%s/%s" $taxo $path) }}
+				<a class="entry__tag btn" href="{{- .RelPermalink }}">{{- .Title }}</a>
+			{{- end }}
+		{{- end }}
+	{{- end }}
+	{{- if not (default false .Page.Params.skipsearch)}}
+		{{- with .Page.Params.btype }}
+			{{- range .}}
+			{{- if isset $.Site.Data.Filters.btype . }}
+				{{- with (index $.Site.Data.Filters.btype .) }}
+				<p hidden data-pagefind-filter="Types">{{- . }}</p>
+				<a class="entry__tag btn" href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+				{{- end}}
+			{{- else}}
+				{{- errorf "Failed to handle btype %q at %q" . $path }}
+			{{- end}}
+			{{- end}}
+		{{- end}}
+		{{- with .Page.Params.blang }}
+			{{- range .}}
+			{{- if isset $.Site.Data.Filters.blang . }}
+				{{- with (index $.Site.Data.Filters.blang .) }}
+				<p hidden data-pagefind-filter="Language">{{- . }}</p>
+				<a class="entry__tag btn" href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+				{{- end}}
+			{{- else}}
+				{{- errorf "Failed to handle blang %q at %q" . $path }}
+			{{- end}}
+			{{- end}}
+		{{- end}}
+		{{- with .Page.Params.bfeature }}
+			{{- range .}}
+			{{- if isset $.Site.Data.Filters.bfeature . }}
+				{{- with (index $.Site.Data.Filters.bfeature .) }}
+				<p hidden data-pagefind-filter="Features">{{- . }}</p>
+				<a class="entry__tag btn" href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+				{{- end}}
+			{{- else}}
+				{{- errorf "Failed to handle bfeature %q at %q" . $path }}
+			{{- end}}
+			{{- end}}
+		{{- end}}
+		{{- with .Page.Params.bmodule }}
+			{{- range .}}
+			{{- if isset $.Site.Data.Filters.bmodule . }}
+				{{- with (index $.Site.Data.Filters.bmodule .) }}
+				<p hidden data-pagefind-filter="Module">{{- . }}</p>
+				<a class="entry__tag btn" href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+				{{- end}}
+			{{- else}}
+				{{- errorf "Failed to handle bmodule %q at %q" . $path }}
+			{{- end}}
+		{{- end}}
+	{{- end}}
+</div>
+{{- end }}

@@ -1,0 +1,72 @@
+{{- $index := default 0 (.Get "id" | int) -}}
+{{- $output := default true (.Get "output" ) -}}
+{{- $sourceNames := default slice $.Page.Params.highlight  -}}
+{{- $highlightStyle := default "monokai" $.Site.Params.highlightStyle  -}}
+{{- if ne (len $sourceNames) 0  -}}
+  {{- $baseURL := replace .Page.File.Dir "\\" "/"   -}}
+  {{- $highlightedSources := slice  -}}
+  {{- $source := index $sourceNames $index -}}
+  {{- if strings.HasSuffix $source ".bal" -}}
+    {{- $sourceFilePath := printf "%s%s" $baseURL $source  -}}
+    {{- $fileContent := readFile $sourceFilePath  -}}
+    {{- $fileContent = split $fileContent "\n"  -}}
+    {{- $highlight := slice  -}}
+    {{- $codeOut := ""  -}}
+    {{- $codeIgnored := false  -}}
+    {{- range $fileContent  -}}
+      {{- if strings.Contains . "//$"  -}}
+        {{- $line := split . "//$"  -}}
+        {{- $highlight = $highlight | append (strings.TrimPrefix "  " (strings.TrimRight " " (index $line 0)))  -}}
+      {{- else if strings.Contains . "//!" -}}
+        {{- if not $codeIgnored  -}}
+          {{- $highlight = $highlight | append "// Some lines (i.e io:println()) are trimmed." | append "// Open $SOURCE$ to view them." -}}
+          {{- $codeIgnored = true  -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $highlight = $highlight | append (strings.TrimPrefix "  " .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $highlight = delimit $highlight "\n"  -}}
+    {{- $codeContent :=  highlight $highlight "ballerina"  (print "style=" $highlightStyle ",tabWidth=2,lineNos=tabel,anchorLineNos=true,lineAnchors=" $source ",lineNumbersInTable=true" ) -}}
+    {{- $codeURL := (printf "%s" $sourceFilePath ) | relLangURL  -}}
+    {{- $codeContent = safeHTML (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $source "</a>")) -}}
+    {{- if strings.HasSuffix $source "service.bal"   -}}
+      {{- $codeOut = highlight " ... " ""  -}}
+    {{- else if strings.HasSuffix $source "-error.bal"  -}}
+      {{- $codeOut = highlight "Compilation Error !" " " -}}
+    {{- else  -}}
+      {{- $codeOut = highlight (readFile (print $sourceFilePath ".out")) "BashSession" (print "style=" $highlightStyle ",tabWidth=2") -}} 
+    {{- end -}}
+    <div class="tip_code">
+      <div class="tip_code_view">
+        <div class="tip_code_view_colomn tip_code_view_source">
+          {{- $codeContent -}}
+          <div class="tip_code_status">
+            {{- if isset $.Site.Data.tests.tests $sourceFilePath  -}}
+              {{- $tests := $.Site.Data.tests  -}}           
+              {{- with (index $.Site.Data.tests.tests $sourceFilePath) -}}
+                {{- $longText := printf "Test %s on %s, at %s" .status $tests.os $tests.endAt -}}
+                <span title="{{- $longText -}}">{{- if eq .compilation "SUCCESS"  -}} ✅ {{- else if eq .compilation "ERROR"  -}} ❌ {{- else -}} ❗ {{- end -}}{{- $tests.balVersion -}} </span>
+              {{- end -}} - 
+            {{- end -}}
+          </div>
+        </div>
+        {{- if $output  -}}
+        <div class="tip_code_view_colomn tip_code_view_meta">
+          {{- with .Inner -}}{{- . | markdownify -}}<hr>{{- end -}}
+          <p><strong>Program Output</strong></p>
+          <div class="">$&nbsp;<code>bal run&nbsp;{{- $source -}}</code></div>
+          <div>{{- $codeOut -}}</div>
+        </div>
+        {{- else -}}
+          {{- with .Inner -}}
+          <div class="tip_code_view_colomn tip_code_view_meta">
+            {{- . | markdownify -}}
+          </div>
+          {{- end -}} 
+        {{- end -}}
+      </div>
+      <div class="tip__code_title">{{- with (.Get "title") -}}{{- . | markdownify -}}&nbsp;-&nbsp; {{- end -}}<a href="{{- $codeURL  -}}">{{- $source -}} ⇗</a></div>
+    </div>
+  {{- end -}}
+{{- end  -}}

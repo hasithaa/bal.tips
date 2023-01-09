@@ -1,0 +1,23 @@
+{{- $toc := default .Site.Params.Entry.toc .Params.toc -}}
+{{- $tocOpen := default .Site.Params.Entry.tocOpen .Params.tocOpen -}}
+{{ $relatedMax := .Site.Params.relatedMax | default 5 }}
+{{ $related := .Site.RegularPages.Related . | first $relatedMax }}
+
+<div class="toc_box">
+{{- if $toc }}
+<details class="entry__toc toc" {{ if $tocOpen }}open{{ end }}>
+	<summary class="toc__title">{{- T "entry_toc" -}}</summary>
+	{{ .TableOfContents }}
+</details>
+{{- end }}
+{{ if and ($related) (.Param "related") }}
+<details class="entry__toc toc" open>
+	<summary class="toc__title">{{ T "related_title" }}</summary>
+	<ul class="related__list">
+		{{ range $related.ByWeight }}
+		<li class="related__item"><a class="related__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		{{ end }}
+	</ul>
+</details>
+{{ end }}
+</div>

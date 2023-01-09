@@ -1,0 +1,5 @@
+<footer class="footer" data-pagefind-ignore="all">
+	{{- partial "footer_social.html" . }}
+	{{- partial "footer_menu.html" . }}
+	<div class="footer__copyright">{{ (markdownify .Site.Params.copyrightTitle) | default .Site.Title }} © {{ now.Format "2006" }} {{ (markdownify .Site.Params.copyright) | default .Site.Title }}. <span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span></div>
+</footer>

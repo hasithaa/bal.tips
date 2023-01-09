@@ -1,0 +1,32 @@
+{{ $page := .page }}
+{{ $sourceNames := default slice $page.Params.highlight }}
+{{ $highlightStyle := default "monokai" $.Site.Params.highlightStyle }}
+{{ $highlight := slice }}
+{{ $highlightSource := ""}}
+{{ if ne (len $sourceNames) 0 }}
+  {{ $baseURL := replace $page.File.Dir "\\" "/"  }}
+  {{ range $name := $sourceNames }}
+    {{ if strings.HasSuffix $name ".bal"}}
+      {{ $sourceFilePath := printf "%s%s" $baseURL $name }}
+      {{ $fileContent := readFile $sourceFilePath }}
+      {{ $fileContent = split $fileContent "\n" }}
+      {{ $highlightStart := false }}
+      {{ range $fileContent }}
+        {{ if strings.Contains . "//$" }}
+          {{ $highlightStart = true }}
+          {{ $line := split . "//$" }}
+          {{ $highlight = $highlight | append (strings.TrimPrefix "    " (strings.TrimRight " " (index $line 0))) }}
+        {{end}}
+      {{end}}
+      {{ if $highlightStart}}
+      {{/*  This check will make sure, we have //! always */}}
+        {{ $highlightSource = delimit $highlight "\n" }}
+      {{ end}}
+    {{ end }}
+  {{ end }}
+  {{if ne $highlightSource ""}}
+    <div class="tip__highlight">
+    {{ highlight $highlightSource "ballerina"  (print "style=" $highlightStyle ",tabWidth=2" )}}
+    </div>
+  {{end}}
+{{ end }}

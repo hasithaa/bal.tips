@@ -1,0 +1,52 @@
+{{ $class:= .Get "class" | default "" }}
+{{- with .Inner }}
+  {{- $titleList:= split . "\n"  -}}
+  {{- $titles:= slice }}
+  {{- range $line := $titleList}}
+    {{- if strings.Contains $line ":::"  }}
+    {{- $content:= split $line ":::" }}
+    {{- $title:= index $content 0 }}
+    {{- $url:= trim (index $content 1) " " }}
+    {{- $page:= "" }}
+    {{- if and (ne $url "") ($.Site.GetPage $url) }}
+      {{- $page = $.Site.GetPage $url }}
+    {{- end }}
+    {{- $data:=  dict "title" $title "url" $url "page" $page}}
+    {{- $titles = $titles | append $data }}
+    {{- end }}
+  {{- end}}
+  {{- if ne (len $titles) 0  -}}
+  <div class="{{ $class }}_parent">
+    <strong>{{- $.Get "title" }}</strong>
+    <div class="{{ $class }}_list" style="display: none;">
+      {{- range $titles}}
+        <div><a href="{{ .page.RelPermalink }}" title="{{.page.Title}}">{{- .title | markdownify}}</a></div>
+      {{- end}}
+    </div>
+    <div  class="{{ $class }}" >
+      <div class="cards">
+        {{- range $titles }}
+        <div class="card card--3col">
+          <article class="entry card__box block">
+            {{- if (ne .page "") }}
+              <strong style="user-select: none; padding-bottom: .2em;">{{- if eq .page.Draft true}}<em title="Draft Content. More Details Coming Soon!">🛠</em>{{- else }}{{$.Get "icon" | default ""}}{{- end }}&nbsp;
+                <a href="{{ .page.RelPermalink }}">{{.page.Title}}</a>&nbsp;
+              </strong> 
+              <div class="entry__content">
+                {{- .page.Summary -}}
+              </div>
+            {{- else }}
+              <strong style="user-select: none; padding-bottom: .2em;"><em title="Draft Content. More Details Coming Soon!">🛠</em>&nbsp;
+                {{- .title | markdownify }}&nbsp;</strong>
+              <div class="entry__content">
+                🚧 More Details Coming Soon!
+              </div>
+            {{- end }}
+          </article>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+  {{- end }}
+{{- end }}

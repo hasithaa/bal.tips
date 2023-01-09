@@ -1,0 +1,110 @@
+baseURL = 'https://bal.tips/'
+languageCode = 'en-us'
+paginate = 15
+title = 'Ballerina Coding Tips'
+
+buildDrafts = true
+
+[Params]
+# Theme
+colorTheme = "dark-blue" 
+columns = 3 
+comments = true # Enable comments for all site pages
+# customCSS = ["css/custom.css"] # Include custom CSS files   
+customJS = ["js/tips.js"] 
+dateFormat = "January 02, 2006" # Change the format of dates
+mainMenuAlignment = "right" 
+mainSections = ["post"] # Set main page sections     
+opengraph = true # Enable OpenGraph if true
+related = true # Enable Related content for single pages
+relatedMax = 12 
+schema = true # Enable Schema
+twitter_cards = true # Enable Twitter Cards if true
+
+# Footer
+copyright = '[**Hasitha Aravinda**](https://twitter.com/hasithaaravinda)'
+copyrightTitle = 'Bal.tips'
+
+[Params.Social]
+github = 'hasithaa/bal.tips'
+linkedin = 'hasithaaravinda'
+twitter = 'hasithaaravinda'
+
+[Params.Entry]
+meta = ["categories", "tags"]
+toc = true
+tocOpen = true
+
+[Params.Breadcrumb]
+enable = true
+homeText = "Bal.Tips"
+
+[Params.Share] # Entry Share block
+facebook = true
+linkedin = true
+pocket = true
+reddit = true
+telegram = true
+twitter = true
+vk = true
+
+[related]
+includeNewer = true
+threshold = 80
+toLower = false
+[[related.indices]]
+name = 'bfeature'
+weight = 100
+[[related.indices]]
+name = 'bmodule'
+weight = 100
+[[related.indices]]
+name = 'btype'
+weight = 100
+[[related.indices]]
+name = 'blang'
+weight = 100
+
+[menu]
+[[menu.Footer]]
+identifier = 'footer-about-author'
+name = 'About Author'
+url = 'https://linkedin.com/in/hasithaaravinda'
+weight = 500
+[[menu.Footer]]
+identifier = 'footer-github-issue'
+name = 'Report an Issue'
+url = 'https://github.com/hasithaa/bal.tips/issues/new'
+weight = 600
+[[menu.Footer]]
+identifier = 'footer-ballerina-io'
+name = 'Ballerina.io'
+url = 'https://ballerina.io'
+weight = 1000
+[[menu.Footer]]
+identifier = 'footer-ballerina-bbe'
+name = 'Ballerina By Examples'
+url = 'https://ballerina.io/learn/by-example/'
+weight = 1100
+[[menu.Footer]]
+identifier = 'footer-ballerina-spec'
+name = 'Ballerina Language Specification'
+url = 'https://ballerina.io/learn/ballerina-specifications/'
+weight = 1100
+
+[outputs]
+home = ['HTML', 'RSS']
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[taxonomies]
+tags = 'tags'
+
+[markup.highlight]
+codeFences = false
+
+[markup.tableOfContents]
+endLevel = 4
+ordered = false
+startLevel = 2

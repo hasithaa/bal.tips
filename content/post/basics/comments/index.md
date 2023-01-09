@@ -1,0 +1,70 @@
+---
+title : Comments
+description : How to use Comments
+author: Hasitha
+date: 2023-01-01
+weight : 1100
+blang : [comment]
+highlight : [comment01.bal]
+---
+{{<md class="summary">}} 
+You can use comments to provide more details about the code or temporally disable a section of the source code.
+{{</md>}}
+{{<md class="syntax">}} 
+* `//`
+{{</md>}}
+{{<md class="tldr">}}
+* No Multiline Comments.
+* Only for Comments.
+* Not for language docs nor metadata.
+{{</md>}}
+<!--more--> 
+<hr>
+
+## Syntax 
+
+A comment starts with two forward slashes `//`. The compiler ignores any characters between `//` and the end of the line. Ballerina supports only single-line comments. 
+
+This example shows how you can use comments. 
+
+{{< code id="0" title="Comments" output=false >}}
+
+**Code Breakdown**
+
+* {{<line 1>}} is a comment.
+* ⚠️{{<line 4>}} is another comment, but **do not** use comments to document functions; Instead, use markdown documentation syntax. 
+* ⚠️{{<line 6>}} is an inline comment, but the code is self-explanatory. Avoid such comments.
+* {{<line 8>}} is commented out code line and will not be executed.
+* ⚠️{{<line 11>}}'s comment is unnecessary and should be avoided in favor of clear, concise code.
+
+{{</ code >}}
+
+## No Multiline Comments
+
+Multi-line comments are useful when providing large text descriptions or commenting on multiple lines of the code. Many languages use `/*  */` syntax for multiline comments. 
+
+**Ballerina does not support this syntax**. Instead, you can use multiple `//` comments for the same purpose.
+
+IDEs such as **VSCode** provide better support when commenting out multi-line code blocks.
+
+1. Select lines you want to comment on.
+1. Press `Ctrl` + `/` key.
+
+## Comments, Docs, and Metadata
+
+It is common to keep documentation within the source code because it is easy to keep up-to-date documentation with the code changes. In many programming languages, Documentation is kept as comments & sometimes formatted in a particular way (e.g.: `/** */` syntax in Java). 
+
+In Ballerina, you can use markdown documentation syntax to document Ballerina constructs. Ballerina markdown documentation starts with `#`. It is a common mistake that the developer uses comments (`//`) for documentation purposes. 
+
+Some programming languages often use comments to store metadata about the program. In Ballerina, you can use `annotation` for this purpose.
+
+## Code Is Read More Than It Is Written
+
+<blockquote>
+"Code never lies, comments sometimes do."
+<footer>— <cite>Ron Jeffries</cite></footer>
+</blockquote>
+
+Rarely, you write perfect code and run forever. Coding is an iterative process; You need to add new features, improve your code, and fix bugs. So, you must continue reading your old code to know how/where to fix it. 
+
+So, write your code in a self-documenting or understandable way. Put comments if necessary. Do not make updating comments in sync with the source code is an excessive task. 
