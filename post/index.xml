@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ballerina Coding Tips</title><link>https://bal.tips/post/</link><description>Recent content in Posts on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bal.tips/post/index.xml" rel="self" type="application/rss+xml"/><item><title>'Hello, World...!' and Ballerina Basics</title><link>https://bal.tips/post/basics/hello/main/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/basics/hello/main/</guid><description>&lt;p>Let us learn how to write a simple Ballerina program.&lt;/p>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Ballerina is a C-style language.&lt;/li>
+&lt;li>Main function acts as an entry point for a program.&lt;/li>
+&lt;li>A Module is a collection of Ballerina codes.&lt;/li>
+&lt;li>Variable declaration &lt;br> &lt;code>type identifier = expr;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Comments</title><link>https://bal.tips/post/basics/comments/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/basics/comments/</guid><description>&lt;p>
+&lt;div class="summary" style="">You can use comments to provide more details about the code or temporally disable a section of the source code.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>//&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>No Multiline Comments.&lt;/li>
+&lt;li>Only for Comments.&lt;/li>
+&lt;li>Not for language docs nor metadata.&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Nil Data Type</title><link>https://bal.tips/post/types/simple/nil/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/simple/nil/</guid><description>&lt;p>
+&lt;div class="summary" style="">The nil basic data type represents A single value called &lt;strong>nil&lt;/strong>, which represents the absence of any other value.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>()&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>&lt;a href="https://bal.tips/post/types/simple/nil/#syntax">Nil Literal&lt;/a> : &lt;code>()&lt;/code> or &lt;code>null&lt;/code> (for JSON support).&lt;/li>
+&lt;li>Multiple toString representations.&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Boolean Data Type</title><link>https://bal.tips/post/types/simple/boolean/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/simple/boolean/</guid><description>&lt;p>
+&lt;div class="summary" style="">The boolean basic data type represents boolean truth values: &lt;code>true&lt;/code> and &lt;code>false&lt;/code>.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>boolean&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>&lt;a href="https://bal.tips/post/types/simple/boolean/#syntax">Boolean Literal&lt;/a>, e.g. &lt;code>true&lt;/code> &amp;amp; &lt;code>false&lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/simple/boolean/#language-library---ballerinalangboolean">&lt;em>ballerina/lang.boolean&lt;/em>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Integer Data Type</title><link>https://bal.tips/post/types/simple/int/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/simple/int/</guid><description>&lt;p>
+&lt;div class="summary" style="">The integer basic data type represents 64-bit signed integer values.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>int&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>&lt;a href="https://bal.tips/post/types/simple/int-literal/">Integer Literal&lt;/a> e.g. &lt;code>10&lt;/code>, &lt;code>12345&lt;/code>, &lt;code>0xAD&lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/simple/int/#language-library---ballerinalangint">&lt;em>ballerina/lang.int&lt;/em>&lt;/a>&lt;/li>
+&lt;li>&lt;code>byte&lt;/code> and more subtypes.&lt;/li>
+&lt;li>No implicit conversion between numbers.&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Integer Literal</title><link>https://bal.tips/post/types/simple/int-literal/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/simple/int-literal/</guid><description>&lt;p>
+&lt;div class="summary" style="">Integer values can be expressed in either common the Decimal system, known for its base 10 format, or the Hexadecimal system which uses the Base 16 format.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>Decimal Literal, e.g. &lt;code>123&lt;/code>&lt;/li>
+&lt;li>Hexadecimal Literal, e.g. &lt;code>0x1a2b&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Conversion using to/from string functions.&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Float Data Type</title><link>https://bal.tips/post/types/simple/float/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/simple/float/</guid><description>&lt;p>
+&lt;div class="summary" style="">The float basic data type represents 64-bit IEEE 754-2008 binary floating point numbers.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>float&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Floating Point Literal, e.g. &lt;code>12.34&lt;/code>, &lt;code>0xA1.2B&lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/simple/float/#language-library---ballerinalangfloat">&lt;em>ballerina/lang.float&lt;/em>&lt;/a>&lt;/li>
+&lt;li>No implicit conversion between numbers.&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Decimal Data Type</title><link>https://bal.tips/post/types/simple/decimal/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/simple/decimal/</guid><description>&lt;p>
+&lt;div class="summary" style="">The decimal basic data type represents 128-bit IEEE 754-2008 decimal floating point values.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>decimal&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Floating Point Literal, e.g. &lt;code>12.34&lt;/code>,&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/simple/decimal/#language-library---ballerinalangdecimal">&lt;em>ballerina/lang.decimal&lt;/em>&lt;/a>&lt;/li>
+&lt;li>No implicit conversion between numbers.&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Floating Point Literal</title><link>https://bal.tips/post/types/simple/float-literal/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/simple/float-literal/</guid><description>Coming Soon</description></item><item><title>Array Type</title><link>https://bal.tips/post/types/structured/array/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/structured/array/</guid><description>&lt;p>
+&lt;div class="summary" style="">An Array type describes a set of list values. A list value is a container that keeps its members in an ordered list and the index of the member is used to access an member. An Array type specifies a type, and all members of the list must belongs to that type. The Array type syntax is variable length (open) by default unless its length is specified.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>Variable Length : &lt;code>𝓣[]&lt;/code>&lt;/li>
+&lt;li>Fixed Length : &lt;code>𝓣[𝓲]&lt;/code>&lt;/li>
+&lt;li>Fixed Length - Inferred : &lt;code>𝓣[*]&lt;/code>&lt;/li>
+&lt;li>Multi Dimension : &lt;code>𝓣[][][]&lt;/code>, &lt;code>T[𝓲][𝓳][𝓴]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;small>Here 𝓣 is the member type, 𝓲, 𝓳 and 𝓴 are integer values(or integer constants)&lt;/small>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>List Constructor&lt;br> e.g. &lt;code>[1, 2, 3, 4]&lt;/code>, &lt;code>[[1,2], [3,4]]&lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/structured/array/#">&lt;em>ballerina/lang.array&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Iterable 🔁&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Map Type</title><link>https://bal.tips/post/types/structured/map/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/structured/map/</guid><description>&lt;p>
+&lt;div class="summary" style="">A map type describes mapping values. A mapping value is a container where each member has a unique string key, which is used to look up a member. A map type specifies a type, and all members of the mapping value must belong to that type.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>map&amp;lt;𝓣&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;small>Here 𝓣 is the member type.&lt;/small>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Mapping Constructor&lt;br> e.g. &lt;code>{𝓪 : 1, 𝓫 : true}&lt;/code> &lt;br> &lt;small>Here 𝓪 and 𝓫 are filed names.&lt;/small>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/structured/map/#">&lt;em>ballerina/lang.map&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Iterable 🔁&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Record Type</title><link>https://bal.tips/post/types/structured/record/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/structured/record/</guid><description>&lt;p>
+&lt;div class="summary" style="">Similar to map type, A Record type describes mapping values too. Similar to Tuple syntax, a Record type specify a separate type for each member of the mapping value. The term &lt;strong>field&lt;/strong> is used to represent both the type of the member and its key together.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>Open Record - Inclusive (Open to &lt;em>anydata&lt;/em>) &lt;br> &lt;code>record { 𝓣 𝓪; 𝓢 𝓫; }&lt;/code>&lt;/li>
+&lt;li>Open Record - Exclusive &lt;br> &lt;code>record {| 𝓣 𝓪; 𝓡...; |}&lt;/code>&lt;/li>
+&lt;li>Close Record - &lt;em>(No Rest Field)&lt;/em> &lt;br> &lt;code>record {| 𝓣 𝓪; 𝓢 𝓫; |}&lt;/code>&lt;/li>
+&lt;li>Optional Field &lt;br> &lt;code>record {| 𝓣 𝓪?; |}&lt;/code>&lt;/li>
+&lt;li>Readonly Field &lt;br> &lt;code>record {| readonly 𝓣 𝓪?; |}&lt;/code>&lt;/li>
+&lt;li>Record Inclusion &lt;br>&lt;code>record {| *𝓣; |}&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;small>Here 𝓣 and 𝓢 are member types with their field names 𝓪 and 𝓫. 𝓡 is the rest member type.&lt;/small>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Mapping Constructor&lt;br> e.g. &lt;code>{𝓪 : 1, 𝓫 : true}&lt;/code> &lt;br> &lt;small>Here 𝓪 and 𝓫 are filed names.&lt;/small>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/structured/record/#">&lt;em>ballerina/lang.map&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Iterable 🔁&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Regular Expression Type</title><link>https://bal.tips/post/types/tagged-data/regex/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/tagged-data/regex/</guid><description>&lt;p>
+&lt;div class="summary" style="">Regular Expression Data type in Ballerina.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>regexp:RegExp&lt;/code>&lt;/li>
+&lt;li>&lt;code>string:RegExp&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Preview Type. GA with SwanLake Update 5.&lt;/li>
+&lt;li>Tagged Data Template &lt;br> e.g. &lt;code>re `A.*?` &lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/tagged-data/regex/#language-library---ballerinalangregexp">&lt;em>ballerina/lang.regexp&lt;/em>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>String Data Type</title><link>https://bal.tips/post/types/sequence/string/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/sequence/string/</guid><description>&lt;p>
+&lt;div class="summary" style="">The string data type is a representation of a sequence of zero or more Unicode characters.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>&lt;code>string&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>String Literal&lt;br> e.g. &lt;code>&amp;quot;Hello, World...!&amp;quot;&lt;/code>&lt;/li>
+&lt;li>String Template&lt;br> e.g. &lt;code>string `Hello, ${name}...!`&lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/sequence/string/#language-library---ballerinalangstring">&lt;em>ballerina/lang.string&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Iterable 🔁&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Table Type</title><link>https://bal.tips/post/types/structured/table/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/structured/table/</guid><description>&lt;p>
+&lt;div class="summary" style="">The table Type represents a tabular data structure, where members are mapping values. The table keeps members in order, but unlike list values, you cannot access members using an index. Table type defines a key to access its members.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>Table with Individual Keys &lt;br> &lt;code>table &amp;lt;𝓣&amp;gt; key (𝓪, 𝓫)&lt;/code>&lt;/li>
+&lt;li>Table with Key Constrain 𝓢 &lt;br> &lt;code>table &amp;lt;𝓣&amp;gt; key &amp;lt;𝓢&amp;gt;&lt;/code>&lt;/li>
+&lt;li>Keyless Table &lt;br> &lt;code>table &amp;lt;𝓣&amp;gt;&lt;/code> or &lt;code>table &amp;lt;𝓣&amp;gt; key &amp;lt;never&amp;gt;&lt;/code>&lt;/li>
+&lt;li>Any Table Value &lt;br> &lt;code>table&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;small>Here 𝓣 and 𝓢 are Record types. 𝓪 and 𝓫 are table keys which are required and readonly field names with subtype of &lt;code>anydata&lt;/code> of the 𝓣.&lt;/small>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>Table Constructor, e.g. &lt;br>&lt;code>table [{𝓪 : 1, 𝓫 : true}, {𝓪 : 2, 𝓫 : false}]&lt;/code> &lt;br> &lt;small>Here 𝓪 and 𝓫 are filed names.&lt;/small>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/structured/table/#">&lt;em>ballerina/lang.table&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Iterable 🔁&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>Tuple Type</title><link>https://bal.tips/post/types/structured/tuple/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/structured/tuple/</guid><description>&lt;p>
+&lt;div class="summary" style="">Like an Array, a Tuple type describes a set of list values. However, a Tuple type specifies a set of types separately for each member of the list. The Tuple type syntax is fixed in length by default, but it can be variable length with a &lt;strong>rest field&lt;/strong>.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>Fixed Length : &lt;code>[𝓣, 𝓢]&lt;/code>&lt;/li>
+&lt;li>Open Length : &lt;code>[𝓣, 𝓡...]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;small>Here 𝓣 and 𝓢 are member types. 𝓡 is the rest field type.&lt;/small>
+&lt;/div>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>List Constructor&lt;br> e.g. &lt;code>[1, 2, 3, 4]&lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/structured/tuple/#">&lt;em>ballerina/lang.array&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Iterable 🔁&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/p></description></item><item><title>XML Data Type</title><link>https://bal.tips/post/types/sequence/xml/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/post/types/sequence/xml/</guid><description>&lt;p>
+&lt;div class="summary" style="">The xml data type is a representation of a sequence of &lt;strong>parsed XML&lt;/strong>. It can contain various elements such as XML elements, processing instructions, comments, and text that appear within an XML element.
+&lt;/div>
+&lt;div class="syntax" style="">&lt;ul>
+&lt;li>Any XML value : &lt;code>xml&lt;/code>&lt;/li>
+&lt;li>Constraint XML Type : &lt;code>xml &amp;lt;𝓣&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;small>Here 𝓣 is subtype of &lt;code>xml:Element|xml:ProcessingInstruction|xml:Comment|xml:Text&lt;/code>&lt;/small>
+&lt;/div>&lt;/p>
+&lt;div class="tldr" style="">&lt;ul>
+&lt;li>XML Template &lt;br> e.g. &lt;code>xml `&amp;lt;name id=&amp;quot;12&amp;quot;&amp;gt;${text}&amp;lt;/name&amp;gt;`&lt;/code>&lt;/li>
+&lt;li>Lang Library : &lt;a href="https://bal.tips/post/types/sequence/xml/#language-library---ballerinalangxml">&lt;em>ballerina/lang.xml&lt;/em>&lt;/a>&lt;/li>
+&lt;li>Iterable 🔁&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>
