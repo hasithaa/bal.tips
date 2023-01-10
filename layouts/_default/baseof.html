@@ -20,9 +20,9 @@
 	{{- if .Site.Params.twitter_cards }}
 		{{ template "_internal/twitter_cards.html" . }}
 	{{- end }}
-	{{- $cssReboot := resources.Get "css/reboot.css" }}
-	{{- $cssMain := resources.Get "css/main.css" }}
-	{{- $cssPrint := resources.Get "css/print.css" }}
+	{{- $cssReboot := resources.Get "css/reboot.css" | minify}}
+	{{- $cssMain := resources.Get "css/main.css" | minify }}
+	{{- $cssPrint := resources.Get "css/print.css" | minify }}
 	{{- $style := slice $cssReboot $cssMain $cssPrint | resources.Concat "css/bundle.css" }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 	{{- range .Site.Params.customCSS }}
@@ -69,9 +69,10 @@
 	{{ end }}
 	</div>
 	{{ partial "footer" . }}
-{{- with .Site.Menus.main }}
-<script src="{{ "js/menu.js" | relURL }}"></script>
-{{- end }}
+{{ $jsmenu := resources.Get "js/menu.js" | minify }}
+{{ $jstips := resources.Get "js/tips.js" | minify }}
+{{ $finaljs := slice $jsmenu $jstips | resources.Concat "js/bundle.js"}}
+<script src="{{ $finaljs.RelPermalink }}"></script>
 {{- partial "mathjax.html" . -}}
 {{- range .Site.Params.customJS }}
 <script src="{{ . | relURL }}"></script>
