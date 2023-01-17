@@ -12,7 +12,10 @@
 					<p>🛠 A draft content. The page content may change in the future including the structure. Refer with caution.</p>		 
 				</div>
 				{{- end }}
-				<div class="entry__content" {{- if eq .Draft false }}{{ if not (default false .Page.Params.skipsearch)}}data-pagefind-body{{end}}{{end}}>{{ .Content }}</div>
+				<div class="entry__content" {{- if eq .Draft false }}{{ if not (default false .Page.Params.skipsearch)}}data-pagefind-body{{end}}{{end}}>
+					{{- $content := split .RawContent "<!--more-->" }}
+						{{- replace .Content .Summary "" | safeHTML }}
+				</div>
 				{{ if or (.Param "share") (isset $.Params "tags") }}
 				<footer class="entry__footer">
 					{{ partial "entry/tags.html" . }}

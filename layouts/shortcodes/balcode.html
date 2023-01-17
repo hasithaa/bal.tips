@@ -1,0 +1,3 @@
+{{- $highlightStyle := default "monokai" $.Site.Params.highlightStyle  -}}
+{{- $highlightLines := default "" (.Get 0) }}
+{{- highlight  (trim .InnerDeindent "\n\r") "ballerina" (print "style=" $highlightStyle ",tabWidth=2,lineNos=inline,hl_lines=" $highlightLines ) }}
