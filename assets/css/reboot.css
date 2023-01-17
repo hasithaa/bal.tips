@@ -71,8 +71,8 @@ p {
 	margin-bottom: 1rem;
 }
 
-.entry__content p {
-	margin-bottom: 0 !important;
+.card p {
+	margin-bottom: 0.2rem !important;
 }
 
 abbr[title] {
