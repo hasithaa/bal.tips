@@ -11,7 +11,7 @@ highlight : []
 draft : true
 ---
 {{<md class="summary">}} 
-The table Type represents a tabular data structure, where members are mapping values. The table keeps members in order, but unlike list values, you cannot access members using an index. Table type defines a key to access its members. 
+A Table type represents a tabular data structure, where members are mapping values. The table keeps members in order, but unlike list values, you cannot access members using an index. The Table syntax defines a key to access its members. 
 {{</md>}}
 {{<md class="syntax">}}
 * Table with Individual Keys <br> `table <𝓣> key (𝓪, 𝓫)`

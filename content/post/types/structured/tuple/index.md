@@ -11,7 +11,7 @@ highlight : []
 draft : true
 ---
 {{<md class="summary">}} 
-Like an Array, a Tuple type describes a set of list values. However, a Tuple type specifies a set of types separately for each member of the list. The Tuple type syntax is fixed in length by default, but it can be variable length with a **rest field**.
+Like an [Array]({{< relref "../array" >}}), a Tuple type describes a set of list values. However, The Tuple syntax specifies a set of types separately for each member of the list. The Tuple syntax is fixed in length by default, but it can be variable length with a **rest field**.
 {{</md>}}
 {{<md class="syntax">}}
 * Fixed Length : `[𝓣, 𝓢]`

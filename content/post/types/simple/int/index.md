@@ -16,7 +16,7 @@ aliases :
   - /examples/types/readonly/numerical/
 ---
 {{<md class="summary">}} 
-The integer basic data type represents 64-bit signed integer values.
+The Integer data type represents 64-bit signed integer values.
 {{</md>}}
 {{<md class="syntax">}} 
 * `int` 

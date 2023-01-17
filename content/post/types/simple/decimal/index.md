@@ -17,7 +17,7 @@ aliases :
 ---
 
 {{<md class="summary">}} 
-The decimal basic data type represents 128-bit IEEE 754-2008 decimal floating point values.
+The Decimal basic data type represents 128-bit IEEE 754-2008 decimal floating point values.
 {{</md>}}
 {{<md class="syntax">}} 
 * `decimal` 

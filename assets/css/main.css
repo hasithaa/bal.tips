@@ -975,31 +975,9 @@ button:not(:-moz-focusring):focus>.main-nav__btn-box {
 }
 
 /* cl_summary */
-.cl_summary .summary_title {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.cl_summary .summary_title>div {
-	margin-left: 10px;
-	text-align: center;
-	font-size: 1rem;
-}
-
-.cl_summary>summary::marker {
-	display: none;
-}
-
-.cl_summary>summary::-webkit-details-marker {
-	display: none;
-}
-
-.cl_summary>summary {
-	position: relative;
-	cursor: pointer;
-	margin: 0em -.6em;
-	list-style: none;
-	padding: .5em;
+.cl_summary {
+	background-color: #1b1b1b;
+	padding: 5px;
 }
 
 

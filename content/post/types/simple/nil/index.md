@@ -14,7 +14,7 @@ aliases :
 ---
 
 {{<md class="summary">}} 
-The nil basic data type represents A single value called **nil**, which represents the absence of any other value. 
+The Nil data type represents a single value called **nil**, which represents the absence of any other value. 
 {{</md>}}
 {{<md class="syntax">}} 
 * `()` 

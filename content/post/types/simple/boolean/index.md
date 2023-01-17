@@ -14,7 +14,7 @@ aliases :
 ---
 
 {{<md class="summary">}} 
-The boolean basic data type represents boolean truth values: `true` and `false`. 
+The Boolean data type represents boolean truth values: `true` and `false`. 
 {{</md>}}
 {{<md class="syntax">}} 
 * `boolean` 

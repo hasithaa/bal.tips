@@ -11,7 +11,7 @@ highlight : []
 draft : true
 ---
 {{<md class="summary">}} 
-An Array type describes a set of list values. A list value is a container that keeps its members in an ordered list and the index of the member is used to access an member. An Array type specifies a type, and all members of the list must belongs to that type. The Array type syntax is variable length (open) by default unless its length is specified. 
+An Array type describes a set of list values. A list value is a container that keeps its members in an ordered list and the index of the member is used to access an member. The Array syntax specifies a type, and all members of the list must belongs to that type. The Array syntax is variable length (open) by default unless its length is specified. 
 {{</md>}}
 {{<md class="syntax">}}
 * Variable Length :  `𝓣[]`

@@ -16,7 +16,7 @@ aliases :
   - /examples/langlib/int/intro/
 ---
 {{<md class="summary">}} 
-The float basic data type represents 64-bit IEEE 754-2008 binary floating point numbers.
+The Float data type represents 64-bit IEEE 754-2008 binary floating point numbers.
 {{</md>}}
 {{<md class="syntax">}} 
 * `float` 
