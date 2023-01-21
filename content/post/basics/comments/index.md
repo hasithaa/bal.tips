@@ -35,7 +35,7 @@ This example shows how you can use comments.
 
 {{< code id="0" title="Comments" output=false >}}
 
-### Code Breakdown
+**Code Breakdown**.
 
 * {{<line 1>}} is a comment.
 * ⚠️{{<line 4>}} is another comment, but **do not** use comments to document functions; Instead, use markdown documentation syntax.
