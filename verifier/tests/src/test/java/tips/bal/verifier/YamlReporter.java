@@ -95,8 +95,6 @@ public class YamlReporter extends TestListenerAdapter {
         exampleTest.kind = example.kind.name();
         exampleTest.compilation = example.buildResult != null ? example.buildResult.status.name() : "";
         exampleTest.status = status;
-        exampleTest.time = result.getEndMillis() - result.getStartMillis();
-        exampleTest.data = String.valueOf(result.getThrowable());
         tests.put(exampleTest.path, exampleTest);
     }
 

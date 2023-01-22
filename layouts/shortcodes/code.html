@@ -47,7 +47,7 @@
               {{- with (index $.Site.Data.tests.tests $sourceFilePath) -}}
                 {{- $longText := printf "Test %s on %s, at %s" .status $tests.os $tests.endAt -}}
                 <span title="{{- $longText -}}">{{- if eq .compilation "SUCCESS"  -}} ✅ {{- else if eq .compilation "ERROR"  -}} ❌ {{- else -}} ❗ {{- end -}}{{- $tests.balVersion -}} </span>
-              {{- end -}} - 
+              {{- end -}}
             {{- end -}}
           </div>
         </div>
