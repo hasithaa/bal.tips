@@ -27,7 +27,7 @@ jobs:
           if [[${{ github.event.inputs.balVersion }}]]; then
             echo ${{ github.event.inputs.balVersion }}
           else
-            echo 2201.2.2
+            echo 2201.3.2   # There are three place to Update, 2 in this file, one under config/
           fi
           )" >> $GITHUB_ENV
           echo "balBuild=$(
@@ -45,7 +45,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: '0.104.2'
+          hugo-version: '0.110.0'
           extended: true
       - uses: actions/setup-node@v3
         with:
@@ -68,6 +68,12 @@ jobs:
         env:
           packageUser: ${{ github.actor }}
           packagePAT: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Gradle Test Results
+        uses: actions/upload-artifact@v3
+        if: failure() && steps.build.outcome == 'failure'
+        with:
+          name: test-result
+          path: verifier/tests/build/reports/tests/test/
       - run: cp -r tests/build/reports/tests/test/* ../static/tests
         working-directory: verifier
       - name: Build Website
