@@ -1,26 +1,25 @@
 ---
-title : JSON Type
-description : About type json
+title: "Type System"
+description: Ballerina Type System
+date : 2023-01-25
 author: Hasitha
-date: 2023-01-01
-weight : 5210
-btype : [json]
-blang : [type]
-bmodule : []
-highlight : []
-draft : true
+menu : main
+weight : 5000
+toc : true
+tocOpen : false
+draft: true
 ---
+
 {{<md class="summary">}}
 
 {{</md>}}
 {{<md class="syntax">}}
 
-* `json`
-
 {{</md>}}
 {{<md class="tldr">}}
 
 {{</md>}}
+
 <!--more-->
 
 🚧 More Details Coming Soon!

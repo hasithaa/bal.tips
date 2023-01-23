@@ -11,20 +11,24 @@ aliases :
   - /examples/expr/literals/int-literal/
   - /examples/expr/literals/int-literal-hex/
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 Integer values can be expressed in either common the Decimal system, known for its base 10 format, or the Hexadecimal system which uses the Base 16 format.
 {{</md>}}
 {{<md class="syntax">}}
+
 * Decimal Literal, e.g. `123`
 * Hexadecimal Literal, e.g. `0x1a2b`
+
 {{</md>}}
-{{<md class="tldr">}} 
+{{<md class="tldr">}}
+
 * Conversion using to/from string functions.
+
 {{</md>}}
 <!--more-->
 ## Decimal Format
 
-An Integer value can be written as a set of decimal digits. In the Decimal system, digits are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, and `9`. 
+An Integer value can be written as a set of decimal digits. In the Decimal system, digits are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, and `9`.
 
 An Integer value can be made negative by writing a minus (`-`) sign in front of the literal.
 
@@ -32,7 +36,7 @@ An Integer value can be made negative by writing a minus (`-`) sign in front of 
 
 ## Hexadecimal Format
 
-Hexadecimal numbers start with a Hex Indicator `0x` (Number zero and lowercase letter `x`) or `0X` (Number zero and Uppercase letter `X`) 
+Hexadecimal numbers start with a Hex Indicator `0x` (Number zero and lowercase letter `x`) or `0X` (Number zero and Uppercase letter `X`).
 
 Hex digits are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `a` or `A`, `b` or `B`, `c` or `C`, `d` or `D`, `e` or `E`, `f`, or `F`. These digits stand for values from zero to fifteen in base sixteen. These digits can be represented using either lowercase or uppercase letters.
 
@@ -40,13 +44,13 @@ Hex digits are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `a` or `A`, `b`
 
 The hexadecimal number system is a useful way to represent large numbers using fewer characters. For example, the decimal number `1048575` can be expressed as `FFFFF` in hexadecimal. Hexadecimal is often used as a shorthand notation for binary data because it is easier to read and write. It is also used in a variety of applications, such as networking, web development, and cryptography.
 
-However, hexadecimal is not as widely understood or used as the decimal system, which can make it more difficult for developers to work with in day-to-day operations. Unless there is a specific need, the decimal system is a better choice for everyday use. Remember the underlying bit representation of a number remains the same, regardless of whether it is represented in decimal or hexadecimal literals. 
+However, hexadecimal is not as widely understood or used as the decimal system, which can make it more difficult for developers to work with in day-to-day operations. Unless there is a specific need, the decimal system is a better choice for everyday use. Remember the underlying bit representation of a number remains the same, regardless of whether it is represented in decimal or hexadecimal literals.
 
 ## Conversion Using `toString` and `fromString`
 
-In Ballerina, Implicit conversion between numerical types and the string type is restricted. This means that you cannot use an `int` value in place of a `string` type is needed, unless it is done explicitly. 
+In Ballerina, Implicit conversion between numerical types and the string type is restricted. This means that you cannot use an `int` value in place of a `string` type is needed, unless it is done explicitly.
 
-For this, you can use the `toString()` language library function. To construct an `int` value from a `string` value, you can use the `int:fromString()`  language library function. 
+For this, you can use the `toString()` language library function. To construct an `int` value from a `string` value, you can use the `int:fromString()`  language library function.
 
 Additionally, if you want to get the hexadecimal version, you can use the `int:toHexString()` and `int:fromHexString()` functions. These functions allow you to convert between hexadecimal and numerical values.
 
@@ -83,10 +87,10 @@ Let us use the above table to convert Hexadecimal literal to Decimal. In a Hexad
 <br>
 {{</md>}}
 
-Now let us try to do the reverse by converting the same decimal literals to hexadecimal. 
+Now let us try to do the reverse by converting the same decimal literals to hexadecimal.
 
 1. Divide the decimal number by 16 and record the Quotient and the Remainder.
-2. Repeat this process with the quotient from the earlier step until it becomes 0. The remainder of each step is equivalent to a hexadecimal digit, where the least significant digit is the first remainder of the division. Here is an example. 
+2. Repeat this process with the quotient from the earlier step until it becomes 0. The remainder of each step is equivalent to a hexadecimal digit, where the least significant digit is the first remainder of the division. Here is an example.
 
 {{<md class="post_element post_table center" >}}
 | Decimal Number | Step | Divide by 16 | Quotient | Remainder | Hex Digit for remainder | Hexadecimal Number |

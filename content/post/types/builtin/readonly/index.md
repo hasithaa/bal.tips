@@ -10,15 +10,17 @@ bmodule : []
 highlight : []
 draft : true
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 
 {{</md>}}
 {{<md class="syntax">}}
+
 * `readonly`
-<small></small>
+
 {{</md>}}
 {{<md class="tldr">}}
 
 {{</md>}}
 <!--more-->
-<hr>
+
+🚧 More Details Coming Soon!

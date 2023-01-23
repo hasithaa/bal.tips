@@ -10,10 +10,11 @@ bmodule : [array]
 highlight : []
 draft : true
 ---
-{{<md class="summary">}} 
-An Array type describes a set of list values. A list value is a container that keeps its members in an ordered list and the index of the member is used to access an member. The Array syntax specifies a type, and all members of the list must belongs to that type. The Array syntax is variable length (open) by default unless its length is specified. 
+{{<md class="summary">}}
+An Array type describes a set of list values. A list value is a container that keeps its members in an ordered list and the index of the member is used to access an member. The Array syntax specifies a type, and all members of the list must belongs to that type. The Array syntax is variable length (open) by default unless its length is specified.
 {{</md>}}
 {{<md class="syntax">}}
+
 * Variable Length :  `𝓣[]`
 * Fixed Length :  `𝓣[𝓲]`
 * Fixed Length - Inferred :  `𝓣[*]`
@@ -22,10 +23,13 @@ An Array type describes a set of list values. A list value is a container that k
 <small>Here 𝓣 is the member type, 𝓲, 𝓳 and 𝓴 are integer values(or integer constants)</small>
 {{</md>}}
 {{<md class="tldr">}}
+
 * List Constructor<br> e.g. `[1, 2, 3, 4]`, `[[1,2], [3,4]]`
 * Lang Library : [*ballerina/lang.array*]({{< linkh "#" >}})
 * Iterable 🔁
+
 {{</md>}}
 
 <!--more-->
-<hr>
+
+🚧 More Details Coming Soon!

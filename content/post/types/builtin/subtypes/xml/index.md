@@ -10,18 +10,20 @@ bmodule : [xml]
 highlight : []
 draft : true
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 
 {{</md>}}
 {{<md class="syntax">}}
+
 * `xml:Element`
 * `xml:ProcessingInstruction`
 * `xml:Comment`
 * `xml:Text`
-<small></small>
+
 {{</md>}}
 {{<md class="tldr">}}
 
 {{</md>}}
 <!--more-->
-<hr>
+
+🚧 More Details Coming Soon!

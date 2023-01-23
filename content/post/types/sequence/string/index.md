@@ -12,20 +12,23 @@ draft : true
 aliases :
   - 
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 The string data type is a representation of a sequence of zero or more Unicode characters.
 {{</md>}}
 {{<md class="syntax">}}
+
 * `string`
+
 {{</md>}}
-{{<md class="tldr">}} 
+{{<md class="tldr">}}
+
 * String Literal<br> e.g. `"Hello, World...!"`
 * String Template<br> e.g. `` string `Hello, ${name}...!` ``
 * Lang Library : [*ballerina/lang.string*]({{<linkh "#language-library---ballerinalangstring">}})
 * Iterable 🔁
+
 {{</md>}}
 <!--more-->
-<hr>
 
 ## Syntax
 

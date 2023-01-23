@@ -13,28 +13,31 @@ aliases :
   - /types/simple/boolean/
 ---
 
-{{<md class="summary">}} 
-The Boolean data type represents boolean truth values: `true` and `false`. 
+{{<md class="summary">}}
+The Boolean data type represents boolean truth values: `true` and `false`.
 {{</md>}}
-{{<md class="syntax">}} 
-* `boolean` 
+{{<md class="syntax">}}
+
+* `boolean`
+
 {{</md>}}
-{{<md class="tldr">}} 
+{{<md class="tldr">}}
+
 * [Boolean Literal]({{< linkh "#syntax" >}}), e.g. `true` & `false`
 * Lang Library : [*ballerina/lang.boolean*]({{< linkh "#language-library---ballerinalangboolean" >}})
+
 {{</md>}}
 <!--more-->
-<hr>
 
 ## Syntax
 
-Boolean type is written as `boolean`. A boolean true is written as `true` and a boolean false is written as `false`. In Ballerina,`0`, `1`, or any other variations of `true` or `false` words are not supported as alternative syntax. 
+Boolean type is written as `boolean`. A boolean true is written as `true` and a boolean false is written as `false`. In Ballerina,`0`, `1`, or any other variations of `true` or `false` words are not supported as alternative syntax.
 
 {{< code id="0" title="Boolean Literal" />}}
 
 ## Properties and Operations
 
-`boolean` values do not have a storage identity, so they are inherently immutable (once created, it is not possible to change the content of the value). Therefore, they can be assigned to a `readonly` variable. 
+`boolean` values do not have a storage identity, so they are inherently immutable (once created, it is not possible to change the content of the value). Therefore, they can be assigned to a `readonly` variable.
 
 The `boolean` type part of the `anydata` and `json`. Also, it is an ordered type.
 
@@ -58,4 +61,4 @@ In Ballerina, boolean values are used in many operations and statements. Here ar
 
 💡 `boolean` is a pre-defined module prefix and you can use it without an `import` declaration.
 
-Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on a `boolean` value. 
+Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on a `boolean` value.

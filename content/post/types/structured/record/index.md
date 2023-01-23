@@ -10,10 +10,11 @@ bmodule : [map]
 highlight : []
 draft : true
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 Similar to a [Map]({{< relref "../map" >}}), a Record type describes mapping values too. Similar to [Tuple]({{< relref "../tuple" >}}) syntax, The Record syntax specifies separate type for each member of the mapping value. The term **field** is used to represent both the type of the member and its key together.
 {{</md>}}
 {{<md class="syntax">}}
+
 * Open Record - Inclusive (Open to *anydata*) <br> `record { 𝓣 𝓪; 𝓢 𝓫; }`
 * Open Record - Exclusive <br> `record {| 𝓣 𝓪; 𝓡...; |}`
 * Close Record - *(No Rest Field)* <br> `record {| 𝓣 𝓪; 𝓢 𝓫; |}`
@@ -25,9 +26,12 @@ Similar to a [Map]({{< relref "../map" >}}), a Record type describes mapping val
 <small>Here 𝓣 and 𝓢 are member types with their field names 𝓪 and 𝓫. 𝓡 is the rest member type. 𝓮𝔁𝓹 is an expression of Type 𝓣.</small>
 {{</md>}}
 {{<md class="tldr">}}
+
 * Mapping Constructor<br> e.g. `{𝓪 : 1, 𝓫 : true}` <br> <small>Here 𝓪 and 𝓫 are filed names.</small>
 * Lang Library : [*ballerina/lang.map*]({{< linkh "#" >}})
 * Iterable 🔁
+
 {{</md>}}
 <!--more-->
-<hr>
+
+🚧 More Details Coming Soon!

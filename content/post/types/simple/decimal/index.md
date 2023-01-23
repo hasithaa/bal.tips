@@ -16,20 +16,23 @@ aliases :
   - /examples/langlib/int/intro/
 ---
 
-{{<md class="summary">}} 
+{{<md class="summary">}}
 The Decimal basic data type represents 128-bit IEEE 754-2008 decimal floating point values.
 {{</md>}}
-{{<md class="syntax">}} 
-* `decimal` 
+{{<md class="syntax">}}
+
+* `decimal`
+
 {{</md>}}
-{{<md class="tldr">}} 
+{{<md class="tldr">}}
+
 * Floating Point Literal, e.g. `12.34`,
 * Lang Library : [*ballerina/lang.decimal*]({{< linkh "#language-library---ballerinalangdecimal">}})
 * No implicit conversion between numbers.
+
 {{</md>}}
 
 <!--more-->
-<hr>
 
 ## Syntax
 

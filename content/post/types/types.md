@@ -4,11 +4,31 @@ description: Ballerina Type Cheat Sheet
 date : 2022-12-16
 author: Hasitha
 menu : main
-weight : 5000
+weight : 5001
 toc : true
 tocOpen : false
-draft : true
 ---
+
+{{<md class="summary">}}
+Ballerina has a variety of `type descriptors` that are used to describe types. In this post, I am summarizing those.
+{{</md>}}
+{{<md class="syntax">}}
+
+* Simple Values<br>
+  `()` `boolean` `int` `float` `decimal`
+* Sequence Values<br>
+  `string` `xml`
+* Structured Values<br>
+  `𝓣[]` `[𝓣, 𝓢]` `map<𝓣>` `record { 𝓣 𝓪; }` `table<𝓣>`
+* And Many More...
+{{</md>}}
+{{<md class="tldr">}}
+
+{{</md>}}
+
+<!--more-->
+
+Ballerina has a variety of `type descriptors` that are used to describe types. In this post, I am summarizing those.
 
 <label class="toggle">
   <input id="toggle-details" type="checkbox"></input>

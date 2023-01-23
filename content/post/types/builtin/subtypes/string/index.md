@@ -10,15 +10,17 @@ bmodule : [string]
 highlight : []
 draft : true
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 
 {{</md>}}
 {{<md class="syntax">}}
+
 * `string:char`
-<small></small>
+
 {{</md>}}
 {{<md class="tldr">}}
 
 {{</md>}}
 <!--more-->
-<hr>
+
+🚧 More Details Coming Soon!

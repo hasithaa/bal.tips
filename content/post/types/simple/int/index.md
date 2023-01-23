@@ -15,21 +15,24 @@ aliases :
   - /examples/langlib/int/intro/
   - /examples/types/readonly/numerical/
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 The Integer data type represents 64-bit signed integer values.
 {{</md>}}
-{{<md class="syntax">}} 
-* `int` 
+{{<md class="syntax">}}
+
+* `int`
+
 {{</md>}}
-{{<md class="tldr">}} 
+{{<md class="tldr">}}
+
 * [Integer Literal]({{<relref "post/types/simple/int-literal">}}) e.g. `10`, `12345`, `0xAD`
 * Lang Library : [*ballerina/lang.int*]({{< linkh "#language-library---ballerinalangint">}})
 * `byte` and more subtypes.
 * No implicit conversion between numbers.
+
 {{</md>}}
 
 <!--more-->
-<hr>
 
 ## Syntax
 
@@ -37,13 +40,13 @@ The integer type is written as `int`. You can use [Integer Literal Syntax]({{<re
 
 {{< code id="0" title="Numeric value conversion with other type" >}}
 
-**Code Breakdown**
+**Code Breakdown**.
 
-*  {{<line 4>}} is an `int` variable with value `10` assigned;
-*  {{<line 5>}} is another `int` variable.
-*  {{<line 7>}} is an `int` addition.
-*  {{<line 9>}} You can refer to the maximum integer value using the `int:MAX_VALUE` constant.
-*  {{<line 10>}} You can refer to the minimum integer value using the `int:MIN_VALUE` constant.
+* {{<line 4>}} is an `int` variable with value `10` assigned;
+* {{<line 5>}} is another `int` variable.
+* {{<line 7>}} is an `int` addition.
+* {{<line 9>}} You can refer to the maximum integer value using the `int:MAX_VALUE` constant.
+* {{<line 10>}} You can refer to the minimum integer value using the `int:MIN_VALUE` constant.
   
 {{</ code>}}
 
@@ -56,7 +59,7 @@ The `int` type part of the `anydata` and `json`. Also, it is an ordered type.
 The `int` type supports the following operations and many more language features. I will discuss these operations in detail in later posts.
 
 * Unary expressions               - `+ x`, `- x`, `~ x`
-* Multiplicative expressions      - `x * y`, `x / y`, `x % y` 
+* Multiplicative expressions      - `x * y`, `x / y`, `x % y`
 * Additive expressions            - `x + y`, `x - y`
 * Relational expressions          - `x < y`, `x > y`, `x <= y`, `x >= y`
 * Equality expressions            - `x == y`, `x != y`, `x === y`, `x !=== y`
@@ -75,7 +78,7 @@ If required, you can use a type-cast expression to do a numeric conversion. This
 
 {{< code id="1" title="Numeric value conversion with other types" >}}
 
-**Code Breakdown**
+**Code Breakdown**.
 
 * {{<line 8>}} is the same as `<int>f.round(0)`. This uses Ballerina default round-to-nearest rounding mode. It is the same as IEEE roundToIntegralTiesToEven operation.
 * {{<line 9>}} is the same as `<int>d.round(0)`. This uses Ballerina default round-to-nearest rounding mode. It is the same as IEEE roundToIntegralTiesToEven operation with a minor exception to handling positive exponent.
@@ -87,13 +90,15 @@ If required, you can use a type-cast expression to do a numeric conversion. This
 
 {{< code id="2" title="Language Library Example" >}}
 **Code Breakdown**
-*  {{<line 8>}} You can call the lang module using function call syntax.
-*  {{<line 9>}} If the type of the first parameter of the `lang.int` function is `int`, you can use method call syntax. It is the same as calling `int:abs(min)` 
+
+* {{<line 8>}} You can call the lang module using function call syntax.
+* {{<line 9>}} If the type of the first parameter of the `lang.int` function is `int`, you can use method call syntax. It is the same as calling `int:abs(min)`
+
 {{< /code >}}
 
 💡 `int` is a pre-defined module prefix and you can use it without an `import` declaration.
 
-Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on an `int` value. 
+Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on an `int` value.
 
 ## Int Subtypes
 

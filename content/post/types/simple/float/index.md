@@ -15,20 +15,23 @@ aliases :
   - /examples/expr/casts/numerical/
   - /examples/langlib/int/intro/
 ---
-{{<md class="summary">}} 
+{{<md class="summary">}}
 The Float data type represents 64-bit IEEE 754-2008 binary floating point numbers.
 {{</md>}}
-{{<md class="syntax">}} 
-* `float` 
+{{<md class="syntax">}}
+
+* `float`
+
 {{</md>}}
-{{<md class="tldr">}} 
+{{<md class="tldr">}}
+
 * Floating Point Literal, e.g. `12.34`, `0xA1.2B`
 * Lang Library : [*ballerina/lang.float*]({{< linkh "#language-library---ballerinalangfloat">}})
 * No implicit conversion between numbers.
+
 {{</md>}}
 
 <!--more-->
-<hr>
 
 ## Syntax
 

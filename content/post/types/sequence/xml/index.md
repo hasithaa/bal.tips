@@ -15,19 +15,21 @@ draft : true
 The xml data type is a representation of a sequence of **parsed XML**. It can contain various elements such as XML elements, processing instructions, comments, and text that appear within an XML element.
 {{</md>}}
 {{<md class="syntax">}}
+
 * Any XML value : `xml`
 * Constraint XML Type : `xml <𝓣>`
 
 <small>Here 𝓣 is subtype of `xml:Element|xml:ProcessingInstruction|xml:Comment|xml:Text`</small>
 {{</md>}}
 
-{{<md class="tldr">}} 
+{{<md class="tldr">}}
+
 * XML Template <br> e.g. `` xml `<name id="12">${text}</name>` ``
 * Lang Library : [*ballerina/lang.xml*]({{<linkh "#language-library---ballerinalangxml">}})
 * Iterable 🔁
+
 {{</md>}}
 <!--more-->
-<hr>
 
 ## Syntax
 

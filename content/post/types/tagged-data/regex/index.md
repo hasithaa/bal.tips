@@ -10,17 +10,21 @@ bmodule : [regexp]
 highlight : []
 draft : true
 ---
-{{<md class="summary">}} 
-Regular Expression data type in Ballerina. 
+{{<md class="summary">}}
+Regular Expression data type in Ballerina.
 {{</md>}}
 {{<md class="syntax">}}
+
 * `regexp:RegExp`
 * `string:RegExp`
+
 {{</md>}}
 {{<md class="tldr">}}
+
 * Preview type. GA with SwanLake Update 5.
 * Tagged Data Template <br> e.g. ``re `A.*?` ``
 * Lang Library : [*ballerina/lang.regexp*]({{< linkh "#language-library---ballerinalangregexp">}})
+
 {{</md>}}
 
 <!--more-->
