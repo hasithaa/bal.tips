@@ -30,6 +30,7 @@ xml = 'XML'
 
 # Basic
 comment = 'Comments'
+identifier = 'Identifiers'
 type ='Types'
 
 # Statments

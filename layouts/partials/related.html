@@ -1,0 +1,82 @@
+{{ $relatedMax := .Site.Params.relatedMax | default 5 }}
+{{- $pages := where (where $.Site.Pages.ByWeight "Draft" false) "Permalink" "ne" $.Page.Permalink -}}
+{{- $relatedBType := slice -}}
+{{- $relatedBLang := slice -}}
+{{- $relatedBFeature := slice -}}
+{{- $relatedBModule := slice -}}
+{{- $relatedExists := false -}}
+
+{{- if $.Page.Param "related" }}
+  {{- range $btype := .Page.Params.btype }}
+    {{- $result := where $pages "Page.Params.btype" "intersect" $.Page.Params.btype | first $relatedMax }}
+    {{- if $result }}
+      {{- $relatedBType = $relatedBType | append (dict "name" (index $.Site.Data.Filters.btype $btype) "pages" $result) }}
+      {{- $relatedExists = true }}
+    {{- end }}
+  {{- end}}
+  {{- range $blang := .Page.Params.blang }}
+    {{- $result := where $pages "Page.Params.blang" "intersect" $.Page.Params.blang | first $relatedMax }}
+    {{- if $result }}
+      {{- $relatedBLang = $relatedBLang | append (dict "name" (index $.Site.Data.Filters.blang $blang) "pages" $result) }}
+      {{- $relatedExists = true }}
+    {{- end }}
+  {{- end}}
+  {{- range $bfeature := .Page.Params.bfeature }}
+    {{- $result := where $pages "Page.Params.bfeature" "intersect" $.Page.Params.bfeature | first $relatedMax }}
+    {{- if $result }}
+      {{- $relatedBFeature = $relatedBFeature | append (dict "name" (index $.Site.Data.Filters.bfeature $bfeature) "pages" $result) }}
+      {{- $relatedExists = true }}
+    {{- end }}
+  {{- end}}
+  {{- range $bmodule := .Page.Params.bmodule }}
+    {{- $result := where $pages "Page.Params.bmodule" "intersect" $.Page.Params.bmodule | first $relatedMax }}
+    {{- if $result }}
+      {{- $relatedBModule = $relatedBModule | append (dict "name" (index $.Site.Data.Filters.bmodule $bmodule) "pages" $result) }}
+      {{- $relatedExists = true }}
+    {{- end }}
+  {{- end}}
+{{- end }}
+
+{{- if $relatedExists }}
+<div>
+  <h3>{{ T "related_title" }}</h3>
+  <ul>
+  {{- range $relatedBType}}
+    <li> Type - {{ .name }}
+      <ul>         
+      {{- range .pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end }}
+      </ul> 
+    </li>
+  {{- end}}
+  {{- range $relatedBLang}}
+    <li> Syntax - {{ .name }}
+      <ul>         
+      {{- range .pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end }}
+      </ul> 
+    </li>
+  {{- end}}
+  {{- range $relatedBFeature}}
+    <li> Feature - {{ .name }}
+      <ul>         
+      {{- range .pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end }}
+      </ul> 
+    </li>
+  {{- end}}
+  {{- range $relatedBModule}}
+    <li> Module - {{ .name }}
+      <ul>         
+      {{- range .pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end }}
+      </ul> 
+    </li>
+  {{- end}}
+  </ul>
+</div>
+{{- end }}
