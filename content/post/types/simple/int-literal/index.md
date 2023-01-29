@@ -3,7 +3,7 @@ title : Integer Literal
 description : Write an int value
 author: Hasitha
 date: 2023-01-01
-weight : 5020
+weight : 5021
 btype : [int]
 blang : [literal]
 highlight : [int-literal.bal, int-literal-hex.bal, int-to-string.bal]

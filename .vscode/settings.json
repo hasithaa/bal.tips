@@ -16,6 +16,8 @@
     "println",
     "relref",
     "tldr",
+    "typedesc",
+    "typeof",
     "typeref"
   ]
 }

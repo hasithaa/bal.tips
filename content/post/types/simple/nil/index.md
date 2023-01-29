@@ -3,7 +3,7 @@ title : Nil Data Type
 description : About type nil
 author: Hasitha
 date: 2023-01-01
-weight : 5005
+weight : 5010
 btype : [(), json]
 blang : [type, literal]
 highlight : [nil-literal.bal, null-literal.bal, nil-string.bal]

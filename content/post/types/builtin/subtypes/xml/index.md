@@ -3,7 +3,7 @@ title : XML Subtypes
 description : About type built-in xml subtypes
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5506
 btype : [xml]
 blang : [type]
 bmodule : [xml]

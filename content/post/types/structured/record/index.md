@@ -3,7 +3,7 @@ title : Record Type
 description : About type record
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5115
 btype : [maps]
 blang : [type]
 bmodule : [map]

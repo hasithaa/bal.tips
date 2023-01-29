@@ -3,7 +3,7 @@ title : Singleton - Single Value Type
 description : About Singleton - Single Value Types
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5245
 btype : []
 blang : [type]
 bmodule : []

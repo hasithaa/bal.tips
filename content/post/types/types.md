@@ -4,7 +4,7 @@ description: Ballerina Type Cheat Sheet
 date : 2022-12-16
 author: Hasitha
 menu : main
-weight : 5001
+weight : 5005
 toc : true
 tocOpen : false
 ---
@@ -52,7 +52,7 @@ Ballerina has a variety of `type descriptors` that are used to describe types. I
 #### Simple Data Values
 
 {{<summary title="" class="cl_summary" icon="💡">}}
-`()`      ::: post/types/simple/nil
+*Nil:*  `()` ::: post/types/simple/nil
 `boolean` ::: post/types/simple/boolean
 `int`     ::: post/types/simple/int
 `float`   ::: post/types/simple/float
@@ -78,8 +78,8 @@ Ballerina has a variety of `type descriptors` that are used to describe types. I
 #### Structured Values
 
 {{<summary title="" class="cl_summary" icon="💡">}}
-`𝓣[]` ::: post/types/structured/array
-`[𝓣, 𝓢]` ::: post/types/structured/tuple
+*Array:* &nbsp; `𝓣[]`  ::: post/types/structured/array
+*Tuple:* &nbsp; `[𝓣, 𝓢]` ::: post/types/structured/tuple
 `map<𝓣>` ::: post/types/structured/map
 `record { 𝓣 𝓪; }` ::: post/types/structured/record
 `table <𝓣>` ::: post/types/structured/table
@@ -89,18 +89,33 @@ Ballerina has a variety of `type descriptors` that are used to describe types. I
 #### Type References And Values as Types
 
 {{<summary class="cl_summary" icon="💡">}}
-`𝓣` &nbsp; `𝓶:𝓣` ::: post/types/other/typeref
-`"Hello"` &nbsp; `123` &nbsp; `45.6` &nbsp; `true` ::: post/types/other/singleton
+`𝓣` &nbsp; `𝓶:𝓣`  &nbsp; - *Type References* ::: post/types/other/typeref
+`"Hello"` &nbsp; `123` &nbsp; `45.6` &nbsp; `true` &nbsp; - *Singleton* ::: post/types/other/singleton
 {{</summary>}}
 <hr>
 
 #### Behavioral Values
 
 {{<summary class="cl_summary" icon="💡">}}
-
+`error <𝓣>` ::: post/types/behavioral/error
+`function (𝓣 𝓪, 𝓢 𝓫) returns 𝓡` ::: post/types/behavioral/function
+`object { }` ::: post/types/behavioral/object
+`future<𝓣>` ::: post/types/behavioral/future
+`stream<𝓣>` ::: post/types/behavioral/stream
+`typedesc<𝓣>` ::: post/types/behavioral/typedesc
+`handle` ::: post/types/behavioral/handle
 {{</summary>}}
+<hr>
 
 #### Type-Level Operations
+
+{{<summary class="cl_summary" icon="💡">}}
+*Union:* `𝓣 | 𝓢` ::: post/types/operations/union
+*Optional:* `𝓣?` ::: post/types/operations/optional
+*Intersection:* `𝓣 & 𝓢` ::: post/types/operations/intersection
+*Distinct:* `distinct 𝓣` ::: post/types/operations/distinct
+{{</summary>}}
+<hr>
 
 #### Built-In Types
 

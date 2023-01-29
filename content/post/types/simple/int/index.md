@@ -3,7 +3,7 @@ title : Integer Data Type
 description : About type int
 author: Hasitha
 date: 2023-01-01
-weight : 5015
+weight : 5020
 btype : [int, byte]
 blang : [type]
 bmodule : [int]

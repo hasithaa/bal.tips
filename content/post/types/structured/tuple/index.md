@@ -3,7 +3,7 @@ title : Tuple Type
 description : About type tuple
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5105
 btype : [list]
 blang : [type]
 bmodule : [array]

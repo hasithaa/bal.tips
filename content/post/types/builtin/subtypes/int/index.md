@@ -3,7 +3,7 @@ title : Integer Subtypes
 description : About type built-in integer subtypes
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5501
 btype : [int]
 blang : [type]
 bmodule : [int]

@@ -3,7 +3,7 @@ title : Map Type
 description : About type map
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5111
 btype : [maps]
 blang : [type]
 bmodule : [map]

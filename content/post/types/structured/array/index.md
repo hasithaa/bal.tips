@@ -3,7 +3,7 @@ title : Array Type
 description : About type array
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5101
 btype : [list]
 blang : [type]
 bmodule : [array]

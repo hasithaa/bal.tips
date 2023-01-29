@@ -3,7 +3,7 @@ title : Regular Expression Type
 description : About type RegExp
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5070
 btype : [regexp]
 blang : [type]
 bmodule : [regexp]

@@ -3,7 +3,7 @@ title : XML Data Type
 description : About type xml
 author: Hasitha
 date: 2023-01-01
-weight : 5250
+weight : 5060
 btype : [xml]
 blang : [type]
 bmodule : [xml]

@@ -1,12 +1,12 @@
 ---
-title : String Subtypes
-description : About type built-in string subtypes
+title : Intersection Type
+description : About intersection types
 author: Hasitha
 date: 2023-01-01
-weight : 5503
-btype : [string]
+weight : 5270
+btype : [intersect]
 blang : [type]
-bmodule : [string]
+bmodule : []
 highlight : []
 draft : true
 ---
@@ -15,7 +15,7 @@ draft : true
 {{</md>}}
 {{<md class="syntax">}}
 
-* `string:char`
+* `𝓣 & 𝓢`
 
 {{</md>}}
 {{<md class="tldr">}}

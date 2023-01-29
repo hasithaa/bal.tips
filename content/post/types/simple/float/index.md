@@ -3,7 +3,7 @@ title : Float Data Type
 description : About type float
 author: Hasitha
 date: 2023-01-01
-weight : 5030
+weight : 5025
 btype : [float]
 blang : [type]
 bmodule : [float]

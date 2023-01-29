@@ -3,7 +3,7 @@ title : Boolean Data Type
 description : About type boolean
 author: Hasitha
 date: 2023-01-01
-weight : 5010
+weight : 5015
 btype : [boolean]
 blang : [type, literal]
 bmodule : [boolean]

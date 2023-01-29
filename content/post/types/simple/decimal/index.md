@@ -3,7 +3,7 @@ title : Decimal Data Type
 description : About type decimal
 author: Hasitha
 date: 2023-01-01
-weight : 5031
+weight : 5030
 btype : [decimal]
 blang : [type]
 bmodule : [decimal]

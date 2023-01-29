@@ -3,7 +3,7 @@ title : String Data Type
 description : About type string
 author: Hasitha
 date: 2023-01-01
-weight : 5210
+weight : 5050
 btype : [string]
 blang : [type]
 bmodule : [string]

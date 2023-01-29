@@ -3,7 +3,7 @@ title : Floating Point Literal
 description : Write an floating point value
 author: Hasitha
 date: 2023-01-01
-weight : 5035
+weight : 5026
 btype : [float, decimal]
 blang : [literal]
 highlight : []
