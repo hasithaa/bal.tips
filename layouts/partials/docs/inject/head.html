@@ -1,0 +1,45 @@
+{{- if and (eq .Draft false) (eq .Params.type "docs") }}
+<meta name="robots" content="index" />
+{{- else }}
+<meta name="robots" content="noindex">
+{{- end}}
+{{- if .Params.author }}
+<meta name="author" content="{{ .Params.author }}" />
+{{- else }}
+<meta name="author" content="{{ .Site.Params.author }}" />
+{{- end }}
+<meta name="publisher" content="bal.tips by Hasitha Aravinda">
+<meta name="copyright" content="{{ (markdownify .Site.Params.copyrightTitle) | default .Site.Title }} © {{ now.Format "2006" }}">
+<meta name="keywords" content={{ delimit .Keywords ", " }} />
+{{- if .Site.Params.schema }}
+{{ template "_internal/schema.html" . }}
+{{- end }}
+{{- if .Site.Params.twitter_cards }}
+{{ template "_internal/twitter_cards.html" . }}
+{{- end }}
+{{- if and .Params.images (gt (len .Params.images) 0) }}
+<link rel="image_src" href="{{ relURL (index .Params.images 0 )  }}" />
+{{- end }}
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0RRFJG0BQS"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-0RRFJG0BQS');
+</script>
+
+<!--Search-->
+<meta name="search-summary" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ default .Summary .Description }}{{ end }}" {{- if eq .Draft false }}data-pagefind-default-meta="summary[content]"{{- end }} >
+
+{{- if and (eq .Draft false) (eq .Params.type "docs") }}
+    {{- $title_len := len .Title }}
+    {{- $description_len := len .Description }}
+    {{- if or (lt $title_len 20 ) (gt $title_len 55) }}
+        {{- warnf "You should has a 30 <= title.lenth <= 65, found %d, %q" $title_len .Path }}
+    {{- end }}
+    {{- if or (lt $description_len 120 ) (gt $description_len 360) }}
+        {{- warnf "You should has a 120 <= description.lenth <= 360, found %d, %q " $description_len .Path }}
+    {{- end }}
+{{- end }}

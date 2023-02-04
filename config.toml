@@ -61,7 +61,13 @@ home = ['HTML', 'RSS']
 
 [Params]
 author = "Hasitha Aravinda"
+copyright = '[**Hasitha Aravinda**](https://twitter.com/hasithaaravinda)'
+copyrightTitle = 'Bal.tips'
+twitter_cards = true
+opengraph = true
+schema = true
 
+# Book-specific parameters
   # (Optional, default light) Sets color theme: light, dark or auto.
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
   BookTheme = 'auto'
