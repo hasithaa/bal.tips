@@ -2,3 +2,31 @@
 
 // @import "plugins/numbered";
 // @import "plugins/scrollbars";
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+.markdown p {
+	text-align: justify;
+}
+
+// Source Code Highlighting
+.highlight {
+	overflow: auto;
+}
+
+.highlight pre {
+	padding: 10px;
+}
+
+.tip_code_status {
+	text-align: center;
+	font-family: Garamond, serif;
+	font-size: .85em;
+}
+
+.tip__code_title {
+	text-align: center;
+	font-family: Garamond, serif;
+}

@@ -1,0 +1,22 @@
+{{- $tag := default "div" (.Get "tag")}}
+{{- if eq $tag "div"}}
+<div class="{{- .Get "class"}}" style="{{- .Get "style" | safeCSS}}">
+  {{- if .Get "link" }}
+  <a href="{{- relref . (.Get "link") }}">
+    {{- .Inner | markdownify }}
+  </a>
+  {{- else}}
+    {{- .Inner | markdownify }}
+  {{- end}}
+</div>
+{{- else if eq $tag "span"}}
+<span class="{{- .Get "class"}}" style="{{- .Get "style" | safeCSS}}">
+  {{- if .Get "link" }}
+  <a href="{{- relref . (.Get "link") }}">
+    {{- .Inner | markdownify }}
+  </a>
+  {{- else}}
+    {{- .Inner | markdownify }}
+  {{- end}}
+</span>
+{{- end}}
