@@ -27,7 +27,7 @@ This tutorial will provide a gateway into the world of Ballerina. Learn how to b
 {{</md>}}
 <!--more-->
 
-## Hello, World
+# Hello, World
 
 Welcome to the world of Ballerina! Let's get started with writing a "Hello World" program.
 First start by creating a file called **main.bal**, and open it up in a text editor such as Visual Studio Code (VSCode). To get the best experience, be sure to install the Ballerina Extension. Save the file with the following code.  
@@ -39,11 +39,11 @@ There are two ways to run this.
 1. Execute it directly using `bal run main.bal` command.
 2. First build the executable `jar` file using `bal build main.bal`. Then run it using `bal run main.jar`  
 
-## Ballerina Basics
+# Ballerina Basics
 
 To become familiar with the syntax of Ballerina Language, I will explain the **Hello World** program step by step. It uses a syntax and paradigm inspired by C-style programming languages such as C, Java, and C++.
 
-### Functions
+## Functions
 
 Functions are the building blocks of a program in Ballerina. To create a Function, start with the keyword `function`, followed by the function's name, with the input parameters written inside parentheses. After that, use the `returns` keyword with a type to indicate the output of the function. Finally, write the function's body. Here is the main function.
 
@@ -70,7 +70,7 @@ public function main() {
 
 Additionally, Services are also entry points for a Ballerina program, which enable parallelism. I will discuss services in details later.
 
-### Modules and Packages
+## Modules and Packages
 
 A **Module** in Ballerina is a collection of Ballerina code, and it is the unit of compilation. Modules are shareable and reusable. It can consist of one or more source files. In this example, `main.bal` work as a single file module.
 
@@ -89,7 +89,7 @@ The last part of the imported module name acts as a prefix, i.e., *`io:`*. This 
 
 The Ballerina compiler generates an error for the above program, stating *"unused module prefix 'io'"*, as the `io` module has not been used in the program. To call a function from the `io` module, we can use the function call syntax:
 
-### Function Call Syntax and Expressions
+## Function Call Syntax and Expressions
 
 The `io` module's `println()` function can be used to write to **stdout**. To do this, call the function by its name with the module prefix (This is a qualified name) and pass a string value inside the parentheses, for example `"Hello, World!"`.
 
@@ -103,7 +103,7 @@ public function main() {
 
 Here `io:println("Hello, World...!")` is a **Call Expression**. An **Expression** is a combination of values, variables, operations, or even sub-expressions that produce **a result or an error**.  There are many expressions in Ballerina, which I will cover in details later.
 
-### Statements and Actions
+## Statements and Actions
 
 A **Statement** is a line of code that performs a specific task. In the last step, the `io:println();` **call statement** was used to print a message. This statement consists of a **call expression** followed by a semicolon `;`. Additionally, a statement can be a declaration, variable assignment, flow control, etc. Ballerina has a wide variety of statements, such as `if`, `while`, `foreach`, `match`, and more, which will be discussed in detail in upcoming posts.
 
@@ -124,7 +124,7 @@ public function main() {
 
 In the example, I have defined a `string` variable called `greeting` and printed its value using the `io:println()` function.  
 
-## Conclusion
+# Conclusion
 
 In this post, we learned about Ballerina basic by writing a "Hello, World...!" program.  Below are the main points to remember:
 
