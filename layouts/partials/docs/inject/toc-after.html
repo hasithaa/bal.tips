@@ -1,0 +1,60 @@
+{{ if and (eq .Draft false) (eq .Params.type "docs")}}
+{{- $path := $.Page.File.Path}}
+<div class="markdown tips_tags">
+    <strong>Ballerina Keywords</strong>
+    {{- if and (eq .Draft false) (eq .Params.type "docs")}}
+		{{- with .Page.Params.ballerina_type }}
+			{{- range .}}
+                {{- if isset $.Site.Data.Filters.ballerina_type . }}
+                    {{- with (index $.Site.Data.Filters.ballerina_type .) }}
+                    <p hidden data-pagefind-filter="Types">{{- . }}</p>
+                    <a class="book-btn" title="{{- . }}"
+                       href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                    {{- end}}
+                {{- else}}
+                    {{- errorf "Failed to handle btype %q at %q" . $path }}
+                {{- end}}
+			{{- end}}
+		{{- end}}
+		{{- with .Page.Params.ballerina_lang }}
+			{{- range .}}
+                {{- if isset $.Site.Data.Filters.ballerina_lang . }}
+                    {{- with (index $.Site.Data.Filters.ballerina_lang .) }}
+                    <p hidden data-pagefind-filter="Language">{{- . }}</p>
+                    <a class="book-btn"
+                       href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                    {{- end}}
+                {{- else}}
+                    {{- errorf "Failed to handle blang %q at %q" . $path }}
+                {{- end}}
+			{{- end}}
+		{{- end}}
+		{{- with .Page.Params.ballerina_feature }}
+			{{- range .}}
+                {{- if isset $.Site.Data.Filters.ballerina_feature . }}
+                    {{- with (index $.Site.Data.Filters.ballerina_feature .) }}
+                    <p hidden data-pagefind-filter="Features">{{- . }}</p>
+                    <a class="book-btn"
+                       href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                    {{- end}}
+                {{- else}}
+                    {{- errorf "Failed to handle bfeature %q at %q" . $path }}
+                {{- end}}
+			{{- end}}
+		{{- end}}
+		{{- with .Page.Params.ballerina_module }}
+			{{- range .}}
+                {{- if isset $.Site.Data.Filters.ballerina_module . }}
+                    {{- with (index $.Site.Data.Filters.ballerina_module .) }}
+                    <p hidden data-pagefind-filter="Module">{{- . }}</p>
+                    <a class="book-btn" rel="noopener"
+                       href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                    {{- end}}
+                {{- else}}
+                    {{- errorf "Failed to handle bmodule %q at %q" . $path }}
+                {{- end}}
+		    {{- end}}
+	    {{- end}}
+	{{- end}}
+</div>
+{{- end}}

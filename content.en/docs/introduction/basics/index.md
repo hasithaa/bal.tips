@@ -6,7 +6,9 @@ images : [/docs/introduction/basics/main.png]
 date: 2023-01-01
 weight : 1000
 type : docs
-bfeature : [main, function]
+ballerina_lang : [function, vardef]
+ballerina_feature : [main, function, expression, statement, module, package]
+ballerina_module : [ballerina-io]
 highlight : [main.bal]
 ---
 
@@ -35,7 +37,7 @@ First start by creating a file called **main.bal**, and open it up in a text edi
 There are two ways to run this.
 
 1. Execute it directly using `bal run main.bal` command.
-1. First build the executable `jar` file using `bal build main.bal`. Then run it using `bal run main.jar`  
+2. First build the executable `jar` file using `bal build main.bal`. Then run it using `bal run main.jar`  
 
 ## Ballerina Basics
 
@@ -99,7 +101,7 @@ public function main() {
 }
 {{</ balcode >}}
 
-Here `io:println("Hello, World...!")` is a **Call Expression**. An **Expression** is a combination of values, variables, operations, or even sub-expressions that produce **a result or an error**.  There are many expressions in Ballerina, which I will cover in detail laster.
+Here `io:println("Hello, World...!")` is a **Call Expression**. An **Expression** is a combination of values, variables, operations, or even sub-expressions that produce **a result or an error**.  There are many expressions in Ballerina, which I will cover in details later.
 
 ### Statements and Actions
 

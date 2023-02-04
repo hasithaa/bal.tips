@@ -73,7 +73,7 @@
 {{ end }}
 
 {{ define "main" }}
-<article class="markdown" {{- if eq .Draft false }}{{ if not (default false .Page.Params.skipsearch)}}data-pagefind-body{{else}}data-pagefind-ignore="all"{{end}}{{end}}>
+<article class="markdown" {{- if and (eq .Draft false) (eq .Params.type "docs")}}data-pagefind-body{{else}}data-pagefind-ignore="all"{{end}}>
     {{- $content := split .RawContent "<!--more-->" }}
     {{- replace .Content .Summary "" | safeHTML }}
 </article>

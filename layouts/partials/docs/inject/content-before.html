@@ -1,0 +1,8 @@
+{{ if and (eq .Draft false) (eq .Params.type "docs")}}
+<div hidden data-pagefind-body><p>Tags :</p>
+    {{ with .Page.Params.ballerina_type }}{{range .}}{{ with (index $.Site.Data.Filters.ballerina_type .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+    {{ with .Page.Params.ballerina_lang }}{{range .}}{{ with (index $.Site.Data.Filters.ballerina_lang .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+    {{ with .Page.Params.ballerina_feature }}{{range .}}{{ with (index $.Site.Data.Filters.ballerina_feature .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+    {{ with .Page.Params.ballerina_module }}{{range .}}{{ with (index $.Site.Data.Filters.ballerina_module .) }}<p>{{ . }}</p>{{end}}{{end}}{{end}}
+</div>
+{{- end}}
