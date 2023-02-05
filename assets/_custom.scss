@@ -40,7 +40,6 @@ body {
 	text-align: center;
 }
 
-
 .mascot img{
 	width: 150px;
 }
@@ -48,4 +47,9 @@ body {
 // Tags
 .tips_tags a{
     margin : 5px
+}
+
+// Search
+.markdown .pagefind-ui__filter-panel details {
+ border: 0;
 }
