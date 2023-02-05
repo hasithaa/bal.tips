@@ -1,7 +1,7 @@
 {{ if and (eq .Draft false) (eq .Params.type "docs")}}
 {{- $path := $.Page.File.Path}}
 <div class="markdown tips_tags">
-    <strong>Ballerina Keywords</strong>
+    <p><strong>Ballerina Keywords</strong></p>
     {{- if and (eq .Draft false) (eq .Params.type "docs")}}
 		{{- with .Page.Params.ballerina_type }}
 			{{- range .}}
