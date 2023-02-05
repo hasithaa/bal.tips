@@ -3,12 +3,16 @@ title: 🔎 Search
 description: Search
 date : 2022-12-16
 share : []
-weight : 99000
+weight : 1
 bookToc : false
 ---
 
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<div class="mascot">
+  <img src="/images/mascot/thinking.png" alt="thinking mascot" />
+</div>
 
 <div id="search"></div>
 <script type="text/javascript">
@@ -35,7 +39,3 @@ window.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 </script>
-
-<div class="mascot">
-  <img src="/images/mascot/thinking.png" alt="thinking mascot" />
-</div>

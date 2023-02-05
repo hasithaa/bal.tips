@@ -40,16 +40,22 @@ body {
 	text-align: center;
 }
 
-.mascot img{
+.mascot img {
 	width: 150px;
 }
 
 // Tags
-.tips_tags a{
-    margin : 5px
+.tips_tags a {
+	margin: 5px
 }
 
 // Search
 .markdown .pagefind-ui__filter-panel details {
- border: 0;
+	border: 0;
+}
+
+// Footer
+.footer__copyright {
+	margin-top: 20px;
+	text-align: center;
 }

@@ -43,3 +43,7 @@ gtag('config', 'G-0RRFJG0BQS');
         {{- warnf "You should has a 120 <= description.lenth <= 360, found %d, %q " $description_len .Path }}
     {{- end }}
 {{- end }}
+
+{{ $jstips := resources.Get "js/tips.js" | minify }}
+{{ $finaljs := slice $jstips | resources.Concat "js/bundle.js"}}
+<script src="{{ $finaljs.RelPermalink }}"></script>
