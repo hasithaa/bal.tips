@@ -30,31 +30,12 @@ codeFences = false
 
 [menu]
 # [[menu.before]]
-[[menu.after]]
-identifier = 'footer-about-author'
-name = 'About Author'
-url = 'https://linkedin.com/in/hasithaaravinda'
-weight = 500
-[[menu.after]]
-identifier = 'footer-github-issue'
-name = 'Report an Issue'
-url = 'https://github.com/hasithaa/bal.tips/issues/new'
-weight = 600
-[[menu.after]]
-identifier = 'footer-ballerina-io'
-name = 'Ballerina.io'
-url = 'https://ballerina.io'
-weight = 1000
-[[menu.after]]
-identifier = 'footer-ballerina-bbe'
-name = 'Ballerina By Examples'
-url = 'https://ballerina.io/learn/by-example/'
-weight = 1100
-[[menu.after]]
-identifier = 'footer-ballerina-spec'
-name = 'Ballerina Language Specification'
-url = 'https://ballerina.io/learn/ballerina-specifications/'
-weight = 1100
+# [[menu.after]]
+# identifier = 'footer-ballerina-io'
+# name = 'Ballerina.io'
+# url = 'https://ballerina.io'
+# weight = 1000
+
 
 [outputs]
 home = ['HTML', 'RSS']
