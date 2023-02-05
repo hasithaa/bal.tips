@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Validator Test Suite" configfailurepolicy="skip">
+    <test name="Output">
+        <packages>
+            <package name="tips.bal.verifier"/>
+        </packages>
+        <groups>
+            <run>
+                <include name="output"/>
+            </run>
+        </groups>
+    </test>
+    <listeners>
+        <listener class-name="tips.bal.verifier.YamlReporter"/>
+    </listeners>
+</suite>
