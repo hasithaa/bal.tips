@@ -1,0 +1,20 @@
+<dl>
+{{ range .Page.Pages.ByWeight }}
+  <dt>
+    <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+  </dt>
+  <dd class="markdown-inner">
+    {{ default .Summary .Description }}
+
+    <div class="sub-section">
+      <ul>
+        {{ range .Page.Pages.ByWeight }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </dd>
+{{ end }}
+</dl>
