@@ -7,7 +7,7 @@
 			{{- range .}}
                 {{- if isset $.Site.Data.Filters.ballerina_type . }}
                     {{- with (index $.Site.Data.Filters.ballerina_type .) }}
-                    <a class="book-btn" title="{{- . }}"
+                    <a class="book-btn" title="Search more on {{ . }}"
                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
                     {{- end}}
                 {{- else}}
@@ -19,7 +19,7 @@
 			{{- range .}}
                 {{- if isset $.Site.Data.Filters.ballerina_lang . }}
                     {{- with (index $.Site.Data.Filters.ballerina_lang .) }}
-                    <a class="book-btn"
+                    <a class="book-btn" title="Search more on {{ . }}"
                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
                     {{- end}}
                 {{- else}}
@@ -31,7 +31,7 @@
 			{{- range .}}
                 {{- if isset $.Site.Data.Filters.ballerina_feature . }}
                     {{- with (index $.Site.Data.Filters.ballerina_feature .) }}
-                    <a class="book-btn"
+                    <a class="book-btn" title="Search more on {{ . }}"
                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
                     {{- end}}
                 {{- else}}
@@ -43,7 +43,7 @@
 			{{- range .}}
                 {{- if isset $.Site.Data.Filters.ballerina_module . }}
                     {{- with (index $.Site.Data.Filters.ballerina_module .) }}
-                    <a class="book-btn" rel="noopener"
+                    <a class="book-btn" title="Search more on {{ . }}"
                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
                     {{- end}}
                 {{- else}}

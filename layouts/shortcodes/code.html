@@ -42,7 +42,7 @@
       <div class="tip_code_view">
         <div class="tip_code_view_source">
           {{- $codeContent -}}
-          <div class="tip_code_status"><a href="{{- $codeURL  -}}">View Source -&nbsp;{{ $source -}} </a>
+          <div class="tip_code_status"><a href="{{- $codeURL  -}}" title="View Source -&nbsp;{{ $source -}}">View Source -&nbsp;{{ $source -}} </a>
             {{- if isset $.Site.Data.tests.tests $sourceFilePath  -}}
               {{- $tests := $.Site.Data.tests  -}}           
               {{- with (index $.Site.Data.tests.tests $sourceFilePath) -}}

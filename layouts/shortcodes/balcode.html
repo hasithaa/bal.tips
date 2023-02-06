@@ -1,3 +1,6 @@
 {{- $highlightStyle := default "monokai" $.Site.Params.highlightStyle  -}}
 {{- $highlightLines := default "" (.Get 0) }}
-{{- highlight  (trim .InnerDeindent "\n\r") "ballerina" (print "style=" $highlightStyle ",tabWidth=2,lineNos=inline,lineNumbersInTable=false,hl_lines=" $highlightLines ) }}
+<div {{ if (.Get 1) }}title="{{- .Get 1 }}"{{ end }}>
+    {{- highlight  (trim .InnerDeindent "\n\r") "ballerina" (print "style=" $highlightStyle ",tabWidth=2,lineNos=inline,lineNumbersInTable=false,hl_lines=" $highlightLines ) }}
+    {{- if (.Get 1) }}<div class="tip__code_title">{{- .Get 1 | markdownify }}</div>{{- end }}
+</div>

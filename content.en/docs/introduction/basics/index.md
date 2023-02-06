@@ -47,7 +47,7 @@ To become familiar with the syntax of Ballerina Language, I will explain the **H
 
 Functions are the building blocks of a program in Ballerina. To create a Function, start with the keyword `function`, followed by the function's name, with the input parameters written inside parentheses. After that, use the `returns` keyword with a type to indicate the output of the function. Finally, write the function's body. Here is the main function.
 
-{{< balcode "1 2">}}
+{{< balcode "1 2" "Function definition syntax - function name is `main`" >}}
 function main() returns () {
 }
 {{</ balcode >}}
@@ -56,14 +56,14 @@ This main function does not return a value. A function that does not return a va
 
 As a best practice, we can omit the `returns ()` from the function signature and simply write the above as bellow.
 
-{{< balcode "1 2">}}
+{{< balcode "1 2" "Shortened function definition syntax by omitting `returns ()`" >}}
 function main() {
 }
 {{</ balcode >}}
 
 The *`main`* function is the primary entry point into a Ballerina program. It must be declared as *`public`* in order to be visible to the outside. Here is the final main function.
 
-{{< balcode "1">}}
+{{< balcode "1" "Function definition syntax with `public` qualifier">}}
 public function main() {
 }
 {{</ balcode >}}
@@ -74,9 +74,9 @@ Additionally, Services are also entry points for a Ballerina program, which enab
 
 A **Module** in Ballerina is a collection of Ballerina code, and it is the unit of compilation. Modules are shareable and reusable. It can consist of one or more source files. In this example, `main.bal` work as a single file module.
 
-One or more modules can be grouped together into a Ballerina **Package**. Ballerina packages can be published or retrieved from [Ballerina Central](https://central.ballerina.io). A Package has its own directory structure and I will discuss this further in more detail later.
+One or more modules can be grouped together into a Ballerina **Package**. Ballerina packages can be published or retrieved from [Ballerina Central](https://central.ballerina.io "ballerina package repository"). A Package has its own directory structure and I will discuss this further in more detail later.
 
-{{< balcode "1">}}
+{{< balcode "1" "Import declaration syntax">}}
 import ballerina/io;
 
 public function main() {
@@ -93,7 +93,7 @@ The Ballerina compiler generates an error for the above program, stating *"unuse
 
 The `io` module's `println()` function can be used to write to **stdout**. To do this, call the function by its name with the module prefix (This is a qualified name) and pass a string value inside the parentheses, for example `"Hello, World!"`.
 
-{{< balcode "4">}}
+{{< balcode "4" "Function call expression">}}
 import ballerina/io;
 
 public function main() {
@@ -111,7 +111,7 @@ In Ballerina, there is another syntactic category called **Actions**, which are 
 
 Let us add a variable declaration statement to our example. Ballerina is a C-style language, so variable definitions start with the type then followed by a variable name. Optionally, you can give an initial value expression after the equal sign `=`. The statement is then terminated with a semicolon `;`.
 
-{{< balcode "6 7">}}
+{{< balcode "6 7" "Variable declaration syntax">}}
 import ballerina/io;
 
 public function main() {
