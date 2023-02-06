@@ -22,8 +22,8 @@ keywords : [Licenses, Copyrights, Ballerina, Tips]
 
 ### Bal.Tips Mascot
 
-<div class="mascot">
-    <img src="/images/mascot/logo.png" alt="welcome mascot" width="100" /> 
+<div class="mascot mascot-small">
+    <img src="/images/mascot/logo.png" alt="welcome mascot" /> 
     <p>Bal.Tips Mascot - Copyright © 2022-{{<year>}} Hasitha Aravinda. All rights reserved.</p>
 </div>
 
