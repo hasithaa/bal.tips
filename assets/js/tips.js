@@ -1,11 +1,11 @@
 function highlightID(id) {
-  document.getElementById(id).animate({
-    color: ["#fff", "auto"],
-    backgroundColor: ["#77baff", "transparent"],
+  document.getElementById(id).parentElement.animate({
+    color: ["#fff"],
+    backgroundColor: ["#5d5e5a", "transparent"],
     easing: ['ease-out'],
     borderRadius: ['2em'],
     pseudoElement: '::before'
-  }, 2000);
+  }, 5000);
 }
 function insertUrlParam(key, value) {
   if (history.pushState) {

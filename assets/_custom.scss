@@ -61,3 +61,42 @@ body {
 	margin-top: 20px;
 	text-align: center;
 }
+
+
+/* Summary */
+
+.summary {
+	padding: .5rem 0;
+	text-align: justify;
+}
+
+/* Syntax */
+
+.syntax ul {
+	padding-left: 1rem;
+}
+
+.syntax ul li {
+	padding-left: .5rem;
+	list-style-type: '✍';
+}
+
+.syntax {
+	padding: .5rem 0;
+}
+
+/* TLDR */
+
+.tldr ul li {
+	padding-left: .5rem;
+	list-style-type: '✓';
+}
+
+.tldr ul li ul li {
+	padding-left: .5rem;
+	list-style-type: '●';
+}
+
+.tldr ul {
+	padding-left: 1rem;
+}

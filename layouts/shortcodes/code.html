@@ -53,7 +53,7 @@
           </div>
         </div>
         {{- with .Inner -}}
-        <div class="markdown-inner">{{ .Inner | .Page.RenderString }}</div>
+        <div class="markdown-inner">{{ . | $.Page.RenderString }}</div>
         {{- end -}}
         {{- if $output  -}}
         <br>

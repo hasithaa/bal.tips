@@ -6,10 +6,10 @@ weight : 16
 bookToc: false
 bookCollapseSection : true
 ---
+# Ballerina Language Introduction Tutorials
+
 This section covers the basics of Ballerina programming language. It is a good place to start if you are new to Ballerina.
 
 <!--more-->
-
-# Ballerina Language Introduction Tutorials
 
 {{< section >}}
