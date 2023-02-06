@@ -10,11 +10,12 @@ bookToc : false
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
 
+<div id="search"></div>
+
 <div class="mascot">
   <img src="/images/mascot/thinking.png" alt="thinking mascot" />
 </div>
 
-<div id="search"></div>
 <script type="text/javascript">
 function updateParam(inputbox, name) {
   insertUrlParam(name, inputbox.value);

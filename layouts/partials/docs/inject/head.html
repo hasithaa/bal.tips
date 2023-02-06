@@ -36,7 +36,7 @@ gtag('config', 'G-0RRFJG0BQS');
 {{- if and (eq .Draft false) (eq .Params.type "docs") }}
     {{- $title_len := len .Title }}
     {{- $description_len := len .Description }}
-    {{- if or (lt $title_len 20 ) (gt $title_len 55) }}
+    {{- if or (lt $title_len 15 ) (gt $title_len 50) }}
         {{- warnf "You should has a 30 <= title.lenth <= 65, found %d, %q" $title_len .Path }}
     {{- end }}
     {{- if or (lt $description_len 120 ) (gt $description_len 360) }}
