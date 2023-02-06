@@ -8,7 +8,6 @@ bookCollapseSection : true
 menuOpen : true
 ---
 
-
 # Ballerina Language Reference Guides
 
 {{< section >}}
