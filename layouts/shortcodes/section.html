@@ -4,7 +4,7 @@
     <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
   </dt>
   <dd class="markdown-inner">
-    {{ default .Summary .Description }}
+    {{ default .Summary .Description | markdownify }}
 
     <div class="sub-section">
       {{ partial "list-pages" . }}

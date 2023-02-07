@@ -36,9 +36,15 @@
       </a>
     </label>
   {{ else if .Page.Params.BookHref }}
-    <a href="{{ .Page.Params.BookHref }}" class="{{ if $current }}active{{ end }}" target="_blank" rel="noopener" title="{{ .Page.Description }}">
-      {{- partial "docs/title" .Page -}}
-    </a>
+    {{ if (hasPrefix  .Page.Params.BookHref "http") }}
+      <a href="{{ .Page.Params.BookHref }}" class="{{ if $current }}active{{ end }}" target="_blank" rel="noopener" title="{{ .Page.Description }}">
+        {{- partial "docs/title" .Page -}}&nbsp;🡭
+      </a>
+    {{ else }}
+        <a href="{{ .Page.Params.BookHref }}" class="{{ if $current }}active{{ end }}" title="{{ .Page.Description }}">
+          {{- partial "docs/title" .Page -}}&nbsp;🡪
+        </a>
+    {{ end }}
   {{ else if .Page.Content }}
     <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}" title="{{ .Page.Description }}">
       {{- partial "docs/title" .Page -}}
