@@ -7,13 +7,7 @@
     {{ default .Summary .Description }}
 
     <div class="sub-section">
-      <ul>
-        {{ range .Page.Pages.ByWeight }}
-          <li>
-            <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
-          </li>
-        {{ end }}
-      </ul>
+      {{ partial "list-pages" . }}
     </div>
   </dd>
 {{ end }}

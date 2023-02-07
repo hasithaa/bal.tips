@@ -12,25 +12,12 @@ ballerina_module : [ballerina-io]
 highlight : [main.bal]
 ---
 
-{{<md class="summary">}}
-This tutorial will provide a gateway into the world of Ballerina. Learn how to build a 'Hello World' program by harnessing the power of functions, modules, expressions, and statements. Step into the world of Ballerina, and say hello to a new way of programming!
-{{</md>}}
-
-{{<md class="tldr">}}
-
-* Ballerina is a C-style language.
-* Functions are the building blocks of a program.
-* The main function acts as an entry point for a program.
-* A Module is a collection of Ballerina codes. One or more modules grouped together form a package.
-* Expression and Statement, and Actions are syntactic categories.
-
-{{</md>}}
-<!--more-->
-
 # Hello, World
 
 Welcome to the world of Ballerina! Let's get started with writing a "Hello World" program.
 First start by creating a file called **main.bal**, and open it up in a text editor such as Visual Studio Code (VSCode). To get the best experience, be sure to install the Ballerina Extension. Save the file with the following code.  
+
+<!--more-->
 
 {{<code id="0" title="Hello World, Program."/>}}
 
@@ -128,8 +115,18 @@ In the example, I have defined a `string` variable called `greeting` and printed
 
 In this post, we learned about Ballerina basic by writing a "Hello, World...!" program.  Below are the main points to remember:
 
+<!--tldr-->
+{{<md class="keypoint">}}
+
+![hello world](main.png)
+
+{{</md>}}
+{{<md class="tldr">}}
+
 * Ballerina is a C-style language.
 * Functions are the building blocks of a program.
 * The main function acts as an entry point for a program.
 * A Module is a collection of Ballerina codes. One or more modules grouped together form a package.
 * Expression and Statement, and Actions are syntactic categories.
+
+{{</md>}}

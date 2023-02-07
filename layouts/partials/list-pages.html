@@ -1,0 +1,10 @@
+{{- if .Page.Pages }}
+<ul>
+    {{ range .Page.Pages.ByWeight }}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+        {{ partial "list-pages" . }}
+    </li>
+    {{ end }}
+</ul>
+{{- end}}

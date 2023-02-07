@@ -9,27 +9,12 @@ type : docs
 ballerina_lang : [comment]
 highlight : [comment01.bal]
 ---
-{{<md class="summary">}}
-Comments are used to provide more details about the code or temporally disable a section of the source code. A comment starts with two forward slashes `//`. The compiler ignores any characters between `//` and the end of the line.
-{{</md>}}
-{{<md class="syntax">}}
-
-* `//`
-
-{{</md>}}
-{{<md class="tldr">}}
-
-* No Multiline Comments.
-* Only for Comments.
-* Do not document inside comments, use Markdown syntax instead.
-* Avoid comments much as possible, use clear, concise code instead.
-
-{{</md>}}
-<!--more-->
 
 # Comments
 
-You can use comments to provide more details about the code or temporally disable a section of the source code.
+Comments are used to provide more details about the code or temporally disable a section of the source code.
+
+<!--more-->
 
 ## Syntax
 
@@ -46,8 +31,8 @@ This example shows how you can use comments.
 {{< code id="0" title="How to use Comments" >}}
 
 **✅ Do's**
-* {{<line 1>}} is a comment.
-* {{<line 8>}} is commented out code line and will not be executed.
+* {{<line 1>}} is a comment. It provides more details about the code.
+* {{<line 8>}} is commented out code and will not be executed.
 
 **⚠️ Avoid**
 * {{<line 4>}} is another comment, but **do not** use comments to document functions; Instead, use markdown documentation syntax.
@@ -84,7 +69,16 @@ So, write your code in a self-documenting or understandable way. Put comments if
 
 Below are the main points to remember:
 
+{{<md class="keypoint">}}
+
+![comments](comment.png)
+
+{{</md>}}
+{{<md class="tldr">}}
+
 * No Multiline Comments.
 * Only for Comments.
 * Do not document inside comments, use Markdown syntax instead.
 * Avoid comments much as possible, use clear, concise code instead.
+
+{{</md>}}

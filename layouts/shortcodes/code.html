@@ -1,5 +1,5 @@
 {{- $index := default 0 (.Get "id" | int) -}}
-{{- $output := default true (.Get "output" ) -}}
+{{- $output := default false (.Get "output" ) -}}
 {{- $sourceNames := default slice $.Page.Params.highlight  -}}
 {{- $highlightStyle := default "monokai" $.Site.Params.highlightStyle  -}}
 {{- if ne (len $sourceNames) 0  -}}
@@ -42,28 +42,29 @@
       <div class="tip_code_view">
         <div class="tip_code_view_source">
           {{- $codeContent -}}
-          <div class="tip_code_status"><a href="{{- $codeURL  -}}" title="View Source -&nbsp;{{ $source -}}">View Source -&nbsp;{{ $source -}} </a>
-            {{- if isset $.Site.Data.tests.tests $sourceFilePath  -}}
-              {{- $tests := $.Site.Data.tests  -}}           
-              {{- with (index $.Site.Data.tests.tests $sourceFilePath) -}}
-                {{- $longText := printf "Test %s on %s, at %s" .status $tests.os $tests.endAt -}}
-                &nbsp;|&nbsp;<span title="{{- $longText -}}">{{- if eq .compilation "SUCCESS"  -}} ✅ {{- else if eq .compilation "ERROR"  -}} ❌ {{- else -}} ❗ {{- end -}}{{- $tests.balVersion -}} </span>
-              {{- end -}}
-            {{- end -}}
-          </div>
         </div>
         {{- with .Inner -}}
-        <div class="markdown-inner">{{ . | $.Page.RenderString }}</div>
-        {{- end -}}
-        {{- if $output  -}}
+        <div class="markdown-inner tip_code_inner">{{ . | $.Page.RenderString }}</div>
         <br>
-        <div>
-          <div >$&nbsp;<code>bal run&nbsp;{{- $source -}}</code></div>
-          <div>{{- $codeOut -}}</div>
-        </div>
         {{- end -}}
+        <details {{if $output}}open{{end}} class="tip_code_out">
+          <summary>Display <strong>{{ $source }}</strong> Output</summary>
+          {{- $tests := $.Site.Data.tests  -}}
+          {{- if isset $.Site.Data.tests.tests $sourceFilePath  -}}
+          {{- with (index $.Site.Data.tests.tests $sourceFilePath) -}}
+          {{- $longText := (printf "Test %s on %s, at %s" .status $tests.os $tests.endAt) -}}
+          <span title="{{- $longText -}}">Ballerina Version -&nbsp;
+            {{- if eq .compilation "SUCCESS"  -}}✓&nbsp;{{- else if eq .compilation "ERROR"  -}}✗&nbsp;{{- else -}}❗&nbsp;{{- end -}}{{- $tests.balVersion -}} </span>
+          {{- end -}}
+          {{- end -}}
+          <div>$&nbsp;<code>bal run&nbsp;{{- $source -}}</code></div>
+          <div>{{- $codeOut -}}</div>
+        </details>
       </div>
-      {{- with (.Get "title") -}}<div class="tip__code_title">{{- . | markdownify -}}</div>{{- end -}}
+      <div class="tip_code_title">
+        {{- with (.Get "title") -}}{{- . | markdownify -}}&nbsp;|&nbsp;{{- end -}}
+        <a href="{{- $codeURL  -}}" title="View Source -&nbsp;{{ $source -}}">{{ $source }}</a>
+      </div>
     </div>
     <hr>
   {{- end -}}

@@ -20,13 +20,17 @@ body {
 	padding: 10px;
 }
 
-.tip_code_status {
-	text-align: center;
-	font-family: Garamond, serif;
-	font-size: .85em;
+.tip_code_inner {
+    font-size: .9rem;
 }
 
-.tip__code_title {
+.tip_code_out {
+	font-family: Garamond, serif;
+	border: 0px !important;
+	font-size: .9rem;
+}
+
+.tip_code_title {
 	text-align: center;
 	font-family: Garamond, serif;
 	font-size: .9rem;
@@ -80,6 +84,15 @@ body {
 .summary {
 	padding: .5rem 0;
 	text-align: justify;
+}
+
+/* keypoint */
+.keypoint {
+    text-align: center;
+}
+
+.keypoint img{
+    width: 75%;
 }
 
 /* Syntax */
