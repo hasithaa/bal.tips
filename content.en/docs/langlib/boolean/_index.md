@@ -6,7 +6,7 @@ weight : 113200
 type : docs
 ballerina_type : [boolean]
 ballerina_module : [boolean]
-highlight : [lang-boolean.bal]
+highlight : [lang_boolean.bal]
 ---
 # Boolean Lang Library
 
@@ -21,22 +21,6 @@ that can operate on a `boolean` value.
 💡 `boolean` is a pre-defined module prefix, and you can use it without an `import` declaration.
 {{</hint>}}
 
-# Functions
+{{< code id="0" title="`ballerina/lang.boolean` Usage" />}}
 
-## `fromString`
-
-```ballerina
-# Converts a string to a boolean.
-# Returns the boolean of which `s` is a string representation.
-# The accepted representations are `true`, `false`
-# (in any combination of lower- and upper-case),
-# and also `1` for true and `0` for `false`.
-# This is the inverse of `value:toString` applied to a `boolean`.
-#
-# + s - string representing a boolean value
-# + return - boolean that `s` represents, or an error if there is no such boolean
-public isolated function fromString(string s) returns boolean|error { ... };
-```
-<div class="tip__code_title"> fromString documentation (source : ballerina spec)</div>
-
-{{< code id="0" title="`boolean:fromString()` Usage" />}}
+{{< section >}}
