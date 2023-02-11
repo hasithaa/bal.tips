@@ -78,6 +78,22 @@ body {
 	text-align: center;
 }
 
+// Post
+.center {
+    text-align: center;
+}
+.post_table {
+    display: flex;
+    justify-content: center;
+}
+
+.post_table table {
+    margin : 0 auto
+}
+
+.post_table table td{
+    text-align: justify;
+}
 
 /* Summary */
 

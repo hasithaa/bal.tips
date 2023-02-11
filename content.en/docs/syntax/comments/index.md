@@ -56,10 +56,10 @@ Some programming languages often use comments to store metadata about the progra
 
 ## Code Is Read More Than It Is Written
 
-<blockquote>
+{{< hint "info" >}}
 "Code never lies, comments sometimes do."
 <footer>— <cite>Ron Jeffries</cite></footer>
-</blockquote>
+{{</ hint >}}
 
 Rarely, you write perfect code and run forever. Coding is an iterative process; You need to add new features, improve your code, and fix bugs. So, you must continue reading your old code to know how/where to fix it.
 
