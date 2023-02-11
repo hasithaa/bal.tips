@@ -1,7 +1,15 @@
 <dl>
 {{ range .Page.Pages.ByWeight }}
   <dt>
-    <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+    {{ if .Params.BookHref }}
+      {{ if (hasPrefix  .Page.Params.BookHref "http") }}
+      <a href="{{ .Params.BookHref }}" title="{{ .Page.Description}}" target="_blank" rel="noopener">{{ partial "docs/title" . }}</a> 🡭
+      {{ else }}
+      <a href="{{ .Params.BookHref }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a> 🡪
+      {{end}}
+    {{ else }}
+      <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a>
+    {{ end }}
   </dt>
   <dd class="markdown-inner">
     {{ default .Summary .Description | markdownify }}

@@ -1,0 +1,7 @@
+{{- $ballerinaSpecVersion := $.Site.Data.Config.ballerina.specVersion }}
+{{- $specLink := printf "https://ballerina.io/spec/lang/%s/" $ballerinaSpecVersion }}
+
+
+{{- .Inner | markdownify }}
+<div class="tip_code_title">{{- with .Get "title" }}{{ . | markdownify }}&nbsp;-&nbsp;{{ end}}
+    (source : <a href="{{ $specLink }}" target="_blank">ballerina spec</a>)</div>
