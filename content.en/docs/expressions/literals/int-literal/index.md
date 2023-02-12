@@ -71,7 +71,7 @@ functions. These functions allow you to convert between hexadecimal and numerica
 
 Here is a summary of the hexadecimal digits and their corresponding decimal and binary values.
 
-{{<md class="post_element post_table center" >}}
+{{<md class="post_element post_table center post_table_compact" >}}
 | Digit | Decimal - Binary | Digit      | Decimal - Binary |
 | ----- | ---------------- | ---------- | ---------------- |
 | `0`   | 0 - `0000`       | `8`        | 8 - `1000`       |
@@ -92,7 +92,7 @@ the third-rightmost digit has a place value of 16² (=256), and so on.
 By multiplying each decimal value by its corresponding place value, and then by adding them all together,
 the decimal value can be obtained. Here is an example.
 
-{{<md class="post_table center" >}}
+{{<md class="post_table center post_table_compact" >}}
 | Hexadecimal Number | 16² (=256) | 16¹ (=16) | 16⁰ (=1)) | Decimal Number                    |
 | ------------------ | ---------- | --------- | --------- | --------------------------------- |
 | D                  | -          | -         | D (13)    | 1 x 13 = 13                       |
@@ -109,7 +109,7 @@ Now let us try to do the reverse by converting the same decimal literals to hexa
    The remainder of each step is equivalent to a hexadecimal digit, 
    where the least significant digit is the first remainder of the division. Here is an example.
 
-{{<md class="post_table center" >}}
+{{<md class="post_table center post_table_compact" >}}
 | Decimal Number | Step | Divide by 16 | Quotient | Remainder | Hex Digit for remainder | Hexadecimal Number |
 | -------------- | ---- | ------------ | -------- | --------- | ----------------------- | ------------------ |
 | 13             | 1    | 13/16        | 0        | 13        | D                       | D                  |

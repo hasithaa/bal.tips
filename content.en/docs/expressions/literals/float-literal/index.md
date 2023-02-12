@@ -18,6 +18,10 @@ aliases :
 
 # Floating Point Literal
 
+Floating point values can be expressed in either Decimal (base 10) or Hexadecimal (base 16) systems
+and come in two types, `float` and `decimal`, with slight differences in their representation using floating point literals.
+<!--more-->
+
 {{<md class="syntax">}}
 
 * Decimal Literal, e.g. `123.34`
@@ -25,9 +29,7 @@ aliases :
 
 {{</md>}}
 
-Floating point values can be expressed in either Decimal (base 10) or Hexadecimal (base 16) systems 
-and come in two types, `float` and `decimal`, with slight differences in their representation using floating point literals.
-<!--more-->
+
 
 ## Decimal Floating Point Literal
 
