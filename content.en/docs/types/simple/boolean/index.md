@@ -20,6 +20,12 @@ The Boolean data type represents boolean truth values: `true` and `false`.
 
 ## Syntax
 
+{{<md class="syntax">}}
+
+* `boolean`
+
+{{</md>}}
+
 Boolean type is written as `boolean`. We use the Boolean literal syntax to write Boolean values.
 A boolean true is written as `true` and a boolean false is written as `false`.
 In Ballerina,`0`, `1`, or any other variations of `true` or `false` words are not supported as alternative syntax.

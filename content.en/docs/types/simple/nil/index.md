@@ -1,6 +1,7 @@
 ---
 title : Nil Data Type
-description : The **Nil** data type represents a single value called **nil**, which represents the absence of any other value.
+description : The **Nil** data type represents a single value called **nil**, which represents the 
+ | absence of any other value.
 date: 2023-01-01
 weight : 5010
 type : docs
