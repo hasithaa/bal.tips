@@ -8,8 +8,8 @@ ballerina_type : [byte]
 ballerina_lang : [literal]
 highlight : [Base16Literal.bal, Base64Literal.bal]
 aliases :
-- /examples/expr/literals/base16literal/
-- /examples/expr/literals/base64literal/
+  - /examples/expr/literals/base16literal/
+  - /examples/expr/literals/base64literal/
 ---
 
 # Byte Array Literal

@@ -7,6 +7,8 @@ type : docs
 ballerina_type : [int]
 ballerina_module : [int]
 highlight : [lang-int.bal]
+aliases :
+  - /examples/langlib/int/intro/
 ---
 
 # Int Lang Library

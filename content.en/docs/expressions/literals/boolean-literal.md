@@ -8,6 +8,8 @@ type : docs
 ballerina_type : [boolean]
 ballerina_lang : [literal]
 highlight : [boolean-literal.bal]
+aliases : 
+  - /examples/expr/literals/boolean-literal/
 ---
 
 # Boolean Literal

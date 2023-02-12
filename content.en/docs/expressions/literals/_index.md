@@ -8,6 +8,9 @@ bookToc: true
 ballerina_lang : [literal]
 highlight : [numeric-literals.bal]
 bookCollapseSection : true
+aliases : 
+  - /learn-syntax/expr/literals/
+  - /examples/expr/literals/numeric-literals/
 ---
 
 # Literals

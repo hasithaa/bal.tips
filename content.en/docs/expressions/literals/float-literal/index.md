@@ -13,7 +13,6 @@ aliases :
   - /examples/expr/literals/float-literal/
   - /examples/expr/literals/float-exp-literal/
   - /examples/expr/literals/float-hex-literal/
-  - /examples/expr/literals/numeric-literals/
 ---
 
 # Floating Point Literal

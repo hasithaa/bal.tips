@@ -8,8 +8,6 @@ ballerina_type : [(), json]
 ballerina_lang : [type, literal]
 highlight : [nil-literal.bal, null-literal.bal, nil-string.bal]
 aliases : 
-  - /examples/expr/literals/nil-literal/
-  - /examples/expr/literals/null-literal/
   - /types/simple/nil/
 ---
 

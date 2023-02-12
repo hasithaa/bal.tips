@@ -9,7 +9,6 @@ ballerina_lang : [type, literal]
 ballerina_module : [boolean]
 highlight : [boolean-literal.bal]
 aliases :
-  - /examples/expr/literals/boolean-literal/
   - /types/simple/boolean/
 ---
 

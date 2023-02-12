@@ -7,6 +7,9 @@ type : docs
 ballerina_type : [()]
 ballerina_lang : [literal]
 highlight : [nil-literal.bal]
+aliases : 
+  - /examples/expr/literals/nil-literal/
+  - /examples/expr/literals/null-literal/
 ---
 
 # Nil Literal
