@@ -2,7 +2,7 @@
 title : String Literal
 description : A string literal can be written by having the Unicode code points wrapped using two double quotes `"`.
 date: 2023-01-01
-weight : 6030
+weight : 6035
 type : docs
 ballerina_type : [string]
 ballerina_lang : [literal]

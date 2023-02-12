@@ -2,7 +2,7 @@
 title : Integer Literal
 description : Integer values can be expressed in either common the Decimal system, known for its base 10 format, or the Hexadecimal system which uses the Base 16 format.
 date: 2023-01-01
-weight : 6021
+weight : 6033
 type : docs
 ballerina_type : [int]
 ballerina_lang : [literal]

@@ -2,7 +2,7 @@
 title : Nil Literal
 description : Nil literal uses the syntax `()` and `null`.
 date: 2023-01-01
-weight : 6011
+weight : 6031
 type : docs
 ballerina_type : [()]
 ballerina_lang : [literal]
