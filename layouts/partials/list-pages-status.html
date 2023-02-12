@@ -1,0 +1,18 @@
+{{- if .Page.Pages }}
+<ul>
+    {{ range .Page.Pages.ByWeight }}
+    <li>
+        {{ if .Params.BookHref }}
+            {{ if (hasPrefix  .Page.Params.BookHref "http") }}
+            <a href="{{ .Params.BookHref }}" title="{{ .Page.Description}}" target="_blank" rel="noopener">({{.Weight}}) ({{ .Type }}) - {{ partial "docs/title" . }}</a> 🡭
+            {{ else }}
+            <a href="{{ .Params.BookHref }}" title="{{ .Page.Description}}">({{.Weight}}) ({{ .Type }}) - {{ partial "docs/title" . }}</a> 🡪
+            {{end}}
+        {{ else }}
+        <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">({{ .Weight }}) ({{ .Type }}) - {{ partial "docs/title" . }} </a>
+        {{ end }}
+        {{ partial "list-pages-status" . }}
+    </li>
+    {{ end }}
+</ul>
+{{- end}}

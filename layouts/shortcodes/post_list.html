@@ -1,0 +1,46 @@
+{{- $kind := .Get "kind" | default "post" }}
+{{- if eq $kind "post" }}
+    {{ $bookSection := default "docs" .Site.Params.BookSection  }}
+    {{- $pages := .Site.GetPage $bookSection }}
+    {{ range $pages.Pages}}
+        {{ partial "list-pages-status" . }}
+    {{ end }}
+{{- else if eq $kind "test" }}
+    {{- $tests := $.Site.Data.tests  -}}
+<ul>
+    <li>Ballerina Version :&nbsp; {{- $tests.balVersion }} </li>
+    <li>OS :&nbsp;{{- $tests.os }} </li>
+    <li>Started :&nbsp; {{- $tests.startAt }}</li>
+    <li>End :&nbsp; {{- $tests.endAt }}</li>
+    <li><a href="../tests">Test Report</a>
+        <ul>
+            <li>Pass :&nbsp; {{- $tests.pass }} </li>
+            <li>Fail :&nbsp; {{- $tests.fail }} </li>
+            <li>Skip :&nbsp; {{- $tests.skip }} </li>
+        </ul>
+    </li>
+</ul>
+<table class="post_table post_table_compact center">
+    <tr>
+        <th>Name</th>
+        <th>Path</th>
+        <th>Kind</th>
+        <th>Compilation</th>
+        <th>Status</th>
+    </tr>
+    {{- range $tests := sort $tests.tests -}}
+    <tr>
+        <td>{{- $tests.name -}}</td>
+        <td><a href="{{- print " ../" $tests.path }}">{{- $tests.path }}</a></td>
+        <td>{{- $tests.kind -}}</td>
+        <td>
+            {{- if eq $tests.compilation "SUCCESS"  -}} ✅ {{- else if eq $tests.compilation "ERROR"  -}} ❌ {{- else -}} ❗
+            {{- end -}}
+        </td>
+        <td>
+            {{- if eq $tests.status "PASS"  -}} ✅ {{- else if eq $tests.status "FAIL"  -}} ❌ {{- else -}} ❗ {{- end -}}
+        </td>
+    </tr>
+    {{- end -}}
+</table>
+{{- end }}
