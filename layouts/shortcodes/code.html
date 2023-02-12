@@ -49,16 +49,18 @@
         {{- end -}}
         <details {{if $output}}open{{end}} class="tip_code_out">
           <summary>Display <strong>{{ $source }}</strong> Output</summary>
-          {{- $tests := $.Site.Data.tests  -}}
-          {{- if isset $.Site.Data.tests.tests $sourceFilePath  -}}
-          {{- with (index $.Site.Data.tests.tests $sourceFilePath) -}}
-          {{- $longText := (printf "Test %s on %s, at %s" .status $tests.os $tests.endAt) -}}
-          <span title="{{- $longText -}}">Ballerina Version -&nbsp;
-            {{- if eq .compilation "SUCCESS"  -}}✓&nbsp;{{- else if eq .compilation "ERROR"  -}}✗&nbsp;{{- else -}}❗&nbsp;{{- end -}}{{- $tests.balVersion -}} </span>
-          {{- end -}}
-          {{- end -}}
           <div>$&nbsp;<code>bal run&nbsp;{{- $source -}}</code></div>
           <div>{{- $codeOut -}}</div>
+          {{- $tests := $.Site.Data.ballerina  -}}
+          {{- $testResult := getJSON (printf "%s/%s%s.json" $.Site.Params.contentDir $baseURL $source ) }}
+          {{- with $testResult -}}
+          <div class="center">
+          <span>Version :&nbsp;{{- $tests.balVersion -}}&nbsp;
+            {{- if $testResult.compile -}}✓&nbsp;{{- else -}}✗&nbsp;{{- end -}} Compile
+            ,&nbsp;{{- if $testResult.test -}}✓&nbsp;{{- else -}}✗&nbsp;{{- end -}}Test
+             </span>
+          </div>
+          {{- end -}}
         </details>
       </div>
       <div class="tip_code_title">

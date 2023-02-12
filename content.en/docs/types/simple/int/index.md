@@ -24,8 +24,8 @@ The Integer data type represents 64-bit signed integer values.
 {{</md>}}
 {{<md class="tldr">}}
 
-* [Integer Literal]({{<relref "/docs/expressions/literals/int-literal">}}) e.g. `10`, `12345`, `0xAD`
-* Lang Library : [*ballerina/lang.int*]({{< linkh "#language-library---ballerinalangint">}})
+* [Integer Literal]({{% relref "/docs/expressions/literals/int"%}}) e.g. `10`, `12345`, `0xAD`
+* Lang Library : [*ballerina/lang.int*]({{% linkh "#language-library" %}})
 * `byte` and more subtypes.
 * No implicit conversion between numbers.
 
@@ -39,7 +39,7 @@ The Integer data type represents 64-bit signed integer values.
 
 ## Syntax
 
-The integer type is written as `int`. You can use [Integer Literal Syntax]({{<relref "/docs/expressions/literals/int-literal" >}}) to write integer values.
+The integer type is written as `int`. You can use [Integer Literal Syntax]({{% relref "/docs/expressions/literals/int" %}}) to write integer values.
 
 {{<md class="syntax">}}
 
@@ -95,10 +95,10 @@ If required, you can use a type-cast expression to do a numeric conversion. This
 * {{<line 9>}} is the same as `<int>d.round(0)`. This uses Ballerina default round-to-nearest rounding mode. It is the same as IEEE roundToIntegralTiesToEven operation with a minor exception to handling positive exponent.
 {{</ code>}}
 
-# Language Library - `ballerina/lang.int`
+# Language Library
 
 `lang.int` Lang Library provides a set of functions that operates on an `int` value. 
-See available operations with examples in [Int Lang Library]({{< relref "/docs/langlib/int" >}}).
+See available operations with examples in [Int Lang Library]({{% relref "/docs/langlib/int" %}}).
 
 {{<hint info>}}
 🚧 More Examples Coming Soon!
@@ -124,7 +124,7 @@ In this post, I have discussed the `int` data type in Ballerina. Here are the ke
 
 <!--tldr-->
 * Type - `int`
-* [Integer Literal]({{<relref "/docs/expressions/literals/int-literal">}}) e.g. `10`, `12345`, `0xAD`
+* [Integer Literal]({{% relref "/docs/expressions/literals/int" %}}) e.g. `10`, `12345`, `0xAD`
 * No implicit conversion between numbers.
-* Lang Library : [*ballerina/lang.int*]({{< linkh "#language-library---ballerinalangint">}})
+* Lang Library : [*ballerina/lang.int*]({{% linkh "#language-library" %}})
 * `byte` and more subtypes.

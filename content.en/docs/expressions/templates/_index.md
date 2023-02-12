@@ -37,6 +37,6 @@ Ballerina supports following template syntaxes:
 
 👉 Template Expression uses interpolated expressions. Let's say the expression you want to interpolate is `expr`, then interpolated expression is written as `${expr}`. The semantics of the interpolated expression depend on each template kind. See each kind for more details.
 
-👉 [Byte Array Literal](../literals/byte-array-literal) Syntax uses the same syntax as the Template expression, But it doesn't support interpolated expressions and is always a constant expression. Because of these reasons, it is more like a literal, than a template expression.   
+👉 [Byte Array Literal](../literals/byte-array) Syntax uses the same syntax as the Template expression, But it doesn't support interpolated expressions and is always a constant expression. Because of these reasons, it is more like a literal, than a template expression.   
 
 🚧 More Details Coming Soon!

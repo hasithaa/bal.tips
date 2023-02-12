@@ -60,7 +60,7 @@ Here are some of those. I will discuss these operations in detail in later posts
 # Language Library - `ballerina/lang.boolean`
 
 `ballerina\lang.boolean` Lang Library provides functions that operate on a `boolean` value. 
-See available operations with examples in [Boolean Lang Library]({{< relref "/docs/langlib/boolean" >}}).
+See available operations with examples in [Boolean Lang Library]({{% relref "/docs/langlib/boolean" %}}).
 
 {{<hint info>}}
 🚧 More Examples Coming Soon!
@@ -78,8 +78,8 @@ Type - `boolean`
 {{</md>}}
 {{<md class="tldr">}}
 
-* [Boolean Literal]({{< linkh "#syntax" >}}), e.g. `true` & `false`.
-* Lang Library : [*ballerina/lang.boolean*]({{< relref "/docs/langlib/boolean" >}}).
+* [Boolean Literal]({{% linkh "#syntax" %}}), e.g. `true` & `false`.
+* Lang Library : [*ballerina/lang.boolean*]({{% relref "/docs/langlib/boolean" %}}).
 * Used in many language constructs.
 
 {{</md>}}

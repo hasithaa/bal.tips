@@ -1,0 +1,101 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2023 Hasitha Aravinda. All rights reserved.
+ * 
+ * This work is licensed under the terms of the MIT license.  
+ * For a copy, see <https://opensource.org/licenses/MIT>.
+ */
+rootProject.name = 'Ballerina Test Runner'
+include('buildTasks')
+
+
+// Output files
+
+// Add Literals
+include(':docs-expression-literal')
+project(':docs-expression-literal').projectDir = file('content.en/docs/expressions/literals/')
+include(':docs-expression-literal-boolean')
+project(':docs-expression-literal-boolean').projectDir = file('content.en/docs/expressions/literals/boolean')
+include(':docs-expression-literal-byte-array')
+project(':docs-expression-literal-byte-array').projectDir = file('content.en/docs/expressions/literals/byte-array')
+include(':docs-expression-literal-float')
+project(':docs-expression-literal-float').projectDir = file('content.en/docs/expressions/literals/float')
+include(':docs-expression-literal-int')
+project(':docs-expression-literal-int').projectDir = file('content.en/docs/expressions/literals/int')
+include(':docs-expression-literal-nil')
+project(':docs-expression-literal-nil').projectDir = file('content.en/docs/expressions/literals/nil')
+include(':docs-expression-literal-string')
+project(':docs-expression-literal-string').projectDir = file('content.en/docs/expressions/literals/string')
+
+// Add template files raw, string, xml
+include(':docs-expression-template-raw')
+project(':docs-expression-template-raw').projectDir = file('content.en/docs/expressions/templates/raw')
+include(':docs-expression-template-string')
+project(':docs-expression-template-string').projectDir = file('content.en/docs/expressions/templates/string')
+include(':docs-expression-template-xml')
+project(':docs-expression-template-xml').projectDir = file('content.en/docs/expressions/templates/xml')
+
+// Add Introduction
+include(':docs-introduction-basic')
+project(':docs-introduction-basic').projectDir = file('content.en/docs/introduction/basics/')
+
+// Add langlib files
+include(':docs-langlib-array')
+project(':docs-langlib-array').projectDir = file('content.en/docs/langlib/array/')
+include(':docs-langlib-boolean')
+project(':docs-langlib-boolean').projectDir = file('content.en/docs/langlib/boolean/')
+include(':docs-langlib-boolean-functions-fromString')
+project(':docs-langlib-boolean-functions-fromString').projectDir = file('content.en/docs/langlib/boolean/functions/fromString')
+include(':docs-langlib-decimal')
+project(':docs-langlib-decimal').projectDir = file('content.en/docs/langlib/decimal/')
+include(':docs-langlib-error')
+project(':docs-langlib-error').projectDir = file('content.en/docs/langlib/error/')
+include(':docs-langlib-float')
+project(':docs-langlib-float').projectDir = file('content.en/docs/langlib/float/')
+include(':docs-langlib-function')
+project(':docs-langlib-function').projectDir = file('content.en/docs/langlib/function/')
+include(':docs-langlib-future')
+project(':docs-langlib-future').projectDir = file('content.en/docs/langlib/future/')
+include(':docs-langlib-int')
+project(':docs-langlib-int').projectDir = file('content.en/docs/langlib/int/')
+include(':docs-langlib-map')
+project(':docs-langlib-map').projectDir = file('content.en/docs/langlib/map/')
+include(':docs-langlib-object')
+project(':docs-langlib-object').projectDir = file('content.en/docs/langlib/object/')
+include(':docs-langlib-regexp')
+project(':docs-langlib-regexp').projectDir = file('content.en/docs/langlib/regexp/')
+include(':docs-langlib-runtime')
+project(':docs-langlib-runtime').projectDir = file('content.en/docs/langlib/runtime/')
+include(':docs-langlib-stream')
+project(':docs-langlib-stream').projectDir = file('content.en/docs/langlib/stream/')
+include(':docs-langlib-string')
+project(':docs-langlib-string').projectDir = file('content.en/docs/langlib/string/')
+include(':docs-langlib-table')
+project(':docs-langlib-table').projectDir = file('content.en/docs/langlib/table/')
+include(':docs-langlib-transaction')
+project(':docs-langlib-transaction').projectDir = file('content.en/docs/langlib/transaction/')
+include(':docs-langlib-typedesc')
+project(':docs-langlib-typedesc').projectDir = file('content.en/docs/langlib/typedesc/')
+include(':docs-langlib-value')
+project(':docs-langlib-value').projectDir = file('content.en/docs/langlib/value/')
+include(':docs-langlib-xml')
+project(':docs-langlib-xml').projectDir = file('content.en/docs/langlib/xml/')
+
+// Add syntax
+include(':docs-syntax-comment')
+project(':docs-syntax-comment').projectDir = file('content.en/docs/syntax/comments/')
+
+// Add types
+
+// Add types simple types; boolean, decimal, float, int, nil
+include(':docs-types-simple-boolean')
+project(':docs-types-simple-boolean').projectDir = file('content.en/docs/types/simple/boolean/')
+include(':docs-types-simple-decimal')
+project(':docs-types-simple-decimal').projectDir = file('content.en/docs/types/simple/decimal/')
+include(':docs-types-simple-float')
+project(':docs-types-simple-float').projectDir = file('content.en/docs/types/simple/float/')
+include(':docs-types-simple-int')
+project(':docs-types-simple-int').projectDir = file('content.en/docs/types/simple/int/')
+include(':docs-types-simple-nil')
+project(':docs-types-simple-nil').projectDir = file('content.en/docs/types/simple/nil/')

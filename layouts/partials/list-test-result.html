@@ -1,0 +1,17 @@
+{{$path := .}}
+{{range (readDir $path) }}
+    {{if strings.HasSuffix .Name ".bal.json"}}
+    {{- $testResult := getJSON (path.Join $path .Name) }}
+      {{- with $testResult -}}
+      <tr>  
+        <td><a href="/{{.path}}" target="_blank">{{.name}}</a></td>
+        <td>{{$path}}</td>
+        <td>{{- if .compile -}}✓&nbsp;{{- else -}}✗&nbsp;{{- end -}}</td>
+        <td>{{- if .test -}}✓&nbsp;{{- else -}}✗&nbsp;{{- end -}}</td>
+      </tr>
+      {{- end -}}
+    {{end}}
+    {{if .IsDir}}
+      {{ partial "list-test-result.html" (path.Join $path .Name) }}
+    {{end}}
+{{end}}    
