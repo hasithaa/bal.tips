@@ -3,7 +3,7 @@ title : Floating Point Literal
 description : Floating point values can be expressed in either Decimal (base 10) or Hexadecimal (base 16) systems
  | and come in two types, `float` and `decimal`, with slight differences in their representation using floating point literals.
 date: 2023-01-01
-weight : 5026
+weight : 6026
 type : docs
 ballerina_type : [float, decimal]
 ballerina_lang : [literal]

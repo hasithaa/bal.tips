@@ -4,7 +4,7 @@ description : Comments are used to provide more details about the code or tempor
 keywords: [comments, add more details to code, temporary disable code, markdown syntax for documentation]
 images : [/docs/syntax/comments/comment.png]
 date: 2023-01-01
-weight : 1100
+weight : 4010
 type : docs
 ballerina_lang : [comment]
 highlight : [comment01.bal]

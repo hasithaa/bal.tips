@@ -2,7 +2,7 @@
 title : "`fromString`"
 description : Converts a string to a boolean.
 date: 2023-01-01
-weight : 113202
+weight : 11106
 type : docs
 ballerina_type : [boolean]
 ballerina_module : [boolean]

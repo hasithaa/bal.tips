@@ -2,7 +2,7 @@
 title : Int Lang Library
 description : "Int lang library provides functions that operate on an `int` value."
 date: 2023-01-01
-weight : 113800
+weight : 11500
 type : docs
 ballerina_type : [int]
 ballerina_module : [int]

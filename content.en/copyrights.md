@@ -2,7 +2,7 @@
 title: Licenses and Copyrights
 description: Ballerina Coding Tips - Copyright © Hasitha Aravinda. All rights reserved.
 date : 2022-12-16
-weight : 10010
+weight : 100010
 toc : false
 keywords : [Licenses, Copyrights, Ballerina, Tips]
 ---

@@ -31,7 +31,7 @@
     {{- range $tests := sort $tests.tests -}}
     <tr>
         <td>{{- $tests.name -}}</td>
-        <td><a href="{{- print " ../" $tests.path }}">{{- $tests.path }}</a></td>
+        <td><a href="/{{- $tests.path }}">{{- $tests.path }}</a></td>
         <td>{{- $tests.kind -}}</td>
         <td>
             {{- if eq $tests.compilation "SUCCESS"  -}} ✅ {{- else if eq $tests.compilation "ERROR"  -}} ❌ {{- else -}} ❗

@@ -1,5 +1,6 @@
 ---
-title: Introduction
+title: Home
+description: Ballerina Coding Tips 
 type: docs
 bookToc: false
 ---

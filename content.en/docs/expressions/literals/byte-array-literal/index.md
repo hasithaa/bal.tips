@@ -2,7 +2,7 @@
 title : Byte Array Literal
 description : "Byte Array Literal is a sequence of bytes represented in base16 or base64."
 date: 2023-01-01
-weight : 5035
+weight : 6035
 type : docs
 ballerina_type : [byte]
 ballerina_lang : [literal]

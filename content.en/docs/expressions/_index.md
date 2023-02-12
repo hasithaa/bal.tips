@@ -1,10 +1,14 @@
 ---
 title: "Expressions"
-description: Ballerina Language Expression Reference Guide
+description: Ballerina has a variety of expressions that are used to describe values, operations, and computations.
 date : 2023-01-01
-weight : 60
+weight : 6000
 bookToc: false
 bookCollapseSection : true
 ---
+
+# List of expressions
+
+Ballerina has a variety of expressions that are used to describe values, operations, and computations.
 
 {{< section >}}

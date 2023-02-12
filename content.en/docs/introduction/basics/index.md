@@ -4,7 +4,7 @@ description : "This tutorial will provide a gateway into the world of Ballerina.
 keywords : [ballerina, programming, language, hello world, functions, modules, expressions, statements]
 images : [/docs/introduction/basics/main.png]
 date: 2023-01-01
-weight : 1000
+weight : 1010
 type : docs
 ballerina_lang : [function, vardef]
 ballerina_feature : [main, function, expression, statement, module, package]

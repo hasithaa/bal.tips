@@ -2,7 +2,7 @@
 title: "Literals"
 description: A literal is a value that is specified directly in the source code.
 date : 2023-01-01
-weight : 610
+weight : 6010
 type : docs
 bookToc: true
 ballerina_lang : [literal]

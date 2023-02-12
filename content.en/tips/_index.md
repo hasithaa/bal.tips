@@ -3,7 +3,7 @@ title: "💡 Tips"
 description: Ballerina Coding Tips
 summary: Ballerina Coding Tips
 date : 2023-01-01
-weight : 15
+weight : 50000
 bookToc: false
 ---
 
