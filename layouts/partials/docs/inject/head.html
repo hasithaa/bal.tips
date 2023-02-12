@@ -47,3 +47,4 @@ gtag('config', 'G-0RRFJG0BQS');
 {{ $jstips := resources.Get "js/tips.js" | minify }}
 {{ $finaljs := slice $jstips | resources.Concat "js/bundle.js"}}
 <script src="{{ $finaljs.RelPermalink }}"></script>
+<!--<script src="https://kit.fontawesome.com/211ced11d5.js" crossorigin="anonymous"></script>-->
