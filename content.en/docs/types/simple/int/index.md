@@ -14,28 +14,12 @@ aliases :
   - /examples/expr/casts/numerical/
   - /examples/types/readonly/numerical/
 ---
-{{<md class="summary">}}
-The Integer data type represents 64-bit signed integer values.
-{{</md>}}
-{{<md class="syntax">}}
-
-* `int`
-
-{{</md>}}
-{{<md class="tldr">}}
-
-* [Integer Literal]({{% relref "/docs/expressions/literals/int"%}}) e.g. `10`, `12345`, `0xAD`
-* Lang Library : [*ballerina/lang.int*]({{% linkh "#language-library" %}})
-* `byte` and more subtypes.
-* No implicit conversion between numbers.
-
-{{</md>}}
-
-<!--more-->
 
 # Integer Data Type
 
 The Integer data type represents 64-bit signed integer values.
+
+<!--more-->
 
 ## Syntax
 
@@ -100,10 +84,6 @@ If required, you can use a type-cast expression to do a numeric conversion. This
 `lang.int` Lang Library provides a set of functions that operates on an `int` value. 
 See available operations with examples in [Int Lang Library]({{% relref "/docs/langlib/int" %}}).
 
-{{<hint info>}}
-🚧 More Examples Coming Soon!
-{{</hint>}}
-
 # Int Subtypes
 
 There are multiple `int` subtypes.
@@ -122,9 +102,16 @@ I will discuss this more later.
 
 In this post, I have discussed the `int` data type in Ballerina. Here are the key points.
 
-<!--tldr-->
-* Type - `int`
+{{<md class="keypoint">}}
+
+Type - `int`
+
+{{</md>}}
+{{<md class="tldr">}}
+
 * [Integer Literal]({{% relref "/docs/expressions/literals/int" %}}) e.g. `10`, `12345`, `0xAD`
 * No implicit conversion between numbers.
 * Lang Library : [*ballerina/lang.int*]({{% linkh "#language-library" %}})
 * `byte` and more subtypes.
+
+{{</md>}}

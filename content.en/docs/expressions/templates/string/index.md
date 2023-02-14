@@ -35,7 +35,7 @@ A String template expression constructs a string value using the Template expres
 
 {{< code id="1" title="String Template Special Cases" />}}
 
-* 🚫 Unlike [*string-literal*](../literals/string/), String Template doesn't support escape characters.    
-* ✅ Use [*string-literal*](../literals/string/) with interpolation to type such characters i.e ``${"`"}``.    
+* 🚫 Unlike [string-literal]({{% relref "../../literals/string/" %}}), String Template doesn't support escape characters.    
+* ✅ Use [string-literal]({{% relref "../../literals/string/" %}}) with interpolation to type such characters i.e ``${"`"}``.    
 
 🚧 More Details Coming Soon!

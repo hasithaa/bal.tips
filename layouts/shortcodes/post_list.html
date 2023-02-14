@@ -6,10 +6,8 @@
         {{ partial "list-pages-status" . }}
     {{ end }}
 {{- else if eq $kind "test" }}
-<ul>
-    <li>Ballerina Version :&nbsp; {{- $.Site.Data.ballerina.balVersion }} </li>
-</ul>
-<table class="post_table post_table_compact">
+<p>Ballerina Version :&nbsp; {{- $.Site.Data.ballerina.balVersion }} </p>
+<table class="post_table post_table_compact markdown">
     <tr>
         <th>Name</th>
         <th>Path</th>

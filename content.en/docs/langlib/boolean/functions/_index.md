@@ -5,7 +5,3 @@ date : 2023-01-01
 weight : 11105
 bookCollapseSection : true
 ---
-
-# Boolean Lang Library Functions
-
-{{< section >}}

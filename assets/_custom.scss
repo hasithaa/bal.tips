@@ -21,7 +21,7 @@ body {
 }
 
 .tip_code_inner {
-    font-size: .9rem;
+	font-size: .9rem;
 }
 
 .tip_code_out {
@@ -80,27 +80,28 @@ body {
 
 // Post
 .center {
-    text-align: center;
+	text-align: center;
 }
+
 .post_table {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .post_table table {
-    margin : 0 auto
+	margin: 0 auto
 }
 
-.post_table table td{
-    text-align: justify;
+.post_table table td {
+	text-align: justify;
 }
 
 .post_table_compact td {
-    padding: .3rem !important;
+	padding: .3rem !important;
 }
 
 .post_table_compact {
-    font-size: small !important;
+	font-size: small !important;
 }
 
 /* Summary */
@@ -112,11 +113,11 @@ body {
 
 /* keypoint */
 .keypoint {
-    text-align: center;
+	text-align: center;
 }
 
-.keypoint img{
-    width: 75%;
+.keypoint img {
+	width: 75%;
 }
 
 /* Syntax */
