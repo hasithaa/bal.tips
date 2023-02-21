@@ -1,7 +1,7 @@
 ---
 title : "`iterator`"
 description : Returns an iterator over an array.
-example : "`[🔵,🟡,🟢].iterator().next()` ➜ `{ value : 🔵 }`"
+example : "`[🔵,🟡,🟢,🔴].iterator().next()` ➜ `{ value : 🔵 }`"
 date: 2023-02-01
 weight : 110505
 type : docs

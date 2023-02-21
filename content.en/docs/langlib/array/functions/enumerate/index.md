@@ -1,7 +1,7 @@
 ---
 title : "`enumerate`"
 description : Returns a new array consisting of index and member pairs.
-example: "`[🔵,🟡,🟢].enumerate()` ➜ `[[0,🔵], [1,🟡], [2,🟢]]`"
+example: "`[🔵,🟡,🟢,🔴].enumerate()` ➜ `[[0,🔵], [1,🟡], [2,🟢], [3,🔴]]`"
 date: 2023-02-01
 weight : 110505
 type : docs

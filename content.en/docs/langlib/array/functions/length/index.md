@@ -1,7 +1,7 @@
 ---
 title : "`length`"
 description : Returns the number of members of an array.
-example : "`[🔵,🟡,🟢].length()` ➜ `3`"
+example : "`[🔵,🟡,🟢,🔴].length()` ➜ `4`"
 date: 2023-02-01
 weight : 110505
 type : docs
