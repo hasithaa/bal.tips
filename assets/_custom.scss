@@ -177,3 +177,19 @@ body {
 .tldr ul {
 	padding-left: 1rem;
 }
+
+/* Section */
+.gridlist {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-column-gap: 10px;
+	padding: 0;
+}
+
+.gridlist-name {
+	width: 100px;
+}
+
+.gridlist-example {
+	font-size: small !important;
+}

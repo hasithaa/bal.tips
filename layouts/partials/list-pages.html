@@ -9,7 +9,16 @@
             <a href="{{ .Params.BookHref }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a> 🡪
             {{end}}
         {{ else }}
-            <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . | markdownify }}</a>{{ with .Params.example }}&#9;{{ . | markdownify }}{{ end }}
+        <div class="gridlist">
+            <div class="gridlist-name">
+                <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . | markdownify }}</a>
+            </div>
+            {{ with .Params.example }}
+                <div class="gridlist-example">
+                    {{ . | markdownify }}
+                </div>
+            {{ end }}
+        </div>
         {{ end }}
         {{ partial "list-pages" . }}
     </li>

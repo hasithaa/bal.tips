@@ -42,11 +42,13 @@ project(':docs-introduction-basic').projectDir = file('content.en/docs/introduct
 
 // Add langlib files
 include(':docs-langlib-array')
-include(':docs-langlib-array-functions')
 include(':docs-langlib-array-functions-enumerate')
+include(':docs-langlib-array-functions-iterator')
+include(':docs-langlib-array-functions-length')
 project(':docs-langlib-array').projectDir = file('content.en/docs/langlib/array/')
-project(':docs-langlib-array-functions').projectDir = file('content.en/docs/langlib/array/functions')
 project(':docs-langlib-array-functions-enumerate').projectDir = file('content.en/docs/langlib/array/functions/enumerate')
+project(':docs-langlib-array-functions-iterator').projectDir = file('content.en/docs/langlib/array/functions/iterator')
+project(':docs-langlib-array-functions-length').projectDir = file('content.en/docs/langlib/array/functions/length')
 
 
 include(':docs-langlib-boolean')

@@ -1,8 +1,8 @@
 ---
 title : "`enumerate`"
 description : Returns a new array consisting of index and member pairs.
-example: "[🔵,🟡,🟢,🔴].enumerate() ➜ [ [0,🔵], [1,🟡], [2,🟢], [3,🔴] ]"
-date: 2023-01-01
+example: "`[🔵,🟡,🟢].enumerate()` ➜ `[[0,🔵], [1,🟡], [2,🟢]]`"
+date: 2023-02-01
 weight : 110505
 type : docs
 ballerina_type : [list]
