@@ -1,0 +1,56 @@
+{{- $index := default 0 (.Parent.Get "id" | int)}}
+{{- $sourceNames := default slice $.Page.Params.highlight -}}
+{{- $source := index $sourceNames $index -}}
+{{- $title := default "Code Breakdown" (.Get "title") -}}
+{{ $class:= .Get "class" | default "" }}
+{{- with .Inner }}
+    {{- $lines:= split . "\n"  -}}
+    {{- $highlighted:= slice }}
+    {{- range $line := $lines}}
+        {{- if strings.Contains $line ":::"  }}
+            {{- $content:= split $line ":::" }}
+            {{- $lineNumbers:= trim (index $content 1) " " }}
+            {{- $list:= slice }}
+            {{- $description:= index $content 2 }}
+            {{- $icon:= index $content 0 }}
+            {{- if strings.Contains $lineNumbers "-" }}
+                {{- $lineNumbers:= split $lineNumbers "-" }}
+                {{- $start:= index $lineNumbers 0 | int }}
+                {{- $end:= index $lineNumbers 1 | int }}
+                {{- range $i := seq $start $end }}
+                    {{- $list = $list | append (print $source "-" $i) -}}
+                {{- end }}
+            {{- else if strings.Contains $lineNumbers "," }}
+                {{- $lineNumbers:= split $lineNumbers "," }}
+                {{- range $i := $lineNumbers }}
+                    {{- $list = $list | append (print $source "-" $i) -}}
+                {{- end }}
+            {{- else }}
+                {{- $list = $list | append (print $source "-" $lineNumbers) -}}
+            {{- end }}
+            {{- $data:= dict "lines" $lineNumbers "icon" $icon "list" $list "description" $description }}
+            {{- $highlighted = $highlighted | append $data -}}
+        {{- end }}
+    {{- end}}
+    {{- if ne (len $highlighted) 0  -}}
+    <div class="highlight-line">
+        <strong>{{- $title }}</strong>
+        {{- range $data := $highlighted }}
+            {{- $list:= $data.list }}
+            {{- $description:= $data.description }}
+            <div class="gridlist">
+                <span class="grid_btn">
+                    {{$data.icon}}&nbsp;
+                    <button class="tip_btn {{$class}}" 
+                        onclick="{{- range $id := $list }}highlightID('{{ $id }}');{{- end }}">
+                        {{- $data.lines }}
+                    </button>
+                </span>
+                <span class="gridlist-data">
+                    {{- $description | markdownify }}
+                </span>
+            </div>
+        {{- end }}
+    </div>
+    {{- end }}
+{{- end }}

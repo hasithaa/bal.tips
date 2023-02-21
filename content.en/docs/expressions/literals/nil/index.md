@@ -24,8 +24,10 @@ The `nil` basic type has only a single value called `nil`. Nil literal uses the 
 {{</md>}}
 
 {{< code id="0" title="Nil literal example" >}}
-* {{< line 5 >}} nil literal `()` is assigned to variable `a`.
-* {{< line 6 >}} nil literal `null` is assigned to variable `b`.
+{{< highlight >}}
+👉::: 5 ::: Nil literal `()` is assigned to variable `a`.
+👉::: 6 ::: Nil literal `null` is assigned to variable `b`.
+{{</ highlight >}}
 {{< /code >}}
 
 {{< hint info >}}

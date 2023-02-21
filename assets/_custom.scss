@@ -28,26 +28,10 @@ body {
 	// list-style-type: "👉 ";
 }
 
-.tip_do button::before {
-	content: "✅ ";
-}
-
-.tip_donot button::before {
-	content: "🚫 ";
-}
-
-.tip_warn button::before {
-	content: "⚠ ";
-}
-
-.tip_info button::before {
-	content: "❕ ";
-}
-
 .tip_code_inner .tip_btn {
 	background-color: white;
 	color: black;
-	border: 1px solid #291fb3;
+	border: 1px solid;
 	border-radius: 4px;
 }
 
@@ -184,6 +168,10 @@ body {
 	grid-template-columns: auto 1fr;
 	grid-column-gap: 10px;
 	padding: 0;
+}
+
+.grid_btn {
+
 }
 
 .gridlist-name {

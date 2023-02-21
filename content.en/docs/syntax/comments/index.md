@@ -29,15 +29,16 @@ A comment starts with two forward slashes `//`. The compiler ignores any charact
 This example shows how you can use comments.
 
 {{< code id="0" title="How to use Comments" >}}
-
-**✅ Do's**
-* {{<line 1>}} is a comment. It provides more details about the code.
-* {{<line 8>}} is commented out code and will not be executed.
-
-**⚠️ Avoid**
-* {{<line 4>}} is another comment, but **do not** use comments to document functions; Instead, use markdown documentation syntax.
-* {{<line 6>}} is an inline comment, but the code is self-explanatory. Avoid such comments.
-* {{<line 11>}}'s comment is unnecessary and should be avoided in favor of clear, concise code.
+{{< highlight title="✅ Do's" >}}
+👉::: 1::: This is a comment. It provides more details about the code.
+👉::: 8::: This is commented out code and will not be executed.
+{{< /highlight >}}
+<br>
+{{< highlight title="⚠️ Avoid" >}}
+👉::: 4 ::: This is another comment, but **do not** use comments to document functions; Instead, use markdown documentation syntax.
+👉::: 6 ::: This is an inline comment, but the code is self-explanatory. Avoid such comments.
+👉::: 11::: This comment is unnecessary and should be avoided in favor of clear, concise code.
+{{< / highlight >}}
 {{</ code >}}
 
 ## No Multiline Comments

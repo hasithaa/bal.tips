@@ -8,7 +8,11 @@
       <a href="{{ .Params.BookHref }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a> 🡪
       {{end}}
     {{ else }}
-      <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a>
+      {{ if .Params.nopage }}
+        <span title="{{ .Page.Description }}">{{ partial "docs/title" . }}</span>
+      {{ else }}
+        <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a>
+      {{end}}
     {{ end }}
   </dt>
   <dd class="markdown-inner">

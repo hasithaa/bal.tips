@@ -1,8 +1,0 @@
-
-{{- $index := default 0 (.Parent.Get "id" | int)}}
-{{- $sourceNames := default slice $.Page.Params.highlight -}}
-{{- $source := index $sourceNames $index -}}
-{{- $line := default 0 (.Get 0 | int) -}}
-{{- $class := default "" (.Get 1 ) -}}
-{{- $id := print $source "-" $line -}}
-<span><button class="tip_btn {{$class}}" onclick="highlightID('{{ $id }}')">Line #{{ $line }}</button></span>

@@ -42,12 +42,14 @@ For example, the type of literal `10` is integer 10, and its broad type is `int`
 Depending on the context, literal `10` can represent floating point value `10.0` or decimal value `10`. 
 
 {{< code id="0" title="Numeric literal type" >}}
-* {{< line 7>}} `a1`'s type is `int`.
-* {{< line 8>}} `a2`'s type is singleton integer 10.
-* {{< line 9>}} You can use integer literal `10` as a floating point literal `10.0`.
-* {{< line 10>}} You can use integer literal `10` as a decimal literal `10`.
-* {{< line 11>}} `a5`'s type is `float`. This is inferred from the type checking algorithm.
-* {{< line 12>}} `a6`'s type is `float`. This is inferred from the type checking algorithm.
+{{< highlight >}}
+* 👉:::7 ::: `a1`'s type is `int`.
+* 👉:::8 ::: `a2`'s type is singleton integer 10.
+* 👉:::9 ::: You can use integer literal `10` as a floating point literal `10.0`.
+* 👉:::10::: You can use integer literal `10` as a decimal literal `10`.
+* 👉:::11::: `a5`'s type is `float`. This is inferred from the type checking algorithm.
+* 👉:::12::: `a6`'s type is `float`. This is inferred from the type checking algorithm.
+{{</ highlight >}}
 {{< /code >}}
 
 When determining the type of a literal, following 3 steps [algorithm](https://ballerina.io/spec/lang/master/#numeric-literal) is used.

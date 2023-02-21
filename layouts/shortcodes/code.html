@@ -44,7 +44,7 @@
           {{- $codeContent -}}
         </div>
         {{- with .Inner -}}
-        <div class="markdown-inner tip_code_inner">{{ . | $.Page.RenderString }}</div>
+        <div class="markdown-inner tip_code_inner">{{ . }}</div>
         <br>
         {{- end -}}
         <details {{if $output}}open{{end}} class="tip_code_out">

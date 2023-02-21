@@ -10,8 +10,12 @@
             {{end}}
         {{ else }}
         <div class="gridlist">
-            <div class="gridlist-name">
-                <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . | markdownify }}</a>
+            <div {{ with .Params.example }}class="gridlist-name"{{end}}>
+                {{ if .Params.nopage }}
+                    <span title="{{ .Page.Description }}">{{ partial "docs/title" . }}</span>
+                {{ else }}
+                    <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . | markdownify }}</a>
+                {{end}}
             </div>
             {{ with .Params.example }}
                 <div class="gridlist-example">

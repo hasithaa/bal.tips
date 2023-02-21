@@ -24,11 +24,10 @@ Additionally, `ballerina/lang.value` Lang Library provides `toString` and anothe
 {{</hint>}}
 
 {{< code id="0" title="Int Lang Library Example" >}}
-**Code Breakdown**
-
-* {{<line 5>}} You can call the lang module using function call syntax.
-* {{<line 8>}} If the type of the first parameter of the `lang.int` function is `int`, you can use method call syntax. It is the same as calling `int:abs(min)`
-
+{{< highlight >}}
+👉::: 5 ::: You can call the lang module using function call syntax.
+👉::: 8 ::: If the type of the first parameter of the `lang.int` function is `int`, you can use method call syntax. It is the same as calling `int:abs(min)`
+{{< /highlight >}}
 {{< /code >}}
 
 ## Functions
