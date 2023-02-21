@@ -9,7 +9,7 @@
             <a href="{{ .Params.BookHref }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a> 🡪
             {{end}}
         {{ else }}
-        <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . }}</a>
+            <a href="{{ .RelPermalink }}" title="{{ .Page.Description}}">{{ partial "docs/title" . | markdownify }}</a>{{ with .Params.example }}&#9;{{ . | markdownify }}{{ end }}
         {{ end }}
         {{ partial "list-pages" . }}
     </li>

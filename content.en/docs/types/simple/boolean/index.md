@@ -62,6 +62,8 @@ Here are some of those. I will discuss these operations in detail in later posts
 `ballerina\lang.boolean` Lang Library provides functions that operate on a `boolean` value. 
 See available operations with examples in [Boolean Lang Library]({{% relref "/docs/langlib/boolean" %}}).
 
+Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on a `boolean` value.
+
 # Conclusion
 
 In this post, I have discussed the `boolean` data type in Ballerina. Here are the key points:

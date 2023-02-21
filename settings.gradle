@@ -42,11 +42,17 @@ project(':docs-introduction-basic').projectDir = file('content.en/docs/introduct
 
 // Add langlib files
 include(':docs-langlib-array')
+include(':docs-langlib-array-functions')
+include(':docs-langlib-array-functions-enumerate')
 project(':docs-langlib-array').projectDir = file('content.en/docs/langlib/array/')
+project(':docs-langlib-array-functions').projectDir = file('content.en/docs/langlib/array/functions')
+project(':docs-langlib-array-functions-enumerate').projectDir = file('content.en/docs/langlib/array/functions/enumerate')
+
+
 include(':docs-langlib-boolean')
+include(':docs-langlib-boolean-functions')
 project(':docs-langlib-boolean').projectDir = file('content.en/docs/langlib/boolean/')
-include(':docs-langlib-boolean-functions-fromString')
-project(':docs-langlib-boolean-functions-fromString').projectDir = file('content.en/docs/langlib/boolean/functions/fromString')
+project(':docs-langlib-boolean-functions').projectDir = file('content.en/docs/langlib/boolean/functions/')
 include(':docs-langlib-decimal')
 project(':docs-langlib-decimal').projectDir = file('content.en/docs/langlib/decimal/')
 include(':docs-langlib-error')

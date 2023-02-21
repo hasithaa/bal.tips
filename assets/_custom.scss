@@ -24,6 +24,33 @@ body {
 	font-size: .9rem;
 }
 
+.tip_code_inner ul {
+	// list-style-type: "👉 ";
+}
+
+.tip_do button::before {
+	content: "✅ ";
+}
+
+.tip_donot button::before {
+	content: "🚫 ";
+}
+
+.tip_warn button::before {
+	content: "⚠ ";
+}
+
+.tip_info button::before {
+	content: "❕ ";
+}
+
+.tip_code_inner .tip_btn {
+	background-color: white;
+	color: black;
+	border: 1px solid #291fb3;
+	border-radius: 4px;
+}
+
 .tip_code_out {
 	font-family: Garamond, serif;
 	border: 0px !important;

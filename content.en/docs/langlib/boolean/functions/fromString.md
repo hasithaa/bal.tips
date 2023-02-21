@@ -6,7 +6,7 @@ weight : 11106
 type : docs
 ballerina_type : [boolean]
 ballerina_module : [boolean]
-highlight : [boolean_FromString.bal]
+highlight : [fromString.bal]
 ---
 
 # `fromString`
@@ -23,7 +23,7 @@ highlight : [boolean_FromString.bal]
 #
 # + s - string representing a boolean value
 # + return - boolean that `s` represents, or an error if there is no such boolean
-public isolated function fromString(string s) returns boolean|error { ... };
+public isolated function fromString(string s) returns boolean|error = external;
 ```
 {{< /spec >}}
 

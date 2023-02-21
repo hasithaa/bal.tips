@@ -9,6 +9,7 @@ ballerina_module : [int]
 highlight : [lang-int.bal]
 aliases :
   - /examples/langlib/int/intro/
+bookCollapseSection : true
 ---
 
 # Int Lang Library

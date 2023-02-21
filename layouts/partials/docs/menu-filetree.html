@@ -47,7 +47,7 @@
     {{ end }}
   {{ else if .Page.Content }}
     <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}" title="{{ .Page.Description }}">
-      {{- partial "docs/title" .Page -}}
+      {{- partial "docs/title" .Page | markdownify -}}
     </a>
   {{ else }}
     <span>{{- partial "docs/title" .Page -}}</span>
