@@ -23,4 +23,4 @@ You can use XML template expression to construct an XML value.
 
 {{< code id="0" title="XML Template Expression Example" />}}
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}

@@ -39,4 +39,4 @@ Ballerina supports following template syntaxes:
 
 👉 [Byte Array Literal](../literals/byte-array) Syntax uses the same syntax as the Template expression, But it doesn't support interpolated expressions and is always a constant expression. Because of these reasons, it is more like a literal, than a template expression.   
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}

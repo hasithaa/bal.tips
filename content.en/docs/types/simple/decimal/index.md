@@ -32,12 +32,12 @@ The Decimal basic data type represents 128-bit IEEE 754-2008 decimal floating po
 
 ## Syntax
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}
 
 ## Properties and Operations
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}
 
 ## Language Library - `ballerina/lang.decimal`
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}

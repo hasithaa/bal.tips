@@ -31,12 +31,12 @@ The Float data type represents 64-bit IEEE 754-2008 binary floating point number
 
 ## Syntax
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}
 
 ## Properties and Operations
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}
 
 ## Language Library - `ballerina/lang.float`
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}

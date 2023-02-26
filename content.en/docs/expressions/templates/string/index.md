@@ -38,4 +38,4 @@ A String template expression constructs a string value using the Template expres
 * 🚫 Unlike [string-literal]({{% relref "../../literals/string/" %}}), String Template doesn't support escape characters.    
 * ✅ Use [string-literal]({{% relref "../../literals/string/" %}}) with interpolation to type such characters i.e ``${"`"}``.    
 
-🚧 More Details Coming Soon!
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}

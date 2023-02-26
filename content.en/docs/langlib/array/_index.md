@@ -26,3 +26,5 @@ However, you can call these functions on a list value using the method call synt
 {{< code id="0" title="`ballerina/lang.array` Usage" />}}
 
 {{<section>}}
+
+{{<hint>}}🚧 More Details Coming Soon!{{</hint>}}
