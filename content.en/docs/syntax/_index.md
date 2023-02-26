@@ -2,8 +2,8 @@
 title: "Syntax Structure"
 description: "Syntax and Lexical Structure of Ballerina Programming Language."
 date : 2023-01-01
+type : docs
 weight : 4000
-bookToc: false
 bookCollapseSection : true
 ---
 

@@ -43,12 +43,12 @@ Depending on the context, literal `10` can represent floating point value `10.0`
 
 {{< code id="0" title="Numeric literal type" >}}
 {{< highlight >}}
-* 👉:::7 ::: `a1`'s type is `int`.
-* 👉:::8 ::: `a2`'s type is singleton integer 10.
-* 👉:::9 ::: You can use integer literal `10` as a floating point literal `10.0`.
-* 👉:::10::: You can use integer literal `10` as a decimal literal `10`.
-* 👉:::11::: `a5`'s type is `float`. This is inferred from the type checking algorithm.
-* 👉:::12::: `a6`'s type is `float`. This is inferred from the type checking algorithm.
+📌:::7 ::: `a1`'s type is `int`.
+📌:::8 ::: `a2`'s type is singleton integer 10.
+📌:::9 ::: You can use integer literal `10` as a floating point literal `10.0`.
+📌:::10::: You can use integer literal `10` as a decimal literal `10`.
+📌:::11::: `a5`'s type is `float`. This is inferred from the type checking algorithm.
+📌:::12::: `a6`'s type is `float`. This is inferred from the type checking algorithm.
 {{</ highlight >}}
 {{< /code >}}
 

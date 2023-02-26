@@ -1,0 +1,28 @@
+{{ if and (eq .Draft false) (eq .Params.type "docs")}}
+    {{ $bookSection := default "docs" .Site.Params.BookSection  }}
+    {{- $pages :=  where .Site.Pages "Params.type" "docs" }}
+    {{- $.Scratch.Set "curPosition" 0 }}
+    {{- $.Scratch.Set "index" 0 }}
+    {{- range $pages }}
+    {{- if eq $ . }}
+    {{- $.Scratch.Set "curPosition" ($.Scratch.Get "index") }}
+    {{- end }}
+    {{- $.Scratch.Add "index" 1 }}
+    {{- end }}
+    {{- $next := (index $pages (add ($.Scratch.Get "curPosition") 1)) }}
+    {{- $prev := (index $pages (sub ($.Scratch.Get "curPosition") 1)) }}
+    <div class="markdown center">
+        <div>
+            {{if $prev}}
+                {{with $prev}}<a href="{{.Permalink}}" class="book-btn" title="{{.Title}}">⮜</a>{{end}}
+            {{else}}
+                <a href="/" class="book-btn" title="Home">🏠</a>
+            {{end}}
+            {{if $next}}
+                {{with $next}}<a href="{{.Permalink}}" class="book-btn" title="{{.Title}}">⮞</a>{{end}}
+            {{else}}
+                <a href="/" class="book-btn" title="Home">🏠</a>
+            {{end}}
+        </div>
+    </div>
+{{- end }}
