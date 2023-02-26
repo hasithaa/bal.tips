@@ -1,7 +1,7 @@
 ---
 title : "`length`"
 description : Returns the number of members of an array.
-example : "`[🔵,🟡,🟢,🔴].length()` ➜ `4`"
+example : "`[🍎, 🍇, 🍌, 🍓].length()` ➜ `4`"
 date: 2023-02-01
 weight : 11052
 type : docs
@@ -12,12 +12,9 @@ highlight : [length.bal]
 
 # `length`
 
-The `length` function is used to determine the number of elements in a list. When this function is called with a list as its input parameter, it returns an `int` value that represents the number of elements in the list.
 {{< example >}}
 
-For example, if you have an array of colors like `[🔵,🟡,🟢,🔴]`, and you call the length function on this array using the expression `[🔵,🟡,🟢,🔴].length()`, the function would return the `int` value 4, which represents the number of colors in the array.
-
-Let's look at a real programing examples.
+The `length` function is used to determine the number of elements in a list. When this function is called with a list as its input parameter, it returns an `int` value that represents the number of elements in the list.
 
 ## Examples
 

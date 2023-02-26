@@ -27,7 +27,7 @@ However, you can call these functions on a list value using the method call synt
 
 ## Definitions
 {{<hint warning>}}
-The color ball example is not a valid programming syntax and only used for illustrative purposes.
+The graphical examples are for illustration purposes only and provide a visual aid to help understand the concept easily. They are not actual syntax.
 {{</hint>}}
 
 {{<section>}}

@@ -1,7 +1,7 @@
 ---
 title : "`forEach`"
 description : Applies a function to each member of an array.
-example : "`[🔵,🟡,🟢,🔴].foreach( m => io:print(m))` ➜ 🔵🟡🟢🔴"
+example : "`[🍎, 🍇, 🍌, 🍓].foreach(PrintName)` ➜ Apples, Grapes, Bananas, Strawberries"
 date: 2023-02-01
 weight : 11056
 type : docs
@@ -11,13 +11,10 @@ highlight : []
 ---
 
 # `forEach`
-The `forEach` function applies a function to each member of an input list in order.
 
 {{< example >}}
 
-The color ball example uses the `forEach` function to apply an `io:print` function to each color in an input list of colors. The `forEach` function then prints each color to the console, which would output the colors 🔵🟡🟢🔴, one after the other.
-
-The color ball example is only used for illustrative purposes, let's take a look at a few real programming examples to better understand the behavior of the `forEach` function.
+The `forEach` function applies a given function to each member of a list in order. It iterates over the list and calls the function with each list member as its argument.
 
 ## Examples
 

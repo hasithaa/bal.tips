@@ -1,7 +1,7 @@
 ---
 title : "`map`"
 description : Applies a function to each member of an array and returns an array of the results.
-example : "`[🔵,🟡,🟢,🔴].map( m => square(m))` ➜ `[🟦,🟨,🟩,🟥]`"
+example : "`[🍎, 🍇, 🍌, 🍓].map(makeCandy)` ➜ `[🍫, 🍬, 🍭, 🍰]`"
 date: 2023-02-01
 weight : 11055
 type : docs
@@ -11,12 +11,10 @@ highlight : []
 ---
 
 # `map`
-The `map` function applies a function to each member of the list and returns **a new list** containing the results.
+
 {{< example >}}
 
-The color ball example uses the `map` function to apply a `square` function to each color in an input list of colors. The `map` function then returns **a new list** containing the squared colors, which would be `[🟦,🟨,🟩,🟥]`.
-
-The color ball example is only used for illustrative purposes, let's take a look at a few real programming examples to better understand the behavior of the `map` function.
+The `map` function applies a given function to each member of a list in order and returns **a new list** containing the result of applying the function to each member of the original list.
 
 ## Examples
 

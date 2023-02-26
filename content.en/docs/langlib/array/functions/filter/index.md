@@ -1,7 +1,7 @@
 ---
 title : "`filter`"
 description : Selects the members from an array for which a function returns true.
-example : "`[🔵,🟡,🟢,🔴].filter( m => m == 🟡))` ➜ `[🟡]`"
+example : "`[🍎, 🍇, 🍌, 🍓].filter(isRed)` ➜ `[🍎, 🍓]`"
 date: 2023-02-01
 weight : 11057
 type : docs
@@ -11,12 +11,10 @@ highlight : []
 ---
 
 # `filter`
-The `filter` function selects members from an input list for which a given function returns `true`.
+
 {{< example >}}
 
-The color ball example uses the `filter` function to apply a predicate function that selects only the color `🟡` from an input list of colors. The `filter` function then returns **a new list** containing only the selected color, which would be `[🟡]`.
-
-The color ball example is only used for illustrative purposes, let's take a look at a few real programming examples to better understand the behavior of the `filter` function.
+The `filter` function selects the members from a list for which a function returns `true`. It applies the given function to each list member to test whether it should be selected, and returns a **new list** containing only the members of the original list for which the function evaluates to true.
 
 ## Examples
 
