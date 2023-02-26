@@ -18,6 +18,7 @@
             {{else}}
                 <a href="/" class="book-btn" title="Home">🏠</a>
             {{end}}
+            <a href="javascript:void(0);" class="book-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">⮝</a>
             {{if $next}}
                 {{with $next}}<a href="{{.Permalink}}" class="book-btn" title="{{.Title}}">⮞</a>{{end}}
             {{else}}
