@@ -12,15 +12,15 @@ highlight : [iterator1.bal, iterator2.bal]
 
 # `iterator`
 
-The `iterator` function in Ballerina is used to create an iterator object for an input array. An iterator is an object that can be used to iterate over the elements of an array in a controlled manner. When the `iterator` function is called with an array as its input parameter, it returns a new iterator object that can be used to iterate over the elements of the input array.
+The `iterator` function in Ballerina is used to create an iterator object for an input list. An iterator is an object that can be used to iterate over the members of a list value in a controlled manner. When the `iterator` function is called with a list as its input parameter, it returns a new iterator object that can be used to iterate over the member of the input list.
 
 {{< example >}}
 
-For example, if you have an array of colors like `[🔵,🟡,🟢,🔴]`, and you call the `iterator` function on this array using the expression `[🔵,🟡,🟢,🔴].iterator()`, the function would return a new iterator object that can be used to iterate over the elements of the array.
+For example, if you have an array of colors like `[🔵,🟡,🟢,🔴]`, and you call the `iterator` function on this array using the expression `[🔵,🟡,🟢,🔴].iterator()`, the function would return a new iterator object that can be used to iterate over the members of the array.
 
-The `next` function of the iterator object is used to retrieve the next element of the array. When the `next` function is called and if the iterator has a next value, it returns a `record` value that contains a single field called `value`. The `value` field contains the next element of the array. If the iterator does not have a next value, it returns `()` instead of a record value.
+The `next` function of the iterator object is used to retrieve the next member of the array. When the `next` function is called and if the iterator has a next value, it returns a `record` value that contains a single field called `value`. The `value` field contains the next member of the array. If the iterator does not have a next value, it returns `()` instead of a record value.
 
-For example, if you call the next function on the iterator object returned from `[🔵,🟡,🟢,🔴].iterator()`, it would return the first element of the array, which is the color `🔵`. The returned `record` value would contain a single field called value, which would contain the value `🔵`.
+For example, if you call the next function on the iterator object returned from `[🔵,🟡,🟢,🔴].iterator()`, it would return the first member of the array, which is the color `🔵`. The returned `record` value would contain a single field called value, which would contain the value `🔵`.
 
 The color ball example is only used for illustrative purposes, let's take a look at a few real programming examples to better understand the behavior of the `iterator` function.
 

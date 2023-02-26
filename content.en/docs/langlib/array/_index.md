@@ -25,6 +25,11 @@ However, you can call these functions on a list value using the method call synt
 
 {{< code id="0" title="`ballerina/lang.array` Usage" />}}
 
+## Definitions
+{{<hint warning>}}
+The color ball example is not a valid programming syntax and only used for illustrative purposes.
+{{</hint>}}
+
 {{<section>}}
 
 {{<hint>}}🚧 More Details Coming Soon!{{</hint>}}

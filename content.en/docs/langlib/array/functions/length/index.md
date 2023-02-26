@@ -12,7 +12,7 @@ highlight : [length.bal]
 
 # `length`
 
-The `length` function is used to determine the number of elements in an array. When this function is called with an array as its input parameter, it returns an `int` value that represents the number of elements in the array.
+The `length` function is used to determine the number of elements in a list. When this function is called with a list as its input parameter, it returns an `int` value that represents the number of elements in the list.
 {{< example >}}
 
 For example, if you have an array of colors like `[🔵,🟡,🟢,🔴]`, and you call the length function on this array using the expression `[🔵,🟡,🟢,🔴].length()`, the function would return the `int` value 4, which represents the number of colors in the array.

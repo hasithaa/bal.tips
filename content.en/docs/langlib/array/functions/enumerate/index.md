@@ -12,10 +12,10 @@ highlight : [enumerate1.bal, enumerate2.bal]
 
 # `enumerate`
 
-The `enumerate` function creates a new array that contains pairs of index and member values from the input array. In other words, it associates each element in the input array with its corresponding index, and returns an array of these index-member pairs.
+The `enumerate` function creates **a new list value** that contains pairs of index and member values from the input array. In other words, it associates each member in the input array with its corresponding index, and returns **a new list** of these index-member pairs.
 {{< example >}}
 
-For example, if you have an array of colors like `[🔵,🟡,🟢,🔴]`, and you call the `enumerate` function on this array using the expression `[🔵,🟡,🟢,🔴].enumerate()`, the function would return a **new array** that contains index-member pairs. The resulting array would look like `[[0,🔵], [1,🟡], [2,🟢], [3,🔴]]`, which represents the original colors in the input array, along with their corresponding index numbers.
+For example, if you have an array of colors like `[🔵,🟡,🟢,🔴]`, and you call the `enumerate` function on this array using the expression `[🔵,🟡,🟢,🔴].enumerate()`, the function would return a **new list value** that contains index-member pairs. The resulting array would look like `[[0,🔵], [1,🟡], [2,🟢], [3,🔴]]`, which represents the original colors in the input array, along with their corresponding index numbers.
 
 The color ball example is only used for illustrative purposes, let's take a look at a few real programming examples to better understand the behavior of the `enumerate` function.
 
