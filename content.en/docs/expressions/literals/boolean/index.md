@@ -28,7 +28,7 @@ Ballerina **doesn't** support `0`, `1` or any other variations of `true` or `fal
 
 {{< code id="0" title="Boolean literal example" >}}
 {{< highlight >}}
-👉::: 5 ::: boolean literal `true` is assigned to variable `enable`.
-👉::: 6 ::: boolean literal `false` is assigned to variable `open`.
+📌::: 5 ::: boolean literal `true` is assigned to variable `enable`.
+📌::: 6 ::: boolean literal `false` is assigned to variable `open`.
 {{</ highlight >}}
 {{< /code >}}

@@ -33,11 +33,11 @@ The integer type is written as `int`. You can use [Integer Literal Syntax]({{% r
 
 {{< code id="0" title="Numeric value conversion with other type" >}}
 {{< highlight >}}
-👉::: 4:::This is an `int` variable with value `10` assigned;
-👉::: 5:::This is another `int` variable.
-👉::: 7:::This is an `int` addition.
-👉::: 9::: You can refer to the maximum integer value using the `int:MAX_VALUE` constant.
-👉::: 10::: You can refer to the minimum integer value using the `int:MIN_VALUE` constant.
+📌::: 4:::This is an `int` variable with value `10` assigned;
+📌::: 5:::This is another `int` variable.
+📌::: 7:::This is an `int` addition.
+📌::: 9::: You can refer to the maximum integer value using the `int:MAX_VALUE` constant.
+📌::: 10::: You can refer to the minimum integer value using the `int:MIN_VALUE` constant.
 {{< /highlight >}}
 {{</ code>}}
 
@@ -72,8 +72,8 @@ If required, you can use a type-cast expression to do a numeric conversion. This
 {{< code id="1" title="Numeric value conversion with other types" >}}
 
 {{< highlight >}}
-👉:::8::: This is the same as `<int>f.round(0)`. This uses Ballerina default round-to-nearest rounding mode. It is the same as IEEE roundToIntegralTiesToEven operation.
-👉:::9::: This is the same as `<int>d.round(0)`. This uses Ballerina default round-to-nearest rounding mode. It is the same as IEEE roundToIntegralTiesToEven operation with a minor exception to handling positive exponent.
+📌:::8::: This is the same as `<int>f.round(0)`. This uses Ballerina default round-to-nearest rounding mode. It is the same as IEEE roundToIntegralTiesToEven operation.
+📌:::9::: This is the same as `<int>d.round(0)`. This uses Ballerina default round-to-nearest rounding mode. It is the same as IEEE roundToIntegralTiesToEven operation with a minor exception to handling positive exponent.
 {{</ highlight >}}
 {{</ code>}}
 

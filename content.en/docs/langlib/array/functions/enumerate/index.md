@@ -28,7 +28,7 @@ public isolated function enumerate(Type[] arr) returns [int, Type][] = external;
 ## Arary Example
 {{< code id="0" title="`array:enumerate()` Usage with Arrays" >}}
 {{< highlight >}}
-👉::: 7 ::: The enumerate() function returns an array of `[int, T]` tuples. In this example, `T` is `string`. Each tuple consists of the index and the value of the array.
+📌::: 7 ::: The enumerate() function returns an array of `[int, T]` tuples. In this example, `T` is `string`. Each tuple consists of the index and the value of the array.
 {{< /highlight >}}
 {{< /code >}}
 
@@ -36,7 +36,7 @@ public isolated function enumerate(Type[] arr) returns [int, Type][] = external;
 ## Tuple Example
 {{< code id="1" title="`array:enumerate()` Usage with Tuples" >}}
 {{< highlight >}}
-👉::: 7 ::: For tuples, enumerate() returns an array of `[int, T]` tuples. Where `T` is an union of the tuple members. In this example it is `float|boolean|string`. 
+📌::: 7 ::: For tuples, enumerate() returns an array of `[int, T]` tuples. Where `T` is an union of the tuple members. In this example it is `float|boolean|string`. 
 {{< /highlight >}}
 {{< /code >}}
 
