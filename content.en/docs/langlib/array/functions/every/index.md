@@ -1,7 +1,7 @@
 ---
 title : "`every`"
 description : Tests whether a function returns `true` for some member of an array.
-example : "`[🍎, 🍇, 🍌, 🍓].some(isFruit)` ➜ `true`"
+example : "`[🍎, 🍇, 🍌, 🍓].every(isFruit)` ➜ `true`"
 date: 2023-02-01
 weight : 11060
 type : docs
