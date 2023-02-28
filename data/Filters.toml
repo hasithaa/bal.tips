@@ -138,6 +138,8 @@ statement = 'Statements'
 expression = 'Expressions'
 module = 'Modules'
 package = 'Packages'
+github = 'Github'
+cicd = 'CI / CD'
 
 [ballerina_module]
 array = 'ballerina/lang.array'

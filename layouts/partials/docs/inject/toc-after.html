@@ -54,3 +54,12 @@
 	{{- end}}
 </div>
 {{- end}}
+<p></p>
+{{ if .Params.canonicalUrl }}
+<div class="markdown" style="text-align:justify">
+    <blockquote class="book-hint info">
+        📃 This article was originally published on <a href="{{ .Params.canonicalUrl }}" target="_blank">{{ default "this blog" ($.Params.canonicalSite | markdownify) }}</a>.
+    </blockquote>
+</div>
+<link rel="canonical" href="{{ .Params.canonicalUrl }}">
+{{ end }}
