@@ -14,3 +14,18 @@ task verifyBallerinaVerision() {
 
 task test(dependsOn: [verifyBallerinaVerision]) {
 }
+
+task build(dependsOn: [test]) {
+    doLast {
+        exec {
+            commandLine "hugo", "--minify"
+        }
+        String npm = 'npm';
+        if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+            npm = 'npm.cmd'
+        }
+        exec {
+            commandLine npm, 'run', 'buildsearch'
+        }
+    }
+}
