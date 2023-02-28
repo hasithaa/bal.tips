@@ -17,10 +17,12 @@
   </dt>
   <dd class="markdown-inner">
     {{ default .Summary .Description | markdownify }}
-
-    <div class="sub-section">
-      {{ partial "list-pages" . }}
-    </div>
+    {{ $children := default true ($.Get "children") }}
+    {{ if eq $children true }}
+      <div class="sub-section">
+        {{ partial "list-pages" . }}
+      </div>
+    {{ end }}
   </dd>
 {{ end }}
 </dl>
