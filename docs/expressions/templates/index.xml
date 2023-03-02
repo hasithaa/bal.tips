@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Template Expressions on Ballerina Tips</title><link>https://bal.tips/docs/expressions/templates/</link><description>Recent content in Template Expressions on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bal.tips/docs/expressions/templates/index.xml" rel="self" type="application/rss+xml"/><item><title>String Template</title><link>https://bal.tips/docs/expressions/templates/string/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/templates/string/</guid><description>&lt;h1 id="string-template-expression">
+String Template Expression
+&lt;a class="anchor" href="#string-template-expression">#&lt;/a>
+&lt;/h1>
+&lt;p>A String template expression constructs a string value using the Template expression. Support interpolation (Syntax &lt;code>${expr}&lt;/code>) and each interpolation expression must have a type that is a subtype of &lt;code>boolean|int|float|decimal|string&lt;/code>. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.&lt;/p></description></item><item><title>XML Template</title><link>https://bal.tips/docs/expressions/templates/xml/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/templates/xml/</guid><description>&lt;h1 id="xml-template-expression">
+XML Template Expression
+&lt;a class="anchor" href="#xml-template-expression">#&lt;/a>
+&lt;/h1>
+&lt;p>You can use XML template expression to construct an XML value.&lt;/p></description></item><item><title>Raw Template Expression</title><link>https://bal.tips/docs/expressions/templates/raw/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/templates/raw/</guid><description>&lt;h1 id="raw-template-expression">
+Raw Template Expression
+&lt;a class="anchor" href="#raw-template-expression">#&lt;/a>
+&lt;/h1>
+&lt;p>Raw Template expression constructs an object belongs to &lt;code>object:RawTemplate&lt;/code> object type.&lt;/p></description></item></channel></rss>

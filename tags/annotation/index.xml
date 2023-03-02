@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>annotation on Ballerina Coding Tips</title><link>https://bal.tips/tags/annotation/</link><description>Recent content in annotation on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><lastBuildDate>Thu, 17 Nov 2022 07:53:29 +0530</lastBuildDate><atom:link href="https://bal.tips/tags/annotation/index.xml" rel="self" type="application/rss+xml"/><item><title>Comments, Docs and Metadata!</title><link>https://bal.tips/examples/basics/comment-tip02/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment-tip02/</guid><description>&lt;p>It is common to keep documentation within the source code because it is easy to keep up-to-date documentation with the code changes. In many programming languages, Documentation kept as comments &amp;amp; sometimes formatted in a particular way (e.g.: &lt;code>/** */&lt;/code> syntax in Java).&lt;/p>
-&lt;p>In Ballerina, You can use
-&lt;span title="Ballerina Markdown Documentation" class="label label-default">
-Documentation&lt;/span>
-to document Ballerina constructs. Ballerina
-&lt;span title="Ballerina Markdown Documentation" class="label label-default">
-Documentation&lt;/span>
-starts with &lt;code>#&lt;/code>. It is a common mistake that the developer uses comments (&lt;code>//&lt;/code>) for documentation purposes.&lt;/p></description></item></channel></rss>

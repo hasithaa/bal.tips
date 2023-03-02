@@ -1,206 +1,94 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>💡 Ballerina Coding Tips on Ballerina Coding Tips</title><link>https://bal.tips/</link><description>Recent content in 💡 Ballerina Coding Tips on Ballerina Coding Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© Hasitha Aravinda</copyright><atom:link href="https://bal.tips/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello, World!</title><link>https://bal.tips/examples/helloworld/main/</link><pubDate>Sun, 03 Jul 2022 01:01:27 +0530</pubDate><guid>https://bal.tips/examples/helloworld/main/</guid><description>Let&amp;rsquo;s write &amp;lsquo;Hello, World!&amp;rsquo; to &lt;em>stdout&lt;/em>.</description></item><item><title>Comments</title><link>https://bal.tips/learn-syntax/basic/comments/</link><pubDate>Thu, 17 Nov 2022 07:43:46 +0530</pubDate><guid>https://bal.tips/learn-syntax/basic/comments/</guid><description>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Comments&lt;/th>
-&lt;th>&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>// A comment.&lt;/code>&lt;/td>
-&lt;td>
-&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>You can use comments to provide more details about the code or temporally disable a section of the source code.&lt;/p></description></item><item><title>How to use Comments</title><link>https://bal.tips/examples/basics/comment/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment/</guid><description>&lt;p>This example shows how you can use comments.&lt;/p></description></item><item><title>No Multiline Comments</title><link>https://bal.tips/examples/basics/comment-tip01/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment-tip01/</guid><description>&lt;p>Multi-line comments are useful when providing large text descriptions or commenting on multiple lines of the code. Many languages use &lt;code>/* */&lt;/code> syntax for multiline comments.&lt;/p>
-&lt;p>&lt;strong>Ballerina doesn&amp;rsquo;t support this syntax&lt;/strong>. Instead, you can use multiple &lt;code>//&lt;/code> comments for the same purpose.&lt;/p></description></item><item><title>Comments, Docs and Metadata!</title><link>https://bal.tips/examples/basics/comment-tip02/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment-tip02/</guid><description>&lt;p>It is common to keep documentation within the source code because it is easy to keep up-to-date documentation with the code changes. In many programming languages, Documentation kept as comments &amp;amp; sometimes formatted in a particular way (e.g.: &lt;code>/** */&lt;/code> syntax in Java).&lt;/p>
-&lt;p>In Ballerina, You can use
-&lt;span title="Ballerina Markdown Documentation" class="label label-default">
-Documentation&lt;/span>
-to document Ballerina constructs. Ballerina
-&lt;span title="Ballerina Markdown Documentation" class="label label-default">
-Documentation&lt;/span>
-starts with &lt;code>#&lt;/code>. It is a common mistake that the developer uses comments (&lt;code>//&lt;/code>) for documentation purposes.&lt;/p></description></item><item><title>Code is read more than it is written</title><link>https://bal.tips/examples/basics/comment-tip03/</link><pubDate>Thu, 17 Nov 2022 07:53:29 +0530</pubDate><guid>https://bal.tips/examples/basics/comment-tip03/</guid><description>&lt;blockquote>
-&lt;blockquote>
-&lt;p>&amp;ldquo;Code never lies, comments sometimes do.&amp;rdquo;
-&lt;em>- Ron Jeffries&lt;/em>&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;p>Rarely, you write perfect code and runs forever. Coding is an iterative process; You need to add new features, improve your code, and fix bugs. So you have to continue reading your old code and to know how/where to fix it.&lt;/p>
-&lt;p>So write your code in a self-documenting or understandable way. Put comments if necessary. Don&amp;rsquo;t make updating comments in sync with the source code is an excessive task.&lt;/p></description></item><item><title>Nil - ()</title><link>https://bal.tips/types/simple/nil/</link><pubDate>Tue, 05 Jul 2022 22:58:27 +0530</pubDate><guid>https://bal.tips/types/simple/nil/</guid><description>&lt;p>The nil basic data type represents A single value, that represents absence of any other value.&lt;/p></description></item><item><title>Nil Literal</title><link>https://bal.tips/examples/expr/literals/nil-literal/</link><pubDate>Tue, 05 Jul 2022 16:12:28 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/nil-literal/</guid><description>&lt;p>The &lt;code>nil&lt;/code> basic type has only a single value called &lt;code>nil&lt;/code>. So, both the type and the value use the syntax &lt;code>()&lt;/code>.&lt;/p></description></item><item><title>Null Literal</title><link>https://bal.tips/examples/expr/literals/null-literal/</link><pubDate>Tue, 05 Jul 2022 16:12:28 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/null-literal/</guid><description>&lt;p>For JSON compatibility you can also write &lt;code>()&lt;/code> as &lt;code>null&lt;/code>. This will help you to copy and paste JSON values as expressions in the code. But avoid using &lt;code>null&lt;/code> in non-JSON-related places.&lt;/p></description></item><item><title>Boolean</title><link>https://bal.tips/types/simple/boolean/</link><pubDate>Tue, 05 Jul 2022 22:58:27 +0530</pubDate><guid>https://bal.tips/types/simple/boolean/</guid><description>&lt;p>The &lt;strong>boolean&lt;/strong> basic data type represents Boolean values; &lt;code>true&lt;/code>, &lt;code>false&lt;/code>.&lt;/p></description></item><item><title>Boolean Literal</title><link>https://bal.tips/examples/expr/literals/boolean-literal/</link><pubDate>Tue, 05 Jul 2022 20:29:45 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/boolean-literal/</guid><description>&lt;p>The &lt;code>boolean&lt;/code> basic type has only two values; boolean true is written as &lt;code>true&lt;/code> and boolean false is written as &lt;code>false&lt;/code>.&lt;/p></description></item><item><title>Int</title><link>https://bal.tips/types/simple/int/</link><pubDate>Tue, 05 Jul 2022 22:58:27 +0530</pubDate><guid>https://bal.tips/types/simple/int/</guid><description>&lt;p>The &lt;strong>int&lt;/strong> basic data type represents 64-bit signed integer values.&lt;/p></description></item><item><title>Integer Literal</title><link>https://bal.tips/examples/expr/literals/int-literal/</link><pubDate>Tue, 05 Jul 2022 16:30:10 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/int-literal/</guid><description>&lt;p>You can write integer values using a set of digits of the decimal system (Base 10 number) numbers. Digits are &lt;code>0&lt;/code>, &lt;code>1&lt;/code>, &lt;code>2&lt;/code>, &lt;code>3&lt;/code>, &lt;code>4&lt;/code>, &lt;code>5&lt;/code>, &lt;code>6&lt;/code>, &lt;code>7&lt;/code>, &lt;code>8&lt;/code>, and &lt;code>9&lt;/code>&lt;/p></description></item><item><title>Hexadecimal Integer Literal</title><link>https://bal.tips/examples/expr/literals/int-literal-hex/</link><pubDate>Tue, 05 Jul 2022 16:46:55 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/int-literal-hex/</guid><description>&lt;p>You can also write an integer using the Hexadecimal (Base 16 number) numeral system.&lt;/p></description></item><item><title>Floating Point Literal</title><link>https://bal.tips/examples/expr/literals/float-literal/</link><pubDate>Tue, 05 Jul 2022 20:49:35 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/float-literal/</guid><description>&lt;p>There are two floating point types, &lt;code>float&lt;/code> and &lt;code>decimal&lt;/code>. Both use the same decimal number (Base 10 number) literal syntax.&lt;/p></description></item><item><title>Float</title><link>https://bal.tips/types/simple/float/</link><pubDate>Tue, 05 Jul 2022 22:58:27 +0530</pubDate><guid>https://bal.tips/types/simple/float/</guid><description>&lt;p>The &lt;strong>float&lt;/strong> basic data type represents &lt;em>64-bit IEEE 754-2008 binary floating point numbers&lt;/em>.&lt;/p></description></item><item><title>Floating Point Literal With Exponent</title><link>https://bal.tips/examples/expr/literals/float-exp-literal/</link><pubDate>Tue, 05 Jul 2022 20:49:35 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/float-exp-literal/</guid><description>&lt;p>You can write floating numbers using scientific notation. Letter &lt;code>e&lt;/code> or &lt;code>E&lt;/code> is used as the exponent indicator.&lt;/p></description></item><item><title>Hexadecimal Float Literal</title><link>https://bal.tips/examples/expr/literals/float-hex-literal/</link><pubDate>Sun, 10 Jul 2022 09:16:26 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/float-hex-literal/</guid><description>&lt;p>Hexadecimal numbers start with a Hex Indicator &lt;code>0x&lt;/code> (Number zero and lowercase letter &lt;code>x&lt;/code>) or &lt;code>0X&lt;/code> (Number zero and Uppercase letter &lt;code>X&lt;/code>) Hex digits are &lt;code>0&lt;/code>, &lt;code>1&lt;/code>, &lt;code>2&lt;/code>, &lt;code>3&lt;/code>, &lt;code>4&lt;/code>, &lt;code>5&lt;/code>, &lt;code>6&lt;/code>, &lt;code>7&lt;/code>, &lt;code>8&lt;/code>, &lt;code>9&lt;/code>, &lt;code>a&lt;/code> or &lt;code>A&lt;/code>, &lt;code>b&lt;/code> or &lt;code>B&lt;/code>, &lt;code>c&lt;/code> or &lt;code>C&lt;/code>, &lt;code>d&lt;/code> or &lt;code>D&lt;/code>, &lt;code>e&lt;/code> or &lt;code>E&lt;/code>, &lt;code>f&lt;/code> or &lt;code>F&lt;/code>&lt;/p></description></item><item><title>Decimal</title><link>https://bal.tips/types/simple/decimal/</link><pubDate>Sun, 10 Jul 2022 10:35:34 +0530</pubDate><guid>https://bal.tips/types/simple/decimal/</guid><description>&lt;p>The &lt;strong>decimal&lt;/strong> basic data type represents &lt;em>128-bit IEEE 754-2008 decimal floating point values&lt;/em>.&lt;/p></description></item><item><title>String</title><link>https://bal.tips/types/sequence/string/</link><pubDate>Mon, 25 Jul 2022 21:54:48 +0530</pubDate><guid>https://bal.tips/types/sequence/string/</guid><description>&lt;p>The &lt;code>string&lt;/code> data type represents sequence of zero of more unicode characters.&lt;/p></description></item><item><title>String Literal</title><link>https://bal.tips/examples/expr/literals/string-literal/</link><pubDate>Mon, 25 Jul 2022 21:54:41 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/string-literal/</guid><description>&lt;p>You can write a string literal, by wrapping the Unicode code points using two double quotes &lt;code>&amp;quot;&lt;/code>.&lt;/p></description></item><item><title>String Escape Chars</title><link>https://bal.tips/examples/expr/literals/string-escape/</link><pubDate>Mon, 25 Jul 2022 21:54:33 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/string-escape/</guid><description>&lt;p>There are certain code points, that are not allowed inside a string literal. You can use String Escape or Numeric Escape syntaxes to provide such code points.&lt;/p></description></item><item><title>Numbers Are Immutable</title><link>https://bal.tips/examples/types/readonly/numerical/</link><pubDate>Fri, 08 Jul 2022 21:27:59 +0530</pubDate><guid>https://bal.tips/examples/types/readonly/numerical/</guid><description>&lt;p>Numerical value don&amp;rsquo;t have a storage identity, hence they are Inherently immutable (once created, it can&amp;rsquo;t be change the content of the value).&lt;/p>
-&lt;p>Numbers are assignable to a &lt;code>readonly&lt;/code> variable.&lt;/p></description></item><item><title>Byte</title><link>https://bal.tips/types/subtypes/byte/</link><pubDate>Mon, 25 Jul 2022 22:51:15 +0530</pubDate><guid>https://bal.tips/types/subtypes/byte/</guid><description>&lt;p>&lt;em>byte&lt;/em> type is built-in union type, that includes &lt;em>int&lt;/em> values between 0 and 255 inclusive. (0 ≤ values ≤ 255).&lt;/p></description></item><item><title>Numerical Operations</title><link>https://bal.tips/examples/expr/numerical-operations/</link><pubDate>Sat, 09 Jul 2022 18:22:30 +0530</pubDate><guid>https://bal.tips/examples/expr/numerical-operations/</guid><description>&lt;p>&lt;em>int&lt;/em>,&lt;em>float&lt;/em>,&lt;em>decimal&lt;/em> values support multiple operators;&lt;/p>
-&lt;ul>
-&lt;li>Multiplicative ( &lt;code>*&lt;/code>, &lt;code>/&lt;/code>, &lt;code>%&lt;/code> )&lt;/li>
-&lt;li>Additive (&lt;code>+&lt;/code>, &lt;code>-&lt;/code>)&lt;/li>
-&lt;li>Relational Operations ( &lt;code>&amp;lt;&lt;/code>, &lt;code>&amp;gt;&lt;/code>, &lt;code>&amp;lt;=&lt;/code>, &lt;code>&amp;gt;=&lt;/code>)&lt;/li>
-&lt;li>Equality ( &lt;code>==&lt;/code>, &lt;code>!=&lt;/code>, &lt;code>===&lt;/code>, &lt;code>!===&lt;/code>)&lt;/li>
-&lt;/ul>
-&lt;p>Additionally, &lt;em>int&lt;/em> type supports following operations&lt;/p>
-&lt;ul>
-&lt;li>Shift Operations ( &lt;code>&amp;lt;&amp;lt;&lt;/code>,&lt;code>&amp;gt;&amp;gt;&lt;/code>, &lt;code>&amp;gt;&amp;gt;&amp;gt;&lt;/code>)&lt;/li>
-&lt;li>Binary bitwise (&lt;code>&amp;amp;&lt;/code>, &lt;code>^&lt;/code>, &lt;code>|&lt;/code>)&lt;/li>
-&lt;li>Range Operator ( &lt;code>x ... y&lt;/code> )&lt;/li>
-&lt;/ul></description></item><item><title>Converting Numerical Values</title><link>https://bal.tips/examples/expr/casts/numerical/</link><pubDate>Fri, 08 Jul 2022 20:57:17 +0530</pubDate><guid>https://bal.tips/examples/expr/casts/numerical/</guid><description>&lt;p>Unlike some programming languages, there is no implicit conversion between Ballerina numerical types.&lt;/p></description></item><item><title>Literals</title><link>https://bal.tips/learn-syntax/expr/literals/</link><pubDate>Fri, 01 Jul 2022 22:19:42 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/literals/</guid><description>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Literals&lt;/th>
-&lt;th>&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>()&lt;/code>, &lt;code>null&lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/nil-literal/"
-title="Writing a nil value">
-Nil Literal&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>true&lt;/code> or &lt;code>false&lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/boolean-literal/"
-title="Writing a boolean value">
-Boolean Literal&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>123&lt;/code>, &lt;code>456.78&lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/numeric-literal/"
-title="Write a number, such as int, float, decimal">
-Numeric Literal&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>&amp;quot;Hello, World!&amp;quot;&lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/string-literal/"
-title="Write a string value">
-String Literal&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>base16 `AB 12 34` &lt;/code> &lt;br/> &lt;code>base64 `A1z+` &lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/byte-array-literal/"
-title="Write a byte[] array value">
-Byte Array Literal&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Type of a numeric literal</title><link>https://bal.tips/examples/expr/literals/numeric-literals/</link><pubDate>Thu, 28 Jul 2022 01:28:56 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/numeric-literals/</guid><description>&lt;p>A value written in a numeric-literal always represents a precise type, which is the singleton type that the literal represents. The broad type of the literal always belongs only to one of the basic types int, float, or decimal.&lt;/p>
-&lt;p>For example, the type of literal &lt;code>10&lt;/code> is integer 10, and its broad type is &lt;code>int&lt;/code>. This is not always true. Depending on the context, literal &lt;code>10&lt;/code> can represent floating point value &lt;code>10.0&lt;/code> or decimal value &lt;code>10&lt;/code>.&lt;/p></description></item><item><title>Base16 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base16literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base16literal/</guid><description>&lt;p>You can use Base16 Byte Array Literal syntax to represent bytes in Hex textual form.&lt;/p></description></item><item><title>Base64 Byte Array Literal</title><link>https://bal.tips/examples/expr/literals/base64literal/</link><pubDate>Mon, 25 Jul 2022 22:52:46 +0530</pubDate><guid>https://bal.tips/examples/expr/literals/base64literal/</guid><description>&lt;p>You can use Base64 Byte Array Literal syntax to represent bytes in Base64 encoded form.&lt;/p></description></item><item><title>Template Expressions</title><link>https://bal.tips/learn-syntax/expr/template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/learn-syntax/expr/template/</guid><description>&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Template Expressions&lt;/th>
-&lt;th>&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>string `Hello ${a}` &lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/string-template/"
-title="Constructs String values">
-String Template&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>xml `&amp;lt;A&amp;gt;${a}&amp;lt;/A&amp;gt;`&lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/xml-template/"
-title="Constructs XML values">
-XML Template&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>re `A.*?` &lt;/code>&lt;/td>
-&lt;td>
-&lt;span title="Constructs tagged data values" class="label label-default">
-Tagged Data Template&lt;/span>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>`A ${a} B`&lt;/code>&lt;/td>
-&lt;td>
-&lt;a class="label label-default" href="https://bal.tips/tags/raw-template/"
-title="Constructs object values that subtype of object:RawTemplate">
-Raw Template&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>String Templates</title><link>https://bal.tips/examples/expr/string-template/string-template/</link><pubDate>Sun, 31 Jul 2022 07:56:53 +0530</pubDate><guid>https://bal.tips/examples/expr/string-template/string-template/</guid><description>&lt;p>A String template expression constructs a string value using the Template expression. Support interpolation (Syntax &lt;code>${expr}&lt;/code>) and each interpolation expression must have a type that is a subtype of &lt;code>boolean|int|float|decimal|string&lt;/code>. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.&lt;/p></description></item><item><title>XML Template Expression</title><link>https://bal.tips/examples/expr/xml-template/xml-template/</link><pubDate>Tue, 20 Sep 2022 22:05:54 +0530</pubDate><guid>https://bal.tips/examples/expr/xml-template/xml-template/</guid><description>&lt;p>You can use XML template expression to construct an XML value.&lt;/p></description></item><item><title>Raw Template Expression</title><link>https://bal.tips/examples/expr/raw-template/raw-template/</link><pubDate>Tue, 20 Sep 2022 22:05:45 +0530</pubDate><guid>https://bal.tips/examples/expr/raw-template/raw-template/</guid><description>&lt;p>Raw Template expression constructs an object belongs to &lt;code>object:RawTemplate&lt;/code> object type.&lt;/p></description></item><item><title>Hello World API</title><link>https://bal.tips/examples/helloworld/http/service/</link><pubDate>Mon, 04 Jul 2022 01:05:24 +0530</pubDate><guid>https://bal.tips/examples/helloworld/http/service/</guid><description>&lt;p>Let&amp;rsquo;s create a &lt;em>Hello, World&lt;/em> HTTP API. This API will accept HTTP get request at &lt;code>http://localhost:8080/greeting&lt;/code>.&lt;/p></description></item><item><title>lang.int Lang Library</title><link>https://bal.tips/examples/langlib/int/intro/</link><pubDate>Fri, 08 Jul 2022 20:46:31 +0530</pubDate><guid>https://bal.tips/examples/langlib/int/intro/</guid><description>&lt;p>&lt;code>lang.int&lt;/code> Lang Library provides a set of functions that operates on an integer value. See available operations in
-&lt;a href="https://ballerina.io/spec/lang/master/#lang.int" target="_blank">ballerina/lang.int&amp;nbsp;&lt;span class="fa fa-external-link" style="font-size: 75%"aria-hidden="true">&lt;/span>&lt;/a>
-module.&lt;/p></description></item><item><title>Let's Write a Hello, World!</title><link>https://bal.tips/examples/helloworld/main-slide/</link><pubDate>Sat, 13 Aug 2022 01:06:51 +0530</pubDate><guid>https://bal.tips/examples/helloworld/main-slide/</guid><description>Let&amp;rsquo;s learn how to write a &amp;lsquo;Hello, World!&amp;rsquo; program.</description></item><item><title>Byte - Ballerina vs Java</title><link>https://bal.tips/examples/types/byte/java/</link><pubDate>Tue, 26 Jul 2022 08:20:35 +0530</pubDate><guid>https://bal.tips/examples/types/byte/java/</guid><description>&lt;p>Ballerina byte type vs Java byte Comparison&lt;/p>
-&lt;div class="center-ele center-txt tip-data" style="">
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>&lt;/th>
-&lt;th>Ballerina&lt;/th>
-&lt;th>Java&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Type&lt;/td>
-&lt;td>&lt;em>byte&lt;/em>&lt;/td>
-&lt;td>&lt;em>byte&lt;/em> or &lt;em>java.lang.Byte&lt;/em>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Signed&lt;/td>
-&lt;td>Unsigned&lt;/td>
-&lt;td>Signed**&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Max value&lt;/td>
-&lt;td>255&lt;/td>
-&lt;td>127&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Min value&lt;/td>
-&lt;td>0&lt;/td>
-&lt;td>-128&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>0000 0000&lt;/code>&lt;/td>
-&lt;td>0&lt;/td>
-&lt;td>0&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>0000 0001&lt;/code>&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>1&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>0111 1111&lt;/code>&lt;/td>
-&lt;td>127&lt;/td>
-&lt;td>127&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>1000 0000&lt;/code>&lt;/td>
-&lt;td>128&lt;/td>
-&lt;td>-128&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>1000 0001&lt;/code>&lt;/td>
-&lt;td>129&lt;/td>
-&lt;td>-127 (= -128 + 1)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>1111 1111&lt;/code>&lt;/td>
-&lt;td>255&lt;/td>
-&lt;td>-1 (= -128 + 127)&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;/div>
-&lt;p>** Read
-&lt;a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">Two&amp;rsquo;s Complement&amp;nbsp;&lt;span class="fa fa-external-link" style="font-size: 75%"aria-hidden="true">&lt;/span>&lt;/a>
-&lt;/p></description></item><item><title/><link>https://bal.tips/_footer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bal.tips/_footer/</guid><description> Bal.tips 2022 Hasitha Aravinda&amp;nbsp; . Built using docdock&amp;nbsp; and Hugo&amp;nbsp;</description></item><item><title/><link>https://bal.tips/_header/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bal.tips/_header/</guid><description> 💡 Ballerina Tips</description></item><item><title/><link>https://bal.tips/_menu-footer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bal.tips/_menu-footer/</guid><description>About All Examples Thank you Copyright About Author&amp;nbsp; Website Source&amp;nbsp; Report an Issue&amp;nbsp; Links Ballerina.io&amp;nbsp; Ballerina By Examples&amp;nbsp; Ballerina Language Specification&amp;nbsp; Bal.tips - A Blog by Hasitha Aravinda&amp;nbsp; .</description></item><item><title/><link>https://bal.tips/slidelink/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bal.tips/slidelink/</guid><description> Back Ballerina Tips All Slides 🎬&amp;nbsp;&amp;nbsp;Let&amp;#39;s Write a Hello, World!</description></item><item><title>Copyright</title><link>https://bal.tips/copyright/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bal.tips/copyright/</guid><description>Content &amp;nbsp; This work including the content of pages, tips etc. is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License&amp;nbsp; by Hasitha Aravinda&amp;nbsp; .
-&amp;nbsp; All Ballerina Example Source in this website are licensed under MIT License&amp;nbsp; , unless explicitly mention in the top of the source code.
-Terms and Trademarks Ballerina Ballerina is an open-source programming language for the cloud that makes it easier to use, combine, and create network services - ballerina.</description></item><item><title>Thank you</title><link>https://bal.tips/thankyou/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bal.tips/thankyou/</guid><description>When I built this website, I was inspired by multiple Hugo themes. I built this re-using and modifying some of the Hugo themes content. Also, I am using multiple awesome Open Source Libraries.
-I thank the original authors for their hard work and for making this website simple, clean, and beautiful.
-Primary Theme - hugo-theme-docdock&amp;nbsp; by vjeantet&amp;nbsp; MIT license. Short Codes inspirations Tabs from hugo-theme-learn&amp;nbsp; by matcornic&amp;nbsp; - MIT license. hugo-book&amp;nbsp; by alex-shpak&amp;nbsp; - MIT license.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Ballerina Tips</title><link>https://bal.tips/</link><description>Recent content in Home on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bal.tips/index.xml" rel="self" type="application/rss+xml"/><item><title>A Beginner's Guide to Ballerina Language</title><link>https://bal.tips/docs/introduction/basics/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/introduction/basics/</guid><description>&lt;h1 id="hello-world">
+Hello, World
+&lt;a class="anchor" href="#hello-world">#&lt;/a>
+&lt;/h1>
+&lt;p>Welcome to the world of Ballerina! Let&amp;rsquo;s get started with writing a &amp;ldquo;Hello World&amp;rdquo; program.
+First start by creating a file called &lt;strong>main.bal&lt;/strong>, and open it up in a text editor such as Visual Studio Code (VSCode). To get the best experience, be sure to install the Ballerina Extension. Save the file with the following code.&lt;/p></description></item><item><title>How to Use Comments</title><link>https://bal.tips/docs/syntax/comments/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/syntax/comments/</guid><description>&lt;h1 id="comments">
+Comments
+&lt;a class="anchor" href="#comments">#&lt;/a>
+&lt;/h1>
+&lt;p>Comments are used to provide more details about the code or temporally disable a section of the source code.&lt;/p></description></item><item><title>Nil Data Type</title><link>https://bal.tips/docs/types/simple/nil/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/types/simple/nil/</guid><description>&lt;h1 id="nil-data-type">
+Nil Data Type
+&lt;a class="anchor" href="#nil-data-type">#&lt;/a>
+&lt;/h1>
+&lt;p>The &lt;strong>Nil&lt;/strong> data type represents a single value called &lt;strong>nil&lt;/strong>, which represents the absence of any other value.&lt;/p></description></item><item><title>Boolean Data Type</title><link>https://bal.tips/docs/types/simple/boolean/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/types/simple/boolean/</guid><description>&lt;h1 id="boolean-data-type">
+Boolean Data Type
+&lt;a class="anchor" href="#boolean-data-type">#&lt;/a>
+&lt;/h1>
+&lt;p>The Boolean data type represents boolean truth values: &lt;code>true&lt;/code> and &lt;code>false&lt;/code>.&lt;/p></description></item><item><title>Integer Data Type</title><link>https://bal.tips/docs/types/simple/int/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/types/simple/int/</guid><description>&lt;h1 id="integer-data-type">
+Integer Data Type
+&lt;a class="anchor" href="#integer-data-type">#&lt;/a>
+&lt;/h1>
+&lt;p>The Integer data type represents 64-bit signed integer values.&lt;/p></description></item><item><title>Nil Literal</title><link>https://bal.tips/docs/expressions/literals/nil/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/nil/</guid><description>&lt;h1 id="nil-literal">
+Nil Literal
+&lt;a class="anchor" href="#nil-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>The &lt;code>nil&lt;/code> basic type has only a single value called &lt;code>nil&lt;/code>. Nil literal uses the syntax &lt;code>()&lt;/code> and &lt;code>null&lt;/code>.&lt;/p></description></item><item><title>Boolean Literal</title><link>https://bal.tips/docs/expressions/literals/boolean/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/boolean/</guid><description>&lt;h1 id="boolean-literal">
+Boolean Literal
+&lt;a class="anchor" href="#boolean-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>The &lt;code>boolean&lt;/code> basic type has only two values; boolean true is written as &lt;code>true&lt;/code> and boolean false is written as &lt;code>false&lt;/code>.&lt;/p></description></item><item><title>Integer Literal</title><link>https://bal.tips/docs/expressions/literals/int/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/int/</guid><description>&lt;h1 id="integer-literal">
+Integer Literal
+&lt;a class="anchor" href="#integer-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>Integer values can be expressed in either common the Decimal system, known for its base 10 format, or the Hexadecimal system which uses the Base 16 format.&lt;/p></description></item><item><title>Floating Point Literal</title><link>https://bal.tips/docs/expressions/literals/float/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/float/</guid><description>&lt;h1 id="floating-point-literal">
+Floating Point Literal
+&lt;a class="anchor" href="#floating-point-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>Floating point values can be expressed in either Decimal (base 10) or Hexadecimal (base 16) systems
+and come in two types, &lt;code>float&lt;/code> and &lt;code>decimal&lt;/code>, with slight differences in their representation using floating point literals.&lt;/p></description></item><item><title>String Literal</title><link>https://bal.tips/docs/expressions/literals/string/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/string/</guid><description>&lt;h1 id="string-literal">
+String Literal
+&lt;a class="anchor" href="#string-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>A string literal can be written by having the Unicode code points wrapped using two double quotes &lt;code>&amp;quot;&lt;/code>.&lt;/p></description></item><item><title>Byte Array Literal</title><link>https://bal.tips/docs/expressions/literals/byte-array/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/byte-array/</guid><description>&lt;h1 id="byte-array-literal">
+Byte Array Literal
+&lt;a class="anchor" href="#byte-array-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>Byte Array Literal is a sequence of bytes represented in base16 or base64.&lt;/p></description></item><item><title>String Template</title><link>https://bal.tips/docs/expressions/templates/string/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/templates/string/</guid><description>&lt;h1 id="string-template-expression">
+String Template Expression
+&lt;a class="anchor" href="#string-template-expression">#&lt;/a>
+&lt;/h1>
+&lt;p>A String template expression constructs a string value using the Template expression. Support interpolation (Syntax &lt;code>${expr}&lt;/code>) and each interpolation expression must have a type that is a subtype of &lt;code>boolean|int|float|decimal|string&lt;/code>. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.&lt;/p></description></item><item><title>XML Template</title><link>https://bal.tips/docs/expressions/templates/xml/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/templates/xml/</guid><description>&lt;h1 id="xml-template-expression">
+XML Template Expression
+&lt;a class="anchor" href="#xml-template-expression">#&lt;/a>
+&lt;/h1>
+&lt;p>You can use XML template expression to construct an XML value.&lt;/p></description></item><item><title>Raw Template Expression</title><link>https://bal.tips/docs/expressions/templates/raw/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/templates/raw/</guid><description>&lt;h1 id="raw-template-expression">
+Raw Template Expression
+&lt;a class="anchor" href="#raw-template-expression">#&lt;/a>
+&lt;/h1>
+&lt;p>Raw Template expression constructs an object belongs to &lt;code>object:RawTemplate&lt;/code> object type.&lt;/p></description></item><item><title>`length`</title><link>https://bal.tips/docs/langlib/array/functions/length/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/length/</guid><description>length # [🍎, 🍇, 🍌, 🍓].length() ➜ 4 The length function is used to determine the number of elements in a list. When this function is called with a list as its input parameter, it returns an int value that represents the number of elements in the list.
+Examples # 1import ballerina/io; 2 3public function main() { 4 // Array of strings 5 string[] names = [&amp;#34;Alice&amp;#34;, &amp;#34;Bob&amp;#34;, &amp;#34;Charlie&amp;#34;]; 6 io:println(&amp;#34;Length of names: &amp;#34;, names.</description></item><item><title>`iterator`</title><link>https://bal.tips/docs/langlib/array/functions/iterator/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/iterator/</guid><description>iterator # [🍎, 🍇, 🍌, 🍓].iterator().next() ➜ { value : 🍎 } The iterator function in Ballerina is used to create an iterator object for an input list. An iterator is an object that can be used to iterate over the members of a list value in a controlled manner. When the iterator function is called with a list as its input parameter, it returns a new iterator object that can be used to iterate over the member of the input list.</description></item><item><title>`enumerate`</title><link>https://bal.tips/docs/langlib/array/functions/enumerate/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/enumerate/</guid><description>enumerate # [🍎, 🍇, 🍌, 🍓].enumerate() ➜ [[0, 🍎], [1, 🍇], [2, 🍌], [3, 🍓]] The enumerate function creates a new list value that contains pairs of index and member values from the input array. In other words, it associates each member in the input array with its corresponding index, and returns a new list of these index-member pairs.
+Examples # Array # 1import ballerina/io; 2 3public function main() { 4 5 string[] names = [&amp;#34;Alice&amp;#34;, &amp;#34;Bob&amp;#34;, &amp;#34;Charlie&amp;#34;]; 6 7 [int, string][] pairs = names.</description></item><item><title>`map`</title><link>https://bal.tips/docs/langlib/array/functions/map/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/map/</guid><description>map # [🍎, 🍇, 🍌, 🍓].map(makeCandy) ➜ [🍫, 🍬, 🍭, 🍰] The map function applies a given function to each member of a list in order and returns a new list containing the result of applying the function to each member of the original list.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`. # Has the special semantic that when used in a declaration # all uses in the declaration must refer to same type.</description></item><item><title>`forEach`</title><link>https://bal.tips/docs/langlib/array/functions/forEach/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/forEach/</guid><description>forEach # [🍎, 🍇, 🍌, 🍓].foreach(PrintName) ➜ Apples, Grapes, Bananas, Strawberries The forEach function applies a given function to each member of a list in order. It iterates over the list and calls the function with each list member as its argument.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`. # Has the special semantic that when used in a declaration # all uses in the declaration must refer to same type.</description></item><item><title>`filter`</title><link>https://bal.tips/docs/langlib/array/functions/filter/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/filter/</guid><description>filter # [🍎, 🍇, 🍌, 🍓].filter(isRed) ➜ [🍎, 🍓] The filter function selects the members from a list for which a function returns true. It applies the given function to each list member to test whether it should be selected, and returns a new list containing only the members of the original list for which the function evaluates to true.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`.</description></item><item><title>`reduce`</title><link>https://bal.tips/docs/langlib/array/functions/reduce/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/reduce/</guid><description>reduce # [🍎, 🍇, 🍌, 🍓].reduce(makeJuice) ➜ 🥤 The reduce function combines the members of a list using a combining function. The combining function takes two arguments: the combined value so far, and a list member. It then returns a new combined value. The reduce function starts with an initial value for the first argument of the combining function, and then applies the combining function to each list member in order, using the current combined value and the current list member as its arguments.</description></item><item><title>`some`</title><link>https://bal.tips/docs/langlib/array/functions/some/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/some/</guid><description>some # [🍎, 🍇, 🍌, 🍓].some(isRed) ➜ true The some function tests whether a given function returns true for at least one member of a given list. It applies the function to each member of the list in order until a call returns true, or until all members have been evaluated. If the list is empty, the function returns false.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`.</description></item><item><title>`every`</title><link>https://bal.tips/docs/langlib/array/functions/every/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/every/</guid><description>every # [🍎, 🍇, 🍌, 🍓].every(isFruit) ➜ true The every function tests whether a given function returns true for every member of a list. It applies the given function to each list member in order, and stops as soon as a call returns false. If the function returns true for every member of the list, the every function returns true. If the list is empty, the every function returns true.</description></item><item><title>`slice`</title><link>https://bal.tips/docs/langlib/array/functions/slice/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/slice/</guid><description>slice # [🍎, 🍇, 🍌, 🍓].slice(1,3) ➜ [🍇, 🍌] The slice function returns a new list containing a subset of the members of a given list. The subset is defined by two indices: startIndex and endIndex. The resulting list includes all members of the original list with indices greater than or equal to startIndex, and less than endIndex.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`.</description></item><item><title>`remove`</title><link>https://bal.tips/docs/langlib/array/functions/remove/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/remove/</guid><description>remove # [🍎, 🍇, 🍌, 🍓].remove(1) ➜ 🍇 The remove function removes a member from a given list. The index argument specifies the index of the member to be removed from the list. The remove function returns the member of the list that was removed.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`. # Has the special semantic that when used in a declaration # all uses in the declaration must refer to same type.</description></item><item><title>`removeAll`</title><link>https://bal.tips/docs/langlib/array/functions/removeAll/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/removeAll/</guid><description> removeAll # [🍎, 🍇, 🍌, 🍓].removeAll() ➜ [] The removeAll function removes all members from a given list. The arr argument specifies the list to be emptied. The function panics if any member cannot be removed.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # Removes all members of an array. # + arr - the array # Panics if any member cannot be removed. public isolated function removeAll((any|error)[] arr) returns () = external; removeAll documentation&amp;nbsp;-&amp;nbsp; (source : ballerina spec)</description></item><item><title>`setLength`</title><link>https://bal.tips/docs/langlib/array/functions/setLength/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/setLength/</guid><description>setLength # [🍎, 🍇, 🍌, 🍓].setLength(2) ➜ [🍎, 🍇] The setLength function changes the length of a given list to a specified value. The arr argument specifies the list of which to change the length, and the length argument specifies the new length of the list.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # Changes the length of an array. # # + arr - the array of which to change the length # + length - new length # `setLength(arr, 0)` is equivalent to `removeAll(arr)`.</description></item><item><title>`indexOf`</title><link>https://bal.tips/docs/langlib/array/functions/indexOf/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/indexOf/</guid><description>indexOf # [🍎, 🍇, 🍌, 🍓].indexOf(🍌) ➜ 2 The indexOf function returns the index of the first member of a given list that is equal to a specified value. The arr argument specifies the list to be searched, and the val argument specifies the value to search for. The startIndex argument specifies the index at which to start the search. The indexOf function returns the index of the first member that is equal to val, if there is one, and () otherwise.</description></item><item><title>`lastIndexOf`</title><link>https://bal.tips/docs/langlib/array/functions/lastIndexOf/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/lastIndexOf/</guid><description>lastIndexOf # [🍎, 🍌, 🍌, 🍓].lastIndexOf(🍌) ➜ 2 The lastIndexOf function returns the index of the last member of a given list that is equal to a specified value. The arr argument specifies the list to be searched, and the val argument specifies the value to search for. The startIndex argument specifies the index at which to start searching backwards. The lastIndexOf function returns the index of the last member that is equal to val, if there is one, and () otherwise.</description></item><item><title>`reverse`</title><link>https://bal.tips/docs/langlib/array/functions/reverse/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/reverse/</guid><description>reverse # [🍎, 🍇, 🍌, 🍓].reverse() ➜ [🍓, 🍌, 🍇, 🍎] The reverse function reverses the order of the members in a given list. The arr argument specifies the list to be reversed. The function returns a new list containing the members of the original list in reverse order.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`. # Has the special semantic that when used in a declaration # all uses in the declaration must refer to same type.</description></item><item><title>`sort`</title><link>https://bal.tips/docs/langlib/array/functions/sort/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/sort/</guid><description>sort # [🍎, 🍇, 🍌, 🍓].sort(byName) ➜ [🍎, 🍌, 🍇, 🍓] The sort function sorts the members of a given list. The arr argument specifies the list to be sorted. The direction argument specifies the direction in which to sort the list, which can be either ASCENDING or DESCENDING. The key argument is an optional function that returns a key to use to sort the members.
+If the member type of the list is not sortable, then the key function must be specified to extract a comparable key from each member.</description></item><item><title>`pop`</title><link>https://bal.tips/docs/langlib/array/functions/pop/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/pop/</guid><description>pop # [🍎, 🍇, 🍌, 🍓].pop() ➜ 🍓 The pop function removes and returns the last member of a given list. The arr argument specifies the list from which to remove the last member. The function returns the removed member.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`. # Has the special semantic that when used in a declaration # all uses in the declaration must refer to same type.</description></item><item><title>`push`</title><link>https://bal.tips/docs/langlib/array/functions/push/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/push/</guid><description>push # [🍎, 🍇, 🍌, 🍓].push(🍒, 🍉) ➜ [🍎, 🍌, 🍇, 🍓, 🍒, 🍉] The push function adds one or more values to the end of a given list. The arr argument specifies the list to which the values will be added, and the vals argument is a variable-length argument that can contain one or more values to add to the list.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`.</description></item><item><title>`shift`</title><link>https://bal.tips/docs/langlib/array/functions/shift/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/shift/</guid><description>shift # [🍎, 🍇, 🍌, 🍓].shift() ➜ 🍎 The shift function removes and returns the first member of a given list. The arr argument specifies the list from which to remove the first member. The function returns the removed member.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`. # Has the special semantic that when used in a declaration # all uses in the declaration must refer to same type.</description></item><item><title>`unshift`</title><link>https://bal.tips/docs/langlib/array/functions/unshift/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/unshift/</guid><description>unshift # [🍎, 🍇, 🍌, 🍓].unshift(🍒, 🍉) ➜ [🍒, 🍉, 🍎, 🍌, 🍇, 🍓] The unshift function adds one or more values to the start of a given list. The arr argument specifies the list to which the values will be added, and the vals argument is a variable-length argument that can contain one or more values to add to the list.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`.</description></item><item><title>`toBase64`</title><link>https://bal.tips/docs/langlib/array/functions/toBase64/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/toBase64/</guid><description>toBase64 # toBase64([72, 101, 108, 108, 111]) ➜ SGVsbG8= The toBase64 function returns a string that is the Base64 representation of an array of bytes. The arr argument specifies the array of bytes to be encoded.
+The Base64 representation returned by the toBase64 function is the same as used by a Ballerina Base64Literal. The resulting string will contain only characters A..Z, a..z, 0..9, +, / and =, and there will be no whitespace in the returned string.</description></item><item><title>`fromBase64`</title><link>https://bal.tips/docs/langlib/array/functions/fromBase64/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/fromBase64/</guid><description>fromBase16 # fromBase64(&amp;quot;SGVsbG8=&amp;quot;) ➜ [72, 101, 108, 108, 111] The fromBase64 function returns the byte array that a string represents in Base64. The str argument specifies the Base64-encoded string to be decoded.
+The str argument must consist of the characters A..Z, a..z, 0..9, +, / and =, and whitespace as allowed by a Ballerina Base64Literal.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # Returns the byte array that a string represents in Base64.</description></item><item><title>`toBase16`</title><link>https://bal.tips/docs/langlib/array/functions/toBase16/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/toBase16/</guid><description>toBase16 # toBase16([72, 101, 108, 108, 111]) ➜ 48656c6c6f The toBase16 function returns a string that represents the Base16 (hexadecimal) encoding of an array of bytes. The resulting string contains only characters 0..9 and a..f and has no whitespace.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # Returns the string that is the Base16 representation of an array of bytes. # The representation is the same as used by a Ballerina Base16Literal.</description></item><item><title>`fromBase16`</title><link>https://bal.tips/docs/langlib/array/functions/fromBase16/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/fromBase16/</guid><description>fromBase16 # fromBase16(&amp;quot;48656c6c6f=&amp;quot;) ➜ [72, 101, 108, 108, 111] The fromBase16 function takes a Base16 string as input and returns the corresponding byte array. The fromBase16 function assumes that the input string contains only characters 0..9, A..F, and a..f, and has no whitespace.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # Returns the byte array that a string represents in Base16. # `str` must consist of the characters `0.</description></item><item><title>`toStream `</title><link>https://bal.tips/docs/langlib/array/functions/toStream/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/array/functions/toStream/</guid><description>toStream # The toStream function takes a list as input and returns a stream that contains the members of the list. The toStream function is useful when you want to use the functional programming capabilities of Ballerina, such as filtering and mapping, with an array.
+Examples # 🚧 More Details Coming Soon! Spec Definition # # A type parameter that is a subtype of `any|error`. # Has the special semantic that when used in a declaration # all uses in the declaration must refer to same type.</description></item><item><title>`fromString`</title><link>https://bal.tips/docs/langlib/boolean/functions/fromString/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/boolean/functions/fromString/</guid><description>fromString # # Converts a string to a boolean. # Returns the boolean of which `s` is a string representation. # The accepted representations are `true`, `false` # (in any combination of lower- and upper-case), # and also `1` for true and `0` for `false`. # This is the inverse of `value:toString` applied to a `boolean`. # # + s - string representing a boolean value # + return - boolean that `s` represents, or an error if there is no such boolean public isolated function fromString(string s) returns boolean|error = external; fromString documentation&amp;nbsp;-&amp;nbsp; (source : ballerina spec) 1import ballerina/io; 2 3public function main() returns error?</description></item><item><title>Int Lang Library</title><link>https://bal.tips/docs/langlib/int/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/langlib/int/</guid><description>Int Lang Library # lang.int Lang Library provides a set of functions that operates on an int value. See available operations in the ballerina/lang.int module.
+Additionally, ballerina/lang.value Lang Library provides toString and another set of functions that can operate on an int value.
+💡 int is a pre-defined module prefix and you can use it without an import declaration. 1import ballerina/io; 2 3public function main() returns error? { 4 5 int sum = int:sum(1, -2, 3, -4, 5); 6 int max = int:max(1, -2, 3, -4, 5); 7 int min = int:min(1, -2, 3, -4, 5); 8 int abs = min.</description></item><item><title>🔎 Search</title><link>https://bal.tips/search/</link><pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate><guid>https://bal.tips/search/</guid><description/></item><item><title>📰 Ballerina Language News</title><link>https://bal.tips/news/</link><pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate><guid>https://bal.tips/news/</guid><description> 📰 Ballerina Language News # News and updates related to Ballerina, such as new releases or upcoming events. (If page is not loading click following link.)
+A Twitter List by HasithaAravinda</description></item><item><title>Ballerina Actions</title><link>https://bal.tips/docs/devops/github/ballerina-action/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/devops/github/ballerina-action/</guid><description>Simplify Ballerina Workflow on GitHub with setup-ballerina Action # The post covers the use of the setup-ballerina GitHub Action to automate the installation of the Ballerina (Swan Lake) distribution in the GitHub Action environment.
+The following code block shows how you can configure the GitHub Action to build your Ballerina project. You can find a working example of this in this repository.
+The setup-ballerina GitHub Action v1 release requires a mandatory input of the Ballerina Swan Lake distribution version in the form of &amp;ldquo;Swan Lake channel&amp;rdquo; as listed in the bal dist list command.</description></item><item><title>Author</title><link>https://bal.tips/about/author/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/about/author/</guid><description># About Author
+This page will redirect to the author's LinkedIn profile.</description></item><item><title>ballerina.io</title><link>https://bal.tips/about/ballerina/bio/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/about/ballerina/bio/</guid><description># Ballerina Website
+This will redirect you to the Ballerina Website.</description></item><item><title>Language Spec</title><link>https://bal.tips/about/ballerina/spec/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/about/ballerina/spec/</guid><description># Ballerina Language Spec
+This page will redirect to the Ballerina Language Spec website.</description></item><item><title>Ballerina By Example</title><link>https://bal.tips/about/ballerina/bbe/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/about/ballerina/bbe/</guid><description># Ballerina By Example
+This page will redirect to the Ballerina By Example website.</description></item><item><title>Best Practices Guide</title><link>https://bal.tips/about/ballerina/bbg/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/about/ballerina/bbg/</guid><description># Ballerina Website
+This will redirect you to the Ballerina best practices guide.</description></item><item><title>Github Repo</title><link>https://bal.tips/about/source/source/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/about/source/source/</guid><description># View Source of the Website
+This page will redirect to the GitHub repository of the website.</description></item><item><title>Report Issue</title><link>https://bal.tips/about/source/report-issue/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/about/source/report-issue/</guid><description># Report an Issue
+This page will redirect to the GitHub repository to create a new issue.</description></item><item><title>Licenses and Copyrights</title><link>https://bal.tips/copyrights/</link><pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate><guid>https://bal.tips/copyrights/</guid><description>Licenses and Copyrights # Bal.Tips Copyright © 2022-2023 Hasitha Aravinda. All rights reserved.
+Source and Content Licenses # Type Description License Content The Content under bal.tips website including the content of pages, posts etc. are licensed under a Creative Commons-NoDerivatives 4.0 International License by Hasitha Aravinda. Ballerina Sources (.bal files) All Ballerina Example Sources in this website are licensed under MIT License, unless explicitly mention in the top of the source code.</description></item></channel></rss>

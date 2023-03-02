@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quick Start Guides on Ballerina Tips</title><link>https://bal.tips/docs/introduction/</link><description>Recent content in Quick Start Guides on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bal.tips/docs/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>A Beginner's Guide to Ballerina Language</title><link>https://bal.tips/docs/introduction/basics/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/introduction/basics/</guid><description>&lt;h1 id="hello-world">
+Hello, World
+&lt;a class="anchor" href="#hello-world">#&lt;/a>
+&lt;/h1>
+&lt;p>Welcome to the world of Ballerina! Let&amp;rsquo;s get started with writing a &amp;ldquo;Hello World&amp;rdquo; program.
+First start by creating a file called &lt;strong>main.bal&lt;/strong>, and open it up in a text editor such as Visual Studio Code (VSCode). To get the best experience, be sure to install the Ballerina Extension. Save the file with the following code.&lt;/p></description></item></channel></rss>

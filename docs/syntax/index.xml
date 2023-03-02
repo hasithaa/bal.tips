@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Syntax Structure on Ballerina Tips</title><link>https://bal.tips/docs/syntax/</link><description>Recent content in Syntax Structure on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bal.tips/docs/syntax/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Use Comments</title><link>https://bal.tips/docs/syntax/comments/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/syntax/comments/</guid><description>&lt;h1 id="comments">
+Comments
+&lt;a class="anchor" href="#comments">#&lt;/a>
+&lt;/h1>
+&lt;p>Comments are used to provide more details about the code or temporally disable a section of the source code.&lt;/p></description></item></channel></rss>

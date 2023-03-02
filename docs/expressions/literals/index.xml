@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Literals on Ballerina Tips</title><link>https://bal.tips/docs/expressions/literals/</link><description>Recent content in Literals on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bal.tips/docs/expressions/literals/index.xml" rel="self" type="application/rss+xml"/><item><title>Nil Literal</title><link>https://bal.tips/docs/expressions/literals/nil/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/nil/</guid><description>&lt;h1 id="nil-literal">
+Nil Literal
+&lt;a class="anchor" href="#nil-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>The &lt;code>nil&lt;/code> basic type has only a single value called &lt;code>nil&lt;/code>. Nil literal uses the syntax &lt;code>()&lt;/code> and &lt;code>null&lt;/code>.&lt;/p></description></item><item><title>Boolean Literal</title><link>https://bal.tips/docs/expressions/literals/boolean/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/boolean/</guid><description>&lt;h1 id="boolean-literal">
+Boolean Literal
+&lt;a class="anchor" href="#boolean-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>The &lt;code>boolean&lt;/code> basic type has only two values; boolean true is written as &lt;code>true&lt;/code> and boolean false is written as &lt;code>false&lt;/code>.&lt;/p></description></item><item><title>Integer Literal</title><link>https://bal.tips/docs/expressions/literals/int/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/int/</guid><description>&lt;h1 id="integer-literal">
+Integer Literal
+&lt;a class="anchor" href="#integer-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>Integer values can be expressed in either common the Decimal system, known for its base 10 format, or the Hexadecimal system which uses the Base 16 format.&lt;/p></description></item><item><title>Floating Point Literal</title><link>https://bal.tips/docs/expressions/literals/float/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/float/</guid><description>&lt;h1 id="floating-point-literal">
+Floating Point Literal
+&lt;a class="anchor" href="#floating-point-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>Floating point values can be expressed in either Decimal (base 10) or Hexadecimal (base 16) systems
+and come in two types, &lt;code>float&lt;/code> and &lt;code>decimal&lt;/code>, with slight differences in their representation using floating point literals.&lt;/p></description></item><item><title>String Literal</title><link>https://bal.tips/docs/expressions/literals/string/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/string/</guid><description>&lt;h1 id="string-literal">
+String Literal
+&lt;a class="anchor" href="#string-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>A string literal can be written by having the Unicode code points wrapped using two double quotes &lt;code>&amp;quot;&lt;/code>.&lt;/p></description></item><item><title>Byte Array Literal</title><link>https://bal.tips/docs/expressions/literals/byte-array/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/expressions/literals/byte-array/</guid><description>&lt;h1 id="byte-array-literal">
+Byte Array Literal
+&lt;a class="anchor" href="#byte-array-literal">#&lt;/a>
+&lt;/h1>
+&lt;p>Byte Array Literal is a sequence of bytes represented in base16 or base64.&lt;/p></description></item></channel></rss>

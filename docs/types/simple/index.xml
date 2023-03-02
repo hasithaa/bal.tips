@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Data Types on Ballerina Tips</title><link>https://bal.tips/docs/types/simple/</link><description>Recent content in Simple Data Types on Ballerina Tips</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bal.tips/docs/types/simple/index.xml" rel="self" type="application/rss+xml"/><item><title>Nil Data Type</title><link>https://bal.tips/docs/types/simple/nil/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/types/simple/nil/</guid><description>&lt;h1 id="nil-data-type">
+Nil Data Type
+&lt;a class="anchor" href="#nil-data-type">#&lt;/a>
+&lt;/h1>
+&lt;p>The &lt;strong>Nil&lt;/strong> data type represents a single value called &lt;strong>nil&lt;/strong>, which represents the absence of any other value.&lt;/p></description></item><item><title>Boolean Data Type</title><link>https://bal.tips/docs/types/simple/boolean/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/types/simple/boolean/</guid><description>&lt;h1 id="boolean-data-type">
+Boolean Data Type
+&lt;a class="anchor" href="#boolean-data-type">#&lt;/a>
+&lt;/h1>
+&lt;p>The Boolean data type represents boolean truth values: &lt;code>true&lt;/code> and &lt;code>false&lt;/code>.&lt;/p></description></item><item><title>Integer Data Type</title><link>https://bal.tips/docs/types/simple/int/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://bal.tips/docs/types/simple/int/</guid><description>&lt;h1 id="integer-data-type">
+Integer Data Type
+&lt;a class="anchor" href="#integer-data-type">#&lt;/a>
+&lt;/h1>
+&lt;p>The Integer data type represents 64-bit signed integer values.&lt;/p></description></item></channel></rss>
