@@ -19,18 +19,18 @@ keywords : [Licenses, Copyrights, Ballerina, Tips]
 
 ## Images
 
-### Bal.Tips Mascot
+### Bali-Bot - Bal.Tips Mascot
 
-<div class="mascot mascot-small">
-    <img src="/images/mascot/logo.png" alt="welcome mascot" /> 
+<div class="mascot mascot-x-small">
+    <img src="/images/mascot/logo.png" alt="Bali-Bot - welcome" /> 
     <p>Bal.Tips Mascot - Copyright © 2022-{{<year>}} Hasitha Aravinda. All rights reserved.</p>
 </div>
 
-This mascot with different actions in this website is original work created by [Groovy by Dinusha Samarasingha](https://www.linkedin.com/in/dinusha-samarasingha-81723347/) and is owned by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/). Unauthorized use, duplication, or distribution of this mascot without written permission from [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/) is strictly prohibited. Any use of this mascot for commercial or non-commercial purposes is forbidden unless approved by Hasitha Aravinda.
+The mascot, Bali-Bot with different actions in this website is original work created by [Groovy by Dinusha Samarasingha](https://www.linkedin.com/in/dinusha-samarasingha-81723347/) and is owned by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/). Unauthorized use, duplication, or distribution of this mascot without written permission from [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/) is strictly prohibited. Any use of this mascot for commercial or non-commercial purposes is forbidden unless approved by Hasitha Aravinda.
 
 ### Source Code Images
 
-All images with Ballerina Source code are created using [Carbon](https://carbon.now.sh) and  licensed under[Creative Commons-Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/)
+All images with Ballerina Source code are created using [Snappify Editor](https://snappify.com/editor) and  licensed under[Creative Commons-Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/)
 # Trademarks
 
 ## Ballerina

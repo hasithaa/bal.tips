@@ -9,7 +9,7 @@ bookToc: false
 
 # Ballerina Tips
 
-<div class="mascot mascot-small">
+<div class="mascot mascot-x-small">
   <img src="/images/mascot/idea.png" alt="mascot with tips" />
 </div>
 

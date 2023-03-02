@@ -12,7 +12,7 @@ bookToc : false
 
 <div id="search"></div>
 
-<div class="mascot mascot-small">
+<div class="mascot mascot-x-small">
   <img src="/images/mascot/thinking.png" alt="thinking mascot" />
 </div>
 
