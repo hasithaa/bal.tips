@@ -1,5 +1,4 @@
 public/
-data/tests.yaml
 .idea/
 resources
 .hugo_build.lock

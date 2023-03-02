@@ -15,7 +15,7 @@ task verifyBallerinaVerision() {
 task test(dependsOn: [verifyBallerinaVerision]) {
 }
 
-task build(dependsOn: [test]) {
+task hugo() {
     doLast {
         exec {
             commandLine "hugo", "--minify"

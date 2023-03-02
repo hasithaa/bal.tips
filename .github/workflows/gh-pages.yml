@@ -61,14 +61,11 @@ jobs:
           hugo-version: 'latest'
           extended: true
       - name: Execute Gradle build
+        id: test
+        run: ./gradlew test --continue ${{ env.balBuild }}
+      - name: Execute Gradle Hugo
         id: build
-        run: ./gradlew build --continue ${{ env.balBuild }}
-      - name: Upload Gradle Test Results
-        uses: actions/upload-artifact@v3
-        if: failure() && steps.build.outcome == 'failure'
-        with:
-          name: test-result
-          path: verifier/tests/build/reports/tests/test/
+        run: ./gradlew hugo
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/v5'
