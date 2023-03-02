@@ -1,0 +1,77 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - v5  # Set a branch to deploy
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      balVersion:
+        default: 2201.4.0
+        description: "Ballerina Version"
+      fullBuild:
+        type: boolean
+        description: "Run full Gradle build without cache"
+        default: true
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set env
+        run: |-
+          echo "balVersion=$(
+          if [[${{ github.event.inputs.balVersion }}]]; then
+            echo ${{ github.event.inputs.balVersion }}
+          else
+            echo 2201.4.0   # There are two place to Update in this file
+          fi
+          )" >> $GITHUB_ENV
+          echo "balBuild=$(
+          if [[${{ github.event.inputs.fullBuild }}]]; then
+            echo "--rerun-tasks --no-build-cache"
+          else
+            echo ""
+          fi
+          )" >> $GITHUB_ENV
+        shell: bash
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install pagefind --global
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+      - name: Setup Ballerina
+        uses: hasithaa/setup-ballerina@main
+        with:
+          version: ${{ env.balVersion }}
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+      - name: Execute Gradle build
+        id: build
+        run: ./gradlew build --continue ${{ env.balBuild }}
+      - name: Upload Gradle Test Results
+        uses: actions/upload-artifact@v3
+        if: failure() && steps.build.outcome == 'failure'
+        with:
+          name: test-result
+          path: verifier/tests/build/reports/tests/test/
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/v5'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
