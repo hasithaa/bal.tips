@@ -10,72 +10,74 @@ An identifier is a name given to an element in a program, such as a variable, fu
 
 The use of appropriate identifiers is important for writing readable and understandable code. Different programming languages have their own rules and conventions for identifiers, and in this post, I will focus on how to master identifiers in Ballerina.
 
-I will start by covering the basics of identifiers, including their usage and syntax. Then, I will delve into more advanced concepts, such as the semantic rules associated with them. By the end of this post, you will have a thorough understanding of identifiers in Ballerina and be able to write clean, well-organized code.
-
 ## Syntax 
 
-### Normal Syntax
+### Identifier Syntax
+
 When writing code in Ballerina, it's important to understand the basic usage of identifiers.
 
-An identifier in Ballerina is defined by the following regular expression:
+An identifier in Ballerina is represented by the following syntax:
 
-`<Initial_Char><Initial_Char | Digits>*`
+{{<md class="syntax">}}
+* `<Initial_Char><Initial_Char | Digits>*`
+{{</md>}}
 
+The `Initial_Char` can be 
+* An ASCII letter (`A-Z` or `a-z`),
+* An underscore (`_`),
+* A Unicode identifier character (excluding certain [characters](https://ballerina.io/spec/lang/master/#UnicodeNonIdentifierChar)) or
+* Any valid Unicode code point escaped using `\u{XXXX}` or a non-empty character using `\`.
 
-The `Initial_Char` can be an ASCII letter (`A-Z` or `a-z`), an underscore (`_`), a Unicode identifier character (excluding certain [characters](https://ballerina.io/spec/lang/master/#UnicodeNonIdentifierChar)) or any valid Unicode code point escaped using `\u{XXXX}` or a non-empty character using `\`. After the `Initial_Char`, any combination of characters including digits is allowed. However, using reserved words such as keywords will result in a compilation error.
+After the `Initial_Char`, any combination of characters including digits is allowed. However, using reserved words such as keywords will result in a compilation error. Let's look at some valid identifiers and invalid identifiers.  
 
-Let's look at some valid identifiers and invalid identifiers.  
-
-<TODO Add example here>
+🚧 TODO: Add example here.
 
 Ballerina supports the use of Unicode characters in identifiers. When we designed the language, supporting Unicode identifiers was one of the primary design requirements, because it makes it easier for programmers to use non-ASCII characters, domain-specific terminology, and support non-English languages in their code. For example, this is particularly useful when working with data such as JSON or XML that may contain characters from various languages and symbols. 
 
-> Ballerina Identifier follows the requirements of Unicode TR31 for immutable identifiers; the set of characters is immutable in the sense that it does not change between Unicode versions. 
-
+{{< hint info >}}
+ Ballerina Identifier follows the requirements of Unicode TR31 for immutable identifiers; the set of characters is immutable in the sense that it does not change between Unicode versions. 
+{{</hint >}}
 
 ### Quoted Identifier
 
 As you may have noticed, the previous syntax we discussed disallowed keywords and identifiers that start with digits. However, this limitation can be overcome using a Quoted Identifier syntax:
 
-`'<Initial_Char | Digits>*`
+{{<md class="syntax">}}
+* `'<Initial_Char | Digits>*`
+{{</md>}}
 
 It is same syntax, instead identifier starts with single quote `'`. This allows any combination of characters, including keywords and identifiers that start with digits, to be used as an identifier. Here are some examples. 
 
-<TODO Add example here>
-
+🚧 TODO: Add example here.
 
 ### Character Escaping 
 
 As previously mentioned, Ballerina allows any valid Unicode code point to be used in an identifier, which can be escaped using the `\u{XXXX}` syntax or a non-empty character using the `\` syntax. This provides even more flexibility for programmers to use non-ASCII characters and support non-English languages in their code.
 
-<TODO Add example here>
+{{<md class="syntax">}}
+* `\u{XXXX}`
+* `\`
+{{</md>}}
 
 However, there are some restrictions on the use of these escape sequences in identifiers, as defined in the [Ballerina Language Specifications](https://ballerina.io/spec/lang/master/#lexical_structure). For example, `\u{0000}` to `\u{D800}` and from (excluding) `\u{DFFF}` to `u{10FFFF}` are not allowed in identifiers. 
+
+🚧 TODO Add example here.
 
 ### Qualified Identifier 
 
 Identifiers are not only used to name elements in a program but also to refer to them. The syntax we discussed so far works well to refer to elements locally within the source of the module. However, to refer to another module, you need a qualified identifier.
 
+{{<md class="syntax">}}
+* `<module-prefix-identifier>:<identifier>`
+{{</md>}}
+
 Qualified identifier syntax has an additional identifier (module-prefix) at the beginning of the identifier to indicate the module that is being referred to. It must be the same as the module-prefix specified in an import declaration in the same source file. To separate the module-prefix and the identifier, there is a colon `:`, and there should not be any whitespace between them.
 
-`<module-prefix-identifier>:<identifier>`
+{{< hint warning >}}
+When using the Ballerina platform, there are restrictions on choosing the organization and module name. Unlike other identifiers, they only support the use of alphanumeric characters for the module name and organization name. The module name and organization name must start with an ASCII letter (`A-Z`, `a-z`) and may contain an underscore `_` to separate words that are written in ASCII letters and digits (`0-9`). They must not end with an underscore. 
+{{</hint >}}
 
-> In the Ballerina platform, there are restrictions on choosing the organization and module name. Unlike other identifiers, they only support the use of alphanumeric characters for the module name and organization name. The module name and organization name must start with an ASCII letter (`A-Z`, `a-z`) and may contain an underscore `_` to separate words that are written in ASCII letters and digits (`0-9`). They must not end with an underscore. 
-
-## Usages and Naming Conventions
-
-Identifiers are used in multiple context. Here I have list them. 
-
-* Type Definitions
-  * To refer already defined type, such as built-in types and user defined types
-  * Record/Object field
-* Function parameter name
-* Objects
-  * Method name 
-  * Resource Path Segment
-
-
-## Naming Conventions 
+## 💡 Usages and Naming Conventions
 
 Identifiers can be used in different language contexts, and depending on the context, there are generally accepted best practices for naming identifiers. 
 
@@ -83,19 +85,172 @@ However, depending on the requirements, you may not be able to follow the same g
 
 Another valid reason to deviate from these guidelines is that they are designed for English words, and camelCase, PascalCase don't make any sense in some other languages. In such cases, you are free to follow your own convention.
 
+### 🐫 camelCase
+
+{{< expand "✅ Function/Method Name" "💡" >}}
+{{< balcode "1 3" >}}
+function calculateAverage() { }
+
+function jsonToXml() { }
+{{</balcode >}}
+{{</expand>}}
+
+{{< expand "✅ Function Parameters" "💡" >}}
+{{<balcode "1">}}
+function getName(string firstName, string lastName) returns string {
+  return firstName + " " + lastName;
+}
+{{</balcode>}}
+{{</expand>}}
+
+{{< expand "✅ Variable (Local or Global) /Configurable/Listeners" "💡" >}}
+{{<balcode "1 2 4 5 7 9">}}
+int number = 10;
+boolean isOpen = true;
+
+configurable int port = ?;
+configurable string hostName = ?;
+
+listener http:Listener httpListener = new (port);
+
+http:Client restClient = check new (hostName);
+{{</balcode>}}
+{{</expand>}}
+
+{{< expand "✅ Record Fields (Or as specified)" "💡" >}}
+{{<balcode "2 3 4">}}
+type Person record {
+    string firstName;
+    string lastName;
+    string home\-address;
+};
+{{</balcode>}}
 
 
-|Context|Case|Examples|
-|---|---|---|
-|Variables, Functions, Configurable, Listener Record/Object fields | camelCase| `number`, `isOpen`, `createResponse()` |
-|Type definitions, Classes, Enum, Annotation| PascalCase | `Person`, `State`, `Connector`, `Display` |
-|Service/Resource Path| kebab-case / dash-case | `about-us`, `customer-info` |
-|Const | UPPER_SNAKE_CASE | `PI`, `INT_MAX` |
+📌 In Record Fields, `\-` is used to escape the `-` character.
+{{</expand >}}
 
+{{< expand "✅ Object/Class Fields" "💡" >}}
+{{<balcode "2 3 8 9">}}
+type PersonObject object {
+    string firstName;
+    string lastName;
+};
+
+class StudentObject {
+    *PersonObject;
+    string firstName = "John";
+    string lastName = "Doe";
+}
+{{</balcode>}}
+
+📌 Unlike records, we do not use objects to represent data from an external system. Therefore, we do not have to worry about escaping the "-" character. It is important to use proper naming conventions for object fields.
+{{</expand >}}
+
+{{< expand "✅ Anonymous function parameter list" "💡" >}}
+{{<balcode "2">}}
+function (string, string) returns string getFullName 
+    = (fname, lname) => fname + " " + lname;
+{{</balcode>}}
+📌Use simple and short name for Anonymous function parameter list.
+{{</expand >}}
+
+{{< expand "✅ Worker Name" "💡" >}}
+{{<balcode "2 6">}}
+function parallelSum(int[1000] numbers) returns int {
+    worker sumWorker1 returns int { 
+        return int:sum(...numbers.slice(0, 499));
+    }
+
+    worker sumWorker2 returns int { 
+        return int:sum(...numbers.slice(500, 999));        
+    }
+
+    record {| int sumWorker1; int sumWorker2; |} results = wait { sumWorker1 , sumWorker2 };
+    return results.sumWorker1 + results.sumWorker2;
+}
+{{</balcode>}}
+{{</expand >}}
+
+{{< expand "✅ XML Namespace" "💡" >}}
+{{<balcode "1">}}
+xmlns "http://bal.tips" as balTips;
+{{</balcode>}}
+
+📌 XML namespace identifier must be short, single word and typically written in lowercase letters. Use camelCase if you need multiple words.
+{{</expand >}}
+
+
+
+### 🅟 PascalCase
+
+{{< expand "✅ Type Definitions, Classes, Enum" "💡" >}}
+{{<balcode "1 7 13">}}
+type DepartmentWorker  record { 
+    string firstName;
+    int age;
+    decimal salary;
+};
+
+enum DepartmentName {
+    HR,
+    IT,
+    SALES
+}
+
+class EmployeeDataClient { }
+{{</balcode>}}
+{{</expand >}}
+
+### 🐍 UPPER_SNAKE_CASE
+
+{{< expand "✅ Constants - UPPER_SNAKE_CASE" "💡" >}}
+{{<balcode "1 2">}}
+const PI = 3.141592653589793;
+const MAX_VALUE = 9223372036854775807;
+{{</balcode>}}
+{{</expand >}}
+
+### ➖ kebab-case/dash-case
+
+{{< expand "✅ Service/Resource Path Segment - (or as specified)" "💡" >}}
+{{<balcode "1 2 3">}}
+service /inventory on new http:Listener (9090) {
+  resource function get item\-list () { }
+  resource function get customer\-info () { }
+}
+{{</balcode>}}
+
+📌 In Resource Path Segment, `\-` is used to escape the `-` character.
+{{</expand >}}
+
+### ⋯ Dot Separated Identifiers
+
+{{< expand "✅ Module Name" "💡" >}}
+{{<balcode "1">}}
+import ballerina/http;
+import bal_tips/user.account;
+import bal_tips/email.pop;
+{{</balcode>}}
+{{</expand >}}
 
 It's important to note that these are just guidelines, and the Ballerina compiler won't force you to follow these rules, except for one occasion where you can only use alphanumeric characters (As mentioned in the qualified identifier) for the module name and organization name. If you see a warning or error other than that, it's probably caused by a compiler extension that is part of the imported library used by you.
 
-<TODO : Good Example >
+#### Working with Acronyms
+
+When using acronyms such as `XML`, `JSON`, or `REST` in identifiers, it's generally recommended to use capital letters for the first letter of the acronym and camelCase for the rest of the letters. However, if the identifier starts with an acronym, you should use appropriate case for the first letter, following the standard convention for that acronym.
+
+For example, in a function that converts JSON to XML, you might use the identifier `jsonToXml`, where "json" is written in lowercase using camelCase, and "Xml" is written in PascalCase with a capital letter for the first letter of the acronym. Similarly, in a function that converts XML to JSON, you might use the identifier `xmlToJson`.
+
+For type definitions that use acronyms, you would follow the same convention, using PascalCase with a capital letter for the first letter of the acronym. For example, you might define a type `XmlProperties` or `RestApiProperties`, where "Xml" and "RestApi" are written in PascalCase with a capital letter for the first letter of each acronym.
+
+## Usage
+
+### Special Identifiers
+
+Use _ in variable context to ignore a return value. 
+
+### XML qualified name
 
 ## Advanced Topics
 
@@ -105,21 +260,16 @@ It's important to note that these are just guidelines, and the Ballerina compile
 
 Predefined built-in types (identifier)
 
-* boolean
-* int
-* float
-* decimal
-* string
-* xml
-* error
-* function
-* future
-* handle
-* any
-* readonly
-* anydata
-* json
-* byte
+{{< md class="post_table center post_table_compact" >}}
+
+|         |        |       |          |
+|---------|--------|-------|----------|
+| boolean | int    | float | decimal  |
+| string  | xml    | error | function |
+| future  | handle | any   | readonly |
+| anydata | json   | byte  |          |
+
+{{</md>}}
 
 
 ### Runtime Representation
