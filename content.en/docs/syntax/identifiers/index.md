@@ -8,6 +8,11 @@ weight : 200
 
 An identifier is a name given to an element in a program, such as a variable, function, or type. Identifiers allow programmers to identify and refer to specific elements in the source code. 
 
+{{< md class="center" >}}
+<img src="/docs/syntax/identifiers/Identifiers.svg" alt="Identifiers are everywhere"  />
+Identifiers are everywhere in your code
+{{</md >}}
+
 The use of appropriate identifiers is important for writing readable and understandable code. Different programming languages have their own rules and conventions for identifiers, and in this post, I will focus on how to master identifiers in Ballerina.
 
 ## Syntax 

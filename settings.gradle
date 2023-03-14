@@ -137,6 +137,8 @@ include(':docs-langlib-xml')
 project(':docs-langlib-xml').projectDir = file('content.en/docs/langlib/xml/')
 
 // Add syntax
+include(':docs-syntax-identifier')
+project(':docs-syntax-identifier').projectDir = file('content.en/docs/syntax/identifiers/')
 include(':docs-syntax-comment')
 project(':docs-syntax-comment').projectDir = file('content.en/docs/syntax/comments/')
 
