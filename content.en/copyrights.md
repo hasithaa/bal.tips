@@ -62,3 +62,8 @@ I thank the original authors for their hard work and for making this website sim
 - [pagefind](https://pagefind.app/)
 - [reveal.js](https://github.com/hakimel/reveal.js/) by [hakimel](https://github.com/hakimel) MIT license.
 - [reveal.js-menu](https://github.com/denehyg/reveal.js-menu/) by [denehyg](https://github.com/denehyg) MIT license. 
+
+
+# Third-Party Services
+
+In order to improve our website and provide better services to our users, we use third-party services such as Google Analytics. This service helps us track important data such as user behavior, page views, and demographics. By using this information, we can optimize our website and make it more user-friendly. Please note that these third-party services may collect your data in accordance with their own privacy policies. We encourage you to review these policies and understand how your data may be used.
