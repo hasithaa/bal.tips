@@ -40,10 +40,9 @@
             {{- $description:= $data.description }}
             <div class="gridlist">
                 <span class="grid_btn">
-                    {{$data.icon}}&nbsp;
                     <button class="tip_btn {{$class}}" 
                         onclick="{{- range $id := $list }}highlightID('{{ $id }}');{{- end }}">
-                        {{- $data.lines }}
+                        {{$data.icon}}&nbsp;{{- $data.lines }}
                     </button>
                 </span>
                 <span class="gridlist-data">

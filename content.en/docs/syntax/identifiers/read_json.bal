@@ -1,4 +1,5 @@
 import ballerina/io;
+
 public function main() returns error? {
     json inputJson = check io:fileReadJson("data.json");
     Customer customer = check inputJson.cloneWithType(Customer);
@@ -7,6 +8,7 @@ public function main() returns error? {
 
     io:println("Full Name: ", fullName);
 }
+
 type CustomerAddress record {
     string street;
     string city;

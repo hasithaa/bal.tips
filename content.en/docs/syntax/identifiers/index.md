@@ -1,7 +1,15 @@
 ---
-title : Identifiers
-description : ""
-weight : 200
+title : "Identifiers - Best Practices and Use Cases"
+description : "An identifier is a name given to an element in a program, such as a variable, function, or type. Identifiers allow programmers to identify and refer to specific elements in the source code."
+keywords: [identifiers, naming conventions, naming rules, naming guidelines]
+images: [/docs/syntax/identifiers/Identifiers.svg]
+date : 2023-03-14
+weight : 4005
+type : docs
+ballerina_type : [json, maps]
+ballerina_lang : [identifier]
+ballerina_feature : [data-bind]
+highlight: [read_json.bal, ignore.bal]
 ---
 
 # Identifiers 
@@ -15,7 +23,7 @@ Identifiers are everywhere in your code
 
 The use of appropriate identifiers is important for writing readable and understandable code. Different programming languages have their own rules and conventions for identifiers, and in this post, I will focus on how to master identifiers in Ballerina.
 
-## Syntax 
+## ✍️ Syntax 
 
 ### Identifier Syntax
 
@@ -133,23 +141,73 @@ public function main() returns error? {
 When using the Ballerina platform, there are restrictions on choosing the organization and module name. Unlike other identifiers, they only support the use of alphanumeric characters for the module name and organization name. The module name and organization name must start with an ASCII letter (`A-Z`, `a-z`) and may contain an underscore `_` to separate words that are written in ASCII letters and digits (`0-9`). They must not end with an underscore. 
 {{</hint >}}
 
-## 💡 Usages and Naming Conventions
+## 💡 Usages 
+
+### Better Support for Domain-Specific Terminology
+
+Ballerina is designed to have flexible identifiers, which is especially useful when working with data that may contain characters from various languages and symbols. This makes it easier to work with domain-specific terminology, as identifiers can be customized to match the specific needs of a domain. For example, if you're working with JSON or XML data that has been poorly designed and contains special characters in the keys, Ballerina allows you to create identifiers that match those keys, making it easier to access and work with the data.
+
+The video showcases how Ballerina's flexible identifiers allow us to work with the special characters in the JSON keys, enabling us to transform and access the data easily.
+
+{{<tabs>}}
+{{<tab "Demo">}}
+{{<youtube Yz21_A6Z1Eo>}}
+
+{{</tab>}}
+{{<tab "Source Code">}}
+{{<code id="0" title="Handling poorly design JSON value">}}
+{{< highlight title="Code Breakdown" >}}
+📌::: 5::: Use `cloneWithType` to convert the JSON value to a record value.
+📌::: 7::: Once the JSON value is converted to a record value, you can access the fields using the dot notation.
+📌::: 12-25::: Generated Record Structure, using the original JSON value as the template by using the Ballerina Visual Studio Code plugin. 
+{{< /highlight >}}
+{{</code>}}
+{{</tab>}}
+{{</tabs>}}
+
+
+### Unicode Support
+
+Ballerina supports the use of Unicode characters in identifiers. When we designed the language, supporting Unicode identifiers was one of the primary design requirements, because it makes it easier for programmers to use non-ASCII characters, domain-specific terminology, and support non-English languages in their code. 
+
+{{<md class="center">}}
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR52UNbp40rRKFI416fBQcLOvjOK68AMjQU67DWPl22JR__7mXAn26DbpJXk4IQtwb-hK81hmV50GFT/embed?start=true&loop=true&delayms=3000" frameborder="0" width="672" height="317" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+{{</md>}}
+
+### Ignore value using `_`
+
+In Ballerina, you can use a single underscore `_` as an identifier in a variable context to simply ignore a value. This is useful when you don't actually need to use the value generated from the expression. Another use-case is when you bind a structured value to multiple variables using binding patterns, but you don't need all the values. In such cases, you can use the single underscore to ignore the values you don't need. 
+
+{{<code id="1" title="Ignore value">}}
+{{< highlight title="Code Breakdown" >}}
+📌:::11::: To calculate the average, you don't need student's name, ignore it using `_`.
+📌:::17::: In this specific case, you only need student's name, ignore the rest using `_`.
+📌:::18::: The `printStudentName` function returns a boolean value, since you don't need it, ignore it using `_`.
+{{< /highlight >}}
+{{</code>}}
+
+
+It's important to note that this technique only works for non-error values. Ignoring errors is generally considered bad practice, and the Ballerina compiler will generate an error if you try to ignore a value that could contain an error.
+
+## 💡 Naming Conventions
 
 Identifiers can be used in different language contexts, and depending on the context, there are generally accepted best practices for naming identifiers. 
-
-* Use descriptive identifiers to make your code more readable and understandable.
-* Avoid using names that are either too long or too short. Longer names are easier to understand, but excessively long names can make your code less readable. Shorter names are easier to type, but names that are too short may not convey sufficient meaning, making your code less readable.
-* Avoid using abbreviations in identifiers unless they are well-known and commonly used.
-* Be aware of the context in which you are using the identifier. Depending on the context, you may have to follow certain conventions. I will discuss some of these conventions later in this section.
-* Be aware of the difference between public and private identifiers. Public identifiers are visible outside the module, while private identifiers are visible only within the module.
-  * When exposing APIs to the public, such as services, client objects, etc., you should choose public identifiers carefully.
-  * Take the time to think about the public identifiers and choose them wisely, as this will make your code more readable and understandable.
-  * This will also reduce the possibility of breaking changes in the future and the inconvenience consumers will experience when migrating to a new version.
 
 {{< md class="center" >}}
 ![Identifiers Everywhere](https://i.imgflip.com/7e9l6t.jpg)
 [Memes by Hasitha Aravinda](https://imgflip.com/i/7e9l6t)
 {{</md >}}
+
+* Use descriptive identifiers to make your code more readable and understandable.
+* Avoid using names that are either too long or too short. Longer names are easier to understand, but excessively long names can make your code less readable. Shorter names are easier to type, but names that are too short may not convey sufficient meaning, making your code less readable.
+* Avoid using abbreviations in identifiers unless they are well-known and commonly used.
+* Be aware of the context in which you are using the identifier. Depending on the context, you may have to follow certain conventions. I will discuss some of these conventions later in this section.
+* Be aware of the difference between public and non-public identifiers. Public identifiers are visible outside the module, while non-public identifiers are visible only within the module.
+  * When exposing APIs to the public, such as services, client objects, etc., you should choose public identifiers carefully.
+  * Take the time to think about the public identifiers and choose them wisely, as this will make your code more readable and understandable.
+  * This will also reduce the possibility of breaking changes in the future and the inconvenience consumers of your library will experience when migrating to a new version.
 
 However, depending on the requirements, you may not be able to follow these guidelines. Sometimes you have to comply with certain specifications or contracts. For example, Ballerina developers implementing integrations often have to adhere to OpenAPI/GraphQL/gRPC contracts and use the names defined in the contract. In such cases, using the same name can help reduce unnecessary data transformation and mapping. You can use features such as quoted identifiers and character escaping to overcome limitations of the identifier syntax.
 
@@ -314,35 +372,94 @@ For example, in a function that converts JSON to XML, you might use the identifi
 
 For type definitions that use acronyms, you would follow the same convention, using PascalCase with a capital letter for the first letter of the acronym. For example, you might define a type `XmlProperties` or `RestApiProperties`, where "Xml" and "RestApi" are written in PascalCase with a capital letter for the first letter of each acronym.
 
-## Usage
+## 🚀 Advanced Topics
 
-### Special Identifiers
+### 🎚️ Identifier Scoping Rules
 
-Use _ in variable context to ignore a return value. 
+Identifiers have their own scope, and depending on the context in which they are used, different rules apply. There are two main scopes for identifiers in Ballerina:
+* Module-scope
+  An identifier declared in the module-scope can be referenced anywhere within the module. If the identifier is declared as public, it can be referenced from outside the module as well.
+* Block-scope.
+  An identifier declared in the block-scope can only be referenced within the particular block in which it is declared. These blocks are typically delimited by curly braces.
 
-### XML qualified name
+These two scopes are further separated into three symbol spaces. Here's a breakdown of which language constructs belong to each of the three symbol spaces in Ballerina:  
 
-## Advanced Topics
-
-### Identifier Scope
-
-### Keywords and Predefined Identifiers
-
-Predefined built-in types (identifier)
-
+**Language Constructs/Symbol Space and Scopes**
 {{< md class="post_table center post_table_compact" >}}
 
-|         |        |       |          |
-|---------|--------|-------|----------|
-| boolean | int    | float | decimal  |
-| string  | xml    | error | function |
-| future  | handle | any   | readonly |
-| anydata | json   | byte  |          |
+| Symbol-Space 🡢 / Scope 🡣 | *main*    | *prefix*      | *annotation tag*   |
+|:--------------------------:|------------|-----|----|
+|        Module-Scope        | Variables, Constants, Types, Functions, and other identifiers that do not belong to any of the other two spaces  | Prefixes declared by import declarations and XML namespace declarations | Annotation tags declared by annotation declarations |
+|        Block-Scope         | Any statement, action, expression that supports type-binding patterns/binding patterns, such as variable definition statements, foreach statements, let expressions, and query from clauses. Additionally, function parameters are also part of the block scope.  | Local XML namespace declaration statements  | N\A    |
 
 {{</md>}}
 
+**Shadowing Rules**
+
+ It is possible to declare an identifier with block-scope even if the same identifier has already been declared with module-scope within the same symbol space. In this case, the block-scope declaration will take precedence over the module-scope declaration within the region where the block-scope declaration is in scope. However, if two identifiers with the same name are declared with overlapping block-scope within the same symbol space, it will result in a compile error.
+
+ {{<balcode "3 4 5 7 9 11 16 17 18">}}
+import ballerina/io;
+
+function sumIf(int num1, int num2, int max) returns int {
+    // num1, num2, max are block-scope variables
+    // max hides a module-scope variable with the same name
+
+    int a = num1; // block-scope, hides module-scope identifier
+    if a > max {
+        int a = 0; // Compile time error. Already defined in a block-scope
+    } else if num2 > max {
+        int num2 = 0; // Compile time error. Already defined in a block-scope
+    }
+    return a + num2;
+}
+
+// module-scope identifiers location does not matter
+int a = 100; // module-scope
+public int max = 40; // module-scope and public
+
+public function main() {
+    io:println(sumIf(a, a, 200));    
+}
+{{</balcode>}}
+
+### Keywords/Predefined Identifiers and Special Cases
+
+Ballerina has a large set of reserved keywords that are reserved for language constructs. Sometimes, common words such as "order" or "limit" may also be reserved keywords. In such cases, you can still use these keywords as identifiers by using the quoted identifier syntax.
+
+However, there are special cases where you don't need to use the quoted identifier syntax. One such case is when using built-in type names. These are the types that are defined in the language specification, yet you can use them as identifiers without using the quoted identifier syntax.
+
+{{< md class="post_table center post_table_compact" >}}
+
+|         |         |          |             |          |
+|---------|---------|----------|-------------|----------|
+| boolean | decimal | error    | float       | future   |
+| int     | string  | xml      | any         | anydata  |
+| byte    | never   | handle   | readonly    | function |
+
+{{</md>}}
+
+Another example of where you don't need to use the quoted identifier syntax is when working with pre-declared module prefixes. These prefixes are used to refer to the language libraries and are predefined by the Ballerina language. Here is the list of pre-declared module prefixes.
+
+{{< md class="post_table center post_table_compact" >}}
+
+|         |         |          |             |          |
+|---------|---------|----------|-------------|----------|
+| boolean | decimal | error    | float       | function |
+| future  | int     | map      | object      | stream   |
+| string  | table   | typedesc | transaction | xml      |
+
+{{</md>}}
+
+Additional `map`, `join`, and `start` are keywords, but they are allowed as method names without the quoted identifier syntax.
 
 ### Runtime Representation
 
+In Ballerina, some identifiers have runtime meaning, while others do not. For example, variable names are desugared into something sequential during bytecode generation, but debugger information is still maintained, so we can refer to those variables using the original identifier name during a debugging session. 
 
+However, not all identifiers are desugared into sequential bytecode. For example, record fields, some level of type information, function names have runtime meaning and are not desugared. In these cases, we keep the original identifier name as it is, as it has runtime significance.
+
+# Conclusion
+
+In this post, I have covered the basics of identifiers in Ballerina. I hope you found this post useful.
 
