@@ -118,7 +118,7 @@ In this post, we learned about Ballerina basic by writing a "Hello, World...!" p
 <!--tldr-->
 {{<md class="keypoint">}}
 
-![hello world](main.png)
+![hello world](/docs/introduction/basics/main.png)
 
 {{</md>}}
 {{<md class="tldr">}}

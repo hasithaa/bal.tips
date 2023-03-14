@@ -89,7 +89,7 @@ It is same syntax, instead identifier starts with single quote `'`. This allows 
 
 ### Character Escaping 
 
-As previously mentioned, Ballerina allows any valid Unicode code point to be used in an identifier, which can be escaped using the `\u{XXXX}` syntax or a non-empty character using the `\` syntax. This provides even more flexibility for programmers to use non-ASCII characters and support non-English languages in their code.
+As previously mentioned, Ballerina allows any valid Unicode code point to be used in an identifier, which can be escaped using the `\u{XXXX}` syntax or a non-empty character using the `\` syntax. This provides even more flexibility for programmers to use non-ASCII characters in their code.
 
 {{<md class="syntax">}}
 * `\u{XXXX}`
@@ -143,9 +143,9 @@ When using the Ballerina platform, there are restrictions on choosing the organi
 
 ## 💡 Usages 
 
-### Better Support for Domain-Specific Terminology
+### Better Support for JSON and XML
 
-Ballerina is designed to have flexible identifiers, which is especially useful when working with data that may contain characters from various languages and symbols. This makes it easier to work with domain-specific terminology, as identifiers can be customized to match the specific needs of a domain. For example, if you're working with JSON or XML data that has been poorly designed and contains special characters in the keys, Ballerina allows you to create identifiers that match those keys, making it easier to access and work with the data.
+Ballerina is designed to have flexible identifiers, which is especially useful when working with data that may contain characters from various languages and symbols. This makes it easier to work with domain-specific terminology, as identifiers can be customized to match the specific needs of a domain. For example, if you're working with JSON or XML data that has been poorly designed or contains special characters in the keys, Ballerina allows you to create identifiers that match those keys, making it easier to access and work with the data without having to do any complex data transformations.
 
 The video showcases how Ballerina's flexible identifiers allow us to work with the special characters in the JSON keys, enabling us to transform and access the data easily.
 
@@ -176,9 +176,9 @@ Ballerina supports the use of Unicode characters in identifiers. When we designe
 
 {{</md>}}
 
-### Ignore value using `_`
+### Ignoring Values Using `_`
 
-In Ballerina, you can use a single underscore `_` as an identifier in a variable context to simply ignore a value. This is useful when you don't actually need to use the value generated from the expression. Another use-case is when you bind a structured value to multiple variables using binding patterns, but you don't need all the values. In such cases, you can use the single underscore to ignore the values you don't need. 
+In Ballerina, you can use a single underscore `_` as an identifier in a variable context to simply ignore a value. This is useful when you don't actually need to use the value generated from an expression. Another use case is when you bind a structured value to multiple variables using binding patterns, but you don't need all of the values. In such cases, you can use a single underscore to ignore the values that you don't need.
 
 {{<code id="1" title="Ignore value">}}
 {{< highlight title="Code Breakdown" >}}
@@ -201,7 +201,8 @@ Identifiers can be used in different language contexts, and depending on the con
 {{</md >}}
 
 * Use descriptive identifiers to make your code more readable and understandable.
-* Avoid using names that are either too long or too short. Longer names are easier to understand, but excessively long names can make your code less readable. Shorter names are easier to type, but names that are too short may not convey sufficient meaning, making your code less readable.
+  * But avoid using names that are too long or too short. Long names can be easier to understand, but excessively long names can make your code harder to read. Short names are easier to type, but they may not convey enough meaning, making your code less readable.
+  * Striking the right balance can be tricky, but it's a skill that you can develop over time.
 * Avoid using abbreviations in identifiers unless they are well-known and commonly used.
 * Be aware of the context in which you are using the identifier. Depending on the context, you may have to follow certain conventions. I will discuss some of these conventions later in this section.
 * Be aware of the difference between public and non-public identifiers. Public identifiers are visible outside the module, while non-public identifiers are visible only within the module.
@@ -457,9 +458,8 @@ Additional `map`, `join`, and `start` are keywords, but they are allowed as meth
 
 In Ballerina, some identifiers have runtime meaning, while others do not. For example, variable names are desugared into something sequential during bytecode generation, but debugger information is still maintained, so we can refer to those variables using the original identifier name during a debugging session. 
 
-However, not all identifiers are desugared into sequential bytecode. For example, record fields, some level of type information, function names have runtime meaning and are not desugared. In these cases, we keep the original identifier name as it is, as it has runtime significance.
+However, not all identifiers are desugared into sequential identifiers. For example, record fields, some level of type information, function names have runtime meaning and are not desugared. In these cases, we keep the original identifier name as it is, as it has runtime significance.
 
 # Conclusion
 
-In this post, I have covered the basics of identifiers in Ballerina. I hope you found this post useful.
-
+In this post, I have covered the basics of identifiers including syntax variations, naming conventions, and scoping rules. Then, discuss the flexibility when working with JSON data, covered some advanced topics such as keywords, predefined identifiers, and runtime representation. I hope you found this post useful.

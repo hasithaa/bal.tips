@@ -72,7 +72,7 @@ Below are the main points to remember:
 
 {{<md class="keypoint">}}
 
-![comments](comment.png)
+![comments](/docs/syntax/comments/comment.png)
 
 {{</md>}}
 {{<md class="tldr">}}
