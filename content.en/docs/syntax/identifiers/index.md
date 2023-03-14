@@ -35,9 +35,22 @@ The `Initial_Char` can be
 
 After the `Initial_Char`, any combination of characters including digits is allowed. However, using reserved words such as keywords will result in a compilation error. Let's look at some valid identifiers and invalid identifiers.  
 
-🚧 TODO: Add example here.
+{{<md class="post_table center">}}
 
-Ballerina supports the use of Unicode characters in identifiers. When we designed the language, supporting Unicode identifiers was one of the primary design requirements, because it makes it easier for programmers to use non-ASCII characters, domain-specific terminology, and support non-English languages in their code. For example, this is particularly useful when working with data such as JSON or XML that may contain characters from various languages and symbols. 
+| ✅ Valid Identifiers |                                                      | ❌ Invalid Identifiers (Reason) |
+|---------------------|------------------------------------------------------|--------------------------------|
+| name                || 2invalid (starts with a number)                      |
+| ageInYears          || my-variable (contains an invalid special character)  |
+| Student             || bad!name (contain with an invalid special character) |
+| sales_tax_rate      || 12345 (starts with a number)                         |
+| user_name           || @hello (starts with an invalid special character)    |
+| _isAvailable        || id with spaces  (contains a space)                   |
+| MAX_ATTEMPTS        || if   (keyword)                                       |
+| 国家                  || order (keyword)                                      |
+| 国                   || service (keyword)                                    |
+| страна              || class (keyword)                                      |
+
+{{</md>}}
 
 {{< hint info >}}
  Ballerina Identifier follows the requirements of Unicode TR31 for immutable identifiers; the set of characters is immutable in the sense that it does not change between Unicode versions. 
@@ -51,9 +64,20 @@ As you may have noticed, the previous syntax we discussed disallowed keywords an
 * `'<Initial_Char | Digits>*`
 {{</md>}}
 
-It is same syntax, instead identifier starts with single quote `'`. This allows any combination of characters, including keywords and identifiers that start with digits, to be used as an identifier. Here are some examples. 
+It is same syntax, instead identifier starts with single quote `'`. This allows any combination of characters, including keywords and identifiers that start with digits, to be used as an identifier. Let's make some of those invalid identifiers valid using quoted identifiers.
 
-🚧 TODO: Add example here.
+{{<md class="post_table center">}}
+
+| ❌ Invalid Identifiers | ✅ Valid Identifiers |
+|-----------------------|---------------------|
+| 2invalid              | '2invalid           |
+| 12345                 | '12345              |
+| if                    | 'if                 |
+| order                 | 'order              |
+| service               | 'service            |
+| class                 | 'class              |
+
+{{</md>}}
 
 ### Character Escaping 
 
@@ -66,9 +90,19 @@ As previously mentioned, Ballerina allows any valid Unicode code point to be use
 
 However, there are some restrictions on the use of these escape sequences in identifiers, as defined in the [Ballerina Language Specifications](https://ballerina.io/spec/lang/master/#lexical_structure). For example, `\u{0000}` to `\u{D800}` and from (excluding) `\u{DFFF}` to `u{10FFFF}` are not allowed in identifiers. 
 
-🚧 TODO Add example here.
+{{<md class="post_table center">}}
 
-### Qualified Identifier 
+| ❌ Invalid Identifiers           | ✅ Valid Identifiers                 | ✅ Valid Identifiers                            |
+|---------------------------------|-------------------------------------|------------------------------------------------|
+| my-variable                     | my\-variable                        | my\u{2D}variable                               |
+| bad!name                        | bad\!name                           | bad\u{21}name                                  |
+| @hello                          | \@hello                             | \u{40}hello                                    |
+| id with spaces                  | id\ with\ spaces                    | id\u{20}with\u{20}spaces                       |
+
+
+{{</md>}}
+
+### Qualified Identifier Syntax
 
 Identifiers are not only used to name elements in a program but also to refer to them. The syntax we discussed so far works well to refer to elements locally within the source of the module. However, to refer to another module, you need a qualified identifier.
 
@@ -78,6 +112,23 @@ Identifiers are not only used to name elements in a program but also to refer to
 
 Qualified identifier syntax has an additional identifier (module-prefix) at the beginning of the identifier to indicate the module that is being referred to. It must be the same as the module-prefix specified in an import declaration in the same source file. To separate the module-prefix and the identifier, there is a colon `:`, and there should not be any whitespace between them.
 
+{{<balcode "1 2 3 7 10 13">}}
+import ballerina/http;
+import ballerina/io;
+import myorg/account.user;
+
+public function main() returns error? {
+    // Refers to http:Client Class 
+    http:Client httpClient = check new("http://localhost:9090");
+
+    // Refers to io:NEW_LINE constant
+    string newLineChar = io:NEW_LINE;
+
+    // Refers to myorg/account.user:Payer Record
+    user:Payer payer = {name: "John Doe", age: 25};
+}
+{{</balcode>}}
+
 {{< hint warning >}}
 When using the Ballerina platform, there are restrictions on choosing the organization and module name. Unlike other identifiers, they only support the use of alphanumeric characters for the module name and organization name. The module name and organization name must start with an ASCII letter (`A-Z`, `a-z`) and may contain an underscore `_` to separate words that are written in ASCII letters and digits (`0-9`). They must not end with an underscore. 
 {{</hint >}}
@@ -86,7 +137,21 @@ When using the Ballerina platform, there are restrictions on choosing the organi
 
 Identifiers can be used in different language contexts, and depending on the context, there are generally accepted best practices for naming identifiers. 
 
-However, depending on the requirements, you may not be able to follow the same guidelines mentioned bellow. Sometimes you have to comply with certain specifications or contracts. For example, Ballerina developers implementing integrations often have to adhere to OpenAPI/GraphQL/gRPC contracts and use the names defined in the contract. In such cases, using the same name can help reduce unnecessary data transformation and mapping.
+* Use descriptive identifiers to make your code more readable and understandable.
+* Avoid using names that are either too long or too short. Longer names are easier to understand, but excessively long names can make your code less readable. Shorter names are easier to type, but names that are too short may not convey sufficient meaning, making your code less readable.
+* Avoid using abbreviations in identifiers unless they are well-known and commonly used.
+* Be aware of the context in which you are using the identifier. Depending on the context, you may have to follow certain conventions. I will discuss some of these conventions later in this section.
+* Be aware of the difference between public and private identifiers. Public identifiers are visible outside the module, while private identifiers are visible only within the module.
+  * When exposing APIs to the public, such as services, client objects, etc., you should choose public identifiers carefully.
+  * Take the time to think about the public identifiers and choose them wisely, as this will make your code more readable and understandable.
+  * This will also reduce the possibility of breaking changes in the future and the inconvenience consumers will experience when migrating to a new version.
+
+{{< md class="center" >}}
+![Identifiers Everywhere](https://i.imgflip.com/7e9l6t.jpg)
+[Memes by Hasitha Aravinda](https://imgflip.com/i/7e9l6t)
+{{</md >}}
+
+However, depending on the requirements, you may not be able to follow these guidelines. Sometimes you have to comply with certain specifications or contracts. For example, Ballerina developers implementing integrations often have to adhere to OpenAPI/GraphQL/gRPC contracts and use the names defined in the contract. In such cases, using the same name can help reduce unnecessary data transformation and mapping. You can use features such as quoted identifiers and character escaping to overcome limitations of the identifier syntax.
 
 Another valid reason to deviate from these guidelines is that they are designed for English words, and camelCase, PascalCase don't make any sense in some other languages. In such cases, you are free to follow your own convention.
 
