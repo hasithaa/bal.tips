@@ -34,7 +34,7 @@ bookToc: false
 
 ## News from Author
 
-{{<tweet "HasithaAravinda" 1627725355472809984 >}}
+{{<twitter_simple "HasithaAravinda" 1627725355472809984 >}}
 
 {{< hint info >}}
 🚧 Hey Viewers, Just a quick update to let you know that most of the posts on Bal.Tips are currently a work in progress, but I'll be adding new content regularly. Stay tuned for some exciting Ballerina coding tips and tutorials coming your way soon!
