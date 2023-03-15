@@ -30,7 +30,7 @@ The mascot, Bali-Bot with different actions in this website is original work cre
 
 ### Source Code Images
 
-All images with Ballerina Source code are created using [Snappify Editor](https://snappify.com/editor) and  licensed under[Creative Commons-Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/)
+All images with Ballerina Source code are licensed under[Creative Commons-Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/) These are created using multiple tools
 # Trademarks
 
 ## Ballerina
@@ -59,10 +59,16 @@ I thank the original authors for their hard work and for making this website sim
 
 - [hugo](https://gohugo.io/)
 - [hugo-book](https://github.com/alex-shpak/hugo-book) by [alex-shpak](https://github.com/alex-shpak) - MIT license. 
-- [pagefind](https://pagefind.app/)
+- [pagefind](https://pagefind.app/) by CloudCannon. MIT license.
 - [reveal.js](https://github.com/hakimel/reveal.js/) by [hakimel](https://github.com/hakimel) MIT license.
 - [reveal.js-menu](https://github.com/denehyg/reveal.js-menu/) by [denehyg](https://github.com/denehyg) MIT license. 
 
+Also, I am using multiple awesome Online Tools for creating images and content.
+
+- [ezgif.com](https://ezgif.com/)
+- [Carbon.now.sh](https://carbon.now.sh/)
+- [Snappify Editor](https://snappify.com/editor)
+- [imgflip.com/](https://imgflip.com/)
 
 # Third-Party Services
 

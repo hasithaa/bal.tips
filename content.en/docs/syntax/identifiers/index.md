@@ -12,16 +12,13 @@ ballerina_feature : [data-bind]
 highlight: [read_json.bal, ignore.bal]
 ---
 
-# Identifiers 
+# Identifiers - Best Practices and Use Cases 
 
-An identifier is a name given to an element in a program, such as a variable, function, or type. Identifiers allow programmers to identify and refer to specific elements in the source code. 
+Identifiers are names assigned to elements like variables, functions, or types in a program, helping programmers identify and reference specific elements in the source code.
 
-{{< md class="center" >}}
-<img src="/docs/syntax/identifiers/Identifiers.svg" alt="Identifiers are everywhere"  />
-Identifiers are everywhere in your code
-{{</md >}}
+{{<figure src="/docs/syntax/identifiers/Identifiers.svg" alt="Identifiers are everywhere" title="Identifiers are everywhere in your code">}}
 
-The use of appropriate identifiers is important for writing readable and understandable code. Different programming languages have their own rules and conventions for identifiers, and in this post, I will focus on how to master identifiers in Ballerina.
+Using suitable identifiers is crucial for creating readable and understandable code. Each programming language has its own rules and conventions for identifiers, and in this post, we'll explore mastering identifiers in Ballerina.
 
 ## ✍️ Syntax 
 
@@ -66,13 +63,13 @@ After the `Initial_Char`, any combination of characters including digits is allo
 
 ### Quoted Identifier
 
-As you may have noticed, the previous syntax we discussed disallowed keywords and identifiers that start with digits. However, this limitation can be overcome using a Quoted Identifier syntax:
+You might have noticed that the earlier syntax doesn't allow keywords and identifiers starting with digits. To overcome this limitation, use the Quoted Identifier syntax:
 
 {{<md class="syntax">}}
 * `'<Initial_Char | Digits>*`
 {{</md>}}
 
-It is same syntax, instead identifier starts with single quote `'`. This allows any combination of characters, including keywords and identifiers that start with digits, to be used as an identifier. Let's make some of those invalid identifiers valid using quoted identifiers.
+This syntax starts with a single quote `'`, enabling any combination of characters, including keywords and identifiers starting with digits, to be used as an identifier. Let's turn some of those invalid identifiers into valid ones using quoted identifiers.
 
 {{<md class="post_table center">}}
 
@@ -89,14 +86,14 @@ It is same syntax, instead identifier starts with single quote `'`. This allows 
 
 ### Character Escaping 
 
-As previously mentioned, Ballerina allows any valid Unicode code point to be used in an identifier, which can be escaped using the `\u{XXXX}` syntax or a non-empty character using the `\` syntax. This provides even more flexibility for programmers to use non-ASCII characters in their code.
+Ballerina allows any valid Unicode code point in an identifier, escaped using the \u{XXXX} syntax or a non-empty character with the \ syntax. This offers flexibility for using non-ASCII characters in code.
 
 {{<md class="syntax">}}
 * `\u{XXXX}`
 * `\`
 {{</md>}}
 
-However, there are some restrictions on the use of these escape sequences in identifiers, as defined in the [Ballerina Language Specifications](https://ballerina.io/spec/lang/master/#lexical_structure). For example, `\u{0000}` to `\u{D800}` and from (excluding) `\u{DFFF}` to `u{10FFFF}` are not allowed in identifiers. 
+However, some restrictions apply to escape sequences in identifiers, as outlined in the [Ballerina Language Specifications](https://ballerina.io/spec/lang/master/#lexical_structure). For instance, `\u{0000}` to `\u{D800}` and (excluding) `\u{DFFF}` to `u{10FFFF}` are not allowed in identifiers.
 
 {{<md class="post_table center">}}
 
@@ -118,7 +115,7 @@ Identifiers are not only used to name elements in a program but also to refer to
 * `<module-prefix-identifier>:<identifier>`
 {{</md>}}
 
-Qualified identifier syntax has an additional identifier (module-prefix) at the beginning of the identifier to indicate the module that is being referred to. It must be the same as the module-prefix specified in an import declaration in the same source file. To separate the module-prefix and the identifier, there is a colon `:`, and there should not be any whitespace between them.
+Qualified identifier syntax includes an additional identifier (module-prefix) at the start to indicate the referenced module. It must match the module-prefix in an import declaration within the same source file. A colon : separates the module-prefix and identifier, with no whitespace in between.
 
 {{<balcode "1 2 3 7 10 13">}}
 import ballerina/http;
@@ -138,16 +135,16 @@ public function main() returns error? {
 {{</balcode>}}
 
 {{< hint warning >}}
-When using the Ballerina platform, there are restrictions on choosing the organization and module name. Unlike other identifiers, they only support the use of alphanumeric characters for the module name and organization name. The module name and organization name must start with an ASCII letter (`A-Z`, `a-z`) and may contain an underscore `_` to separate words that are written in ASCII letters and digits (`0-9`). They must not end with an underscore. 
+With Ballerina platform, restrictions apply to organization and module names. They only support alphanumeric characters, and names must start with an ASCII letter (A-Z, a-z). Underscores _ can be used to separate words composed of ASCII letters and digits (0-9), but names shouldn't end with an underscore.
 {{</hint >}}
 
 ## 💡 Usages 
 
 ### Better Support for JSON and XML
 
-Ballerina is designed to have flexible identifiers, which is especially useful when working with data that may contain characters from various languages and symbols. This makes it easier to work with domain-specific terminology, as identifiers can be customized to match the specific needs of a domain. For example, if you're working with JSON or XML data that has been poorly designed or contains special characters in the keys, Ballerina allows you to create identifiers that match those keys, making it easier to access and work with the data without having to do any complex data transformations.
+Ballerina's flexible identifiers are great for working with data containing various languages and symbols, making it easier to handle domain-specific terminology. For instance, when dealing with poorly designed JSON or XML data with special characters in the keys, Ballerina enables you to create matching identifiers, simplifying data access and manipulation without complex transformations.
 
-The video showcases how Ballerina's flexible identifiers allow us to work with the special characters in the JSON keys, enabling us to transform and access the data easily.
+The video demonstrates how Ballerina's flexible identifiers help work with special characters in JSON keys for easy data transformation and access.
 
 {{<tabs>}}
 {{<tab "Demo">}}
@@ -157,9 +154,9 @@ The video showcases how Ballerina's flexible identifiers allow us to work with t
 {{<tab "Source Code">}}
 {{<code id="0" title="Handling poorly design JSON value">}}
 {{< highlight title="Code Breakdown" >}}
-📌::: 5::: Use `cloneWithType` to convert the JSON value to a record value.
-📌::: 7::: Once the JSON value is converted to a record value, you can access the fields using the dot notation.
-📌::: 12-25::: Generated Record Structure, using the original JSON value as the template by using the Ballerina Visual Studio Code plugin. 
+📌::: 5::: Using `cloneWithType`, convert the JSON value to a record value.
+📌::: 7::: After converting the JSON value to a record value, access the fields using dot notation.
+📌::: 12-25::: Generated the Record Structure using the original JSON value as a template with the Ballerina Visual Studio Code plugin.
 {{< /highlight >}}
 {{</code>}}
 {{</tab>}}
@@ -195,22 +192,18 @@ It's important to note that this technique only works for non-error values. Igno
 
 Identifiers can be used in different language contexts, and depending on the context, there are generally accepted best practices for naming identifiers. 
 
-{{< md class="center" >}}
-![Identifiers Everywhere](https://i.imgflip.com/7e9l6t.jpg)
-[Memes by Hasitha Aravinda](https://imgflip.com/i/7e9l6t)
-{{</md >}}
+{{<figure src="/docs/syntax/identifiers/7e9l6t.jpg" attrlink="https://imgflip.com/i/7e9l6t" attr="Memes by Hasitha Aravinda" title="Identifiers Everywhere, But not a single one descriptive." >}}
 
-* Use descriptive identifiers to make your code more readable and understandable.
-  * But avoid using names that are too long or too short. Long names can be easier to understand, but excessively long names can make your code harder to read. Short names are easier to type, but they may not convey enough meaning, making your code less readable.
-  * Striking the right balance can be tricky, but it's a skill that you can develop over time.
-* Avoid using abbreviations in identifiers unless they are well-known and commonly used.
-* Be aware of the context in which you are using the identifier. Depending on the context, you may have to follow certain conventions. I will discuss some of these conventions later in this section.
-* Be aware of the difference between public and non-public identifiers. Public identifiers are visible outside the module, while non-public identifiers are visible only within the module.
-  * When exposing APIs to the public, such as services, client objects, etc., you should choose public identifiers carefully.
-  * Take the time to think about the public identifiers and choose them wisely, as this will make your code more readable and understandable.
-  * This will also reduce the possibility of breaking changes in the future and the inconvenience consumers of your library will experience when migrating to a new version.
+* Opt for descriptive identifiers to enhance code readability and comprehension.
+  * Balance length: long names add clarity, but excessively long ones reduce readability. Short names are quicker to type but may lack meaning.
+  * This balance takes time to master.
+* Steer clear of abbreviations in identifiers, except for well-known, widely-used ones.
+* Be mindful of the identifier's context and any relevant conventions. Depending on the context, you may have to follow certain conventions. I will discuss some of these conventions later in this section.
+* Understand public vs. non-public identifiers: public ones are visible outside the module, while non-public ones are module-specific.
+  * When exposing APIs like services or client objects, choose public identifiers thoughtfully.
+  * Careful public identifier selection improves code readability and minimizes future breaking changes or inconvenience when upgrading a library version.
 
-However, depending on the requirements, you may not be able to follow these guidelines. Sometimes you have to comply with certain specifications or contracts. For example, Ballerina developers implementing integrations often have to adhere to OpenAPI/GraphQL/gRPC contracts and use the names defined in the contract. In such cases, using the same name can help reduce unnecessary data transformation and mapping. You can use features such as quoted identifiers and character escaping to overcome limitations of the identifier syntax.
+Some times, you might not be able to stick to these guidelines due to specific requirements, like following OpenAPI/GraphQL/gRPC contracts for Ballerina integrations. In these cases, using the same names defined in the contract can minimize extra data transformation and mapping. To work around identifier syntax limitations, you can use features like quoted identifiers and character escaping.
 
 Another valid reason to deviate from these guidelines is that they are designed for English words, and camelCase, PascalCase don't make any sense in some other languages. In such cases, you are free to follow your own convention.
 
@@ -367,23 +360,22 @@ It's important to note that these are just guidelines, and the Ballerina compile
 
 #### Working with Acronyms
 
-When using acronyms such as `XML`, `JSON`, or `REST` in identifiers, it's generally recommended to use capital letters for the first letter of the acronym and camelCase for the rest of the letters. However, if the identifier starts with an acronym, you should use appropriate case for the first letter, following the standard convention for that acronym.
+When using acronyms like XML, JSON, or REST in identifiers, stick to capitalizing the first letter and using camelCase for the rest. If an identifier starts with an acronym, follow the standard convention for its case in the context it used.
 
-For example, in a function that converts JSON to XML, you might use the identifier `jsonToXml`, where "json" is written in lowercase using camelCase, and "Xml" is written in PascalCase with a capital letter for the first letter of the acronym. Similarly, in a function that converts XML to JSON, you might use the identifier `xmlToJson`.
+For instance, in a function converting JSON to XML, you could use `jsonToXml` (with "json" in lowercase camelCase and "Xml" in PascalCase). Similarly, for XML to JSON, use `xmlToJson`.
 
-For type definitions that use acronyms, you would follow the same convention, using PascalCase with a capital letter for the first letter of the acronym. For example, you might define a type `XmlProperties` or `RestApiProperties`, where "Xml" and "RestApi" are written in PascalCase with a capital letter for the first letter of each acronym.
+For type definitions with acronyms, apply the same rule, using PascalCase and capitalizing the first letter. Examples include `XmlProperties` or `RestApiProperties`, where "Xml" and "RestApi" follow this convention.
 
 ## 🚀 Advanced Topics
 
 ### 🎚️ Identifier Scoping Rules
 
-Identifiers have their own scope, and depending on the context in which they are used, different rules apply. There are two main scopes for identifiers in Ballerina:
-* Module-scope
-  An identifier declared in the module-scope can be referenced anywhere within the module. If the identifier is declared as public, it can be referenced from outside the module as well.
-* Block-scope.
-  An identifier declared in the block-scope can only be referenced within the particular block in which it is declared. These blocks are typically delimited by curly braces.
+Identifiers in Ballerina have their own scope, with different rules based on the context. There are two main scopes:
 
-These two scopes are further separated into three symbol spaces. Here's a breakdown of which language constructs belong to each of the three symbol spaces in Ballerina:  
+* **Module-scope**: You can reference identifiers declared here anywhere in the module. If they're public, you can reference them outside the module too.
+* **Block-scope**: These identifiers are limited to the block they're declared in, usually within curly braces.
+
+Additionally, there are three symbol spaces for these scopes. Here's a quick rundown of language constructs in each Ballerina symbol space:
 
 **Language Constructs/Symbol Space and Scopes**
 {{< md class="post_table center post_table_compact" >}}
@@ -397,7 +389,7 @@ These two scopes are further separated into three symbol spaces. Here's a breakd
 
 **Shadowing Rules**
 
- It is possible to declare an identifier with block-scope even if the same identifier has already been declared with module-scope within the same symbol space. In this case, the block-scope declaration will take precedence over the module-scope declaration within the region where the block-scope declaration is in scope. However, if two identifiers with the same name are declared with overlapping block-scope within the same symbol space, it will result in a compile error.
+You can use the same identifier name for both block-scope and module-scope within the same symbol space. Within the block-scope region, it'll take priority over the module-scope. But watch out! If you declare two same-named identifiers with overlapping block-scope in the same symbol space, you'll get a compile error.
 
  {{<balcode "3 4 5 7 9 11 16 17 18">}}
 import ballerina/io;
