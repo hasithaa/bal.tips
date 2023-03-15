@@ -2,14 +2,14 @@
 title : "Identifiers - Best Practices and Use Cases"
 description : "An identifier is a name given to an element in a program, such as a variable, function, or type. Identifiers allow programmers to identify and refer to specific elements in the source code."
 keywords: [identifiers, naming conventions, naming rules, naming guidelines]
-images: [/docs/syntax/identifiers/Identifiers.svg]
+images: [/docs/syntax/identifiers/Identifiers.png]
 date : 2023-03-14
 weight : 4005
 type : docs
 ballerina_type : [json, maps]
 ballerina_lang : [identifier]
 ballerina_feature : [data-bind]
-highlight: [read_json.bal, ignore.bal]
+highlight: [read_json.bal, person.bal, ignore.bal]
 ---
 
 # Identifiers - Best Practices and Use Cases 
@@ -75,12 +75,12 @@ This syntax starts with a single quote `'`, enabling any combination of characte
 
 | ❌ Invalid Identifiers | ✅ Valid Identifiers |
 |-----------------------|---------------------|
-| 2invalid              | '2invalid           |
-| 12345                 | '12345              |
-| if                    | 'if                 |
-| order                 | 'order              |
-| service               | 'service            |
-| class                 | 'class              |
+| 2invalid              | `'2invalid`           |
+| 12345                 | `'12345`              |
+| if                    | `'if`                 |
+| order                 | `'order`              |
+| service               | `'service`            |
+| class                 | `'class`              |
 
 {{</md>}}
 
@@ -97,12 +97,12 @@ However, some restrictions apply to escape sequences in identifiers, as outlined
 
 {{<md class="post_table center">}}
 
-| ❌ Invalid Identifiers           | ✅ Valid Identifiers                 | ✅ Valid Identifiers                            |
-|---------------------------------|-------------------------------------|------------------------------------------------|
-| my-variable                     | my\-variable                        | my\u{2D}variable                               |
-| bad!name                        | bad\!name                           | bad\u{21}name                                  |
-| @hello                          | \@hello                             | \u{40}hello                                    |
-| id with spaces                  | id\ with\ spaces                    | id\u{20}with\u{20}spaces                       |
+| ❌ Invalid Identifiers  | ✅ Valid Identifiers  | ✅ Valid Identifiers |
+|---|---|---|
+| `my-variable`  | `my\-variable` | `my\u{2D}variable`|
+| `bad!name` | `bad\!name` | `bad\u{21}name` |
+| `@hello`| `\@hello` | `\u{40}hello` |
+| `id with spaces` | `id\ with\ spaces` | `id\u{20}with\u{20}spaces` |
 
 
 {{</md>}}
@@ -138,18 +138,17 @@ public function main() returns error? {
 With Ballerina platform, restrictions apply to organization and module names. They only support alphanumeric characters, and names must start with an ASCII letter (A-Z, a-z). Underscores _ can be used to separate words composed of ASCII letters and digits (0-9), but names shouldn't end with an underscore.
 {{</hint >}}
 
-## 💡 Usages 
+## 💡 Use-Cases 
 
-### Better Support for JSON and XML
+### Better Support for JSON Keys
 
 Ballerina's flexible identifiers are great for working with data containing various languages and symbols, making it easier to handle domain-specific terminology. For instance, when dealing with poorly designed JSON or XML data with special characters in the keys, Ballerina enables you to create matching identifiers, simplifying data access and manipulation without complex transformations.
 
 The video demonstrates how Ballerina's flexible identifiers help work with special characters in JSON keys for easy data transformation and access.
 
-{{<tabs>}}
+{{<tabs "demo1">}}
 {{<tab "Demo">}}
-{{<youtube Yz21_A6Z1Eo>}}
-
+{{<youtube id="Yz21_A6Z1Eo" title="Working with JSON data ">}}
 {{</tab>}}
 {{<tab "Source Code">}}
 {{<code id="0" title="Handling poorly design JSON value">}}
@@ -167,17 +166,22 @@ The video demonstrates how Ballerina's flexible identifiers help work with speci
 
 Ballerina supports the use of Unicode characters in identifiers. When we designed the language, supporting Unicode identifiers was one of the primary design requirements, because it makes it easier for programmers to use non-ASCII characters, domain-specific terminology, and support non-English languages in their code. 
 
+{{<tabs "demo2">}}
+{{<tab "Demo">}}
 {{<md class="center">}}
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR52UNbp40rRKFI416fBQcLOvjOK68AMjQU67DWPl22JR__7mXAn26DbpJXk4IQtwb-hK81hmV50GFT/embed?start=true&loop=true&delayms=3000" frameborder="0" width="672" height="317" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
+{{<figure src="/docs/syntax/identifiers/person-record.gif" title="Writing Person record in different languages" >}}
 {{</md>}}
+{{</tab>}}
+{{<tab "Source Code">}}
+{{<code id="1" title="Unicode identifiers in Action" />}}
+{{</tab>}}
+{{</tabs>}}
 
 ### Ignoring Values Using `_`
 
 In Ballerina, you can use a single underscore `_` as an identifier in a variable context to simply ignore a value. This is useful when you don't actually need to use the value generated from an expression. Another use case is when you bind a structured value to multiple variables using binding patterns, but you don't need all of the values. In such cases, you can use a single underscore to ignore the values that you don't need.
 
-{{<code id="1" title="Ignore value">}}
+{{<code id="2" title="Ignore value">}}
 {{< highlight title="Code Breakdown" >}}
 📌:::11::: To calculate the average, you don't need student's name, ignore it using `_`.
 📌:::17::: In this specific case, you only need student's name, ignore the rest using `_`.
