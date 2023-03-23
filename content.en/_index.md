@@ -23,18 +23,27 @@ bookToc: false
 
 {{</md >}}
 
-## Featured Articles
+## Featured Articles 🎉
 
 {{< columns >}}
 * [Hello World Explained]({{< ref "/docs/introduction/basics" >}})
-* [Ballerina Github Action]({{< ref "/docs/devops/github/ballerina-action" >}})
+* [Ballerina Identifiers]({{< ref "/docs/syntax/identifiers" >}})
+
 <--->
+* [Ballerina Github Action]({{< ref "/docs/devops/github/ballerina-action" >}})
 * [How to Use Comments]({{< ref "/docs/syntax/comments" >}})
 {{< / columns >}}
 
-## News from Author
+## Latest Videos 📺
+<div style="width:70%; display:block; align-content: center;" >
+{{< youtube id="Yz21_A6Z1Eo" >}}
+</div>
 
-{{<twitter_simple "HasithaAravinda" 1627725355472809984 >}}
+## News from Author 📢
+
+{{< tweet user="HasithaAravinda" id="1635990104610152449" >}}
+{{< tweet user="HasithaAravinda" id="1627725355472809984" >}}
+
 
 {{< hint info >}}
 🚧 Hey Viewers, Just a quick update to let you know that most of the posts on Bal.Tips are currently a work in progress, but I'll be adding new content regularly. Stay tuned for some exciting Ballerina coding tips and tutorials coming your way soon!

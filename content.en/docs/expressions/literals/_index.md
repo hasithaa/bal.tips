@@ -70,7 +70,7 @@ Let's see how this works with different examples <select id="numericAlgoSelect">
   <option value="m-11110-0100-1111001-100-1000-000-0100"><code>float e1 = 10.0d; //Error</code></option>
   <option value="n-11111-0010-1111001-100-1000-000-1000"><code>int e1 = 10.0; //Error</code></option>
 </select>.
-Please note that, additional type checking rules may be applied after deciding the precise type of a literal. 
+Please note that, additional type checking rules may be applied to decide the precise type of a literal. 
 
 <figure style="max-width=100%;"><?xml version="1.0" encoding="UTF-8"?>
 <svg width="100%" version="1.1" viewBox="0 0 207.4 262.96" xmlns="http://www.w3.org/2000/svg">
