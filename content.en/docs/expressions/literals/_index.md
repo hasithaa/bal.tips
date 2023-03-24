@@ -38,21 +38,21 @@ Ballerina supports the following literals.
 
 A value written in a numeric literal always represents a specific type, which is determined by the literal itself. The type of a literal can be one of the basic types, such as int, float, or decimal.
 
-For example, the literal 10 represents the integer value 10, and its type is int. However, in some contexts, the same literal 10 can also represent a floating-point value 10.0 or a decimal value 10. Depending on the context, the compiler determines the appropriate type of the literal to be used.
+For example, the literal 10 represents the integer value 10, and its basic type is int. However, in some contexts, the same literal 10 can also represent a floating-point value 10.0 or a decimal value 10. Depending on the context, the compiler determines the appropriate type of the literal to be used.
 
 {{< code id="0" title="Numeric literal type" >}}
 {{< highlight >}}
-📌:::7 ::: The type of the literal `10` is `int`.
-📌:::8 ::: The type of the literal `10` is `float`.
-📌:::9 ::: The type of the literal `10` is `decimal`.
-📌:::11::: The type of the literal `10` is singleton integer value `10`. This is inferred from Singleton type checking rules after identifying the literal type is `int`.
-📌:::12::: The type of the literal `10` is `float`.
-📌:::14::: The type of the literal `10` is `int`.
-📌:::15::: The type of the literal `10.0` is `float`.
+📌:::7 ::: The basic type of the literal `10` is `int`.
+📌:::8 ::: The basic type of the literal `10` is `float`.
+📌:::9 ::: The basic type of the literal `10` is `decimal`.
+📌:::11::: The basic type of the literal `10` is `int`.
+📌:::12::: The basic type of the literal `10` is `float`.
+📌:::14::: The basic type of the literal `10` is `int`.
+📌:::15::: The basic type of the literal `10.0` is `float`.
 {{</ highlight >}}
 {{< /code >}}
 
-When determining the type of a literal, following 3 steps [algorithm](https://ballerina.io/spec/lang/master/#numeric-literal) is used.
+When determining the type basic of a literal, following 3 steps [algorithm](https://ballerina.io/spec/lang/master/#numeric-literal) is used.
 
 Let's see how this works with different examples <select id="numericAlgoSelect">
   <option value="a-00000-0000-0000000-000-0000-000-0000" select><code></code></option>
@@ -70,7 +70,7 @@ Let's see how this works with different examples <select id="numericAlgoSelect">
   <option value="m-11110-0100-1111001-100-1000-000-0100"><code>float e1 = 10.0d; //Error</code></option>
   <option value="n-11111-0010-1111001-100-1000-000-1000"><code>int e1 = 10.0; //Error</code></option>
 </select>.
-Please note that, additional type checking rules may be applied to decide the precise type of a literal. 
+Please note that, after deciding the basic type of the literal, precise type of a literal is applied by the type checking algorithm.
 
 <figure style="max-width=100%;"><?xml version="1.0" encoding="UTF-8"?>
 <svg width="100%" version="1.1" viewBox="0 0 207.4 262.96" xmlns="http://www.w3.org/2000/svg">
