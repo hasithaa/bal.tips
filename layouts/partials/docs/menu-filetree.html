@@ -38,11 +38,11 @@
   {{ else if .Page.Params.BookHref }}
     {{ if (hasPrefix  .Page.Params.BookHref "http") }}
       <a href="{{ .Page.Params.BookHref }}" class="{{ if $current }}active{{ end }}" target="_blank" rel="noopener" title="{{ .Page.Description }}">
-        {{- partial "docs/title" .Page -}}&nbsp;🡭
+        {{- partial "docs/title" .Page -}}&nbsp;↗️
       </a>
     {{ else }}
         <a href="{{ .Page.Params.BookHref }}" class="{{ if $current }}active{{ end }}" title="{{ .Page.Description }}">
-          {{- partial "docs/title" .Page -}}&nbsp;🡪
+          {{- partial "docs/title" .Page -}}&nbsp;↗️
         </a>
     {{ end }}
   {{ else if .Page.Content }}
