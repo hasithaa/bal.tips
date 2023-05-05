@@ -8,7 +8,7 @@ task verifyBallerinaVerision() {
             standardOutput = stdout;
         }
         def additionalData = [balVersion : stdout.toString()]
-        new File("data/ballerina.json").text = JsonOutput.toJson(additionalData)
+        file("data/ballerina.json").text = JsonOutput.toJson(additionalData)
     }
 }
 
