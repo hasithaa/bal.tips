@@ -1,0 +1,4 @@
+Boolean fromString:
+    True: true
+    False: false 
+    
