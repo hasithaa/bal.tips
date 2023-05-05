@@ -1,2 +1,4 @@
-enable:true
-open:false
+Boolean Literal:
+    Truth: true
+    False: false 
+    

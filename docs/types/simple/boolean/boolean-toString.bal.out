@@ -1,0 +1,6 @@
+ToString Behavior:
+    True to String: true
+    False to String: false
+    True to Json String: true
+    False to Json String: false 
+    

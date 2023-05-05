@@ -2,9 +2,12 @@ import ballerina/io;
 
 public function main() {
 
-    boolean enable = true; //$
-    boolean open = false; //$
+    boolean truth = true;
+    boolean falseValue = false;
 
-    io:println("enable:", enable);
-    io:println("open:", open);
+    string output = string `Boolean Literal:
+    Truth: ${truth}
+    False: ${falseValue} 
+    `;
+    io:println(output);
 }
