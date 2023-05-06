@@ -7,7 +7,7 @@ type : docs
 ballerina_type : [int, byte]
 ballerina_lang : [type]
 ballerina_module : [int]
-highlight : [int-intro.bal, int-conversion.bal]
+highlight : [int-intro.bal, int-conversion.bal, int-operation.bal]
 aliases :
   - /types/simple/int/
   - /examples/expr/numerical-operations/
@@ -43,10 +43,6 @@ The integer type is written as `int`. You can use [Integer Literal Syntax]({{% r
 
 # Properties and Operations
 
-`int` values do not have a storage identity, so they cannot be modified once created. As a result, they can be assigned to a `readonly` variable like other numeric types, such as float and decimal.
-
-The `int` type part of the `anydata` and `json`. Also, it is an ordered type.
-
 The `int` type supports the following operations and many more language features. I will discuss these operations in detail in later posts.
 
 * Unary expressions               - `+ x`, `- x`, `~ x`
@@ -62,6 +58,12 @@ The `int` type supports the following operations and many more language features
 {{< hint warning >}}
  ⚠ The runtime will panic on integer overflow or division by zero.
 {{</ hint >}}
+
+{{<code id="2" title="Integer Operations" />}}
+
+`int` values do not have a storage identity, so they cannot be modified once created. As a result, they can be assigned to a `readonly` variable like other numeric types, such as `float` and `decimal`.
+
+The `int` type part of the `anydata` and `json`. Also, it is an ordered type.
 
 # Converting Numerical Values
 
