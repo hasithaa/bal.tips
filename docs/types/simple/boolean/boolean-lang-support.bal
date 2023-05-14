@@ -1,4 +1,5 @@
 import ballerina/io;
+
 function demoSupportedOperations() {
 
     boolean x = true;
@@ -41,7 +42,7 @@ function demoLanguageUsage(boolean isTrue = true) {
     io:println("Ternary Expression: ", result);
 
     int i = 0;
-    while (i < 5) { // This boolean expression is used to determine whether to continue looping or not.
+    while i < 5 { // This boolean expression is used to determine whether to continue looping or not.
         io:println("While Loop Iteration: ", i);
         i = i + 1;
     }

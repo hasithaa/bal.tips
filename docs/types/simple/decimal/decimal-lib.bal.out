@@ -1,0 +1,8 @@
+ballerina/lang.decimal Functions:
+    x: 5.5
+    y: -10.0
+    max(x, y): 5.5
+    min(x, y): -10.0
+    abs(y): 10.0
+    round(x): 6
+    
