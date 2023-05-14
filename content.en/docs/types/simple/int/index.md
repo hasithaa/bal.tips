@@ -7,7 +7,7 @@ type : docs
 ballerina_type : [int, byte]
 ballerina_lang : [type]
 ballerina_module : [int]
-highlight : [int-intro.bal, int-conversion.bal, int-operation.bal]
+highlight : [int-intro.bal, int-conversion.bal, int-operation.bal, int-lib.bal]
 aliases :
   - /types/simple/int/
   - /examples/expr/numerical-operations/
@@ -17,13 +17,13 @@ aliases :
 
 # Integer Data Type
 
-The Integer data type represents 64-bit signed integer values.
+The Integer data type represents 64-bit signed integer values. Integer values represent whole numbers. They are usually used to represent counts, indices, and other discrete quantities.
 
 <!--more-->
 
 ## Syntax
 
-The integer type is written as `int`. You can use [Integer Literal Syntax]({{% relref "/docs/expressions/literals/int" %}}) to write integer values.
+The integer type is written as `int`. You can use [Integer Literal Syntax]({{% relref "/docs/expressions/literals/int" %}}) to write integer values. Integers in Ballerina have a range from `int:MIN_VALUE` to `int:MAX_VALUE`.
 
 {{<md class="syntax">}}
 
@@ -31,7 +31,7 @@ The integer type is written as `int`. You can use [Integer Literal Syntax]({{% r
 
 {{</md>}}
 
-{{< code id="0" title="Numeric value conversion with other type" >}}
+{{< code id="0" title="`int` type" >}}
 {{< highlight >}}
 📌::: 4:::This is an `int` variable with value `10` assigned;
 📌::: 5:::This is another `int` variable.
@@ -65,7 +65,7 @@ The `int` type supports the following operations and many more language features
 
 The `int` type part of the `anydata` and `json`. Also, it is an ordered type.
 
-# Converting Numerical Values
+## Converting Numerical Values
 
 Unlike some programming languages, there is no implicit conversion between Ballerina numerical types.
 
@@ -81,8 +81,12 @@ If required, you can use a type-cast expression to do a numeric conversion. This
 
 # Language Library
 
-`lang.int` Lang Library provides a set of functions that operates on an `int` value. 
+`lang.int` lang library provides a set of functions that operates on an `int` value. 
 See available operations with examples in [Int Lang Library]({{% relref "/docs/langlib/int" %}}).
+
+{{<code id="4" title="Int Lang Library" />}}
+
+Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on a `int` value.
 
 # Int Subtypes
 

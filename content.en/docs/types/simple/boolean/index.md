@@ -14,7 +14,7 @@ aliases :
 
 # Boolean Data Type
 
-The Boolean data type represents boolean truth values: `true` and `false`.
+The Boolean data type represents boolean truth values: `true` and `false`. You may use boolean values to represent various conditions in your program. For example, you can use a boolean value to represent whether a file exists or not, whether a user is logged in or not, etc. Use-cases of boolean values are endless.
 
 <!--more-->
 

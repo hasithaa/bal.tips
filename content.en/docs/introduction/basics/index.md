@@ -9,7 +9,7 @@ type : docs
 ballerina_lang : [function, vardef]
 ballerina_feature : [main, function, expression, statement, module, package]
 ballerina_module : [ballerina-io]
-highlight : [main.bal]
+highlight: [main.bal]
 ---
 
 # Hello, World

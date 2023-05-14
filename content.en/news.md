@@ -9,6 +9,6 @@ bookToc : false
 
 # 📰 Ballerina Language News
 
-News and updates related to Ballerina, such as new releases or upcoming events. (If page is not loading click following link.)
+News and updates related to Ballerina, such as new releases or upcoming events. (If page is not loading click the following link.)
 
 <a class="twitter-timeline" href="https://twitter.com/HasithaAravinda/lists/1631324270159593475?ref_src=twsrc%5Etfw">A Twitter List by HasithaAravinda</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

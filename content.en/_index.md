@@ -35,15 +35,17 @@ bookToc: false
 {{< / columns >}}
 
 ## Latest Videos 📺
-<div style="width:70%; display:block; align-content: center;" >
+
+{{< columns >}}
+{{< youtube id="HWFbIE3jyHc" >}}
+<--->
 {{< youtube id="Yz21_A6Z1Eo" >}}
-</div>
+{{< / columns >}}
 
 ## News from Author 📢
 
 {{< tweet user="HasithaAravinda" id="1635990104610152449" >}}
 {{< tweet user="HasithaAravinda" id="1627725355472809984" >}}
-
 
 {{< hint info >}}
 🚧 Hey Viewers, Just a quick update to let you know that most of the posts on Bal.Tips are currently a work in progress, but I'll be adding new content regularly. Stay tuned for some exciting Ballerina coding tips and tutorials coming your way soon!
