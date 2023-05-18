@@ -1,0 +1,19 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    {{ $siteKeywords := delimit (split .Site.Params.keywords ",") ", " }}
+    {{ $keywords = delimit (split .Keywords ",") ", " }}
+    {{ $keywords = print $keywords $siteKeywords }}
+    <meta name="keywords" content="{{ $keywords }}">
+    <meta name="description" content="{{ .Description }}">
+    <!--TODO : Add other meta tags-->
+
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!--TODO : Add jquery and nicepage css-->
+</head>
