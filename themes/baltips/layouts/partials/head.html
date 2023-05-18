@@ -2,10 +2,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 
-    {{ $siteKeywords := delimit (split .Site.Params.keywords ",") ", " }}
-    {{ $keywords = delimit (split .Keywords ",") ", " }}
-    {{ $keywords = print $keywords $siteKeywords }}
-    <meta name="keywords" content="{{ $keywords }}">
+    <meta name="keywords" content="{{ .Keywords }}">
     <meta name="description" content="{{ .Description }}">
     <!--TODO : Add other meta tags-->
 
