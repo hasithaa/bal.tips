@@ -1,0 +1,46 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Ballerina Coding Tips'
+theme = 'baltips'
+
+[menu]
+[[menu.main]]
+name = 'Home'
+url = '/'
+weight = 1
+pre = '<i class="bi bi-house-door"></i>'
+
+[[menu.main]]
+name = 'Guides'
+weight = 2
+pre = '<i class="bi bi-book"></i>'
+id = 'guides'
+
+[[menu.main]]
+name = "A Beginner's Guide to Ballerina Language"
+url = '/docs/introduction/basics/'
+weight = 0
+pre = '<i class="bi bi-lightbulb-fill"></i>'
+parent = 'Guides'
+
+
+[outputs]
+home = ['HTML', 'RSS']
+
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+codeFences = false
+
+[markup.tableOfContents]
+  startLevel = 1
+  endLevel = 4
+  ordered = false
+
+[languages]
+[languages.en]
+  languageName = 'English'
+  contentDir = 'content.en'
+  weight = 1

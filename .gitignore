@@ -1,0 +1,18 @@
+public/
+.idea/
+resources
+.hugo_build.lock
+node_modules
+
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+bin
+
+data/ballerina.json
+*.bal.out1
+*.bal.jar
+*.bal.json
