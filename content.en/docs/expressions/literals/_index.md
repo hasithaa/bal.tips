@@ -12,7 +12,6 @@ aliases :
 menu:
   main:
     parent: syntax
-    pre: <i class="bi bi-code"></i>
     name: 'Literal'
     params:
       group: "expressions"

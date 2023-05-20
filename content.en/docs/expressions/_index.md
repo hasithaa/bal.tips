@@ -7,7 +7,6 @@ menu:
   main:
     parent: syntax
     name: 'Expressions'
-    pre: <i class="bi bi-braces"></i>
     params:
       group: "basic"
 ---

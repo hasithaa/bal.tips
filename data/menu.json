@@ -1,24 +1,28 @@
 {
     "home": [],
-    "guide": [
+    "guides": [
         {
             "key": "intro",
-            "name": "Introduction"
+            "name": "Introduction",
+            "pre": "<i class='bi bi-collection'></i>"
         }
     ],
     "about": [],
     "syntax": [
         {
             "key": "basic",
-            "name": "Basic Concepts"
+            "name": "Basic Concepts",
+            "pre": "<i class='bi bi-collection'></i>"
         },
         {
             "key": "expressions",
-            "name": "Expressions"
+            "name": "Expressions",
+            "pre": "<i class='bi bi-collection'></i>"
         },
         {
             "key": "literals",
-            "name": "Literals"
+            "name": "Literals",
+            "pre": "<i class='bi bi-collection'></i>"
         }
     ]
 }

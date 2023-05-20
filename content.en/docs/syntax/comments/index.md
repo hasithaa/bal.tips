@@ -11,7 +11,6 @@ menu:
   main:
     parent: syntax
     name: 'Comments'
-    pre: <i class="bi bi-code"></i>
     params:
       group: "basic"
 ---

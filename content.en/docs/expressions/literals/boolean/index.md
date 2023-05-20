@@ -12,7 +12,6 @@ aliases :
 menu:
   main:
     parent: syntax
-    pre: <i class="bi bi-code"></i>
     name: 'Boolean Literal'
     params:
       group: "literals"

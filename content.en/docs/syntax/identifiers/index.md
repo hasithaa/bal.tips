@@ -13,7 +13,6 @@ menu:
   main:
     parent: syntax
     name: 'Identifiers'
-    pre: <i class="bi bi-code"></i>
     params:
       group: "basic"
 ---
