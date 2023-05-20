@@ -6,8 +6,8 @@ weight : 4000
 menu: 
   main:
     identifier: syntax
-    name: 'Learn Syntax'
-    pre: <i class="bi bi-code-slash"></i>
+    name: 'Syntax'
+    pre: <i class="bi bi-braces"></i>
 ---
 
 # Syntax Structure

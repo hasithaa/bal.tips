@@ -5,7 +5,6 @@ keywords : [ballerina, programming, language, hello world, functions, modules, e
 images : [/docs/introduction/basics/main.png]
 date: 2023-01-01
 weight : 1010
-type : docs
 ballerina_lang : [function, vardef]
 ballerina_feature : [main, function, expression, statement, module, package]
 ballerina_module : [ballerina-io]
@@ -16,7 +15,7 @@ menu:
     pre: <i class="bi bi-lightbulb-fill"></i>
     parent: guides
     params:
-      group: "Basic Concepts"
+      group: "intro"
 ---
 
 # Hello, World

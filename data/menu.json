@@ -1,0 +1,24 @@
+{
+    "home": [],
+    "guide": [
+        {
+            "key": "intro",
+            "name": "Introduction"
+        }
+    ],
+    "about": [],
+    "syntax": [
+        {
+            "key": "basic",
+            "name": "Basic Concepts"
+        },
+        {
+            "key": "expressions",
+            "name": "Expressions"
+        },
+        {
+            "key": "literals",
+            "name": "Literals"
+        }
+    ]
+}

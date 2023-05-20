@@ -1,10 +1,11 @@
 ---
 title: Home
 description: Ballerina Coding Tips
-weight: 10 
+weight: 10
 menu: 
   main:
     name: 'Home'
+    identifier: home
     pre: <i class="bi bi-house-door"></i>
 ---
 
