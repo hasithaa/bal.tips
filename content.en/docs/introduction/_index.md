@@ -1,5 +1,0 @@
----
-title : Title
----
-
-## Hello, World

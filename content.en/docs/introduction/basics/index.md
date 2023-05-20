@@ -10,6 +10,13 @@ ballerina_lang : [function, vardef]
 ballerina_feature : [main, function, expression, statement, module, package]
 ballerina_module : [ballerina-io]
 highlight: [main.bal]
+menu:
+  main:
+    name: "A Beginner's Guide to Ballerina Language"
+    pre: <i class="bi bi-lightbulb-fill"></i>
+    parent: guides
+    params:
+      group: "Basic Concepts"
 ---
 
 # Hello, World
