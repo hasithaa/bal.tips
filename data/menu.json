@@ -24,5 +24,18 @@
             "name": "Literals",
             "pre": "<i class='bi bi-collection'></i>"
         }
+    ],
+    "video": [],
+    "module": [
+        {
+            "key": "intro",
+            "name": "Ballerina Modules",
+            "pre": "<i class='bi bi-boxes'></i>"
+        },
+        {
+            "key": "langlib",
+            "name": "Language Library",
+            "pre": "<i class='bi bi-boxes'></i>"
+        }
     ]
 }

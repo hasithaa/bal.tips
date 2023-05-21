@@ -1,0 +1,21 @@
+{{ $source := default "youtube" (.Get "source")}}
+{{ $key := .Get "key" }}
+{{ $ratioValue := default "4x3" (.Get "ratio")}}
+{{ $ratio := print "ratio-" $ratioValue }}
+
+{{ with index $.Site.Data $source }}
+{{ with index . $key }}
+{{ $list := . }}
+<div class="d-flex flex-wrap justify-content-center ">
+    {{ range $video := $list }}
+    <div class="m-3 ratio ratio-16x9 " style="max-width:560px; max-height:315px;">
+        {{- $title := $video.title | default (print $source " Video") }}
+        <iframe src="https://www.youtube.com/embed/{{ $video.key}}" title="{{$title}}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+    {{ end }}
+</div>
+{{ end }}
+{{ end }}

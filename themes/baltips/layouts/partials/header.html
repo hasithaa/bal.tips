@@ -14,7 +14,7 @@
 
             <div class="collapse navbar-collapse" id="mainMenu">
                 {{ $menuData := $.Site.Data.menu }}
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     {{ $current := . }}
                     {{ range .Site.Menus.main }}
                     {{ if .HasChildren }}

@@ -3,8 +3,10 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+        <div class="d-flex" >
+            <div id="content" class="container justify-content-center" style="width: 85%; margin: auto;">
+                {{- block "main" . }}{{- end }}
+            </div>
         </div>
         {{- partial "footer.html" . -}}
         {{- partial "script.html" . -}}

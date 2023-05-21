@@ -18,3 +18,4 @@ menu:
 👨‍💻 From syntax and structure to type and values, I'll be covering a range of topics to help you make the most of Ballerina's powerful integration capabilities. So be sure to check out my latest posts and stay tuned for more!
 
 🤖 Meet Bali-Bot, the robot mascot for this blog, your go-to resource for all things Ballerina!
+
