@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body>
+    <body class="mx-2 mt-2">
         {{- partial "header.html" . -}}
-        <div class="d-flex" >
+        <div class="d-flex mt-4">
             <div id="content" class="container justify-content-center" style="width: 85%; margin: auto;">
                 {{- block "main" . }}{{- end }}
             </div>
