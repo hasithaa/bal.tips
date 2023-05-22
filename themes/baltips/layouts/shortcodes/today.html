@@ -1,9 +1,9 @@
-{{$format := (.Get "format") }}
-{{with .Get 0}}
-    {{$format = .}}
-{{end}}
-{{$now := now}}
-{{if $format}}
-    {{$now = $now.Format $format}}
-{{end}}
-{{$now}}
+{{- $format := (.Get "format") }}
+{{- with .Get 0}}
+    {{- $format = .}}
+{{- end}}
+{{- $now := now}}
+{{- if $format}}
+    {{- $now = $now.Format $format}}
+{{- end}}
+{{- $now}}

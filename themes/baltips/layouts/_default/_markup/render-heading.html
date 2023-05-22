@@ -1,0 +1,4 @@
+{{if eq (int .Level) 1}}<hr class="text-dark mt-3">{{end}}
+<a class="text-reset m-{{ sub 6 (int .Level)}}{{if eq (int .Level) 1}} text-center{{end}}" href="#{{ .Anchor | safeURL }}">
+    <h{{ .Level }} id="{{ .Anchor | safeURL }}" >{{ .Text | safeHTML }}</h{{ .Level }}>    
+</a>

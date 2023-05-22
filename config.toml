@@ -9,14 +9,19 @@ home = ['HTML', 'RSS']
 [markup]
 [markup.goldmark.renderer]
   unsafe = true
+  hardWraps = false
+
+[markup.goldmark.parser.attribute]
+ block = true
+ title = true
 
 [markup.highlight]
-codeFences = false
+codeFences = true
 
 [markup.tableOfContents]
-  startLevel = 1
   endLevel = 4
   ordered = false
+  startLevel = 1
 
 [languages]
 [languages.en]
