@@ -1,0 +1,138 @@
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted">
+
+    <!-- Section: Privacy Notice  -->
+    {{ with $.Site.Params.Footer.privacyNotice }}
+    <section class="d-flex justify-content-center justify-content-lg-between" id="privacyNotice">
+        <div class="note note-info m-auto shadow-5">
+            <div>
+                    <span class="m-3">{{ . | safeHTML | markdownify }}</span>
+                    <button type="button" class="btn btn-primary ms-auto" id="agree-button">I Agree</button>
+            </div>
+    </section>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const agreeButton = document.getElementById('agree-button');
+            const privacyNotice = document.getElementById('privacyNotice');
+
+            // Check if the user has already agreed to the privacy notice
+            if (localStorage.getItem('privacyNoticeAgreed') === 'true') {
+                privacyNotice.classList.add('d-none');
+            }
+
+            agreeButton.addEventListener('click', () => {
+                // Hide the privacy notice section
+                privacyNotice.classList.add('d-none');
+
+                // Remember the user's choice for 1 day
+                localStorage.setItem('privacyNoticeAgreed', 'true');
+                setTimeout(() => {
+                    localStorage.removeItem('privacyNoticeAgreed');
+                }, {{ default 60480000024 $.Site.Params.Footer.privacyNoticeTimeout}}); // 1 day in milliseconds
+            });
+        });
+    </script>
+    {{ end }}
+
+    <!-- Notice -->
+    {{ with $.Site.Params.Footer.notice }}
+    <section class="d-flex justify-content-center justify-content-lg-between pt-2 mt-2">
+        <div class="m-auto">
+            <div class="note note-light m-3">{{ . | safeHTML | markdownify }}</div>
+        </div>
+    </section>
+    {{ end}}
+    <!-- Notice -->
+
+    {{ $menuData := $.Site.Data.menu }}
+    {{ $current := . }}
+    <!-- Section: Links  -->
+    <section class="border-top">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            {{ $size := len .Site.Menus.footer }}
+            {{ if gt $size 3}}
+                {{ errorf "Footer menu should have 3 or less items. Current: %d" $size }}
+            {{ end }}
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3 text-secondary"></i>{{ .Site.Title }}
+                    </h6>
+                    {{ with $.Site.Params.Footer.description }}
+                    <p class="text-wrap text-start">
+                        {{ . | safeHTML | markdownify }}
+                    </p>
+                    {{ end }}
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                {{ range .Site.Menus.footer }}
+                    {{ if .HasChildren }}
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        {{ $Children := .Children.ByWeight }}
+                        {{ range $group := (index $menuData .Identifier)}}
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            {{ $group.pre | safeHTML }} {{ $group.name }}
+                        </h6>
+                            {{ range where $Children.ByWeight "Params.group" $group.key }}
+                                {{ $active := eq $current.Permalink ( absLangURL .URL ) }}
+                                <p>
+                                    <a class="text-reset{{if $active}} active{{end}}" target="_blank"
+                                        {{if $active}}aria-current="true"{{end}} href="{{ .URL }}">
+                                        {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> {{ end }}
+                                        {{ .Name }}
+                                    </a>
+                                </p>
+                            {{ end }}
+                        {{end}}
+                        
+                    </div>
+                    {{end}}
+                {{ end }}
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        {{with $.Site.Params.Footer.socialText}}
+        <div class="me-5 d-none d-lg-block">
+            <span>{{ . | safeHTML }}</span>
+        </div>
+        {{end}}
+
+        <!-- Right -->
+        {{with $.Site.Params.Footer.socialLinks}}
+        <div>
+            {{ range . }}
+            <a href="{{ .url }}" class="me-4 link-secondary">
+                {{ .pre | safeHTML}} {{ .name | safeHTML }}
+            </a>
+            {{ end }}
+        </div>
+        {{end}}
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        <a class="text-reset fw-bold"
+            href="{{ if $.Site.Params.Copyright.textUrl }}{{$.Site.Params.Copyright.textUrl | safeURL }}{{else}}{{ .Site.BaseURL }}{{end}}">
+            {{ if $.Site.Params.Copyright.text}}{{ $.Site.Params.Copyright.text | safeHTML | markdownify }}{{else}}{{ $.Site.BaseURL |
+            safeHTML }}{{end}}
+        </a>
+        <i class="bi bi-c-circle"></i> {{with $.Site.Params.Copyright.startYear}}{{.}} - {{end}}{{ .Date | time.Format
+        "2006" }}
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->

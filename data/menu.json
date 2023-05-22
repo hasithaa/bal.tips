@@ -7,7 +7,7 @@
             "pre": "<i class='bi bi-collection'></i>"
         }
     ],
-    "about": [],
+    "tips" : [],
     "syntax": [
         {
             "key": "basic",
@@ -37,5 +37,13 @@
             "name": "Language Library",
             "pre": "<i class='bi bi-boxes'></i>"
         }
-    ]
+    ],
+    "links": [
+        {
+            "key": "ballerina",
+            "name": "Ballerina",
+            "pre": "<i class='bi bi-collection'></i>"
+        }
+    ],
+    "about": []
 }

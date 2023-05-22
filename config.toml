@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://bal.tips'
 languageCode = 'en-us'
 title = 'Ballerina Coding Tips'
 theme = 'baltips'
@@ -23,3 +23,35 @@ codeFences = false
   languageName = 'English'
   contentDir = 'content.en'
   weight = 1
+
+[menu]
+footer = [
+  { name = "Links", identifier = "links" },
+  { parent= 'links', params={ group = 'ballerina'}, name = 'Website', pre = '<i class="bi bi-box-arrow-up-right"></i>', url = 'https://ballerina.io', weight = 30050 },
+  { parent= 'links', params={ group = 'ballerina'}, name = 'By Example', pre = '<i class="bi bi-box-arrow-up-right"></i>', url = 'https://ballerina.io/learn/by-example/', weight = 30100},
+  { parent= 'links', params={ group = 'ballerina'}, name = 'Language Specification', pre = '<i class="bi bi-box-arrow-up-right"></i>', url = 'https://ballerina.io/spec/lang/master/', weight = 300105 },
+  { parent= 'links', params={ group = 'ballerina'}, name = 'Twitter Handler', pre = '<i class="bi bi-twitter"></i>', url = 'https://twitter.com/ballerinalang', weight = 300120},
+  { parent= 'links', params={ group = 'ballerina'}, name = 'Talk to Community', pre = '<i class="bi bi-discord"></i>', url = 'https://discord.gg/ballerinalang', weight = 300125}
+]
+
+[params]
+[params.Copyright]
+startYear = 2022
+text = 'bal.tips by Hasitha Aravinda'
+textUrl = 'https://hasithaa.github.io/'
+
+[params.Footer]
+socialText = 'Get connected with me on social networks:'
+socialLinks = [
+  { name = 'Twitter', url = 'https://twitter.com/HasithaAravinda', pre = '<i class="bi bi-twitter"></i>' },
+  { name = 'GitHub', url = 'https://github.com/hasithaa', pre = '<i class="bi bi-github"></i>'},
+  { name = 'LinkedIn', url = 'https://www.linkedin.com/in/hasithaaravinda/', pre = '<i class="bi bi-linkedin"></i>'}
+]
+description = '''"Ballerina Coding Tips" provides useful tips and code snippets for Ballerina programmers.
+ Despite being a fairly new language, [Ballerina](https://ballerina.io) <i class="bi bi-box-arrow-up-right"></i> 
+ has numerous features that may be unknown to developers. This blog aims to share some of these features
+ and is based on my own views and experiences as a member of the Ballerina Language Design and Development team.'''
+notice = '''<i class="fa-3 bi bi-wrench-adjustable"></i> Hello! "Bal.Tips" is currently under construction, but stay tuned for exciting Ballerina coding tips and tutorials!'''
+privacyNotice = '''This site uses Google Analytics and cookies to enhance your browsing experience.
+By using this site, you accept these terms. Thank you!'''
+privacyNoticeTimeout =  604800000 # default 7 days = 24 * 60 * 60 * 1000 * 7 = 604800000 milliseconds
