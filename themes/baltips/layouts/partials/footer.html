@@ -7,21 +7,34 @@
         <div class="note note-info m-auto shadow-5">
             <div>
                     <span class="m-3">{{ . | safeHTML | markdownify }}</span>
-                    <button type="button" class="btn btn-primary ms-auto" id="agree-button">I Agree</button>
+                    <button type="button" class="btn btn-primary ms-auto" id="ga-agree-button">I Agree</button>
+                    <button type="button" class="btn btn-secondary me-2" id="ga-decline-button">Decline</button>
             </div>
     </section>
 
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', () => {
-            const agreeButton = document.getElementById('agree-button');
+            const agreeButton = document.getElementById('ga-agree-button');
+            const declineButton = document.getElementById('ga-decline-button');
+
             const privacyNotice = document.getElementById('privacyNotice');
 
             // Check if the user has already agreed to the privacy notice
-            if (localStorage.getItem('privacyNoticeAgreed') === 'true') {
+            if (localStorage.getItem('privacyNoticeAgreed')) {
                 privacyNotice.classList.add('d-none');
+                if (localStorage.getItem('privacyNoticeAgreed') === 'true') {
+                    // Enable Google Analytics
+                    window['ga-disable-GA_MEASUREMENT_ID'] = false;
+                } else {
+                    // Disable Google Analytics
+                    window['ga-disable-GA_MEASUREMENT_ID'] = true;
+                }
             }
 
             agreeButton.addEventListener('click', () => {
+                // Enable Google Analytics
+                window['ga-disable-GA_MEASUREMENT_ID'] = false;
+  
                 // Hide the privacy notice section
                 privacyNotice.classList.add('d-none');
 
@@ -29,7 +42,21 @@
                 localStorage.setItem('privacyNoticeAgreed', 'true');
                 setTimeout(() => {
                     localStorage.removeItem('privacyNoticeAgreed');
-                }, {{ default 60480000024 $.Site.Params.Footer.privacyNoticeTimeout}}); // 1 day in milliseconds
+                }, {{ default 60480000024 $.Site.Params.Footer.privacyNoticeTimeout}}); // 7 day in milliseconds
+            });
+
+            declineButton.addEventListener("click", () => {
+                // Disable Google Analytics
+                window['ga-disable-GA_MEASUREMENT_ID'] = true;
+
+                // Hide the privacy notice section
+                privacyNotice.classList.add('d-none');
+
+                // Remember the user's choice for 1 day
+                localStorage.setItem('privacyNoticeAgreed', 'false');
+                setTimeout(() => {
+                    localStorage.removeItem('privacyNoticeAgreed');
+                }, {{ default 60480000024 $.Site.Params.Footer.privacyNoticeTimeout}}); // 7 day in milliseconds
             });
         });
     </script>
