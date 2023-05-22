@@ -26,7 +26,8 @@ codeFences = false
 
 [menu]
 footer = [
-  { name = "Links", identifier = "links" },
+  { name = "More", identifier = "more", weight = 20000},
+  { name = "Links", identifier = "links", weight = 30000},
   { parent= 'links', params={ group = 'ballerina'}, name = 'Website', pre = '<i class="bi bi-box-arrow-up-right"></i>', url = 'https://ballerina.io', weight = 30050 },
   { parent= 'links', params={ group = 'ballerina'}, name = 'By Example', pre = '<i class="bi bi-box-arrow-up-right"></i>', url = 'https://ballerina.io/learn/by-example/', weight = 30100},
   { parent= 'links', params={ group = 'ballerina'}, name = 'Language Specification', pre = '<i class="bi bi-box-arrow-up-right"></i>', url = 'https://ballerina.io/spec/lang/master/', weight = 300105 },
@@ -36,7 +37,7 @@ footer = [
 
 [params]
 [params.Copyright]
-startYear = 2022
+startYear = 2021
 text = 'bal.tips by Hasitha Aravinda'
 textUrl = 'https://hasithaa.github.io/'
 
@@ -48,10 +49,12 @@ socialLinks = [
   { name = 'LinkedIn', url = 'https://www.linkedin.com/in/hasithaaravinda/', pre = '<i class="bi bi-linkedin"></i>'}
 ]
 description = '''"Ballerina Coding Tips" provides useful tips and code snippets for Ballerina programmers.
- Despite being a fairly new language, [Ballerina](https://ballerina.io) <i class="bi bi-box-arrow-up-right"></i> 
- has numerous features that may be unknown to developers. This blog aims to share some of these features
- and is based on my own views and experiences as a member of the Ballerina Language Design and Development team.'''
-notice = '''<i class="fa-3 bi bi-wrench-adjustable"></i> Hello! "Bal.Tips" is currently under construction, but stay tuned for exciting Ballerina coding tips and tutorials!'''
+ Despite being a fairly new language, Ballerina has numerous features that may be unknown to developers. 
+ This blog aims to share some of these features and is based on my own views and experiences as 
+ a member of the Ballerina Language Design and Development team.'''
+notice = '''<i class="fa-3 bi bi-wrench-adjustable"></i> Hello !<br>
+ Most of the posts on "Bal.tips" are currently a work in progress, but I'll be adding new content regularly.
+Stay tuned for some exciting Ballerina coding tips and tutorials coming your way soon!'''
 privacyNotice = '''This site uses Google Analytics and cookies to enhance your browsing experience.
 By using this site, you accept these terms. Thank you!'''
 privacyNoticeTimeout =  604800000 # default 7 days = 24 * 60 * 60 * 1000 * 7 = 604800000 milliseconds

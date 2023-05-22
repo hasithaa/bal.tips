@@ -45,5 +45,13 @@
             "pre": "<i class='bi bi-collection'></i>"
         }
     ],
+    "more": [
+        {
+            "key": "highlights",
+            "name": "See Also",
+            "pre": "<i class='bi bi-collection'></i>"
+        }
+    ],
+
     "about": []
 }

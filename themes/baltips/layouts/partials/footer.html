@@ -110,7 +110,7 @@
                             {{ range where $Children.ByWeight "Params.group" $group.key }}
                                 {{ $active := eq $current.Permalink ( absLangURL .URL ) }}
                                 <p>
-                                    <a class="text-reset{{if $active}} active{{end}}" target="_blank"
+                                    <a class="text-reset{{if $active}} active{{end}}" {{ if not .Page}}target="_blank"{{end}}
                                         {{if $active}}aria-current="true"{{end}} href="{{ .URL }}">
                                         {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> {{ end }}
                                         {{ .Name }}
@@ -130,7 +130,7 @@
     <!-- Section: Links  -->
 
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <section class="d-flex justify-content-center justify-content-lg-between p-1 border-bottom">
         {{with $.Site.Params.Footer.socialText}}
         <div class="me-5 d-none d-lg-block">
             <span>{{ . | safeHTML }}</span>

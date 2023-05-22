@@ -2,12 +2,14 @@
 title: 📰 Ballerina Language News
 description: News and updates related to Ballerina, such as new releases or upcoming events.
 date : 2022-12-16
-share : []
-weight : 40001
-menu:
+weight : 20050
+menu: 
   footer:
-    name: 📰 Ballerina Language News
-    parent: links
+    name: 'Ballerina News'
+    parent: more
+    pre: <i class="bi bi-newspaper"></i>
+    params:
+      group: 'highlights'
 ---
 
 # 📰 Ballerina Language News
