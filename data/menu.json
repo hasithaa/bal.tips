@@ -50,6 +50,11 @@
             "key": "highlights",
             "name": "See Also",
             "pre": "<i class='bi bi-collection'></i>"
+        },
+        {
+            "key": "about",
+            "name": "About",
+            "pre": "<i class='bi bi-info-circle'></i>"
         }
     ],
 

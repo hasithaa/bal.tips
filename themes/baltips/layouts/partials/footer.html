@@ -3,70 +3,26 @@
 
     <!-- Section: Privacy Notice  -->
     {{ with $.Site.Params.Footer.privacyNotice }}
-    <section class="d-flex justify-content-center justify-content-lg-between" id="privacyNotice">
+    <section class="d-flex justify-content-center justify-content-lg-between d-none" id="privacyNotice">
         <div class="note note-info m-auto shadow-5">
             <div>
                     <span class="m-3">{{ . | safeHTML | markdownify }}</span>
-                    <button type="button" class="btn btn-primary ms-auto" id="ga-agree-button">I Agree</button>
+                    <button type="button" class="btn btn-primary ms-auto" id="ga-agree-button">I am Ok</button>
                     <button type="button" class="btn btn-secondary me-2" id="ga-decline-button">Decline</button>
             </div>
     </section>
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            const agreeButton = document.getElementById('ga-agree-button');
-            const declineButton = document.getElementById('ga-decline-button');
-
-            const privacyNotice = document.getElementById('privacyNotice');
-
-            // Check if the user has already agreed to the privacy notice
-            if (localStorage.getItem('privacyNoticeAgreed')) {
-                privacyNotice.classList.add('d-none');
-                if (localStorage.getItem('privacyNoticeAgreed') === 'true') {
-                    // Enable Google Analytics
-                    window['ga-disable-GA_MEASUREMENT_ID'] = false;
-                } else {
-                    // Disable Google Analytics
-                    window['ga-disable-GA_MEASUREMENT_ID'] = true;
-                }
-            }
-
-            agreeButton.addEventListener('click', () => {
-                // Enable Google Analytics
-                window['ga-disable-GA_MEASUREMENT_ID'] = false;
-  
-                // Hide the privacy notice section
-                privacyNotice.classList.add('d-none');
-
-                // Remember the user's choice for 1 day
-                localStorage.setItem('privacyNoticeAgreed', 'true');
-                setTimeout(() => {
-                    localStorage.removeItem('privacyNoticeAgreed');
-                }, {{ default 60480000024 $.Site.Params.Footer.privacyNoticeTimeout}}); // 7 day in milliseconds
-            });
-
-            declineButton.addEventListener("click", () => {
-                // Disable Google Analytics
-                window['ga-disable-GA_MEASUREMENT_ID'] = true;
-
-                // Hide the privacy notice section
-                privacyNotice.classList.add('d-none');
-
-                // Remember the user's choice for 1 day
-                localStorage.setItem('privacyNoticeAgreed', 'false');
-                setTimeout(() => {
-                    localStorage.removeItem('privacyNoticeAgreed');
-                }, {{ default 60480000024 $.Site.Params.Footer.privacyNoticeTimeout}}); // 7 day in milliseconds
-            });
-        });
-    </script>
     {{ end }}
 
     <!-- Notice -->
     {{ with $.Site.Params.Footer.notice }}
-    <section class="d-flex justify-content-center justify-content-lg-between pt-2 mt-2">
-        <div class="m-auto">
-            <div class="note note-light m-3">{{ . | safeHTML | markdownify }}</div>
+    <section class="d-flex justify-content-center justify-content-lg-between py-2 mt-2 d-none" id="footer-note">
+        <div class="note note-light m-auto shadow-5">
+            <div>
+                <span class="m-3">{{ . | safeHTML | markdownify }}</span>
+                <button type="button" class="btn btn-secondary" aria-label="Close" id="footer-note-x-button">
+                    Close
+                </button>
+            </div>
         </div>
     </section>
     {{ end}}
@@ -102,14 +58,14 @@
                     {{ if .HasChildren }}
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         {{ $Children := .Children.ByWeight }}
-                        {{ range $group := (index $menuData .Identifier)}}
+                        {{ range $idx, $group := (index $menuData .Identifier)}}
 
-                        <h6 class="text-uppercase fw-bold mb-4">
+                        <h6 class="text-uppercase fw-bold{{if gt $idx 0}} mt-4{{end}}">
                             {{ $group.pre | safeHTML }} {{ $group.name }}
                         </h6>
                             {{ range where $Children.ByWeight "Params.group" $group.key }}
                                 {{ $active := eq $current.Permalink ( absLangURL .URL ) }}
-                                <p>
+                                <p class="m-1">
                                     <a class="text-reset{{if $active}} active{{end}}" {{ if not .Page}}target="_blank"{{end}}
                                         {{if $active}}aria-current="true"{{end}} href="{{ .URL }}">
                                         {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> {{ end }}
@@ -131,21 +87,21 @@
 
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-1 border-bottom">
-        {{with $.Site.Params.Footer.socialText}}
-        <div class="me-5 d-none d-lg-block">
-            <span>{{ . | safeHTML }}</span>
-        </div>
-        {{end}}
-
-        <!-- Right -->
         {{with $.Site.Params.Footer.socialLinks}}
-        <div>
-            {{ range . }}
-            <a href="{{ .url }}" class="me-4 link-secondary">
-                {{ .pre | safeHTML}} {{ .name | safeHTML }}
-            </a>
-            {{ end }}
-        </div>
+            {{with $.Site.Params.Footer.socialText}}
+            <div class="m-auto d-none d-lg-block">
+                <span>{{ . | safeHTML }}</span>
+            </div>
+            {{end}}
+
+            <!-- Right -->
+            <div>
+                {{ range . }}
+                <a href="{{ .url }}" class="me-4 link-secondary">
+                    {{ .pre | safeHTML}} {{ .name | safeHTML }}
+                </a>
+                {{ end }}
+            </div>
         {{end}}
     </section>
     <!-- Section: Social media -->
