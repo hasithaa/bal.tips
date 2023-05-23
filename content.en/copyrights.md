@@ -17,10 +17,11 @@ menu:
 
 Website content, source code, and images are licensed under different licenses. Please read the following sections for more information.
 
-[Bal.Tips](/ "title")  Copyright © 2022-{{<today "2006">}} Hasitha Aravinda. All rights reserved. 
-{.note .note-info .text-center}
-
 ## Source and Content Licenses
+
+**[Bal.Tips](/ "title")  Copyright © 2022-{{<today "2006">}} Hasitha Aravinda. All rights reserved.**
+{.tip-note}
+
 
 | Type                           | Description                                                                                                                                                                                                                                                                          | License                                                                                                                            |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,14 +37,17 @@ Website content, source code, and images are licensed under different licenses. 
 
 ![Bal.Tips Logo - Copyright © 2022-{{<today "2006">}} Hasitha Aravinda. All rights reserved.](/images/logo.png "Bal.Tips Logo - Copyright © 2022-{{<today "2006">}} Hasitha Aravinda. All rights reserved.")
 
-Bal.Tips Mascot - Copyright © 2022-{{<today "2006">}} Hasitha Aravinda. All rights reserved.<br>
-The mascot, "Bali-Bot" with different actions and Logo in this website is the original work created by
+**Bal.Tips Mascot - Copyright © 2022-{{<today "2006">}} Hasitha Aravinda. All rights reserved.**
+{.tip-note}
+
+
+The mascot, "Bali-Bot" with different actions and the "Bulb" Logo in this website is the original work created by
  [Groovy by Dinusha Samarasingha](https://www.linkedin.com/in/dinusha-samarasingha-81723347/) and
   is owned by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/).
    Unauthorized use, duplication, or distribution of this mascot without written permission from
     [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/) is strictly prohibited.
      Any use of this mascot for commercial or non-commercial purposes is forbidden unless approved by Hasitha Aravinda.
-{.note .note-info .text-center}
+
 
 ## Other Images
 
@@ -60,12 +64,12 @@ In this website, we use multiple trademarks and logos. Please read the following
 
 ## Ballerina
 
-Ballerina is an open-source programming language for the cloud that makes it easier to use, combine, and create network services
-<cite><a href="https://ballerina.io" target="_blank">ballerina.io</a></cite>
-{.blockquote .blockquote-reverse}
+"Ballerina is an open-source programming language for the cloud that makes it easier to use, combine, and create network services"
+<cite> - <a href="https://ballerina.io" target="_blank">ballerina.io</a></cite>
+{.tip-blockquote}
 
 **Ballerina** is a trademark of [WSO2 LLC](https://wso2.com).
-{.note .note-info .text-center}
+{.tip-note}
 
 ## Ballerina Language Specification
 
@@ -74,7 +78,7 @@ Bal.Tips content is created based on the [Ballerina Language Specification](http
 
 
 The language specification is licensed under [Creative Commons Attribution-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nd/4.0/) by [WSO2 LLC](https://wso2.com).
-{.note .note-info .text-center}
+{.tip-note}
 
 ## Other Marks and Logos
 

@@ -1,0 +1,21 @@
+@import '../node_modules/mdb-ui-kit/src/scss/mdb.free.scss';
+
+html {
+    font-size: 16px;
+}
+
+.tip-note {
+    @extend .note;
+    @extend .note-info;
+    @extend .text-center;
+    @extend .shadow-5;
+    @extend .m-auto ;
+    @extend .mb-3;
+}
+
+.tip-blockquote {
+    @extend .blockquote;
+    @extend .text-center;
+    @extend .m-auto ;
+    @extend .mb-3;
+}

@@ -11,4 +11,6 @@ menu:
       group: 'highlights'
 ---
 
+# Ballerina Tips Video Playlist
+
 {{< playlist source="youtube" key="main" >}} 

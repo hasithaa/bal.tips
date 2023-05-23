@@ -1,0 +1,15 @@
+{
+  "name": "baltips-theme",
+  "version": "0.1.0",
+  "description": "Hugo theme for bal.tips",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hasitha Aravinda",
+  "license": "MIT",
+  "dependencies": {
+    "mdb-ui-kit": "^6.1.0",
+    "sass": "^1.62.1"
+  }
+}

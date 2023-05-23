@@ -1,4 +1,13 @@
-{{if eq (int .Level) 1}}<hr class="text-dark mt-3">{{end}}
+{{ if eq (int .Level) 1 }}
+    {{ if $.Page.Scratch.Get "count" }}
+        {{ $.Page.Scratch.Set "count" (add ($.Page.Scratch.Get "count") 1) }}
+    {{ else }}
+        {{ $.Page.Scratch.Set "count" 1 }}
+    {{ end }}
+    {{ if gt ($.Page.Scratch.Get "count") 1 }}
+        <hr class="text-dark mt-5">
+    {{ end }}
+{{ end }}
 <a class="text-reset m-{{ sub 6 (int .Level)}}{{if eq (int .Level) 1}} text-center{{end}}" href="#{{ .Anchor | safeURL }}">
     <h{{ .Level }} id="{{ .Anchor | safeURL }}" >{{ .Text | safeHTML }}</h{{ .Level }}>    
 </a>
