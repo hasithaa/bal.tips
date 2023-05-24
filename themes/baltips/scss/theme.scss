@@ -9,13 +9,32 @@ html {
     @extend .note-info;
     @extend .text-center;
     @extend .shadow-5;
-    @extend .m-auto ;
+    @extend .m-auto;
     @extend .mb-3;
 }
 
 .tip-blockquote {
     @extend .blockquote;
     @extend .text-center;
-    @extend .m-auto ;
+    @extend .m-auto;
     @extend .mb-3;
+}
+
+.tip-table {
+    @extend .table;
+    @extend .table-striped;
+    @extend .table-bordered;
+    @extend .table-hover;
+    @extend .table-sm;
+    @extend .table-responsive;
+}
+
+.tip-50-frame {
+    @extend .w-50;
+    @extend .mx-auto;
+}
+
+.tip-75-frame {
+    @extend .w-75;
+    @extend .mx-auto;
 }

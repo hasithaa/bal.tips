@@ -27,7 +27,7 @@ Website content, source code, and images are licensed under different licenses. 
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Content                        | The Content under *bal.tips* website including the content of pages, posts etc. are licensed under a [Creative Commons-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nd/4.0/) by [Hasitha Aravinda](https://www.linkedin.com/in/hasithaaravinda/). | [![Creative Commons License](https://i.creativecommons.org/l/by-nd/4.0/88x31.png)](http://creativecommons.org/licenses/by-nd/4.0/) |
 | Ballerina Sources (.bal files) | All Ballerina Example Sources in this website are licensed under [MIT License](https://opensource.org/licenses/MIT), unless explicitly mention in the top of the source code.                                                                                                        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)                        |
-{.table .table-striped .table-bordered .table-hover .table-sm .table-responsive}
+{.tip-table}
 
 # Images
 

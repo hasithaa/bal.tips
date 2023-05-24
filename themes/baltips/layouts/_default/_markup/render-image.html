@@ -5,7 +5,7 @@ https://github.com/alex-shpak/hugo-book/blob/036e037a63ba06ca366adb1a0c3a005d1a0
   {{- template "portable-image" . -}}
 {{- else -}}
   <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}
-  class="img-fluid img-thumbnail img-responsive mx-auto d-block rounded shadow-lg border p-2 m-2"/>
+  class="img-fluid img-thumbnail img-responsive mx-auto d-block rounded shadow-3 border p-2 m-2 h-75"/>
 {{- end -}}
 
 {{- define "portable-image" -}}
@@ -20,5 +20,5 @@ https://github.com/alex-shpak/hugo-book/blob/036e037a63ba06ca366adb1a0c3a005d1a0
     {{- end }}
   {{- end }}
   <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}
-  class="img-fluid img-thumbnail img-responsive mx-auto d-block rounded shadow-lg border p-2 m-2"/>
+  class="img-fluid img-thumbnail img-responsive mx-auto d-block rounded shadow-lg border p-2 m-2 h-75"/>
 {{- end -}}
