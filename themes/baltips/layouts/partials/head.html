@@ -2,9 +2,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 
-    <meta name="keywords" content="{{ .Keywords }}">
+    {{with $.Site.Params.Head.publisher}}
+    <meta name="publisher" content="{{ . }}">
+    {{end}}
+    <meta name="copyright" 
+        content="{{ if $.Site.Params.Copyright.text}}{{ $.Site.Params.Copyright.text | plainify }}{{else}}{{ $.Site.Title | plainify }}{{end}} © {{with $.Site.Params.Copyright.startYear}}{{.}} - {{end}}{{ .Date | time.Format "2006" }}">
+    <meta name="keywords" content={{ delimit .Keywords ", " }} />
     <meta name="description" content="{{ .Description }}">
-    <!--TODO : Add other meta tags-->
+    
+    {{- if and (eq .Draft false) (eq .Params.type "docs") }}
+        <meta name="robots" content="index" />
+    {{- else }}
+        <meta name="robots" content="noindex">
+    {{- end}}
+    {{- if .Params.author }}
+        <meta name="author" content="{{ .Params.author }}" />
+    {{- else }}
+        <meta name="author" content="{{ .Site.Params.Head.author }}" />
+    {{- end }}
+    {{- if .Site.Params.schema }}
+        {{ template "_internal/schema.html" . }}
+    {{- end }}
+    {{- if .Site.Params.twitter_cards }}
+    {   { template "_internal/twitter_cards.html" . }}
+    {{- end }}
+    {{- if and .Params.images (gt (len .Params.images) 0) }}
+        <link rel="image_src" href="{{ relURL (index .Params.images 0 )  }}" />
+    {{- end }}
+
+    {{ if .Params.canonicalUrl }}
+        <link rel="canonical" href="{{ .Params.canonicalUrl }}">
+    {{ else }}
+        <link rel="canonical" href="{{ .Permalink }}">
+    {{ end }}
 
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
@@ -17,7 +47,7 @@
         
     <!-- Google tag (gtag.js) -->
     {{ if not $.Site.IsServer }}
-        {{ with $.Site.Params.GoogleTag }}
+        {{ with $.Site.Params.Head.GoogleTag }}
             <script async src="https://www.googletagmanager.com/gtag/js?id={{.}}"></script>
             <script>
             window.dataLayer = window.dataLayer || [];
@@ -35,4 +65,8 @@
 
     {{ $themeJS := resources.Get "js/theme.js" | minify }}
     <script src="{{ $themeJS.RelPermalink }}"></script>
+
+    <!--Search-->
+    <meta name="search-summary" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ default .Summary .Description }}{{ end }}" {{- if eq .Draft false }}data-pagefind-default-meta="summary[content]"{{- end }} >
+
 </head>

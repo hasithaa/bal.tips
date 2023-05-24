@@ -44,7 +44,11 @@ footer = [
 ]
 
 [params]
+
+[params.Head]
+publisher='bal.tips by Hasitha Aravinda'
 GoogleTag='G-T6DGTL873C'
+author='Hasitha Aravinda'
 
 [params.Copyright]
 startYear = 2022
