@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const searchBtn = document.getElementById('search-btn');
+    const searchInput = document.querySelector('input[type="search"]');
+    
+    searchBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      const searchQuery = searchInput.value;
+      const searchUrl = new URL('/search', window.location.href);
+      searchUrl.searchParams.set('q', searchQuery);
+      window.location.href = searchUrl.href;
+    });
+    
     const agreeButton = document.getElementById('ga-agree-button');
     const declineButton = document.getElementById('ga-decline-button');
 
