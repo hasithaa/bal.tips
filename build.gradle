@@ -1,0 +1,31 @@
+import groovy.json.JsonOutput
+
+task verifyBallerinaVerision() {
+    def stdout = new ByteArrayOutputStream()
+    doLast {
+        exec {
+            commandLine "bash", "-c", "bal version  2>&1 | sed 1q"
+            standardOutput = stdout;
+        }
+        def additionalData = [balVersion : stdout.toString()]
+        file("data/ballerina.json").text = JsonOutput.toJson(additionalData)
+    }
+}
+
+task test(dependsOn: [verifyBallerinaVerision]) {
+}
+
+task hugo() {
+    doLast {
+        exec {
+            commandLine "hugo", "--minify"
+        }
+        String npm = 'npm';
+        if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+            npm = 'npm.cmd'
+        }
+        exec {
+            commandLine npm, 'run', 'buildsearch'
+        }
+    }
+}

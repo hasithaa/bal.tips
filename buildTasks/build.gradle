@@ -1,0 +1,80 @@
+import groovy.json.JsonOutput
+
+task testOutput() {
+    def currentDir = file(".")
+    def files = fileTree(dir: currentDir, include: "*.bal")
+    files.each { file ->
+        def taskName = "testOutput-${file.name}-${file.canonicalPath.length()}"
+        def task = tasks.create(taskName) {
+            inputs.files(file.name, new File("${file.name}.out"))
+            outputs.file "${file.name}.out1"
+            doLast {
+
+                def filePath = file.canonicalPath
+                def startIndex = filePath.indexOf("docs")
+                def partOfPath = filePath.substring(startIndex)
+                def additionalData = [name: file.name, path: partOfPath]
+                def compile = true
+                def output = true
+                try {
+                    exec {
+                        commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name}"
+                        workingDir currentDir
+                    }
+                } catch (GradleException e) {
+                    compile = false
+                }
+                additionalData["compile"] = compile
+                if (compile) {
+                    try {
+                        exec {
+                            commandLine "bash", "-c", "java -jar ${file.name}.jar > ${file.name}.out1"
+                            workingDir currentDir
+                        }
+                    } catch (GradleException e) {
+                        output = false
+                    }
+                }
+                if (compile && output) {
+                    def referenceOutput = new File(file.path.toString() + ".out").text
+                    def currentOutput = new File(file.path.toString() + ".out1").text
+                    additionalData["kind"] = "output"
+                    if (currentOutput != referenceOutput) {
+                        output = false
+                        println("Output does not match reference output. Expected: [[\n${referenceOutput}\n]] but Found: [[\n${currentOutput}\n]].")
+                    }
+                }
+                additionalData["test"] = output
+                new File("${file.path}.json").text = JsonOutput.toJson(additionalData)
+                if (!compile || !output) {
+                    throw new GradleException("Test failed.")
+                }
+            }
+
+        }
+        testOutput.dependsOn task
+    }
+}
+
+task clean() {
+    def currentDir = file(".")
+    def out1Files = fileTree(dir: currentDir, includes: ["*.bal.out1", "*.bal.jar", "*.bal.json"])
+    doLast {
+        out1Files.each { file ->
+            file.delete()
+        }
+    }
+}
+
+task cleanJar() {
+    def currentDir = file(".")
+    def jarFiles = fileTree(dir: currentDir, includes: ["*.bal.jar"])
+    doLast {
+        jarFiles.each { file ->
+            file.delete()
+        }
+    }
+}
+
+task test(dependsOn: [testOutput, cleanJar]) {
+}
