@@ -65,8 +65,31 @@
 
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
+                    <button class="btn" type="submit" id="search-btn">Search</button>
                 </form>
+                <hr>
+                <div class="m-1 d-flex flex-wrap justify-content-center">
+                    <div class="dropdown ">
+                        <button class="btn dropdown-toggle" type="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-sliders"></i>
+                        </button>
+                        <div class="dropdown-menu" style="width: 320px">
+                            <form class="px-4 py-3">
+                                <label for="code_view">Source Code Density</label>
+                                <div class="btn-group my-2" id="code_view">
+                                    <input value="tip-code-full" type="radio" class="btn-check" name="source-options" id="radioSourceFull" autocomplete="off" checked />
+                                    <label class="btn btn-secondary" for="radioSourceFull"><i class="bi bi-arrows-fullscreen"></i> Full</label>
+                                
+                                    <input value="tip-code-simple" type="radio" class="btn-check" name="source-options" id="radioSourceSimple" autocomplete="off" />
+                                    <label class="btn btn-secondary" for="radioSourceSimple"><i class="bi bi-arrows-expand"></i> Simple</label>
+                                
+                                    <input value="tip-code-highlight" type="radio" class="btn-check" name="source-options" id="radioSourceHighligh" autocomplete="off" />
+                                    <label class="btn btn-secondary" for="radioSourceHighligh"><i class="bi bi-stars"></i> Highlights</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

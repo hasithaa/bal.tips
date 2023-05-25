@@ -73,4 +73,46 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         note.classList.remove('d-none');
     }
+
+    // Load Source Code View.
+    // Get the radio buttons and the code blocks
+    const radioButtons = document.querySelectorAll('input[name="source-options"]');
+    const fullCodeBlock = document.querySelector('.tip-code-full');
+    const simpleCodeBlock = document.querySelector('.tip-code-simple');
+    const highlightCodeBlock = document.querySelector('.tip-code-highlight');
+
+    // Get the value from local storage and set the selected radio button
+    const localStorageKey = 'codeView';
+    const selectedValue = localStorage.getItem(localStorageKey);
+    if (selectedValue) {
+        const selectedButton = document.querySelector(`input[value="${selectedValue}"]`);
+        if (selectedButton) {
+            selectedButton.checked = true;
+        }
+    }
+
+    // Add an event listener to each radio button to toggle the visibility of the code blocks
+    radioButtons.forEach(button => {
+    button.addEventListener('change', () => {
+        localStorage.setItem(localStorageKey, button.value);
+        if (button.value === 'tip-code-full') {
+            fullCodeBlock.classList.remove('d-none');
+            simpleCodeBlock.classList.add('d-none');
+            highlightCodeBlock.classList.add('d-none');
+        } else if (button.value === 'tip-code-simple') {
+            fullCodeBlock.classList.add('d-none');
+            simpleCodeBlock.classList.remove('d-none');
+            highlightCodeBlock.classList.add('d-none');
+        } else if (button.value === 'tip-code-highlight') {
+            fullCodeBlock.classList.add('d-none');
+            simpleCodeBlock.classList.add('d-none');
+            highlightCodeBlock.classList.remove('d-none');
+        }
+    });
+    
+    // Trigger the change event on the selected radio button to set the visibility of the code blocks
+    if (button.checked) {
+        button.dispatchEvent(new Event('change'));
+    }
+    });
 });

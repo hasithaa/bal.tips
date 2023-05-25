@@ -39,30 +39,25 @@
             {{ $simpleView = $simpleView | append $line  }}
         {{ end }}
     {{ end }}
+  
+<div class="tip-code-full table-responsive rounded rounded-3 shadow-3 m-auto">
+    {{ $fullView = delimit $fullView "\n" }}
+    {{ highlight $fullView "ballerina" $options }}
+</div>
+
+<div class="tip-code-simple d-none table-responsive rounded rounded-3 shadow-3 m-auto">
+    {{ $simpleView = delimit $simpleView "\n" }}
+    {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
+    {{ $sourceFilePath := printf "%s%s" $baseURL $filename }}
+    {{ $codeURL := (printf "%s" $sourceFilePath ) | relLangURL }}
     
- 
-    Full View
-    <div class="table-responsive rounded rounded-3 shadow-3 m-auto mt-5">
-        {{ $fullView = delimit $fullView "\n" }}
-        {{ highlight $fullView "ballerina" $options }}
-    </div>
+    {{ $codeContent := highlight $simpleView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=simple-" $filename) }}
+    {{ safeHTML (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
+</div>
 
-    Simple View
-    <div class="table-responsive rounded rounded-3 shadow-3 m-auto mt-5">
-        {{ $simpleView = delimit $simpleView "\n" }}
-        {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
-        {{ $sourceFilePath := printf "%s%s" $baseURL $filename }}
-        {{ $codeURL := (printf "%s" $sourceFilePath ) | relLangURL }}
-        
-        {{ $codeContent := highlight $simpleView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=highlight-" $filename) }}
-        {{ safeHTML (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
-
-    </div>
-
-    Highlight View
-    <div class="table-responsive rounded rounded-3 shadow-3 m-auto mt-5">
-        {{ $highlightView = delimit $highlightView "\n" }}
-        {{ highlight $highlightView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=simple-" $filename) }}
-    </div>
+<div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto">
+    {{ $highlightView = delimit $highlightView "\n" }}
+    {{ highlight $highlightView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=-highlight-" $filename) }}
+</div>
 
 {{ end }}
