@@ -1,0 +1,15 @@
+{{ if .Options }}
+    {{ errorf "Ballerina code fence does not support options. Use lines Attribute instead." }}
+{{ end }}
+{{ if not (isset .Attributes "filename") }}
+    {{ errorf "Ballerina code fence requires filename attribute."}}
+{{ else }}
+    {{ $filename := index .Attributes "filename"}}
+    {{ $options := print "lineNos=table,anchorLineNos=true,lineAnchors=" $filename}}
+    {{ with index .Attributes "lines" }}
+        {{ $options = print $options ",hl_lines=" .  }}
+    {{ end }}
+    <div class="table-responsive rounded rounded-3 shadow-3 m-auto mt-5">
+        {{ highlight .Inner "ballerina" $options }}
+    </div>
+{{ end }}
