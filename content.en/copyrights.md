@@ -64,9 +64,9 @@ In this website, we use multiple trademarks and logos. Please read the following
 
 ## Ballerina
 
+{{<quote source="[ballerina.io](https://ballerina.io)" pre="Ballerina Lang Website" post="(2023-May-05)">}}
 "Ballerina is an open-source programming language for the cloud that makes it easier to use, combine, and create network services"
-<cite> - <a href="https://ballerina.io" target="_blank">ballerina.io</a></cite>
-{.tip-blockquote}
+{{</quote>}}
 
 **Ballerina** is a trademark of [WSO2 LLC](https://wso2.com).
 {.tip-note}

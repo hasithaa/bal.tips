@@ -1,0 +1,13 @@
+{{ $source := .Get "source"}}
+{{ $preSource := .Get "pre" }}
+{{ $postSource := .Get "post"}}
+<figure class="text-center">
+    <blockquote class="blockquote">
+      {{ .Inner | safeHTML | markdownify }}
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        {{ $preSource | safeHTML | markdownify }}
+        <cite title="Source Title">{{ $source | safeHTML | markdownify }}</cite>
+        {{ $postSource | safeHTML | markdownify }}
+    </figcaption>
+  </figure>
