@@ -2,9 +2,9 @@
   "name": "baltips-theme",
   "version": "0.1.0",
   "description": "Hugo theme for bal.tips",
-  "main": "index.js",
+  "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js"
   },
   "author": "Hasitha Aravinda",
   "license": "MIT",

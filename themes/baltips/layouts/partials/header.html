@@ -19,12 +19,15 @@
                     {{ range .Site.Menus.main }}
                     {{ if .HasChildren }}
                     <li class="nav-item dropdown dropdown-hover position-static">
-                        <a class="nav-link dropdown-toggle" href="#" id="menu_{{.Identifier}}" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                            {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> {{ end }}
+                        <a class="nav-link dropdown-toggle" href="#" id="menu_{{.Identifier}}" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> 
+                            {{ end }}
                             {{ .Name }}
                         </a>
                         {{ $Children := .Children.ByWeight }}
-                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="menu_{{.Identifier}}" style="ßborder-top-left-radius: 0; border-top-right-radius: 0;">
+                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="menu_{{.Identifier}}"
+                            style="ßborder-top-left-radius: 0; border-top-right-radius: 0;">
                             <div class="container">
                                 <div class="row my-4">
                                     {{ range $group := (index $menuData .Identifier)}}
@@ -34,12 +37,13 @@
                                                 {{ $group.pre | safeHTML }} {{ $group.name }}
                                             </p>
                                             {{ range where $Children.ByWeight "Params.group" $group.key }}
-                                                {{ $active := eq $current.Permalink ( absLangURL .URL ) }}
-                                                <a class="list-group-item list-group-item-action{{if $active}} active{{end}}"
-                                                    {{if $active}}aria-current="true"{{end}} href="{{ .URL }}">
-                                                    {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> {{ end }}
-                                                    {{ .Name }}
-                                                </a>
+                                            {{ $active := eq $current.Permalink ( absLangURL .URL ) }}
+                                            <a class="list-group-item list-group-item-action{{if $active}} active{{end}}"
+                                                {{if $active}}aria-current="true" {{end}} href="{{ .URL }}">
+                                                {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }}
+                                                 <i class="bi bi-caret-right-fill"></i> {{ end }}
+                                                {{ .Name }}
+                                            </a>
                                             {{ end }}
                                         </div>
                                     </div>
@@ -58,7 +62,7 @@
                     {{ end }}
                     {{ end }}
                 </ul>
-                
+
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>

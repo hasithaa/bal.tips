@@ -13,8 +13,9 @@ sass.render(
   },
   function (error, result) {
     if (!error) {
-      // Write the compiled CSS to the output file
-      fs.writeFile(outputFile, result.css, function (err) {
+      // Write the compiled CSS to the output file with a comment at the top
+      const css = `/* Do not modify, Generated code */\n\n${result.css}`;
+      fs.writeFile(outputFile, css, function (err) {
         if (!err) {
           console.log('SCSS compiled successfully!');
         } else {

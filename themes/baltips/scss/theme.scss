@@ -8,9 +8,11 @@ html {
     @extend .note;
     @extend .note-info;
     @extend .text-center;
-    @extend .shadow-5;
+    @extend .shadow-3;
     @extend .m-auto;
     @extend .mb-3;
+    @extend .mt-3;
+
 }
 
 .tip-blockquote {
@@ -18,6 +20,7 @@ html {
     @extend .text-center;
     @extend .m-auto;
     @extend .mb-3;
+    @extend .mt-3;
 }
 
 .tip-table {
