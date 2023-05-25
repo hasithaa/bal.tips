@@ -5,7 +5,7 @@
     {{ errorf "Ballerina code fence requires filename attribute."}}
 {{ else }}
     {{ $filename := index .Attributes "filename"}}
-    {{ $options := print "lineNos=table,anchorLineNos=true,lineAnchors=full-" $filename}}
+    {{ $options := print "style=monokai,lineNos=table,anchorLineNos=true,lineAnchors=full-" $filename}}
     {{ with index .Attributes "lines" }}
         {{ $options = print $options ",hl_lines=" .  }}
     {{ end }}
@@ -51,13 +51,13 @@
     {{ $sourceFilePath := printf "%s%s" $baseURL $filename }}
     {{ $codeURL := (printf "%s" $sourceFilePath ) | relLangURL }}
     
-    {{ $codeContent := highlight $simpleView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=simple-" $filename) }}
+    {{ $codeContent := highlight $simpleView "ballerina" (print "style=monokai,lineNos=table,anchorLineNos=true,lineAnchors=simple-" $filename) }}
     {{ safeHTML (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
 </div>
 
 <div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto">
     {{ $highlightView = delimit $highlightView "\n" }}
-    {{ highlight $highlightView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=-highlight-" $filename) }}
+    {{ highlight $highlightView "ballerina" (print "style=monokai,lineNos=table,anchorLineNos=true,lineAnchors=-highlight-" $filename) }}
 </div>
 
 {{ end }}

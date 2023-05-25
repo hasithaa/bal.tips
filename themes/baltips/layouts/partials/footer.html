@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted mt-5">
+<footer class="text-center text-lg-start text-muted mt-5">
 
     <!-- Section: Privacy Notice  -->
     {{ with $.Site.Params.Footer.privacyNotice }}
@@ -13,25 +13,10 @@
     </section>
     {{ end }}
 
-    <!-- Notice -->
-    {{ with $.Site.Params.Footer.notice }}
-    <section class="d-flex justify-content-center justify-content-lg-between py-2 mt-2 d-none" id="footer-note">
-        <div class="note note-light m-auto shadow-5">
-            <div>
-                <span class="m-3">{{ . | safeHTML | markdownify }}</span>
-                <button type="button" class="btn btn-secondary" aria-label="Close" id="footer-note-x-button">
-                    Close
-                </button>
-            </div>
-        </div>
-    </section>
-    {{ end}}
-    <!-- Notice -->
-
     {{ $menuData := $.Site.Data.menu }}
     {{ $current := . }}
     <!-- Section: Links  -->
-    <section class="border-top">
+    <section class="border-top bg-light">
         <div class="container text-center text-md-start mt-5">
             <!-- Grid row -->
             {{ $size := len .Site.Menus.footer }}
@@ -86,7 +71,7 @@
     <!-- Section: Links  -->
 
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-1 border-bottom">
+    <section class="d-flex justify-content-center justify-content-lg-between p-1 border-bottom bg-light">
         {{with $.Site.Params.Footer.socialLinks}}
             {{with $.Site.Params.Footer.socialText}}
             <div class="ms-auto mx-3 d-none d-lg-block">
@@ -106,8 +91,23 @@
     </section>
     <!-- Section: Social media -->
 
+    <!-- Notice -->
+    {{ with $.Site.Params.Footer.notice }}
+    <section class="d-flex justify-content-center justify-content-lg-between py-2 mt-2 d-none bg-white" id="footer-note">
+        <div class="note note-light m-auto shadow-5">
+            <div>
+                <span class="m-3">{{ . | safeHTML | markdownify }}</span>
+                <button type="button" class="btn btn-secondary" aria-label="Close" id="footer-note-x-button">
+                    Close
+                </button>
+            </div>
+        </div>
+    </section>
+    {{ end}}
+    <!-- Notice -->
+
     <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    <div class="text-center p-4 bg-white bg-gradient" style="background-color: rgba(0, 0, 0, 0.025);">
         <a class="text-reset fw-bold"
             href="{{ if $.Site.Params.Copyright.textUrl }}{{$.Site.Params.Copyright.textUrl | safeURL }}{{else}}{{ .Site.BaseURL }}{{end}}">
             {{ if $.Site.Params.Copyright.text}}{{ $.Site.Params.Copyright.text | safeHTML | markdownify }}{{else}}{{ $.Site.BaseURL |

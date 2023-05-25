@@ -23,10 +23,6 @@ See available operations in the [ballerina/lang.boolean](https://ballerina.io/sp
 
 <!--more-->
 
-💡 `boolean` is a keyword in Ballerina, and it is a pre-defined prefix.
-Therefore, you can call boolean functions with the prefix even without an import declaration.
-{.tip-note}
-
 ```ballerina {filename="lang_boolean.bal" lines="5-6"  result="output"}
 import ballerina/io;
 
@@ -39,3 +35,7 @@ public function main() returns error? {
     io:println("f1:", f1); //!
 }
 ```
+
+💡 `boolean` is a keyword in Ballerina, and it is a pre-defined prefix.
+Therefore, you can call boolean functions with the prefix even without an import declaration.
+{.tip-note}

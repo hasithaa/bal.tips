@@ -23,11 +23,6 @@ See available operations in the [ballerina/lang.boolean](https://ballerina.io/sp
 
 <!--more-->
 
-💡 _array_ is not a pre-defined module prefix (because array is not a keyword).
-To use it with function call syntax, you must have an `import ballerina/lang.array` declaration.
-However, you can call these functions on a list value using the method call syntax.
-{.tip-note}
-
 ```ballerina {filename="lang_array.bal" lines="2 5-7"  result="output"}
 import ballerina/io;
 import ballerina/lang.array; //$
@@ -43,6 +38,11 @@ public function main() {
     io:println("sortedNumbers: ", sortedNumbers); //!
 }
 ```
+
+💡 _array_ is not a pre-defined module prefix (because array is not a keyword).
+To use it with function call syntax, you must have an `import ballerina/lang.array` declaration.
+However, you can call these functions on a list value using the method call syntax.
+{.tip-note}
 
 ## Definitions
 

@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ .Site.BaseURL }}">
                 <img src="/images/logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top"
@@ -21,7 +21,7 @@
                     <li class="nav-item dropdown dropdown-hover position-static">
                         <a class="nav-link dropdown-toggle" href="#" id="menu_{{.Identifier}}" role="button"
                             data-mdb-toggle="dropdown" aria-expanded="false">
-                            {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> 
+                            {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i>
                             {{ end }}
                             {{ .Name }}
                         </a>
@@ -41,7 +41,7 @@
                                             <a class="list-group-item list-group-item-action{{if $active}} active{{end}}"
                                                 {{if $active}}aria-current="true" {{end}} href="{{ .URL }}">
                                                 {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }}
-                                                 <i class="bi bi-caret-right-fill"></i> {{ end }}
+                                                <i class="bi bi-caret-right-fill"></i> {{ end }}
                                                 {{ .Name }}
                                             </a>
                                             {{ end }}
@@ -56,7 +56,8 @@
                     {{ $active := eq $current.Permalink ( absLangURL .URL ) }}
                     <li class="nav-item">
                         <a class="nav-link{{if $active}} active{{end}}" href="{{ .URL }}">
-                            {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> {{ end }}
+                            {{ if .Pre }} {{ .Pre | safeHTML }} {{ else }} <i class="bi bi-caret-right-fill"></i> {{ end
+                            }}
                             {{ .Name }}</a>
                     </li>
                     {{ end }}
@@ -70,23 +71,41 @@
                 <hr>
                 <div class="m-1 d-flex flex-wrap justify-content-center">
                     <div class="dropdown ">
-                        <button class="btn dropdown-toggle" type="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <button class="btn dropdown-toggle" type="button" data-mdb-toggle="dropdown"
+                            aria-expanded="false">
                             <i class="bi bi-sliders"></i>
                         </button>
                         <div class="dropdown-menu" style="width: 320px">
-                            <form class="px-4 py-3">
+                            <div class="px-4 py-3">
+                                <label for="theme_view">Site Theme</label>
+                                <div class="text-center btn-group my-2" id="theme_view">                                    
+                                    <input value="theme-light" type="radio" class="btn-check" name="theme-options"
+                                        id="radioThemeLight" autocomplete="off" checked />
+                                    <label class="btn btn-secondary" for="radioThemeLight"><span class="bi bi-brightness-high-fill"></span>Light</label>
+
+                                    <input value="theme-dark" type="radio" class="btn-check" name="theme-options"
+                                        id="radioThemeDark" autocomplete="off" />
+                                    <label class="btn btn-secondary" for="radioThemeDark"><span class="bi bi-moon-stars-fill"></span> Dark</label>
+                                </div>
+                                <hr>
                                 <label for="code_view">Source Code Density</label>
                                 <div class="btn-group my-2" id="code_view">
-                                    <input value="tip-code-full" type="radio" class="btn-check" name="source-options" id="radioSourceFull" autocomplete="off" checked />
-                                    <label class="btn btn-secondary" for="radioSourceFull"><i class="bi bi-arrows-fullscreen"></i> Full</label>
-                                
-                                    <input value="tip-code-simple" type="radio" class="btn-check" name="source-options" id="radioSourceSimple" autocomplete="off" />
-                                    <label class="btn btn-secondary" for="radioSourceSimple"><i class="bi bi-arrows-expand"></i> Simple</label>
-                                
-                                    <input value="tip-code-highlight" type="radio" class="btn-check" name="source-options" id="radioSourceHighligh" autocomplete="off" />
-                                    <label class="btn btn-secondary" for="radioSourceHighligh"><i class="bi bi-stars"></i> Highlights</label>
+                                    <input value="tip-code-full" type="radio" class="btn-check" name="source-options"
+                                        id="radioSourceFull" autocomplete="off" checked />
+                                    <label class="btn btn-secondary" for="radioSourceFull"><i
+                                            class="bi bi-arrows-fullscreen"></i> Full</label>
+
+                                    <input value="tip-code-simple" type="radio" class="btn-check" name="source-options"
+                                        id="radioSourceSimple" autocomplete="off" />
+                                    <label class="btn btn-secondary" for="radioSourceSimple"><i
+                                            class="bi bi-arrows-expand"></i> Simple</label>
+
+                                    <input value="tip-code-highlight" type="radio" class="btn-check"
+                                        name="source-options" id="radioSourceHighligh" autocomplete="off" />
+                                    <label class="btn btn-secondary" for="radioSourceHighligh"><i
+                                            class="bi bi-stars"></i> Highlights</label>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

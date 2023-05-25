@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('search-btn');
     const searchInput = document.querySelector('input[type="search"]');
-    
+
     searchBtn.addEventListener('click', (event) => {
-      event.preventDefault();
-      const searchQuery = searchInput.value;
-      const searchUrl = new URL('/search', window.location.href);
-      searchUrl.searchParams.set('q', searchQuery);
-      window.location.href = searchUrl.href;
+        event.preventDefault();
+        const searchQuery = searchInput.value;
+        const searchUrl = new URL('/search', window.location.href);
+        searchUrl.searchParams.set('q', searchQuery);
+        window.location.href = searchUrl.href;
     });
-    
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const agreeButton = document.getElementById('ga-agree-button');
     const declineButton = document.getElementById('ga-decline-button');
 
@@ -56,7 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem('privacyNoticeAgreed');
         }, 24 * 60 * 60 * 1000 * 7); // 7 day in milliseconds
     });
+});
 
+document.addEventListener('DOMContentLoaded', () => {
     const footerNoteXButton = document.getElementById('footer-note-x-button');
     const note = document.getElementById('footer-note');
 
@@ -73,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         note.classList.remove('d-none');
     }
-
+});
+document.addEventListener('DOMContentLoaded', () => {
     // Load Source Code View.
     // Get the radio buttons and the code blocks
     const radioButtons = document.querySelectorAll('input[name="source-options"]');
@@ -93,26 +98,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add an event listener to each radio button to toggle the visibility of the code blocks
     radioButtons.forEach(button => {
-    button.addEventListener('change', () => {
-        localStorage.setItem(localStorageKey, button.value);
-        if (button.value === 'tip-code-full') {
-            fullCodeBlock.classList.remove('d-none');
-            simpleCodeBlock.classList.add('d-none');
-            highlightCodeBlock.classList.add('d-none');
-        } else if (button.value === 'tip-code-simple') {
-            fullCodeBlock.classList.add('d-none');
-            simpleCodeBlock.classList.remove('d-none');
-            highlightCodeBlock.classList.add('d-none');
-        } else if (button.value === 'tip-code-highlight') {
-            fullCodeBlock.classList.add('d-none');
-            simpleCodeBlock.classList.add('d-none');
-            highlightCodeBlock.classList.remove('d-none');
+        button.addEventListener('change', () => {
+            localStorage.setItem(localStorageKey, button.value);
+            if (fullCodeBlock !== null) {
+                if (button.value === 'tip-code-full') {
+                    fullCodeBlock.classList.remove('d-none');
+                    simpleCodeBlock.classList.add('d-none');
+                    highlightCodeBlock.classList.add('d-none');
+                } else if (button.value === 'tip-code-simple') {
+                    fullCodeBlock.classList.add('d-none');
+                    simpleCodeBlock.classList.remove('d-none');
+                    highlightCodeBlock.classList.add('d-none');
+                } else if (button.value === 'tip-code-highlight') {
+                    fullCodeBlock.classList.add('d-none');
+                    simpleCodeBlock.classList.add('d-none');
+                    highlightCodeBlock.classList.remove('d-none');
+                }
+            }
+        });
+
+        // Trigger the change event on the selected radio button to set the visibility of the code blocks
+        if (button.checked) {
+            button.dispatchEvent(new Event('change'));
         }
     });
-    
-    // Trigger the change event on the selected radio button to set the visibility of the code blocks
-    if (button.checked) {
-        button.dispatchEvent(new Event('change'));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Load Source Code View.
+    // Get the radio buttons and the code blocks
+    const radioButtons = document.querySelectorAll('input[name="theme-options"]');
+    const themeContent = document.getElementById('content-body');
+
+    // Get the value from local storage and set the selected radio button
+    const localStorageKey = 'theme';
+    const selectedValue = localStorage.getItem(localStorageKey);
+    if (selectedValue) {
+        const selectedButton = document.querySelector(`input[value="${selectedValue}"]`);
+        if (selectedButton) {
+            selectedButton.checked = true;
+        }
     }
+
+    // Add an event listener to each radio button to toggle the visibility of the code blocks
+    radioButtons.forEach(button => {
+        button.addEventListener('change', () => {
+            localStorage.setItem(localStorageKey, button.value);
+            if (themeContent !== null) {
+                if (button.value === 'theme-light') {
+                    themeContent.classList.remove('bg-dark')
+                    themeContent.classList.remove('text-light')
+                    themeContent.classList.add('bg-light')
+                    themeContent.classList.add('text-dark')
+                } else if (button.value === 'theme-dark') {
+                    themeContent.classList.add('bg-dark')
+                    themeContent.classList.add('text-light')
+                    themeContent.classList.remove('bg-light')
+                    themeContent.classList.remove('text-dark')
+                } else {
+                    themeContent.classList.remove('bg-dark')
+                    themeContent.classList.remove('text-light')
+                    themeContent.classList.add('bg-light')
+                    themeContent.classList.add('text-dark')
+                }
+            }
+        });
+
+        // Trigger the change event on the selected radio button to set the visibility of the code blocks
+        if (button.checked) {
+            button.dispatchEvent(new Event('change'));
+        }
     });
 });

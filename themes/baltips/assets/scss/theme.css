@@ -8404,7 +8404,7 @@ textarea.form-control-lg {
   color: rgba(var(--mdb-light-rgb), var(--mdb-text-opacity)) !important;
 }
 
-.text-dark {
+.text-dark, .tip-table, .tip-blockquote, .tip-note {
   --mdb-text-opacity: 1;
   color: rgba(var(--mdb-dark-rgb), var(--mdb-text-opacity)) !important;
 }
@@ -8490,7 +8490,7 @@ textarea.form-control-lg {
   background-color: rgba(var(--mdb-info-rgb), var(--mdb-bg-opacity)) !important;
 }
 
-.bg-light {
+.bg-light, .tip-table {
   --mdb-bg-opacity: 1;
   background-color: rgba(var(--mdb-light-rgb), var(--mdb-bg-opacity)) !important;
 }
@@ -12137,7 +12137,7 @@ a {
   background-color: rgba(84, 180, 211, var(--mdb--bg-opacity));
 }
 
-.bg-light {
+.bg-light, .tip-table {
   --mdb--bg-opacity: 1;
   background-color: rgba(251, 251, 251, var(--mdb--bg-opacity));
 }
