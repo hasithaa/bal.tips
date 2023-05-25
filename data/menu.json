@@ -5,6 +5,10 @@
             "key": "intro",
             "name": "Introduction",
             "pre": "<i class='bi bi-collection'></i>"
+        },{
+            "key": "devops",
+            "name": "DevOps",
+            "pre": "<i class='bi bi-cloud-arrow-up-fill'></i>"
         }
     ],
     "tips" : [],
