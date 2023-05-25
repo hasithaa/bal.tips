@@ -6,6 +6,13 @@ theme = 'baltips'
 [outputs]
 home = ['HTML', 'RSS']
 
+[mediaTypes]
+  [mediaTypes.'text/plain']
+    suffixes = ['bal']
+[outputFormats]
+  [outputFormats.bal]
+    mediaType = 'text/plain'
+
 [markup]
 [markup.goldmark.renderer]
   unsafe = true

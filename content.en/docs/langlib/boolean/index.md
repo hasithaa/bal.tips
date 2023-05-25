@@ -6,7 +6,6 @@ weight : 11100
 type : docs
 ballerina_type : [boolean]
 ballerina_module : [boolean]
-highlight : [lang_boolean.bal]
 menu:
   main:
     name: "lang.boolean"
@@ -28,7 +27,7 @@ See available operations in the [ballerina/lang.boolean](https://ballerina.io/sp
 Therefore, you can call boolean functions with the prefix even without an import declaration.
 {.tip-note}
 
-```ballerina {filename="lang_boolean.bal" lines="5-6"  test="output"}
+```ballerina {filename="lang_boolean.bal" lines="5-6"  result="output"}
 import ballerina/io;
 
 public function main() returns error? {

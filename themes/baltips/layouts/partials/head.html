@@ -10,25 +10,25 @@
     <meta name="keywords" content={{ delimit .Keywords ", " }} />
     <meta name="description" content="{{ .Description }}">
     
-    {{- if and (eq .Draft false) (eq .Params.type "docs") }}
+    {{ if and (eq .Draft false) (eq .Params.type "docs") }}
         <meta name="robots" content="index" />
-    {{- else }}
+    {{ else }}
         <meta name="robots" content="noindex">
-    {{- end}}
-    {{- if .Params.author }}
+    {{ end}}
+    {{ if .Params.author }}
         <meta name="author" content="{{ .Params.author }}" />
-    {{- else }}
+    {{ else }}
         <meta name="author" content="{{ .Site.Params.Head.author }}" />
-    {{- end }}
-    {{- if .Site.Params.schema }}
+    {{ end }}
+    {{ if .Site.Params.schema }}
         {{ template "_internal/schema.html" . }}
-    {{- end }}
-    {{- if .Site.Params.twitter_cards }}
+    {{ end }}
+    {{ if .Site.Params.twitter_cards }}
     {   { template "_internal/twitter_cards.html" . }}
-    {{- end }}
-    {{- if and .Params.images (gt (len .Params.images) 0) }}
+    {{ end }}
+    {{ if and .Params.images (gt (len .Params.images) 0) }}
         <link rel="image_src" href="{{ relURL (index .Params.images 0 )  }}" />
-    {{- end }}
+    {{ end }}
 
     {{ if .Params.canonicalUrl }}
         <link rel="canonical" href="{{ .Params.canonicalUrl }}">
@@ -59,7 +59,7 @@
         {{ end }}
     {{ end }}
     
-    {{- $options := (dict "includePaths" (slice "node_modules")) -}}
+    {{ $options := (dict "includePaths" (slice "node_modules")) }}
     {{ $themeCSS := resources.Get "scss/theme.css" | toCSS  $options | minify }}
     <link rel="stylesheet" href="{{ $themeCSS.RelPermalink }}" />
 
@@ -67,6 +67,6 @@
     <script src="{{ $themeJS.RelPermalink }}"></script>
 
     <!--Search-->
-    <meta name="search-summary" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ default .Summary .Description }}{{ end }}" {{- if eq .Draft false }}data-pagefind-default-meta="summary[content]"{{- end }} >
+    <meta name="search-summary" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ default .Summary .Description }}{{ end }}" {{ if eq .Draft false }}data-pagefind-default-meta="summary[content]"{{ end }} >
 
 </head>

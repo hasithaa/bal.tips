@@ -5,11 +5,64 @@
     {{ errorf "Ballerina code fence requires filename attribute."}}
 {{ else }}
     {{ $filename := index .Attributes "filename"}}
-    {{ $options := print "lineNos=table,anchorLineNos=true,lineAnchors=" $filename}}
+    {{ $options := print "lineNos=table,anchorLineNos=true,lineAnchors=full-" $filename}}
     {{ with index .Attributes "lines" }}
         {{ $options = print $options ",hl_lines=" .  }}
     {{ end }}
+
+    {{ $code := .Inner }}
+    {{ $code = split $code "\n" }}
+
+    {{ $fullView := slice }}
+    {{ $simpleView := slice }}
+    {{ $highlightView := slice }}
+
+    {{ $codeIgnored := false  }}
+    {{ range $code  }}
+        {{ if strings.Contains . "//$"  }}
+            {{ $line := split . "//$"  }}
+            {{ $line = (strings.TrimRight " " (index $line 0)) }}
+            {{ $fullView = $fullView | append $line  }}
+            {{ $simpleView = $simpleView | append $line  }}
+            {{ $highlightView = $highlightView | append (strings.TrimLeft " " $line)  }}
+        {{ else if strings.Contains . "//!" }}
+            {{ $line := split . "//!" }}
+            {{ $line := (strings.TrimRight " " (index $line 0)) }}
+            {{ $fullView = $fullView | append $line  }}
+            {{ if not $codeIgnored  }}
+                {{ $simpleView = $simpleView | append "    // Some lines (i.e io:println()) are trimmed." | append "    // Open $SOURCE$ to view them." }}
+                {{ $codeIgnored = true  }}
+            {{ end }}
+        {{ else }}
+            {{ $line :=  . }}
+            {{ $fullView = $fullView | append $line  }}
+            {{ $simpleView = $simpleView | append $line  }}
+        {{ end }}
+    {{ end }}
+    
+ 
+    Full View
     <div class="table-responsive rounded rounded-3 shadow-3 m-auto mt-5">
-        {{ highlight .Inner "ballerina" $options }}
+        {{ $fullView = delimit $fullView "\n" }}
+        {{ highlight $fullView "ballerina" $options }}
     </div>
+
+    Simple View
+    <div class="table-responsive rounded rounded-3 shadow-3 m-auto mt-5">
+        {{ $simpleView = delimit $simpleView "\n" }}
+        {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
+        {{ $sourceFilePath := printf "%s%s" $baseURL $filename }}
+        {{ $codeURL := (printf "%s" $sourceFilePath ) | relLangURL }}
+        
+        {{ $codeContent := highlight $simpleView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=highlight-" $filename) }}
+        {{ safeHTML (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
+
+    </div>
+
+    Highlight View
+    <div class="table-responsive rounded rounded-3 shadow-3 m-auto mt-5">
+        {{ $highlightView = delimit $highlightView "\n" }}
+        {{ highlight $highlightView "ballerina" (print "lineNos=table,anchorLineNos=true,lineAnchors=simple-" $filename) }}
+    </div>
+
 {{ end }}
