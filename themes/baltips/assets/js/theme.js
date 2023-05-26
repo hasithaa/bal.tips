@@ -170,3 +170,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const openSettingsLinks = document.querySelectorAll('[name="openSettingsLink"]');
+    const existingButton = document.querySelector('#openSettings');
+
+    openSettingsLinks.forEach(link => {
+        const dropdown = new mdb.Dropdown(existingButton, { autoClose: false });
+
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            // If the dropdown is shown, hide it, else show it
+            if (dropdown._menu.classList.contains('show')) {
+                dropdown.hide();
+            } else {
+                dropdown.show();
+            }
+        });
+    });
+});

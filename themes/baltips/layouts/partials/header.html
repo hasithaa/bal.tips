@@ -68,14 +68,15 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn" type="submit" id="search-btn">Search</button>
                 </form>
+
                 <hr>
                 <div class="m-1 d-flex flex-wrap justify-content-center">
-                    <div class="dropdown ">
-                        <button class="btn dropdown-toggle" type="button" data-mdb-toggle="dropdown"
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-mdb-toggle="dropdown"  data-bs-auto-close="false" id="openSettings" 
                             aria-expanded="false">
                             <i class="bi bi-sliders"></i>
                         </button>
-                        <div class="dropdown-menu" style="width: 320px">
+                        <div class="dropdown-menu" id="siteSettings" style="width: 320px">
                             <div class="px-4 py-3">
                                 <label for="theme_view">Site Theme</label>
                                 <div class="text-center btn-group my-2" id="theme_view">                                    

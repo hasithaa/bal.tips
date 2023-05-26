@@ -5,7 +5,11 @@
         {{ $.Page.Scratch.Set "count" 1 }}
     {{ end }}
     {{ if gt ($.Page.Scratch.Get "count") 1 }}
-        <hr class="text-dark mt-5">
+    <div class="text-center text-secondary mt-5">
+        <a title="Back to top" class="text-reset" href="#top">
+            <i class="bi bi-caret-up-fill"></i>
+        </a>
+    </div>
     {{ end }}
 {{ end }}
 <a class="text-reset m-{{ sub 6 (int .Level)}}{{if eq (int .Level) 1}} text-center{{end}}" href="#{{ .Anchor | safeURL }}">

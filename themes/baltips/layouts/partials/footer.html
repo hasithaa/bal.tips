@@ -3,7 +3,7 @@
 
     <!-- Section: Privacy Notice  -->
     {{ with $.Site.Params.Footer.privacyNotice }}
-    <section class="d-flex justify-content-center justify-content-lg-between d-none" id="privacyNotice">
+    <section class="d-flex justify-content-center mt-2 mb-2 justify-content-lg-between d-none" id="privacyNotice">
         <div class="note note-info m-auto shadow-5">
             <div>
                     <span class="m-3">{{ . | safeHTML | markdownify }}</span>
@@ -93,7 +93,7 @@
 
     <!-- Notice -->
     {{ with $.Site.Params.Footer.notice }}
-    <section class="d-flex justify-content-center justify-content-lg-between py-2 mt-2 d-none bg-white" id="footer-note">
+    <section class="d-flex justify-content-center justify-content-lg-between py-2 mt-2 mb-2 d-none bg-white" id="footer-note">
         <div class="note note-light m-auto shadow-5">
             <div>
                 <span class="m-3">{{ . | safeHTML | markdownify }}</span>

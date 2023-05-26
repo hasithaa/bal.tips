@@ -24,15 +24,15 @@ See available operations in the [ballerina/lang.boolean](https://ballerina.io/sp
 <!--more-->
 
 ```ballerina {filename="lang_array.bal" lines="2 5-7"  result="output"}
-import ballerina/io;
+import ballerina/io; //!
 import ballerina/lang.array; //$
-
+//$
 public function main() {
     int[] numbers = [5, -2, 9, 1, 0, 8]; //$
     int length = numbers.length(); //$
     int? index = array:indexOf(numbers, 9); //$
     int[] sortedNumbers = array:sort(numbers);
-
+    //!
     io:println("length: ", length); //!
     io:println("index: ", index); //!
     io:println("sortedNumbers: ", sortedNumbers); //!
