@@ -45,3 +45,16 @@ html {
     @extend .w-75;
     @extend .mx-auto;
 }
+
+.btn-text-transform-none {
+    text-transform: none !important;
+}
+
+.toc a.active {
+    text-decoration: underline !important
+}
+
+.toc a{
+  @extend .text-dark;
+}
+

@@ -8404,7 +8404,7 @@ textarea.form-control-lg {
   color: rgba(var(--mdb-light-rgb), var(--mdb-text-opacity)) !important;
 }
 
-.text-dark, .tip-table, .tip-blockquote, .tip-note {
+.text-dark, .toc a, .tip-table, .tip-blockquote, .tip-note {
   --mdb-text-opacity: 1;
   color: rgba(var(--mdb-dark-rgb), var(--mdb-text-opacity)) !important;
 }
@@ -16174,4 +16174,12 @@ fieldset:disabled .btn-group-vertical > .btn {
 
 html {
   font-size: 16px;
+}
+
+.btn-text-transform-none {
+  text-transform: none !important;
+}
+
+.toc a.active {
+  text-decoration: underline !important;
 }

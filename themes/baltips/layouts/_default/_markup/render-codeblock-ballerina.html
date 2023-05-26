@@ -50,7 +50,7 @@
     
     {{ $codeContent := highlight $simpleView "ballerina" (print "style=monokai") }}
     {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
-    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#' name='openSettingsLink' ><i class='bi bi-sliders'></i></a>")) }}
+    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
     {{ safeHTML $codeContent}}
 </div>
 
@@ -58,7 +58,7 @@
     {{ $highlightView = delimit $highlightView "\n" }}
     {{ $codeContent := highlight $highlightView "ballerina" (print "style=monokai") }}
     {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
-    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#' name='openSettingsLink' ><i class='bi bi-sliders'></i></a>")) }}
+    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
     {{ safeHTML $codeContent}}
 </div>
 

@@ -1,3 +1,127 @@
+<div class="position-fixed bottom-0 end-0 p-3 pb-5">
+    <button class="btn btn-secondary" type="button" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight"
+        aria-controls="offcanvasRight">
+        <i class="bi bi-lightbulb-fill"></i>
+    </button>
+    <div class="offcanvas offcanvas-end bg-light text-dark" tabindex="-1" data-mdb-scroll="true" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">{{ .Title }}</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="offcanvas" aria-label="Close"></button>
+            
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                {{ if .Params.canonicalUrl }}
+                <div class="markdown" style="text-align:justify">
+                    <blockquote class="book-hint info">
+                        📃 This article was originally published on <a href="{{ .Params.canonicalUrl }}" target="_blank">{{ default "this blog" ($.Params.canonicalSite | markdownify) }}</a>.
+                    </blockquote>
+                </div>
+                <link rel="canonical" href="{{ .Params.canonicalUrl }}">
+                {{ end }}
+                <h6 class="offcanvas-title py-3"><i class="bi bi-list-columns"></i> Table of Content</h6>
+                <div class="toc text-muted text-dark p-2 sticky-top" id="scrollspy-collapsible">
+                    {{ .TableOfContents}}
+                </div>
+                <!-- Key words -->
+                {{ if $.Page.File }}
+                    <h6 class="py-3"><i class="bi bi-tags-fill"></i> Key Words</h6>
+                    <div class="text-reset text-dark p-2">
+                    {{- $path := $.Page.File.Path}}                            
+                        {{- if and (eq .Draft false) (eq .Params.type "docs")}}
+                            {{- with .Page.Params.ballerina_type }}
+                                {{- range .}}
+                                    {{- if isset $.Site.Data.Filters.ballerina_type . }}
+                                        {{- with (index $.Site.Data.Filters.ballerina_type .) }}
+                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
+                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                                        {{- end}}
+                                    {{- else}}
+                                        {{- errorf "Failed to handle btype %q at %q" . $path }}
+                                    {{- end}}
+                                {{- end}}
+                            {{- end}}
+                            {{- with .Page.Params.ballerina_lang }}
+                                {{- range .}}
+                                    {{- if isset $.Site.Data.Filters.ballerina_lang . }}
+                                        {{- with (index $.Site.Data.Filters.ballerina_lang .) }}
+                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
+                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                                        {{- end}}
+                                    {{- else}}
+                                        {{- errorf "Failed to handle blang %q at %q" . $path }}
+                                    {{- end}}
+                                {{- end}}
+                            {{- end}}
+                            {{- with .Page.Params.ballerina_feature }}
+                                {{- range .}}
+                                    {{- if isset $.Site.Data.Filters.ballerina_feature . }}
+                                        {{- with (index $.Site.Data.Filters.ballerina_feature .) }}
+                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
+                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                                        {{- end}}
+                                    {{- else}}
+                                        {{- errorf "Failed to handle bfeature %q at %q" . $path }}
+                                    {{- end}}
+                                {{- end}}
+                            {{- end}}
+                            {{- with .Page.Params.ballerina_module }}
+                                {{- range .}}
+                                    {{- if isset $.Site.Data.Filters.ballerina_module . }}
+                                        {{- with (index $.Site.Data.Filters.ballerina_module .) }}
+                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
+                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                                        {{- end}}
+                                    {{- else}}
+                                        {{- errorf "Failed to handle bmodule %q at %q" . $path }}
+                                    {{- end}}
+                                {{- end}}
+                            {{- end}}
+                        {{- end}}
+                    
+                    </div>
+                {{end}}
+                <!-- End of keywords -->
+                
+            </div>
+            <hr>
+            <div id="siteSettings" style="width: 320px">
+                <h6 class="offcanvas-title"><i class="bi bi-sliders"></i> Site Settings</h6>
+                <div class="py-3">
+                    <label for="theme_view">Site Theme</label>
+                    <div class="text-center btn-group my-2" id="theme_view">                                    
+                        <input value="theme-light" type="radio" class="btn-check" name="theme-options"
+                            id="radioThemeLight" autocomplete="off" checked />
+                        <label class="btn btn-secondary" for="radioThemeLight"><span class="bi bi-brightness-high-fill"></span>Light</label>
+
+                        <input value="theme-dark" type="radio" class="btn-check" name="theme-options"
+                            id="radioThemeDark" autocomplete="off" />
+                        <label class="btn btn-secondary" for="radioThemeDark"><span class="bi bi-moon-stars-fill"></span> Dark</label>
+                    </div>
+                    
+                    <label for="code_view" class="py-3">Source Code Density</label>
+                    <div class="btn-group my-2" id="code_view">
+                        <input value="tip-code-full" type="radio" class="btn-check" name="source-options"
+                            id="radioSourceFull" autocomplete="off" checked />
+                        <label class="btn btn-secondary" for="radioSourceFull"><i
+                                class="bi bi-arrows-fullscreen"></i> Full</label>
+
+                        <input value="tip-code-simple" type="radio" class="btn-check" name="source-options"
+                            id="radioSourceSimple" autocomplete="off" />
+                        <label class="btn btn-secondary" for="radioSourceSimple"><i
+                                class="bi bi-arrows-expand"></i> Simple</label>
+
+                        <input value="tip-code-highlight" type="radio" class="btn-check"
+                            name="source-options" id="radioSourceHighligh" autocomplete="off" />
+                        <label class="btn btn-secondary" for="radioSourceHighligh"><i
+                                class="bi bi-stars"></i> Highlights</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Footer -->
 <footer class="text-center text-lg-start text-muted mt-5">
 
