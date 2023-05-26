@@ -11,6 +11,7 @@
         </div>
         <div class="offcanvas-body">
             <div>
+                <!-- canonicalUrl -->
                 {{ if .Params.canonicalUrl }}
                 <div class="markdown" style="text-align:justify">
                     <blockquote class="book-hint info">
@@ -19,77 +20,117 @@
                 </div>
                 <link rel="canonical" href="{{ .Params.canonicalUrl }}">
                 {{ end }}
+                <!-- End of canonicalUrl -->
+                <!-- TOC -->
                 <h6 class="offcanvas-title py-3"><i class="bi bi-list-columns"></i> Table of Content</h6>
                 <div class="toc text-muted text-dark p-2 sticky-top" id="scrollspy-collapsible">
                     {{ .TableOfContents}}
                 </div>
+                <!-- End of TOC -->
                 <!-- Key words -->
                 {{ if $.Page.File }}
-                    <h6 class="py-3"><i class="bi bi-tags-fill"></i> Key Words</h6>
-                    <div class="text-reset text-dark p-2">
                     {{- $path := $.Page.File.Path}}                            
-                        {{- if and (eq .Draft false) (eq .Params.type "docs")}}
-                            {{- with .Page.Params.ballerina_type }}
-                                {{- range .}}
-                                    {{- if isset $.Site.Data.Filters.ballerina_type . }}
-                                        {{- with (index $.Site.Data.Filters.ballerina_type .) }}
-                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
-                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
-                                        {{- end}}
-                                    {{- else}}
-                                        {{- errorf "Failed to handle btype %q at %q" . $path }}
-                                    {{- end}}
+                    {{ $keywords := slice }}       
+                    {{- with .Page.Params.ballerina_type }}
+                        {{- range .}}
+                            {{- if isset $.Site.Data.Filters.ballerina_type . }}
+                                {{- with (index $.Site.Data.Filters.ballerina_type .) }}
+                                    {{ $keywords = $keywords | append . }}
                                 {{- end}}
-                            {{- end}}
-                            {{- with .Page.Params.ballerina_lang }}
-                                {{- range .}}
-                                    {{- if isset $.Site.Data.Filters.ballerina_lang . }}
-                                        {{- with (index $.Site.Data.Filters.ballerina_lang .) }}
-                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
-                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
-                                        {{- end}}
-                                    {{- else}}
-                                        {{- errorf "Failed to handle blang %q at %q" . $path }}
-                                    {{- end}}
-                                {{- end}}
-                            {{- end}}
-                            {{- with .Page.Params.ballerina_feature }}
-                                {{- range .}}
-                                    {{- if isset $.Site.Data.Filters.ballerina_feature . }}
-                                        {{- with (index $.Site.Data.Filters.ballerina_feature .) }}
-                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
-                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
-                                        {{- end}}
-                                    {{- else}}
-                                        {{- errorf "Failed to handle bfeature %q at %q" . $path }}
-                                    {{- end}}
-                                {{- end}}
-                            {{- end}}
-                            {{- with .Page.Params.ballerina_module }}
-                                {{- range .}}
-                                    {{- if isset $.Site.Data.Filters.ballerina_module . }}
-                                        {{- with (index $.Site.Data.Filters.ballerina_module .) }}
-                                        <a role="button" class="btn btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
-                                        href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
-                                        {{- end}}
-                                    {{- else}}
-                                        {{- errorf "Failed to handle bmodule %q at %q" . $path }}
-                                    {{- end}}
-                                {{- end}}
+                            {{- else}}
+                                {{- errorf "Failed to handle btype %q at %q" . $path }}
                             {{- end}}
                         {{- end}}
-                    
-                    </div>
+                    {{- end}}
+                    {{- with .Page.Params.ballerina_lang }}
+                        {{- range .}}
+                            {{- if isset $.Site.Data.Filters.ballerina_lang . }}
+                                {{- with (index $.Site.Data.Filters.ballerina_lang .) }}
+                                    {{ $keywords = $keywords | append . }}
+                                {{- end}}
+                            {{- else}}
+                                {{- errorf "Failed to handle blang %q at %q" . $path }}
+                            {{- end}}
+                        {{- end}}
+                    {{- end}}
+                    {{- with .Page.Params.ballerina_feature }}
+                        {{- range .}}
+                            {{- if isset $.Site.Data.Filters.ballerina_feature . }}
+                                {{- with (index $.Site.Data.Filters.ballerina_feature .) }}
+                                    {{ $keywords = $keywords | append . }}
+                                {{- end}}
+                            {{- else}}
+                                {{- errorf "Failed to handle bfeature %q at %q" . $path }}
+                            {{- end}}
+                        {{- end}}
+                    {{- end}}
+                    {{- with .Page.Params.ballerina_module }}
+                        {{- range .}}
+                            {{- if isset $.Site.Data.Filters.ballerina_module . }}
+                                {{- with (index $.Site.Data.Filters.ballerina_module .) }}
+                                    {{ $keywords = $keywords | append . }}
+                                {{- end}}
+                            {{- else}}
+                                {{- errorf "Failed to handle bmodule %q at %q" . $path }}
+                            {{- end}}
+                        {{- end}}
+                    {{- end}}
+                    {{ if gt (len $keywords) 0}}
+                        <h6 class="py-3"><i class="bi bi-tags-fill"></i> Key Words</h6>
+                        <div class="text-reset text-dark p-2 d-flex justify-content-center justify-content-lg-between flex-wrap">
+                        {{ range $keywords }}
+                            <a role="button" class="btn btn-sm btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
+                                href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
+                        {{ end }}
+                        </div>
+                    {{ end }}
                 {{end}}
                 <!-- End of keywords -->
                 
             </div>
             <hr>
-            <div id="siteSettings" style="width: 320px">
+            {{- $pages := $.Site.Pages  }}
+            {{- $.Scratch.Set "curPosition" 0 }}
+            {{- $.Scratch.Set "index" 0 }}
+            {{- range $pages.ByWeight }}
+            {{- if eq $ . }}
+            {{- $.Scratch.Set "curPosition" ($.Scratch.Get "index") }}
+            {{- end }}
+            {{- $.Scratch.Add "index" 1 }}
+            {{- end }}
+            {{- $next := (index $pages (add ($.Scratch.Get "curPosition") 1)) }}
+            {{- $prev := (index $pages (sub ($.Scratch.Get "curPosition") 1)) }}
+            <div class="pt-2">
+                <h6 class="offcanvas-title"><i class="bi bi-bookmark"></i> Navigation</h6>
+                <div class="pt-1 m-2 d-flex justify-content-center justify-content-lg-between">
+                    <a role="button" class="btn btn-secondary btn-text-transform-none" href="javascript:void(0);" class="book-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+                        <i class="bi bi-caret-up-fill me-2"></i> Go to top </a>
+                    {{if $prev}}
+                        {{with $prev}}<a role="button" class="btn btn-secondary btn-text-transform-none"href="{{.Permalink}}" class="book-btn" title="{{.Title}}">
+                            <i class="bi bi-caret-left-fill me-2"></i> Back
+                        </a>{{end}}
+                    {{else}}
+                        <a role="button" class="btn btn-secondary btn-text-transform-none" href="/" class="book-btn" title="Home">
+                            <i class="bi bi-house me-2"></i> Home
+                        </a>
+                    {{end}}
+                    {{if $next}}
+                        {{with $next}}<a role="button" class="btn btn-secondary btn-text-transform-none" href="{{.Permalink}}" class="book-btn" title="{{.Title}}">
+                            Next <i class="bi bi-caret-right-fill ms-2"></i>
+                        </a>{{end}}
+                    {{else}}
+                        <a role="button" class="btn btn-secondary btn-text-transform-none" href="/" class="book-btn" title="Home">
+                            <i class="bi bi-house me-2"></i> Home
+                        </a>
+                    {{end}}
+                </div>
+            </div>
+            <hr>
+            <div id="siteSettings" class="pt-2" >
                 <h6 class="offcanvas-title"><i class="bi bi-sliders"></i> Site Settings</h6>
-                <div class="py-3">
+                <div class="pt-2">
                     <label for="theme_view">Site Theme</label>
-                    <div class="text-center btn-group my-2" id="theme_view">                                    
+                    <div class="text-center btn-group m-2" id="theme_view">                                    
                         <input value="theme-light" type="radio" class="btn-check" name="theme-options"
                             id="radioThemeLight" autocomplete="off" checked />
                         <label class="btn btn-secondary" for="radioThemeLight"><span class="bi bi-brightness-high-fill"></span>Light</label>
@@ -99,22 +140,26 @@
                         <label class="btn btn-secondary" for="radioThemeDark"><span class="bi bi-moon-stars-fill"></span> Dark</label>
                     </div>
                     
-                    <label for="code_view" class="py-3">Source Code Density</label>
-                    <div class="btn-group my-2" id="code_view">
-                        <input value="tip-code-full" type="radio" class="btn-check" name="source-options"
-                            id="radioSourceFull" autocomplete="off" checked />
-                        <label class="btn btn-secondary" for="radioSourceFull"><i
-                                class="bi bi-arrows-fullscreen"></i> Full</label>
-
-                        <input value="tip-code-simple" type="radio" class="btn-check" name="source-options"
+                    <label for="code_view" class="pt-2">Source Code Density</label>
+                    <div class="btn-group m-2 d-flex justify-content-center justify-content-lg-between" id="code_view">
+                        <div>
+                            <input value="tip-code-full" type="radio" class="btn-check" name="source-options"
+                                id="radioSourceFull" autocomplete="off"  />
+                            <label class="btn btn-secondary" for="radioSourceFull"><i
+                                    class="bi bi-chevron-bar-expand"></i> Full</label>
+                        </div>
+                        <div>
+                            <input value="tip-code-simple" type="radio" class="btn-check" name="source-options"
                             id="radioSourceSimple" autocomplete="off" />
-                        <label class="btn btn-secondary" for="radioSourceSimple"><i
-                                class="bi bi-arrows-expand"></i> Simple</label>
-
-                        <input value="tip-code-highlight" type="radio" class="btn-check"
-                            name="source-options" id="radioSourceHighligh" autocomplete="off" />
-                        <label class="btn btn-secondary" for="radioSourceHighligh"><i
+                            <label class="btn btn-secondary" for="radioSourceSimple"><i
+                                class="bi bi-chevron-bar-contract"></i> Simple</label>
+                        </div>
+                        <div>
+                            <input value="tip-code-highlight" type="radio" class="btn-check" name="source-options"
+                            id="radioSourceHighligh" autocomplete="off" checked />
+                            <label class="btn btn-secondary" for="radioSourceHighligh"><i
                                 class="bi bi-stars"></i> Highlights</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -217,15 +262,13 @@
 
     <!-- Notice -->
     {{ with $.Site.Params.Footer.notice }}
-    <section class="d-flex justify-content-center justify-content-lg-between py-2 mt-2 mb-2 d-none bg-white" id="footer-note">
-        <div class="note note-light m-auto shadow-5">
-            <div>
-                <span class="m-3">{{ . | safeHTML | markdownify }}</span>
+    <section class="text-center p-4 bg-white bg-gradient d-none bg-white" id="footer-note">
+            <div class="w-100">
+                <span class="m-3">{{ . | safeHTML | markdownify }}</span><br>
                 <button type="button" class="btn btn-secondary" aria-label="Close" id="footer-note-x-button">
                     Close
                 </button>
             </div>
-        </div>
     </section>
     {{ end}}
     <!-- Notice -->

@@ -5,7 +5,7 @@
     {{ errorf "Ballerina code fence requires filename attribute."}}
 {{ else }}
     {{ $filename := index .Attributes "filename"}}
-    {{ $options := print "style=monokai,lineNos=table,anchorLineNos=true,lineAnchors=full-" $filename}}
+    {{ $options := print "style=manni,lineNos=table,anchorLineNos=true,lineAnchors=full-" $filename}}
     {{ with index .Attributes "lines" }}
         {{ $options = print $options ",hl_lines=" .  }}
     {{ end }}
@@ -36,30 +36,41 @@
             {{ $simpleView = $simpleView | append $line  }}
         {{ end }}
     {{ end }}
-  
-<div class="tip-code-full table-responsive rounded rounded-3 shadow-3 m-auto">
-    {{ $fullView = delimit $fullView "\n" }}
-    {{ highlight $fullView "ballerina" $options }}
-</div>
 
-<div class="tip-code-simple d-none table-responsive rounded rounded-3 shadow-3 m-auto">
-    {{ $simpleView = delimit $simpleView "\n" }}
     {{ $baseURL := replace .Page.File.Dir "\\" "/"  }}
     {{ $sourceFilePath := printf "%s%s" $baseURL $filename }}
     {{ $codeURL := (printf "%s" $sourceFilePath ) | relLangURL }}
-    
-    {{ $codeContent := highlight $simpleView "ballerina" (print "style=monokai") }}
-    {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
-    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
-    {{ safeHTML $codeContent}}
+    {{ $codeOut := "" }}
+    {{ if eq "output" (index .Attributes "result")}}
+        {{ $codeOut = highlight (readFile (print $sourceFilePath ".out")) "BashSession" "style=manni" -}} 
+    {{ end }}
+
+  
+<div class="tip-code-full d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark bg-code ">
+    {{ $fullView = delimit $fullView "\n" }}
+    <div class="p-2">{{ highlight $fullView "ballerina" $options }}</div>
+    <a class="link px-2" data-mdb-toggle="collapse" data-mdb-target="#collapsibleDiv" aria-expanded="false" aria-controls="collapsibleDiv">
+        &nbsp;$&nbsp;<code>bal run&nbsp;{{- $filename -}}</code>
+    </a>
+    <div class="collapse p-2" id="collapsibleDiv">
+        {{- $codeOut -}}
+    </div>
 </div>
 
-<div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto">
-    {{ $highlightView = delimit $highlightView "\n" }}
-    {{ $codeContent := highlight $highlightView "ballerina" (print "style=monokai") }}
+<div class="tip-code-simple d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code ">
+    {{ $simpleView = delimit $simpleView "\n" }}    
+    {{ $codeContent := highlight $simpleView "ballerina" (print "style=manni") }}
     {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
     {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
-    {{ safeHTML $codeContent}}
+    <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
+</div>
+
+<div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code ">
+    {{ $highlightView = delimit $highlightView "\n" }}
+    {{ $codeContent := highlight $highlightView "ballerina" (print "style=manni") }}
+    {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
+    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
+    <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
 </div>
 
 {{ end }}

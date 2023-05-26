@@ -10,10 +10,11 @@
     {{ range $video := $list }}
     <div class="m-3 ratio ratio-16x9 " style="max-width:560px; max-height:315px;">
         {{ $title := $video.title | default (print $source " Video") }}
+        <div class="embed-responsive-item placeholder placeholder-glow"></div>
         <iframe src="https://www.youtube.com/embed/{{ $video.key}}" title="{{$title}}"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+            allowfullscreen onload="this.previousElementSibling.remove()"></iframe>
     </div>
     {{ end }}
 </div>

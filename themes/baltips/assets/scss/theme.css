@@ -16183,3 +16183,7 @@ html {
 .toc a.active {
   text-decoration: underline !important;
 }
+
+.bg-code {
+  background-color: #f0f3f3 !important;
+}
