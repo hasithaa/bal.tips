@@ -1,0 +1,38 @@
+{{ $source := default "youtube" (.Get "source")}}
+{{ $key :=  .Get "key" }}
+{{ $ratioValue := default "4x3" (.Get "ratio")}}
+{{ $ratio := print "ratio-" $ratioValue }}
+
+{{ with index $.Site.Data $source }}
+    {{ with index .  $key }}
+    <div class="container px-4">
+        {{ $list := . }}
+        {{ range $i, $e := $list }}
+        {{ if eq (mod $i 2) 0  }}
+            <div class="row gx-5">
+                {{ $video := . }}
+                <div class="col">
+                    <p class="p-3 ratio {{$ratio}}">
+                        <iframe
+                        src="https://www.youtube.com/embed/{{ $video.key}}"
+                        title="{{ default "video" $video.key}}"
+                        allowfullscreen></iframe>
+                    </p>
+                </div>
+                {{ if isset $list (add $i 1) }}
+                <div class="col">
+                    {{ $video = index $list (add $i 1) }}
+                    <p class="p-3 ratio {{$ratio}}">
+                        <iframe
+                        src="https://www.youtube.com/embed/{{ $video.key}}"
+                        title="{{ default "video" $video.key}}"
+                        allowfullscreen></iframe>
+                    </p>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+{{ end }}
