@@ -89,6 +89,7 @@
                 
             </div>
             <hr>
+            <!-- Navigation -->
             {{- $pages := $.Site.Pages  }}
             {{- $.Scratch.Set "curPosition" 0 }}
             {{- $.Scratch.Set "index" 0 }}
@@ -125,12 +126,14 @@
                     {{end}}
                 </div>
             </div>
+            <!-- End of Navigation -->
             <hr>
+            <!-- Site Settings -->
             <div id="siteSettings" class="pt-2" >
                 <h6 class="offcanvas-title"><i class="bi bi-sliders"></i> Site Settings</h6>
                 <div class="pt-2">
                     <label for="theme_view">Site Theme</label>
-                    <div class="text-center btn-group m-2" id="theme_view">                                    
+                    <div class="text-center btn-group m-2 shadow-0" id="theme_view">                                    
                         <input value="theme-light" type="radio" class="btn-check" name="theme-options"
                             id="radioThemeLight" autocomplete="off" checked />
                         <label class="btn btn-secondary" for="radioThemeLight"><span class="bi bi-brightness-high-fill"></span>Light</label>
@@ -141,7 +144,7 @@
                     </div>
                     
                     <label for="code_view" class="pt-2">Source Code Density</label>
-                    <div class="btn-group m-2 d-flex justify-content-center justify-content-lg-between" id="code_view">
+                    <div class="btn-group m-2 d-flex justify-content-center justify-content-lg-between shadow-0" id="code_view">
                         <div>
                             <input value="tip-code-full" type="radio" class="btn-check" name="source-options"
                                 id="radioSourceFull" autocomplete="off"  />
@@ -163,6 +166,7 @@
                     </div>
                 </div>
             </div>
+            <!-- End of Site Settings -->
         </div>
     </div>
 </div>
