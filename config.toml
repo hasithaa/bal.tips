@@ -26,7 +26,7 @@ home = ['HTML', 'RSS']
 codeFences = true
 
 [markup.tableOfContents]
-  endLevel = 4
+  endLevel = 5
   ordered = false
   startLevel = 1
 

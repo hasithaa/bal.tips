@@ -1,21 +1,50 @@
 import groovy.json.JsonOutput
 
+task develop() {
+    def currentDir = file(".")
+    def files = fileTree(dir: currentDir, include: "*.bal")
+    files.each { file ->
+        def taskName = "dev-${file.name}-${file.canonicalPath.length()}"
+        def task = tasks.create(taskName) {
+            doLast {
+                try {
+                    exec {
+                        commandLine "bash", "-c", "bal run ${file.name} > ${file.name}.out"
+                        workingDir currentDir
+                    }
+                } catch (GradleException e) {
+                    compile = false
+                }
+            }
+
+        }
+        develop.dependsOn task
+    }
+}
+
 task testOutput() {
     def currentDir = file(".")
     def files = fileTree(dir: currentDir, include: "*.bal")
     files.each { file ->
         def taskName = "testOutput-${file.name}-${file.canonicalPath.length()}"
         def task = tasks.create(taskName) {
-            inputs.files(file.name, new File("${file.name}.out"))
-            outputs.file "${file.name}.out1"
+            // inputs.files(file.name, new File("${file.name}.out"))
+            // outputs.file "${file.name}.out1"
             doLast {
-
                 def filePath = file.canonicalPath
                 def startIndex = filePath.indexOf("docs")
                 def partOfPath = filePath.substring(startIndex)
                 def additionalData = [name: file.name, path: partOfPath]
                 def compile = true
                 def output = true
+                try {
+                    exec {
+                        commandLine "bash", "-c", "bal format ${file.name}"
+                        workingDir currentDir
+                    }
+                } catch (GradleException e) {
+                    compile = false
+                }
                 try {
                     exec {
                         commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name}"
@@ -77,4 +106,7 @@ task cleanJar() {
 }
 
 task test(dependsOn: [testOutput, cleanJar]) {
+}
+
+task build(dependsOn: [develop, clean]) {
 }

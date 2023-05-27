@@ -29,3 +29,14 @@ task hugo() {
         }
     }
 }
+
+
+task codeGen() {
+    doLast {
+        exec {
+            commandLine "bash", "-c", "node build-ballerina.js"
+        }
+    }
+}
+
+task build(dependsOn: [codeGen]){}

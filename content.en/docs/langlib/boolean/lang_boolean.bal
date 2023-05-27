@@ -2,10 +2,9 @@
 import ballerina/io;
 
 public function main() returns error? {
+    boolean t1 = check boolean:fromString("true");
+    boolean f1 = check boolean:fromString("false");
 
-    boolean t1 = check boolean:fromString("true"); 
-    boolean f1 = check boolean:fromString("false"); 
-
-    io:println("t1:", t1); 
-    io:println("f1:", f1); 
+    io:println("t1:", t1);
+    io:println("f1:", f1);
 }

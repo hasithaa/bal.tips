@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load Source Code View.
     // Get the radio buttons and the code blocks
     const radioButtons = document.querySelectorAll('input[name="source-options"]');
-    const fullCodeBlock = document.querySelector('.tip-code-full');
-    const simpleCodeBlock = document.querySelector('.tip-code-simple');
-    const highlightCodeBlock = document.querySelector('.tip-code-highlight');
+    const fullCodeBlock = document.querySelectorAll('.tip-code-full');
+    const simpleCodeBlock = document.querySelectorAll('.tip-code-simple');
+    const highlightCodeBlock = document.querySelectorAll('.tip-code-highlight');
 
     // Get the value from local storage and set the selected radio button
     const localStorageKey = 'codeView';
@@ -102,17 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem(localStorageKey, button.value);
             if (fullCodeBlock !== null) {
                 if (button.value === 'tip-code-full') {
-                    fullCodeBlock.classList.remove('d-none');
-                    simpleCodeBlock.classList.add('d-none');
-                    highlightCodeBlock.classList.add('d-none');
+                    fullCodeBlock.forEach( t => { t.classList.remove('d-none') });
+                    simpleCodeBlock.forEach( t => { t.classList.add('d-none') });
+                    highlightCodeBlock.forEach( t => { t.classList.add('d-none') });
                 } else if (button.value === 'tip-code-simple') {
-                    fullCodeBlock.classList.add('d-none');
-                    simpleCodeBlock.classList.remove('d-none');
-                    highlightCodeBlock.classList.add('d-none');
+                    fullCodeBlock.forEach( t => { t.classList.add('d-none') });
+                    simpleCodeBlock.forEach( t => { t.classList.remove('d-none') });
+                    highlightCodeBlock.forEach( t => { t.classList.add('d-none') });
                 } else if (button.value === 'tip-code-highlight') {
-                    fullCodeBlock.classList.add('d-none');
-                    simpleCodeBlock.classList.add('d-none');
-                    highlightCodeBlock.classList.remove('d-none');
+                    fullCodeBlock.forEach( t => { t.classList.add('d-none') });
+                    simpleCodeBlock.forEach( t => { t.classList.add('d-none') });
+                    highlightCodeBlock.forEach( t => { t.classList.remove('d-none') });
                 }
             }
         });

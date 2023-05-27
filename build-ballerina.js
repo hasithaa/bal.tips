@@ -70,8 +70,8 @@ async function traverseDirectory(dirPath) {
 
 async function createSettingGradle() {
     const rootSettingsGradlePath = path.join(__dirname, 'settings.gradle');
-    const rootSettingsGradleContent = `/*\n * MIT License\n * \n * Copyright (c) 2023 Hasitha Aravinda. All rights reserved.\n * Generated File, Do not Modify!\n */ \n rootProject.name = 'Bal.tips Website'\ninclude('buildTasks')\n`;
-    const includeStatements = Array.from(buildStatements).join('\n');
+    const rootSettingsGradleContent = `/*\n * MIT License\n * \n * Copyright (c) 2023 Hasitha Aravinda. All rights reserved.\n * Generated File, Do not Modify!\n */ \nrootProject.name = 'Bal.tips Website'\ninclude('buildTasks')\n`;
+    const includeStatements = Array.from(buildStatements).sort().join('\n');
     const rootSettingsGradleContentWithIncludes = `${rootSettingsGradleContent}${includeStatements}`;
 
     try {

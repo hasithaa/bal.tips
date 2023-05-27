@@ -17,8 +17,8 @@
     {{ $simpleView := slice }}
     {{ $highlightView := slice }}
 
-    {{ $simpleView = $simpleView | append "// Partial Code. Change View $CHANGE$ or Open $SOURCE$ to see full code." }}
-    {{ $highlightView = $highlightView | append "// Highlights Only. Change View $CHANGE$ or Open $SOURCE$ to see full code." }}
+    {{ $simpleView = $simpleView | append "// Partial Code. Change View $CHANGE$ to see full code." }}
+    {{ $highlightView = $highlightView | append "// Highlights Only. Change View $CHANGE$ to see full code." }}
     {{ range $code  }}
         {{ if strings.Contains . "//$"  }}
             {{ $oline := split . "//$"  }}
@@ -46,7 +46,7 @@
     {{ end }}
 
   
-<div class="tip-code-full d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark bg-code ">
+<div class="tip-code-full d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code ">
     {{ $fullView = delimit $fullView "\n" }}
     <div class="p-2">{{ highlight $fullView "ballerina" $options }}</div>
     <a class="link px-2" data-mdb-toggle="collapse" data-mdb-target="#collapsibleDiv" aria-expanded="false" aria-controls="collapsibleDiv">
@@ -65,7 +65,7 @@
     <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
 </div>
 
-<div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code ">
+<div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-6 col-12 bg-code ">
     {{ $highlightView = delimit $highlightView "\n" }}
     {{ $codeContent := highlight $highlightView "ballerina" (print "style=manni") }}
     {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}

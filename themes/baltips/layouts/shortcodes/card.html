@@ -1,0 +1,13 @@
+{{ if .Parent }}
+  {{ $title := .Get "title" }}
+  {{ $header := default "<i class='bi bi-card-heading'></i>"  (.Get "header") }}
+  {{ $cards := printf "cards-%s" (.Parent.Get 0) }}
+
+  {{ if not (.Parent.Scratch.Get $cards) }}
+    {{ .Parent.Scratch.Set $cards slice }}
+  {{ end }}
+
+  {{ .Parent.Scratch.Add $cards (dict "Title" $title "Header" $header "Content" .Inner) }}
+{{ else }}
+  {{ errorf "%q: 'card' shortcode must be inside 'cards' shortcode" .Page.Path }}
+{{ end}}

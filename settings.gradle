@@ -4,9 +4,9 @@
  * Copyright (c) 2023 Hasitha Aravinda. All rights reserved.
  * Generated File, Do not Modify!
  */ 
- rootProject.name = 'Bal.tips Website'
+rootProject.name = 'Bal.tips Website'
 include('buildTasks')
-include(':docs-langlib-boolean')
-project(':docs-langlib-boolean').projectDir = file('content.en/docs/langlib/boolean/')
 include(':docs-langlib-array')
+include(':docs-langlib-boolean')
 project(':docs-langlib-array').projectDir = file('content.en/docs/langlib/array/')
+project(':docs-langlib-boolean').projectDir = file('content.en/docs/langlib/boolean/')

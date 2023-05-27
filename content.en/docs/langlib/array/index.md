@@ -44,7 +44,74 @@ To use it with function call syntax, you must have an `import ballerina/lang.arr
 However, you can call these functions on a list value using the method call syntax.
 {.tip-note}
 
-## Definitions
+## Functions
 
 The graphical examples are for illustration purposes only and provide a visual aid to help understand the concept easily. They are not actual syntax.
 {.tip-note}
+
+### Stack and Queue Operations
+
+{{<cards "stack-queue">}}
+{{<card title="Pop">}}
+
+Removes and returns the last element of the list. 
+
+`[🍎, 🍇, 🍌, 🍓].pop()` ➜ `🍓`
+
+The `pop` function removes and returns the last member of a given list. The arr argument specifies the list from which to remove the last member. The function returns the removed member.
+
+{{</card>}}
+{{<card title="Push">}}
+
+Adds values to the end of an array.
+
+`[🍎, 🍇, 🍌, 🍓].push(🍒, 🍉)` ➜ `[🍎, 🍌, 🍇, 🍓, 🍒, 🍉]`
+
+The `push` function adds one or more values to the end of a given list. The _arr_ argument specifies the list to which the values will be added, and the _vals_ argument is a variable-length argument that can contain one or more values to add to the list.
+
+{{</card>}}
+{{<card title="Shift">}}
+
+Removes and returns first member of an array.
+
+`[🍎, 🍇, 🍌, 🍓].shift()` ➜ `🍎`
+
+The `shift` function removes and returns the first member of a given list. The _arr_ argument specifies the list from which to remove the first member. The function returns the removed member.
+
+{{</card>}}
+{{<card title="Unshift">}}
+
+Adds values to the start of an array. 
+
+`[🍎, 🍇, 🍌, 🍓].unshift(🍒, 🍉)` ➜ `[🍒, 🍉, 🍎, 🍌, 🍇, 🍓]`
+
+The `unshift` function adds one or more values to the start of a given list. The _arr_ argument specifies the list to which the values will be added, and the _vals_ argument is a variable-length argument that can contain one or more values to add to the list.
+
+{{</card>}}
+{{</cards>}}
+
+
+```ballerina {filename="lang_array_stack_queue.bal" result="output" lines=""}
+import ballerina/io; //!
+
+public function main() {
+    int[] numbers = [1,2,3,4,5]; //$
+
+    io:println("Numbers: ", numbers); //!
+    numbers.push(6,7); //$
+    io:println("Numbers After Push: ", numbers); //!
+
+    int last = numbers.pop(); //$
+    io:println("Numbers After Pop: ", numbers); //!
+    io:println("Last: ", last); //!
+
+    int first = numbers.shift(); //$
+    io:println("Numbers After Shift: ", numbers); //!
+    io:println("First: ", first); //!
+
+    numbers.unshift(-1, 0); //$
+    io:println("Numbers After Unshift: ", numbers); //!
+}
+```
+
+```

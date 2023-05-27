@@ -1,0 +1,12 @@
+{{ if .Inner }}{{ end }}
+<div class="row d-flex justify-content-center">
+    {{ range $card := .Scratch.Get (printf "cards-%s" (.Get 0)) }}
+    <div class="card m-3 col-md-5  ">
+        <h5 class="card-header d-none d-md-block">{{ $card.Header | safeHTML | markdownify }} {{ $card.Title | safeHTML | markdownify }}</h5>
+        <div class="card-body">
+        <h5 class="card-title d-md-none">{{ $card.Title | safeHTML | markdownify }}</h5>
+        {{ $card.Content | safeHTML | markdownify }}
+        </div>
+    </div>
+    {{ end }}
+</div>
