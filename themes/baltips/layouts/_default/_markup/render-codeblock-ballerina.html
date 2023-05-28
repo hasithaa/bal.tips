@@ -5,6 +5,8 @@
     {{ errorf "Ballerina code fence requires filename attribute."}}
 {{ else }}
     {{ $filename := index .Attributes "filename"}}
+    {{ $trim := default true (index .Attributes "trim")}}
+    {{ $codeview := default true (index .Attributes "codeview")}}
     {{ $options := print "style=manni,lineNos=table,anchorLineNos=true,lineAnchors=full-" $filename}}
     {{ with index .Attributes "lines" }}
         {{ $options = print $options ",hl_lines=" .  }}
@@ -25,7 +27,10 @@
             {{ $line := (strings.TrimRight " " (index $oline 0)) }}
             {{ $fullView = $fullView | append $line  }}
             {{ $simpleView = $simpleView | append $line }}
-            {{ $highlightView = $highlightView | append (strings.TrimLeft " " $line)  }}
+            {{ if $trim }}
+                {{ $line = (strings.TrimLeft " " $line) }}
+            {{ end }}
+            {{ $highlightView = $highlightView | append $line }}
         {{ else if strings.Contains . "//!" }}
             {{ $line := split . "//!" }}
             {{ $line := (strings.TrimRight " " (index $line 0)) }}
@@ -46,7 +51,7 @@
     {{ end }}
 
   
-<div class="tip-code-full d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code ">
+<div class="{{if $codeview}}tip-code-full d-none{{end}} table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code mb-3">
     {{ $fullView = delimit $fullView "\n" }}
     <div class="p-2">{{ highlight $fullView "ballerina" $options }}</div>
     <a class="link px-2" data-mdb-toggle="collapse" data-mdb-target="#collapsibleDiv" aria-expanded="false" aria-controls="collapsibleDiv">
@@ -57,20 +62,22 @@
     </div>
 </div>
 
-<div class="tip-code-simple d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code ">
-    {{ $simpleView = delimit $simpleView "\n" }}    
-    {{ $codeContent := highlight $simpleView "ballerina" (print "style=manni") }}
-    {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
-    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
-    <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
-</div>
+    {{if $codeview}}
+    <div class="tip-code-simple d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code mb-3">
+        {{ $simpleView = delimit $simpleView "\n" }}    
+        {{ $codeContent := highlight $simpleView "ballerina" (print "style=manni") }}
+        {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
+        {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
+        <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
+    </div>
 
-<div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-6 col-12 bg-code ">
-    {{ $highlightView = delimit $highlightView "\n" }}
-    {{ $codeContent := highlight $highlightView "ballerina" (print "style=manni") }}
-    {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
-    {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
-    <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
-</div>
+    <div class="tip-code-highlight d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-6 col-12 bg-code mb-3">
+        {{ $highlightView = delimit $highlightView "\n" }}
+        {{ $codeContent := highlight $highlightView "ballerina" (print "style=manni") }}
+        {{ $codeContent = (replace $codeContent "$SOURCE$" (print "<a href='" $codeURL "' target='_blank'>" $filename "</a>")) }}
+        {{ $codeContent = (replace $codeContent "$CHANGE$"  (print "<a href='#offcanvasRight' data-mdb-toggle='offcanvas' data-mdb-target='#offcanvasRight' aria-controls='offcanvasRight' ><i class='bi bi-sliders'></i></a>")) }}
+        <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
+    </div>
+    {{end}}
 
 {{ end }}

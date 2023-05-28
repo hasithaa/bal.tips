@@ -73,8 +73,7 @@ description = '''"Ballerina Coding Tips" provides useful tips and code snippets 
  Despite being a fairly new language, Ballerina has numerous features that may be unknown to developers. 
  This blog aims to share some of these features and is based on my own views and experiences as 
  a member of the Ballerina Language Design and Development team.'''
-notice = '''👋 Hello! <br>
-Welcome to "Bal.tips"! While most of the posts are currently a work in progress, I'm committed to adding new content regularly. <br>
+notice = '''Notice : While most of the posts are currently a work in progress, I'm committed to adding new content regularly. <br>
 Stay tuned for some exciting Ballerina coding tips and tutorials that will be coming your way soon!<br>
 Thank you for your patience and support.'''
 privacyNotice = ''' 👉 🍪 This site utilizes Google Analytics and cookies to enhance your browsing experience. 

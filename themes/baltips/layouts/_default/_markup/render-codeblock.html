@@ -1,0 +1,29 @@
+{{ $Options := .Options}}
+{{ if not (index $Options "style")}}
+ {{ $Options =  merge $Options (dict "style" "manni") }}
+{{ end }}
+{{ if not (index $Options "lineNos")}}
+ {{ $Options =  merge $Options (dict "lineNos" "table") }}
+{{ end }}
+{{ with index .Attributes "lines" }}
+    {{ $Options = merge $Options (dict "hl_lines" . )  }}
+{{ end }}
+{{ $type := .Type}}
+{{ if and (eq $type "plan") (index .Attributes "lang")}}
+    {{ if eq (index .Attributes "lang") "ballerina" }}
+        {{ $type = "ballerina" }}
+    {{ end }}
+{{ end }}
+<div>
+    <div class="table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code mb-3">
+        <div class="p-2">
+            {{ highlight .Inner $type $Options }}
+        </div>
+    </div>
+    {{ with index .Attributes "title" }}
+    <p class="text-center">{{ . }}</p>
+    {{ end}}
+</div>
+
+
+

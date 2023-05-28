@@ -6,7 +6,9 @@
  */ 
 rootProject.name = 'Bal.tips Website'
 include('buildTasks')
+include(':docs-introduction-basics')
 include(':docs-langlib-array')
 include(':docs-langlib-boolean')
+project(':docs-introduction-basics').projectDir = file('content.en/docs/introduction/basics/')
 project(':docs-langlib-array').projectDir = file('content.en/docs/langlib/array/')
 project(':docs-langlib-boolean').projectDir = file('content.en/docs/langlib/boolean/')
