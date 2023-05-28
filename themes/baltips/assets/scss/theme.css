@@ -16187,3 +16187,10 @@ html {
 .bg-code {
   background-color: #f0f3f3 !important;
 }
+
+.drop-cap::first-letter {
+  float: left;
+  font-size: 2em;
+  line-height: 0.8em;
+  padding-top: 0.1em;
+}

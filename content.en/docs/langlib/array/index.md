@@ -51,7 +51,7 @@ The graphical examples are for illustration purposes only and provide a visual a
 
 ### Stack and Queue Operations
 
-{{<cards "stack-queue">}}
+{{<cards>}}
 {{<card title="Pop">}}
 
 Removes and returns the last element of the list. 
@@ -91,7 +91,7 @@ The `unshift` function adds one or more values to the start of a given list. The
 {{</cards>}}
 
 
-```ballerina {filename="lang_array_stack_queue.bal" result="output" lines=""}
+```ballerina {filename="lang_array_stack_queue.bal" result="output" lines="4 7 10 14 18"}
 import ballerina/io; //!
 
 public function main() {
@@ -112,6 +112,4 @@ public function main() {
     numbers.unshift(-1, 0); //$
     io:println("Numbers After Unshift: ", numbers); //!
 }
-```
-
 ```

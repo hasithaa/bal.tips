@@ -1,0 +1,27 @@
+{{ $url := .Get "url" }}
+{{ if $url }}
+    {{ $page := $.Site.GetPage $url }}
+
+    <div class="card m-1 col-md-4 text-center bg-transparent">
+        {{ with .Get "header" }}
+        <h4 class="card-header"></h4>
+        {{ . | safeHTML | markdownify }}
+        </h4>
+        {{ end }}
+        {{ with $page.Params.images}}
+            {{ if gt (len .) 0 }}
+            <img src="{{index . 0}}" class="card-img-top" alt="{{$page.Title}}"/>
+            {{end}}
+        {{end}}
+        <div class="card-body p-2">
+        {{ with $page.Title}}
+        <h5 class="card-title mb-2">{{ . | safeHTML | markdownify }}</h5>
+        {{ end }}
+        {{ $page.Description | safeHTML | markdownify }}
+        <a href="{{$page.Permalink}}" class="my-2 btn btn-primary">Read More</a>
+        </div>
+    </div>
+
+{{ else }}
+    {{ errorf "No page specified for summary shortcode" }}
+{{ end }}

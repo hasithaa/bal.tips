@@ -1,13 +1,52 @@
-{{ if .Parent }}
-  {{ $title := .Get "title" }}
-  {{ $header := default "<i class='bi bi-card-heading'></i>"  (.Get "header") }}
-  {{ $cards := printf "cards-%s" (.Parent.Get 0) }}
-
-  {{ if not (.Parent.Scratch.Get $cards) }}
-    {{ .Parent.Scratch.Set $cards slice }}
-  {{ end }}
-
-  {{ .Parent.Scratch.Add $cards (dict "Title" $title "Header" $header "Content" .Inner) }}
+{{ $title := .Get "title" }}
+{{ $header := .Get "header" }}
+{{ $image := .Get "image" }}
+{{ $imageAlt := .Get "imageAlt"}}
+{{ $imagePos := default "left" (.Get "imagePos")}}
+{{ $col := default 5 (.Get "col")}}
+{{ if $image }}
+<div class="card col-md-{{ $col }} mb-3 text-center bg-transparent">
+  <div class="row col-md-12">
+    {{ if eq $imagePos "left" }}
+    <div class="col-md-4">
+      <img
+        src="{{ $image | safeURL }}"
+        alt="{{ $imageAlt | safeHTML | markdownify }}"
+        class="img-fluid rounded-start"
+      />
+    </div>
+    {{ end }}
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{ $title | safeHTML | markdownify }}</h3>
+        {{ .Inner | safeHTML | markdownify }}
+      </div>
+    </div>
+    {{ if eq $imagePos "right" }}
+    <div class="col-md-4">
+      <img
+        src="{{ $image | safeURL }}"
+        alt="{{ $imageAlt | safeHTML | markdownify }}"
+        class="img-fluid rounded-start"
+      />
+    </div>
+    {{ end }}
+  </div>
+</div>
 {{ else }}
-  {{ errorf "%q: 'card' shortcode must be inside 'cards' shortcode" .Page.Path }}
-{{ end}}
+<div class="card m-3 col-md-{{ $col }} text-center bg-transparent">
+  
+  {{ with $header }}
+  <h4 class="card-header"></h4>
+    {{ . | safeHTML | markdownify }}
+  </h4>
+  {{ end }}
+  
+  <div class="card-body">
+  {{ with $title}}
+  <h5 class="card-title">{{ . | safeHTML | markdownify }}</h5>
+  {{ end }}
+  {{ .Inner | safeHTML | markdownify }}
+  </div>
+</div>
+{{ end }}

@@ -1,11 +1,15 @@
 {{ define "main" }}
-{{ .Content }}
-{{ range .Pages.ByWeight }}
-<p>
-    <h3><a class="text-reset" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    {{ partial "metadata.html" . }}
-    <p>{{ .Description }}, &nbsp;<a class="text-muted" href="{{ .RelPermalink }}" class="">Read More... <i class="bi bi-link"></i></a> </p>
-
-</p>
-{{ end }}
+    {{ if eq .Params.layout "single" }}
+        {{ .Content }}
+    {{ else}}
+        <h1>{{ .Title }}</h1>
+        {{ partial "metadata.html" . }}
+        {{ range .Pages.ByWeight }}
+        <p>
+            <h3><a class="text-reset" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ partial "metadata.html" . }}
+            <p>{{ .Description }} &nbsp;<a class="text-muted" href="{{ .RelPermalink }}" class="">Read More... <i class="bi bi-link"></i></a> </p>
+        </p>
+        {{end}}
+    {{ end}}
 {{ end }}
