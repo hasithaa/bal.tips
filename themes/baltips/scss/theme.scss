@@ -37,12 +37,16 @@ html {
 }
 
 .tip-50-frame {
-    @extend .w-50;
+    @extend .col-lg-6;
+    @extend .col-12;
+    @extend .d-block;
     @extend .mx-auto;
 }
 
 .tip-75-frame {
-    @extend .w-75;
+    @extend .col-lg-9;
+    @extend .col-12;
+    @extend .d-block;
     @extend .mx-auto;
 }
 

@@ -11,7 +11,7 @@ ballerina_module : [ballerina-io]
 highlight: [main.bal]
 menu:
   main:
-    name: "A Beginner's Guide to Ballerina Language"
+    name: "Hello World - Language Basics"
     pre: <i class="bi bi-lightbulb-fill"></i>
     parent: guides
     params:
@@ -133,10 +133,14 @@ In the example, I have defined a `string` variable called `greeting` and printed
 In this post, we learned about Ballerina basic by writing a "Hello, World...!" program.  Below are the main points to remember:
 
 ![hello world](/docs/introduction/basics/main.png)
-{.col-6 .mx-auto .d-block}
+{.tip-50-frame}
 
-* Ballerina is a C-style language.
-* Functions are the building blocks of a program.
-* The main function acts as an entry point for a program.
-* A Module is a collection of Ballerina codes. One or more modules grouped together form a package.
-* Expression and Statement, and Actions are syntactic categories.
+{{<cards>}}
+{{< card header="Highlights" col="6">}}
+<i class="bi bi-info-lg text-primary"></i> Ballerina is a C-style language.<br>
+<i class="bi bi-info-lg text-primary"></i> Functions serve as the building blocks of a program.<br>
+<i class="bi bi-info-lg text-primary"></i> The 'main' function serves as the entry point for a program.<br>
+<i class="bi bi-info-lg text-primary"></i> A module is a collection of Ballerina code. A package is formed by grouping together one or more modules.<br>
+<i class="bi bi-info-lg text-primary"></i> Expressions, Statements, and Actions are considered syntactic categories.<br>
+{{</ card >}}
+{{</cards>}}

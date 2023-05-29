@@ -37,7 +37,7 @@
 <div class="card m-3 col-md-{{ $col }} text-center bg-transparent">
   
   {{ with $header }}
-  <h4 class="card-header"></h4>
+  <h4 class="card-header">
     {{ . | safeHTML | markdownify }}
   </h4>
   {{ end }}

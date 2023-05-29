@@ -775,7 +775,7 @@ progress {
   width: 91.66666667%;
 }
 
-.col-12 {
+.col-12, .tip-75-frame, .tip-50-frame {
   flex: 0 0 auto;
   width: 100%;
 }
@@ -1278,7 +1278,7 @@ progress {
     flex: 0 0 auto;
     width: 41.66666667%;
   }
-  .col-lg-6 {
+  .col-lg-6, .tip-50-frame {
     flex: 0 0 auto;
     width: 50%;
   }
@@ -1290,7 +1290,7 @@ progress {
     flex: 0 0 auto;
     width: 66.66666667%;
   }
-  .col-lg-9 {
+  .col-lg-9, .tip-75-frame {
     flex: 0 0 auto;
     width: 75%;
   }
@@ -7073,7 +7073,7 @@ textarea.form-control-lg {
   display: inline-block !important;
 }
 
-.d-block {
+.d-block, .tip-75-frame, .tip-50-frame {
   display: block !important;
 }
 
@@ -7410,11 +7410,11 @@ textarea.form-control-lg {
   width: 25% !important;
 }
 
-.w-50, .tip-50-frame {
+.w-50 {
   width: 50% !important;
 }
 
-.w-75, .tip-75-frame {
+.w-75 {
   width: 75% !important;
 }
 

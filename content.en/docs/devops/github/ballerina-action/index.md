@@ -6,6 +6,7 @@ weight : 50110
 canonicalUrl : https://dev.to/hasitha/simplify-ballerina-workflow-on-github-with-setup-ballerina-action-452j
 canonicalSite : "**Dev.to Community** blog"
 date : 2023-02-20
+images : [/docs/devops/github/ballerina-action/action.png]
 ballerina_feature : [cicd, github ]
 menu:
   main:
@@ -21,7 +22,7 @@ The post covers the use of the `setup-ballerina` GitHub Action to automate the i
 
 The following code block shows how you can configure the GitHub Action to build your Ballerina project. You can find a working example of this in this [repository](https://github.com/hasithaa/example-setup-ballerina/).
 
-![`setup-ballerina` in action](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a3sw6oneauy7hol8ml53.png)
+![`setup-ballerina` in action](/docs/devops/github/ballerina-action/action.png)
 {.tip-50-frame}
 
 * The `setup-ballerina` GitHub Action `v1` release requires a mandatory input of the Ballerina Swan Lake distribution version in the form of "Swan Lake channel" as listed in the `bal dist list` command. i.e. `2201.3.0`, `2201.3.2`, etc. This will install Ballerina on workflow environment and `bal` command is added to the `PATH`.
