@@ -1,0 +1,20 @@
+import ballerina/http;
+
+type Person record {
+    string firstName;
+    string lastName;
+    string home\-address;
+};
+
+configurable int port = 9090;
+
+service /inventory on new http:Listener(port) {
+    resource function get items() returns string[] {
+        return ["Item1", "Item2", "Item3"];
+    }
+
+    resource function get customer\-info() returns Person {
+        Person person = {firstName: "John", lastName: "Doe", home\-address: "Colombo 03"};
+        return person;
+    }
+}

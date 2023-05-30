@@ -95,10 +95,10 @@ The `unshift` function adds one or more values to the start of a given list. The
 import ballerina/io; //!
 
 public function main() {
-    int[] numbers = [1,2,3,4,5]; //$
+    int[] numbers = [1, 2, 3, 4, 5]; //$
 
     io:println("Numbers: ", numbers); //!
-    numbers.push(6,7); //$
+    numbers.push(6, 7); //$
     io:println("Numbers After Push: ", numbers); //!
 
     int last = numbers.pop(); //$

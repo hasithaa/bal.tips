@@ -2,14 +2,18 @@ import groovy.json.JsonOutput
 
 task develop() {
     def currentDir = file(".")
-    def files = fileTree(dir: currentDir, include: "*.bal")
+    def files = fileTree(dir: currentDir, include: "*.bal", exclude: "*-error.bal")
     files.each { file ->
         def taskName = "dev-${file.name}-${file.canonicalPath.length()}"
         def task = tasks.create(taskName) {
             doLast {
+                def cmd = "bal run ${file.name} > ${file.name}.out"
+                if (file.name.endsWith("error.bal")) {
+                    cmd = "bal build ${file.name} 2> ${file.name}.err"
+                }
                 try {
                     exec {
-                        commandLine "bash", "-c", "bal run ${file.name} > ${file.name}.out"
+                        commandLine "bash", "-c", "${cmd}"
                         workingDir currentDir
                     }
                 } catch (GradleException e) {
@@ -22,9 +26,47 @@ task develop() {
     }
 }
 
+
+
+task testError() {
+    def currentDir = file(".")
+    def files = fileTree(dir: currentDir, include: "*-error.bal")
+    files.each { file ->
+        def taskName = "testError-${file.name}-${file.canonicalPath.length()}"
+        def task = tasks.create(taskName) {
+            doLast {
+                def compile = true
+                exec {
+                    commandLine "bash", "-c", "bal format ${file.name}"
+                    workingDir currentDir
+                }
+                try {
+                    exec {
+                        commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name} 2> ${file.name}.err1"
+                        workingDir currentDir
+                    }
+                } catch (GradleException e) {
+                    compile = false
+                }
+                if (compile) {
+                    throw new GradleException("Test Expected to see error, but not failed.")
+                }
+                def referenceOutput = new File(file.path.toString() + ".err").text
+                def currentOutput = new File(file.path.toString() + ".err1").text
+                if (currentOutput != referenceOutput) {
+                    def diff = "Error does not match reference error. Expected: [[\n${referenceOutput}\n]] but Found: [[\n${currentOutput}\n]]."
+                    throw new GradleException("Test failed. " + diff)
+                }
+            }
+
+        }
+        testError.dependsOn task
+    }
+}
+
 task testOutput() {
     def currentDir = file(".")
-    def files = fileTree(dir: currentDir, include: "*.bal")
+    def files = fileTree(dir: currentDir, include: "*.bal", exclude: "*-error.bal")
     files.each { file ->
         def taskName = "testOutput-${file.name}-${file.canonicalPath.length()}"
         def task = tasks.create(taskName) {
@@ -37,13 +79,9 @@ task testOutput() {
                 def additionalData = [name: file.name, path: partOfPath]
                 def compile = true
                 def output = true
-                try {
-                    exec {
-                        commandLine "bash", "-c", "bal format ${file.name}"
-                        workingDir currentDir
-                    }
-                } catch (GradleException e) {
-                    compile = false
+                exec {
+                    commandLine "bash", "-c", "bal format ${file.name}"
+                    workingDir currentDir
                 }
                 try {
                     exec {
@@ -76,7 +114,7 @@ task testOutput() {
                 additionalData["test"] = output
                 new File("${file.path}.json").text = JsonOutput.toJson(additionalData)
                 if (!compile || !output) {
-                    throw new GradleException("Test failed.")
+                    throw new GradleException("Test failed." + additionalData)
                 }
             }
 
@@ -87,7 +125,7 @@ task testOutput() {
 
 task clean() {
     def currentDir = file(".")
-    def out1Files = fileTree(dir: currentDir, includes: ["*.bal.out1", "*.bal.jar", "*.bal.json"])
+    def out1Files = fileTree(dir: currentDir, includes: ["*.bal.out1", "*.bal.jar", "*.bal.json", "*.bal.err1"])
     doLast {
         out1Files.each { file ->
             file.delete()
@@ -95,17 +133,7 @@ task clean() {
     }
 }
 
-task cleanJar() {
-    def currentDir = file(".")
-    def jarFiles = fileTree(dir: currentDir, includes: ["*.bal.jar"])
-    doLast {
-        jarFiles.each { file ->
-            file.delete()
-        }
-    }
-}
-
-task test(dependsOn: [testOutput, cleanJar]) {
+task test(dependsOn: [testOutput, testError, clean]) {
 }
 
 task build(dependsOn: [develop, clean]) {

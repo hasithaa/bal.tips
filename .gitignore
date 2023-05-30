@@ -14,5 +14,6 @@ bin
 
 data/ballerina.json
 *.bal.out1
+*.bal.err1
 *.bal.jar
 *.bal.json

@@ -1,0 +1,13 @@
+{
+  "customer.first.name": "John",
+  "customer.last.name": "Smith",
+  "customer.age": 30,
+  "customer.email-address": "john.smith@example.com",
+  "customer#phone-number": "555-1234",
+  "customer$address": {
+    "street": "123 Main St.",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345"
+  }
+}

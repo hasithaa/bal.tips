@@ -6,7 +6,7 @@ images : [/docs/syntax/comments/comment.png]
 date: 2023-01-01
 weight : 4010
 ballerina_lang : [comment]
-highlight : [comment01.bal]
+highlight : [comments.bal]
 menu: 
   main:
     parent: syntax

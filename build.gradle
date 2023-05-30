@@ -39,4 +39,4 @@ task codeGen() {
     }
 }
 
-task build(dependsOn: [codeGen]){}
+task prepare(dependsOn: [codeGen]){}

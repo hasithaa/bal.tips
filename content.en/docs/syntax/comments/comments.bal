@@ -6,7 +6,7 @@ import ballerina/io;
 public function main() {
     io:println("Hello World...!!!"); // printing hello world.
 
-    // io:println("No execution."); 
+    // io:println("No execution.");
 }
 
 // End of this example.

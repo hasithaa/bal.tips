@@ -1,0 +1,10 @@
+<div class="d-flex flex-wrap justify-content-center ">
+    <div class="m-3 ratio ratio-16x9 " style="max-width:560px; max-height:315px;">
+        {{ $title := .Get "title" }}
+        <div class="embed-responsive-item placeholder placeholder-glow"></div>
+        <iframe src="https://www.youtube.com/embed/{{ .Get "id" }}" title="{{$title}}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen onload="this.previousElementSibling.remove()"></iframe>
+    </div>
+</div>
