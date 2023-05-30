@@ -6,7 +6,7 @@
     {{ else }}
     <div class="card m-1 col-md-3 text-center bg-transparent">
         {{ with .Get "header" }}
-        <h4 class="card-header"></h4>
+        <h4 class="card-header">
         {{ . | safeHTML | markdownify }}
         </h4>
         {{ end }}

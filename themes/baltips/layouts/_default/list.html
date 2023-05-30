@@ -4,12 +4,26 @@
     {{ else}}
         <h1>{{ .Title }}</h1>
         {{ partial "metadata.html" . }}
-        {{ range .Pages.ByWeight }}
-        <p>
-            <h3><a class="text-reset" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            {{ partial "metadata.html" . }}
-            <p>{{ .Description }} &nbsp;<a class="text-muted" href="{{ .RelPermalink }}" class="">Read More... <i class="bi bi-link"></i></a> </p>
-        </p>
-        {{end}}
+        <div class="row d-flex justify-content-center">
+            {{ range $page:= .Pages.ByWeight }}
+            <div class="card m-1 col-md-3 text-center bg-transparent">
+                <h4 class="card-header"><i class="bi bi-newspaper"></i>&nbsp;Article</h4>
+                {{ with .Params.images}}
+                    {{ if gt (len .) 0 }}
+                    <img src="{{index . 0}}" class="card-img-top img-fluid img-thumbnail" style="width: 100%; height: 300px; object-fit: cover;" alt="{{$page.Title}}"/>
+                    {{end}}
+                {{end}}
+                <div class="card-body p-2">
+                {{ with .Title}}
+                <h5 class="card-title mb-2">{{ . | safeHTML | markdownify }}</h5>
+                {{ end }}
+                <p>
+                    {{ .Description | safeHTML | markdownify }}
+                </p>
+                <a href="{{.Permalink}}" class="my-2 btn btn-primary">Read More</a>
+                </div>
+            </div>
+            {{end}}
+        </div>
     {{ end}}
 {{ end }}
