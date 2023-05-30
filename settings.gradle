@@ -6,11 +6,13 @@
  */ 
 rootProject.name = 'Bal.tips Website'
 include('buildTasks')
+include(':docs-expressions-literals-boolean')
 include(':docs-introduction-basics')
 include(':docs-langlib-array')
 include(':docs-langlib-boolean')
 include(':docs-syntax-comments')
 include(':docs-syntax-identifiers')
+project(':docs-expressions-literals-boolean').projectDir = file('content.en/docs/expressions/literals/boolean/')
 project(':docs-introduction-basics').projectDir = file('content.en/docs/introduction/basics/')
 project(':docs-langlib-array').projectDir = file('content.en/docs/langlib/array/')
 project(':docs-langlib-boolean').projectDir = file('content.en/docs/langlib/boolean/')
