@@ -52,7 +52,7 @@
     {{ if $output }}
         {{ $codeOut = highlight (readFile (print $sourceFilePath ".out")) "BashSession" "style=manni" -}} 
     {{ else if $error }}
-        {{ $codeOut = highlight (readFile (print $sourceFilePath ".err")) "BashSession" "style=manni" -}} 
+        {{ $codeOut = highlight (readFile (print $sourceFilePath ".out")) "BashSession" "style=manni" -}} 
     {{ end }}
 
   

@@ -2,14 +2,20 @@ import groovy.json.JsonOutput
 
 task develop() {
     def currentDir = file(".")
-    def files = fileTree(dir: currentDir, include: "*.bal", exclude: "*-error.bal")
+    def files = fileTree(dir: currentDir, include: "*.bal")
     files.each { file ->
         def taskName = "dev-${file.name}-${file.canonicalPath.length()}"
         def task = tasks.create(taskName) {
+            inputs.files(file.name)
+            outputs.file "${file.name}.out"
+            outputs.cacheIf { true }
             doLast {
                 def cmd = "bal run ${file.name} > ${file.name}.out"
+                def output = true
+                def failed = false
                 if (file.name.endsWith("error.bal")) {
-                    cmd = "bal build ${file.name} 2> ${file.name}.err"
+                    cmd = "bal build ${file.name} 2> ${file.name}.out"
+                    output = false
                 }
                 try {
                     exec {
@@ -17,16 +23,16 @@ task develop() {
                         workingDir currentDir
                     }
                 } catch (GradleException e) {
-                    compile = false
+                    failed = true
+                }
+                if (!output && !failed) {
+                    throw new GradleException("Test Expected to see error, but not failed.")
                 }
             }
-
         }
         develop.dependsOn task
     }
 }
-
-
 
 task testError() {
     def currentDir = file(".")
@@ -34,6 +40,9 @@ task testError() {
     files.each { file ->
         def taskName = "testError-${file.name}-${file.canonicalPath.length()}"
         def task = tasks.create(taskName) {
+            inputs.files(file.name, new File("${file.name}.out"))
+            outputs.file "build/${file.name}.out"
+            outputs.cacheIf { true }
             doLast {
                 def compile = true
                 exec {
@@ -42,7 +51,7 @@ task testError() {
                 }
                 try {
                     exec {
-                        commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name} 2> ${file.name}.err1"
+                        commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name} 2> build/${file.name}.out"
                         workingDir currentDir
                     }
                 } catch (GradleException e) {
@@ -51,8 +60,8 @@ task testError() {
                 if (compile) {
                     throw new GradleException("Test Expected to see error, but not failed.")
                 }
-                def referenceOutput = new File(file.path.toString() + ".err").text
-                def currentOutput = new File(file.path.toString() + ".err1").text
+                def referenceOutput = new File(file.path.toString() + ".out").text
+                def currentOutput = new File(currentDir.toString() + "/build/${file.name}.out").text
                 if (currentOutput != referenceOutput) {
                     def diff = "Error does not match reference error. Expected: [[\n${referenceOutput}\n]] but Found: [[\n${currentOutput}\n]]."
                     throw new GradleException("Test failed. " + diff)
@@ -70,8 +79,8 @@ task testOutput() {
     files.each { file ->
         def taskName = "testOutput-${file.name}-${file.canonicalPath.length()}"
         def task = tasks.create(taskName) {
-            // inputs.files(file.name, new File("${file.name}.out"))
-            // outputs.file "${file.name}.out1"
+            inputs.files(file.name, new File("${file.name}.out"))
+            outputs.file "build/${file.name}.out"
             doLast {
                 def filePath = file.canonicalPath
                 def startIndex = filePath.indexOf("docs")
@@ -85,7 +94,7 @@ task testOutput() {
                 }
                 try {
                     exec {
-                        commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name}"
+                        commandLine "bash", "-c", "bal build -o build/${file.name}.jar ${file.name}"
                         workingDir currentDir
                     }
                 } catch (GradleException e) {
@@ -95,7 +104,7 @@ task testOutput() {
                 if (compile) {
                     try {
                         exec {
-                            commandLine "bash", "-c", "java -jar ${file.name}.jar > ${file.name}.out1"
+                            commandLine "bash", "-c", "java -jar build/${file.name}.jar > build/${file.name}.out"
                             workingDir currentDir
                         }
                     } catch (GradleException e) {
@@ -104,7 +113,7 @@ task testOutput() {
                 }
                 if (compile && output) {
                     def referenceOutput = new File(file.path.toString() + ".out").text
-                    def currentOutput = new File(file.path.toString() + ".out1").text
+                    def currentOutput = new File(currentDir.toString() + "/build/${file.name}.out").text
                     additionalData["kind"] = "output"
                     if (currentOutput != referenceOutput) {
                         output = false
@@ -112,7 +121,7 @@ task testOutput() {
                     }
                 }
                 additionalData["test"] = output
-                new File("${file.path}.json").text = JsonOutput.toJson(additionalData)
+                new File(currentDir.toString() + "/build/result.json").text = JsonOutput.toJson(additionalData)
                 if (!compile || !output) {
                     throw new GradleException("Test failed." + additionalData)
                 }
@@ -125,7 +134,7 @@ task testOutput() {
 
 task clean() {
     def currentDir = file(".")
-    def out1Files = fileTree(dir: currentDir, includes: ["*.bal.out1", "*.bal.jar", "*.bal.json", "*.bal.err1"])
+    def out1Files = fileTree(dir: currentDir, includes: ["build/", "*.bal.out1", "*.bal.jar", "*.bal.json", "*.bal.err1"])
     doLast {
         out1Files.each { file ->
             file.delete()
@@ -133,8 +142,8 @@ task clean() {
     }
 }
 
-task test(dependsOn: [testOutput, testError, clean]) {
+task test(dependsOn: [testOutput, testError]) {
 }
 
-task build(dependsOn: [develop, clean]) {
+task build(dependsOn: [develop]) {
 }
