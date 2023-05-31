@@ -32,7 +32,7 @@ Ballerina **doesn't** support `0`, `1` or any other variations of `true` or `fal
 
 
 
-```ballerina {filename="boolean_literal.bal" lines="5 6"}
+```ballerina {filename="boolean_literal.bal" lines="5 6" result="output"}
 import ballerina/io; //!
 //!
 public function main() {

@@ -27,20 +27,59 @@ and come in two types, `float` and `decimal`, with slight differences in their r
 {{< cards >}}
 {{<card header="✍ Syntax" title="Decimal Literal" url="#decimal-float-literal">}}
 
-&lt;integer-part> `.` &lt;fractional-part> [`f`|`F`|`d`|`D`]
+[DecimalNumber] `.` Digit+ [`f`|`F`|`d`|`D`]
+{.tip-syntax}
+
+Here
+
+DecimalNumber = `0` | NonZeroDigit Digit*
 {.tip-syntax}
 
 {{</card>}}
 {{<card header="✍ Syntax" title="Hexadecimal Literal" url="#hex-float-literal">}}
 
-`0`[`x`|`X`] hex-integer-part `.` hex-fractional-part
+HexIndicator [HexDigit+] `.` HexDigit+
+{.tip-syntax}
+
+Here
+
+HexIndicator = `0x`|`0X`
+{.tip-syntax}
+
+{{</card>}}
+{{<card header="✍ Syntax" title="Floating Point Literal With Exponent" url="#float-literal-exponent">}}
+
+* DecimalNumber Exponent [`f`|`F`|`d`|`D`]
+* [DecimalNumber] `.` Digit+ Exponent [`f`|`F`|`d`|`D`]
+* HexIndicator HexDigit+ HexExponent
+* HexIndicator [HexDigit+] `.` HexDigit+ HexExponent
+{.tip-syntax}
+
+Here
+
+* DecimalNumber = `0` | NonZeroDigit Digit*
+* Exponent = ExponentIndicator [Sign] Digit+
+* HexExponent = HexExponentIndicator [Sign] Digit+
+* ExponentIndicator = `e`|`E`
+* HexIndicator = `0x`|`0X`
+* HexExponentIndicator = `p`|`P`
+* Sign = `+`|`-`
 {.tip-syntax}
 
 {{</card>}}
 {{</ cards >}}
 
+## ✍ Syntax
 
-## Decimal Floating Point Literal{id="decimal-float-literal"}
+### Decimal Floating Point Literal{id="decimal-float-literal"}
+
+[DecimalNumber] `.` Digit+ [`f`|`F`|`d`|`D`]
+{.tip-syntax}
+
+Here
+
+DecimalNumber = `0` | NonZeroDigit Digit*
+{.tip-syntax}
 
 You can write floating point values using a set of digits of the decimal system (Base 10 number) numbers, 
 by using a dot `.` as the radix character to separate *integer-part* and *fractional-part*.
@@ -98,42 +137,18 @@ public function main() {
 }
 ```
 
-## Floating Point Literal With Exponent
-
-You can write floating numbers using scientific notation. The Letter `e` or `E` is used as the exponent indicator.
-
-```ballerina {filename="float_literal_exponent.bal" lines="5-12" result="output" title="Floating point literal with the exponent"}
-import ballerina/io; //!
-//!
-public function main() {
-//!
-    float f1 = 12e4; //$
-    float f2 = 543e-5; //$
-    float f3 = 1.23e3; //$
-    float f4 = 1.23e3f; //$
-    decimal d1 = 12e4; //$
-    decimal d2 = 543e-5; //$
-    decimal d3 = 1.23e3; //$
-    decimal d4 = 1.23e3d; //$
-//!
-    io:println(f1); //!
-    io:println(f2); //!
-    io:println(f3); //!
-    io:println(f4); //!
-    io:println(d1); //!
-    io:println(d2); //!
-    io:println(d3); //!
-    io:println(d4); //!
-}
-```
-
-## Hexadecimal Floating Point Literal{id="hex-float-literal"}
+### Hexadecimal Floating Point Literal{id="hex-float-literal"}
 
 Hexadecimal numbers start with a Hex Indicator `0x` (Number zero and lowercase letter `x`) or `0X`
 (Number zero and Uppercase letter `X`) Hex digits are `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, 
 `9`, `a` or `A`, `b` or `B`, `c` or `C`, `d` or `D`, `e` or `E`, `f` or `F`
 
-`0`[`x`|`X`] hex-integer-part `.` hex-fractional-part
+HexIndicator [HexDigit+] `.` HexDigit+
+{.tip-syntax}
+
+Here
+
+HexIndicator = `0x`|`0X`
 {.tip-syntax}
 
 💡 Hexadecimal floating point literal only supports the `float` type.
@@ -155,5 +170,58 @@ public function main() {
     io:println(f3); //!
     io:println(f4); //!
     io:println(f5); //!
+}
+```
+
+### Floating Point Literal With Exponent{id="float-literal-exponent"}
+
+You can write floating numbers using scientific notation. The Letter `e` or `E` is used as the exponent indicator in decimal format,
+while `p` or `P` is used as the exponent indicator in hexadecimal format.
+
+* DecimalNumber Exponent [`f`|`F`|`d`|`D`]
+* [DecimalNumber] `.` Digit+ Exponent [`f`|`F`|`d`|`D`]
+* HexIndicator HexDigit+ HexExponent
+* HexIndicator [HexDigit+] `.` HexDigit+ HexExponent
+{.tip-syntax}
+
+Here
+
+* DecimalNumber = `0` | NonZeroDigit Digit*
+* Exponent = ExponentIndicator [Sign] Digit+
+* HexExponent = HexExponentIndicator [Sign] Digit+
+* ExponentIndicator = `e`|`E`
+* HexIndicator = `0x`|`0X`
+* HexExponentIndicator = `p`|`P`
+* Sign = `+`|`-`
+{.tip-syntax}
+
+```ballerina {filename="float_literal_exponent.bal" lines="5-15" result="output" title="Floating point literal with the exponent"}
+import ballerina/io; //!
+//!
+public function main() {
+//!
+    float f1 = 12e4; //$
+    float f2 = 543e-5; //$
+    float f3 = 1.23e3; //$
+    float f4 = 1.23e3f; //$
+    decimal d1 = 12e4; //$
+    decimal d2 = 543e-5; //$
+    decimal d3 = 1.23e3; //$
+    decimal d4 = 1.23e3d; //$
+    float fh1 = 0x1.a2bp3; //$
+    float fh2 = 0X1F3Dp3; //$
+    float fh3 = 0xAB12CDP-3; //$
+//!
+    io:println(f1); //!
+    io:println(f2); //!
+    io:println(f3); //!
+    io:println(f4); //!
+    io:println(d1); //!
+    io:println(d2); //!
+    io:println(d3); //!
+    io:println(d4); //!
+    io:println(fh1); //!
+    io:println(fh2); //!
+    io:println(fh3); //!
 }
 ```
