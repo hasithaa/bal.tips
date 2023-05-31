@@ -23,7 +23,8 @@ Comments are used to provide more details about the code or temporally disable a
 
 {{< card header="✍ Syntax" col=3 >}}
 
-#### `//`
+`//`
+{.tip-syntax}
 
 A comment starts with two forward slashes `//`. The compiler ignores any characters between `//` and the end of the line. Ballerina supports only single-line comments.
 

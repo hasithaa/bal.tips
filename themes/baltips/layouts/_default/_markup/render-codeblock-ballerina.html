@@ -55,24 +55,24 @@
         {{ $codeOut = highlight (readFile (print $sourceFilePath ".out")) "BashSession" "style=manni" -}} 
     {{ end }}
 
-  
-<div class="{{if $codeview}}tip-code-full d-none{{end}} table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code mb-3">
-    {{ $fullView = delimit $fullView "\n" }}
-    <div class="p-2">{{ highlight $fullView "ballerina" $options }}</div>
-    {{ if or $output $error }}
-    <a class="link px-2" data-mdb-toggle="collapse" data-mdb-target="#collapsibleDiv{{$anchor}}" aria-expanded="false" aria-controls="collapsibleDiv">
-        {{ if $output }}
-            <i class="bi bi-terminal"></i>&nbsp;<code>bal run&nbsp;{{- $filename -}}</code>
-        {{ else if $error }}
-            <i class="bi bi-exclamation-triangle"></i> Compiler Error
+<div> 
+    <div class="{{if $codeview}}tip-code-full d-none{{end}} table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code mb-3">
+        {{ $fullView = delimit $fullView "\n" }}
+        <div class="p-2">{{ highlight $fullView "ballerina" $options }}</div>
+        {{ if or $output $error }}
+        <a class="link px-2" data-mdb-toggle="collapse" data-mdb-target="#collapsibleDiv{{$anchor}}" aria-expanded="false" aria-controls="collapsibleDiv">
+            {{ if $output }}
+                <i class="bi bi-terminal"></i>&nbsp;<code>bal run&nbsp;{{- $filename -}}</code>
+            {{ else if $error }}
+                <i class="bi bi-exclamation-triangle"></i> Compiler Error
+            {{ end }}
+        </a>
+        <div class="collapse p-2" id="collapsibleDiv{{$anchor}}">
+            {{- $codeOut -}}
+        </div>
         {{ end }}
-    </a>
-    <div class="collapse p-2" id="collapsibleDiv{{$anchor}}">
-        {{- $codeOut -}}
-    </div>
-    {{ end }}
 
-</div>
+    </div>
 
     {{if $codeview}}
     <div class="tip-code-simple d-none table-responsive rounded rounded-3 shadow-3 m-auto text-dark col-lg-9 col-12 bg-code mb-3">
@@ -91,5 +91,8 @@
         <div class="p-2 overflow-auto">{{ safeHTML $codeContent}}</div>
     </div>
     {{end}}
-
+    {{ with index .Attributes "title" }}
+    <p class="text-center fw-light fst-italic">{{ . }}</p>
+    {{ end}}
+</div>
 {{ end }}

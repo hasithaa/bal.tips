@@ -1,7 +1,23 @@
 @import '../node_modules/mdb-ui-kit/src/scss/mdb.free.scss';
 
 html {
-    font-size: 16px;
+    font-size: 0.9em;
+}
+
+code {
+    font-size: 1em !important;
+}
+
+.tip-syntax {
+    @extend .alert;
+    @extend .alert-primary;
+    @extend .text-center;
+    @extend .font-monospace;
+}
+
+.tip-title {
+    @extend .text-center;
+    @extend .fst-italic;
 }
 
 .tip-note {
@@ -58,8 +74,8 @@ html {
     text-decoration: underline !important
 }
 
-.toc a{
-  @extend .text-dark;
+.toc a {
+    @extend .text-dark;
 }
 
 .bg-code {

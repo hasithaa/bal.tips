@@ -14,7 +14,7 @@
                 <!-- canonicalUrl -->
                 {{ if .Params.canonicalUrl }}
                 <div class="markdown" style="text-align:justify">
-                    <blockquote class="book-hint info">
+                    <blockquote class="">
                         📃 This article was originally published on <a href="{{ .Params.canonicalUrl }}" target="_blank">{{ default "this blog" ($.Params.canonicalSite | markdownify) }}</a>.
                     </blockquote>
                 </div>
@@ -106,23 +106,23 @@
             <div class="pt-2">
                 <h6 class="offcanvas-title"><i class="bi bi-bookmark"></i> Navigation</h6>
                 <div class="pt-1 m-2 d-flex justify-content-center justify-content-lg-between">
-                    <a role="button" class="btn btn-secondary btn-text-transform-none" href="javascript:void(0);" class="book-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+                    <a role="button" class="btn btn-secondary btn-text-transform-none" href="javascript:void(0);"  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
                         <i class="bi bi-caret-up-fill me-2"></i> Go to top </a>
                     {{if $prev}}
-                        {{with $prev}}<a role="button" class="btn btn-secondary btn-text-transform-none"href="{{.Permalink}}" class="book-btn" title="{{.Title}}">
+                        {{with $prev}}<a role="button" class="btn btn-secondary btn-text-transform-none"href="{{.Permalink}}"  title="{{.Title}}">
                             <i class="bi bi-caret-left-fill me-2"></i> Back
                         </a>{{end}}
                     {{else}}
-                        <a role="button" class="btn btn-secondary btn-text-transform-none" href="/" class="book-btn" title="Home">
+                        <a role="button" class="btn btn-secondary btn-text-transform-none" href="/"  title="Home">
                             <i class="bi bi-house me-2"></i> Home
                         </a>
                     {{end}}
                     {{if $next}}
-                        {{with $next}}<a role="button" class="btn btn-secondary btn-text-transform-none" href="{{.Permalink}}" class="book-btn" title="{{.Title}}">
+                        {{with $next}}<a role="button" class="btn btn-secondary btn-text-transform-none" href="{{.Permalink}}"  title="{{.Title}}">
                             Next <i class="bi bi-caret-right-fill ms-2"></i>
                         </a>{{end}}
                     {{else}}
-                        <a role="button" class="btn btn-secondary btn-text-transform-none" href="/" class="book-btn" title="Home">
+                        <a role="button" class="btn btn-secondary btn-text-transform-none" href="/"  title="Home">
                             <i class="bi bi-house me-2"></i> Home
                         </a>
                     {{end}}

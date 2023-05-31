@@ -70,6 +70,7 @@ task testError() {
 
         }
         testError.dependsOn task
+        task.mustRunAfter parent.verifyBallerinaVerision
     }
 }
 
@@ -129,6 +130,7 @@ task testOutput() {
 
         }
         testOutput.dependsOn task
+        task.mustRunAfter parent.verifyBallerinaVerision
     }
 }
 

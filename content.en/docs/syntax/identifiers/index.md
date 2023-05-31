@@ -20,7 +20,36 @@ menu:
 
 # Identifiers
 
-Identifiers are names assigned to elements like variables, functions, or types in a program, helping programmers identify and reference specific elements in the source code. Using suitable identifiers is crucial for creating readable and understandable code. Each programming language has its own rules and conventions for identifiers, and in this post, we'll explore mastering identifiers in Ballerina.
+Identifiers are names assigned to elements like variables, functions, or types in a program, helping programmers identify and reference specific elements in the source code.
+
+{{<cards>}}
+{{<card header="✍ Syntax" title="Common Identifier Syntax" url="#common-identifier-syntax">}}
+
+&lt;Initial_Char>&lt;Initial_Char | Digits>*
+{.tip-syntax}
+
+{{</card>}}
+{{<card header="✍ Syntax" title="Quoted Identifier" url="#quoted-identifier">}}
+
+`'`&lt;Initial_Char | Digits>*
+{.tip-syntax}
+
+{{</card>}}
+{{<card header="✍ Syntax" title="Character Escaping" url="#character-escaping">}}
+* `\u{`&lt;Digits>`}`
+* `\`&lt;Char>
+{.tip-syntax}
+
+{{</card>}}
+{{<card header="✍ Syntax" title="Qualified Identifier" url="#qualified-identifier-syntax">}}
+
+&lt;module-prefix-identifier>`:`&lt;identifier>
+{.tip-syntax}
+
+{{</card>}}
+{{</cards>}}
+
+Using suitable identifiers is crucial for creating readable and understandable code. Each programming language has its own rules and conventions for identifiers, and in this post, we'll explore mastering identifiers in Ballerina.
 
 ![Identifiers are everywhere](/docs/syntax/identifiers/Identifiers.svg "Identifiers are everywhere in your code")
 {.tip-75-frame}
@@ -29,12 +58,12 @@ Identifiers are names assigned to elements like variables, functions, or types i
 
 There are multiple ways to define identifiers in Ballerina. Let's look at the syntax for each of them.
 
-### Common Identifier Syntax
+### Common Identifier Syntax {id="common-identifier-syntax"}
 
 An identifier in Ballerina is represented by the following syntax:
 
-`<Initial_Char><Initial_Char | Digits>*`
-{.alert .alert-primary .text-center}
+&lt;Initial_Char>&lt;Initial_Char | Digits>*
+{.tip-syntax}
 
 The `Initial_Char` can be:
 * An ASCII letter (`A-Z` or `a-z`),
@@ -56,19 +85,17 @@ After the `Initial_Char`, any combination of characters including digits (`0-9`)
 | `国家`                  | `order` (keyword)                                     |
 | `国`                   | `service` (keyword)                                   |
 | `страна`              | `class` (keyword)                                     |
-{.table .table-striped .table-bordered .table-hover .table-condensed .table-responsive .table-sm .text-center}
+{.tip-table .text-center}
 
 Note: Ballerina Identifier follows the requirements of Unicode TR31 for immutable identifiers; the set of characters is immutable in the sense that it does not change between Unicode versions.
 {.note .note-primary}
 
-### Quoted Identifier
+### Quoted Identifier{id="quoted-identifier"}
 
 You might have noticed that the earlier syntax doesn't allow keywords and identifiers starting with digits. To overcome this limitation, use the Quoted Identifier syntax:
 
-`'<Initial_Char | Digits>*`
-
-
-{.alert .alert-primary .text-center}
+`'`&lt;Initial_Char | Digits>*
+{.tip-syntax}
 
 This syntax starts with a single quote ('), enabling any combination of characters, including keywords and identifiers starting with digits, to be used as an identifier. Let's turn some of those invalid identifiers into valid ones using quoted identifiers.
 
@@ -80,15 +107,15 @@ This syntax starts with a single quote ('), enabling any combination of characte
 | `order`                 | `'order`              |
 | `service`               | `'service`            |
 | `class`                 | `'class`              |
-{.table .table-striped .table-bordered .table-hover .table-condensed .table-responsive .table-sm .text-center}
+{.tip-table .text-center}
 
-### Identifiers with Character Escaping
+### Identifiers with Character Escaping{id="character-escaping"}
 
 Ballerina allows any valid Unicode code point in an identifier, escaped using the `\u{XXXX}` syntax or a non-empty character with the `\` syntax. This offers flexibility for using non-ASCII characters in code.
 
-* `\u{<Digits>}`
-* `\<Char>`
-{.alert .alert-primary .text-center}
+* `\u{`&lt;Digits>`}`
+* `\`&lt;Char>
+{.tip-syntax}
 
 Note: However, some restrictions apply to escape sequences in identifiers, as outlined in the [Ballerina Language Specifications](https://ballerina.io/spec/lang/master/#lexical_structure). For instance, `\u{0000}` to `\u{D800}` and (excluding) `\u{DFFF}` to `u{10FFFF}` are not allowed in identifiers.
 {.note .note-warning}
@@ -99,14 +126,14 @@ Note: However, some restrictions apply to escape sequences in identifiers, as ou
 | `@hello`              | `\u{40}hello`       | `\@hello`           |
 | `bad!name`            | `bad\u{21}name`     | `bad\!name`         |
 | `id with spaces`      | `id\u{20}with\u{20}spaces`  | `id\ with\ spaces`  |
-{.table .table-striped .table-bordered .table-hover .table-condensed .table-responsive .table-sm .text-center}
+{.tip-table .text-center}
 
-### Qualified Identifier Syntax
+### Qualified Identifier Syntax{id="qualified-identifier-syntax"}
 
 Identifiers are not only used to name elements in a program but also to refer to them. The syntax we discussed so far works well to refer to elements locally within the source of the module. However, to refer to another module, you need a qualified identifier.
 
-`<module-prefix-identifier>:<identifier>`
-{.alert .alert-primary .text-center}
+&lt;module-prefix-identifier>`:`&lt;identifier>
+{.tip-syntax}
 
 Qualified identifier syntax includes an additional identifier (module-prefix) at the start to indicate the referenced module. It must match the module-prefix in an import declaration within the same source file. A colon (:) separates the module-prefix and identifier, with no whitespace in between.
 
@@ -314,7 +341,7 @@ function printName(string fname, string lname) returns boolean { //$ ... }
 
 
 Note: It's important to note that this technique only works for non-error values. Ignoring errors is generally considered bad practice, and the Ballerina compiler will generate an error if you try to ignore a value that could contain an error.
-{.note .note-info}
+{.note .note-primary}
 
 # 💡 Naming Conventions
 
@@ -495,7 +522,7 @@ Additionally, there are three symbol spaces for these scopes. Here's a quick run
 |:--------------------------:|------------|-----|----|
 |        Module-Scope        | Variables, Constants, Types, Functions, and other identifiers that do not belong to any of the other two spaces  | Prefixes declared by import declarations and XML namespace declarations | Annotation tags declared by annotation declarations |
 |        Block-Scope         | Any statement, action, expression that supports type-binding patterns/binding patterns, such as variable definition statements, foreach statements, let expressions, and query from clauses. Additionally, function parameters are also part of the block scope.  | Local XML namespace declaration statements  | N\A    |
-{.table .table-striped .table-bordered .table-hover .table-condensed .table-responsive .table-sm .text-center}
+{.tip-table .text-center}
 
 ## Variable Shadowing Rules
 
@@ -537,7 +564,7 @@ However, there are special cases where you don't need to use the quoted identifi
 | boolean | decimal | error    | float       | future   |
 | int     | string  | xml      | any         | anydata  |
 | byte    | never   | handle   | readonly    | function |
-{.table .table-striped .table-bordered .table-hover .table-condensed .table-responsive .table-sm .text-center}
+{.tip-table .text-center}
 
 Another example of where you don't need to use the quoted identifier syntax is when working with pre-declared module prefixes. These prefixes are used to refer to the language libraries and are predefined by the Ballerina language. Here is the list of pre-declared module prefixes.
 
@@ -546,7 +573,7 @@ Another example of where you don't need to use the quoted identifier syntax is w
 | boolean | decimal | error    | float       | function |
 | future  | int     | map      | object      | stream   |
 | string  | table   | typedesc | transaction | xml      |
-{.table .table-striped .table-bordered .table-hover .table-condensed .table-responsive .table-sm .text-center}
+{.tip-table .text-center}
 
 Additional `map`, `join`, and `start` are keywords, but they are allowed as method names without the quoted identifier syntax.
 

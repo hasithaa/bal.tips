@@ -21,10 +21,16 @@ menu:
 
 The `boolean` basic type has only two values; boolean true is written as `true` and boolean false is written as `false`.
 
-`true` and `false`
-{.alert .alert-info}
+{{<cards>}}
+{{<card header="✍ Syntax" >}}
+`true` | `false`
+{.tip-syntax}
 
-Ballerina **doesn't** support `0`, `1` or any other variations of `true` or `false` words as alternative syntax. 
+Ballerina **doesn't** support `0`, `1` or any other variations of `true` or `false` words as alternative syntax.
+{{</card>}}
+{{</cards>}}
+
+
 
 ```ballerina {filename="boolean_literal.bal" lines="5 6"}
 import ballerina/io; //!

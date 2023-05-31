@@ -22,5 +22,5 @@ https://github.com/alex-shpak/hugo-book/blob/036e037a63ba06ca366adb1a0c3a005d1a0
   {{ end }}
   <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }}
   class="img-fluid img-thumbnail img-responsive mx-auto d-block rounded shadow-lg border p-2 m-2 h-75"/>
-  {{ with .Title }}<p class="text-center fw-medium fst-italic text-body-secondary">{{ . }}</p>{{ end }}
+  {{ with .Title }}<p class="text-center fw-light fst-italic">{{ . }}</p>{{ end }}
 {{ end }}
