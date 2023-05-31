@@ -2,9 +2,9 @@
     {{ if eq .Params.layout "single" }}
         {{ .Content }}
     {{ else}}
-        <h1>{{ .Title }}</h1>
         {{ partial "metadata.html" . }}
-        <div class="row d-flex justify-content-center">
+        {{ .Content }}
+        <div class="mt-5 row d-flex justify-content-center">
             {{ range $page:= .Pages.ByWeight }}
             <div class="card m-1 col-md-3 text-center bg-transparent">
                 <h4 class="card-header"><i class="bi bi-newspaper"></i>&nbsp;Article</h4>
@@ -14,13 +14,15 @@
                     {{end}}
                 {{end}}
                 <div class="card-body p-2">
-                {{ with .Title}}
-                <h5 class="card-title mb-2">{{ . | safeHTML | markdownify }}</h5>
-                {{ end }}
-                <p>
-                    {{ .Description | safeHTML | markdownify }}
-                </p>
-                <a href="{{.Permalink}}" class="my-2 btn btn-primary">Read More</a>
+                    {{ with .Title}}
+                    <h5 class="card-title mb-2">{{ . | safeHTML | markdownify }}</h5>
+                    {{ end }}
+                    <p>
+                        {{ .Description | safeHTML | markdownify }}
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="{{.Permalink}}" class="my-2 btn btn-primary btn-sm">Read More</a>
                 </div>
             </div>
             {{end}}

@@ -61,6 +61,12 @@
             "pre": "<i class='bi bi-info-circle'></i>"
         }
     ],
-
+    "types": [
+        {
+            "key": "rules",
+            "name": "Type System Rules",
+            "pre": "<i class='bi bi-collection'></i>"
+        }
+    ],
     "about": []
 }

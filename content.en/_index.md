@@ -36,6 +36,7 @@ menu:
 {{< summary url="/docs/introduction/basics" col=3 >}}
 {{< summary url="/docs/devops/github/ballerina-action" col=3 >}}
 {{< summary url="/docs/syntax/identifiers" col=3 >}}
+{{< summary url="docs/types/rules/numeric-literals" col=3 >}}
 {{< summary url="/docs/syntax/comments" col=3 >}}
 
 {{</cards>}}
