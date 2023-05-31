@@ -1,0 +1,6 @@
+tab :A	B
+newline :A
+B
+carriageReturn :AB
+backSlash :A\B
+doubleQuote :A"B
