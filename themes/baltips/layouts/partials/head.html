@@ -11,11 +11,6 @@
     <meta name="description" content="{{ .Description }}">
     <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
     
-    {{ if and (eq .Draft false) (eq .Params.type "docs") }}
-        <meta name="robots" content="index" />
-    {{ else }}
-        <meta name="robots" content="noindex">
-    {{ end}}
     {{ if .Params.author }}
         <meta name="author" content="{{ .Params.author }}" />
     {{ else }}
