@@ -69,6 +69,10 @@
         </a>
         <div class="collapse p-2" id="collapsibleDiv{{$anchor}}">
             {{- $codeOut -}}
+            {{ with $.Page.Site.Data.ballerina.balVersion }}
+            <i class="bi bi-terminal"></i>&nbsp;<code class="text-primary">bal version</code>
+            {{ highlight . "BashSession" "style=manni"}}
+            {{end}}
         </div>
         {{ end }}
 
