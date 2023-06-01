@@ -16,9 +16,20 @@ task test(dependsOn: [verifyBallerinaVerision]) {
 }
 
 task hugo() {
+    def currentDir = file(".")
+    def themeDir = file("themes/baltips")
     doLast {
         exec {
+            commandLine "npm", "install"
+            workingDir themeDir
+        }
+        exec {
+            commandLine "npm", "run", "build"
+            workingDir themeDir
+        }
+        exec {
             commandLine "hugo", "--minify"
+            workingDir currentDir
         }
         String npm = 'npm';
         if (System.getProperty('os.name').toLowerCase().contains('windows')) {
@@ -26,6 +37,7 @@ task hugo() {
         }
         exec {
             commandLine npm, 'run', 'buildsearch'
+            workingDir currentDir
         }
     }
 }
