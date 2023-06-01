@@ -1,7 +1,0 @@
-Numbers: [1,2,3,4,5]
-Numbers After Push: [1,2,3,4,5,6,7]
-Numbers After Pop: [1,2,3,4,5,6]
-Last: 7
-Numbers After Shift: [2,3,4,5,6]
-First: 1
-Numbers After Unshift: [-1,0,2,3,4,5,6]
