@@ -68,7 +68,7 @@ The `decimal` type supports the following operations and many more language feat
 * Type Cast expression            - `<int> x`, `<float> x`
 
 
-Note: Unlike some programming languages, there is no implicit conversion between Ballerina numerical types. [Learn more]({{< relref "/docs/types/conversion/numeric" >}}).
+<i class="bi bi-info text-primary"></i> Unlike some programming languages, there is no implicit conversion between Ballerina numerical types. [Learn more]({{< relref "/docs/types/conversion/numeric" >}}).
 {.tip-note}
 
 ```ballerina {filename="decimal_operation.bal" lines="5-6 9-21 26-27" result="output" title="Decimal Operations" trim=false}
