@@ -3,7 +3,6 @@ title : Boolean Data Type
 description : "The Boolean data type represents boolean truth values: `true` and `false`."
 date: 2023-01-01
 weight : 5015
-type : docs
 ballerina_type : [boolean]
 ballerina_lang : [type, literal]
 ballerina_module : [boolean]
@@ -30,7 +29,7 @@ The Boolean data type represents boolean truth values: `true` and `false`. You m
 {{</card>}}
 {{</cards>}}
 
-## ✍ Syntax
+## ✍ Syntax{id=syntax}
 
 Boolean type is written as `boolean`. We use the Boolean literal syntax to write Boolean values.
 A boolean true is written as `true` and a boolean false is written as `false`.
@@ -149,6 +148,8 @@ public function main() returns error? { //!
 `ballerina\lang.boolean` Lang Library provides functions that operate on a `boolean` value. 
 See available operations with examples in [Boolean Lang Library]({{% relref "/docs/langlib/boolean" %}}).
 
+Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on a `boolean` value.
+
 ```ballerina {filename="boolean_lib.bal" lines="5 6" result="output" title="Boolean Lang Library"}
 import ballerina/io; //!
 //!
@@ -164,8 +165,6 @@ public function main() returns error? {
     io:println(output); //!
 }
 ```
-
-Additionally, `ballerina/lang.value` Lang Library provides `toString` and another set of functions that can operate on a `boolean` value.
 
 ## ToString Behavior
 
@@ -190,3 +189,15 @@ public function main() {
     io:println(output); //!
 }
 ```
+
+# Conclusion
+
+In this post, I have discussed the `boolean` data type in Ballerina. Here are the key points:
+
+{{<cards>}}
+{{<card col=6 text="text-left">}}
+* [Boolean Literal](#syntax), e.g. `true` & `false`.
+* Lang Library : [*ballerina/lang.boolean*]({{% relref "/docs/langlib/boolean" %}}).
+* Used in many language constructs.
+{{</card>}}
+{{</cards>}}

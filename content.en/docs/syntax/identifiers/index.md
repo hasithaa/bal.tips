@@ -54,7 +54,7 @@ Using suitable identifiers is crucial for creating readable and understandable c
 ![Identifiers are everywhere](/docs/syntax/identifiers/Identifiers.svg "Identifiers are everywhere in your code")
 {.tip-75-frame}
 
-## ✍ Syntax
+## ✍ Syntax{id=syntax}
 
 There are multiple ways to define identifiers in Ballerina. Let's look at the syntax for each of them.
 

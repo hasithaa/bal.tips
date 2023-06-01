@@ -44,7 +44,7 @@ Here `StringCharacters` is an Unicode Code Point except 0xA | 0xD | `\` | `"`
 {{</card>}}
 {{</cards>}}
 
-## ✍ Syntax
+## ✍ Syntax{id=syntax}
 
 ### Double Quoted String Literal{id="DoubleQuotedStringLiteral"}
 

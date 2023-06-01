@@ -18,9 +18,7 @@ menu:
 
 The Ballerina Boolean lang library ( `ballerina\lang.boolean` ) provides functions that operate on a `boolean` value.
 As of now, it has only the `fromString` function.
-See available operations in the [ballerina/lang.boolean](https://ballerina.io/spec/lang/master/#lang.boolean) module.
 
-<!--more-->
 
 ```ballerina {filename="lang_boolean.bal" lines="5-6"  result="output"}
 import ballerina/io; //!

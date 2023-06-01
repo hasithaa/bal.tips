@@ -41,7 +41,7 @@ HexIndicator = `0x`|`0X`
 {{</card>}}
 {{</cards>}}
 
-## ✍ Syntax
+## ✍ Syntax{id=syntax}
 
 ### Decimal Integer Literal{id="decimal-int-literal"}
 

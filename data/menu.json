@@ -70,17 +70,22 @@
         {
             "key": "basic",
             "name": "Type System",
-            "pre": "<i class='bi bi-collection'></i>"
+            "pre": "<i class='bi bi-fonts'></i>"
         },
         {
             "key": "simple",
             "name": "Simple Basic Types",
-            "pre": "<i class='bi bi-collection'></i>"
+            "pre": "<i class='bi bi-fonts'></i>"
+        },
+        {
+            "key": "conversion",
+            "name": "Type Conversion",
+            "pre": "<i class='bi bi-arrow-repeat'></i>"
         },
         {
             "key": "rules",
-            "name": "Compiler Algorithms",
-            "pre": "<i class='bi bi-collection'></i>"
+            "name": "Type Checking Algorithms",
+            "pre": "<i class='bi bi-fonts'></i>"
         }
     ],
     "about": []

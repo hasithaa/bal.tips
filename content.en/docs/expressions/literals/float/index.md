@@ -69,7 +69,7 @@ Here
 {{</card>}}
 {{</ cards >}}
 
-## ✍ Syntax
+## ✍ Syntax{id=syntax}
 
 ### Decimal Floating Point Literal{id="decimal-float-literal"}
 

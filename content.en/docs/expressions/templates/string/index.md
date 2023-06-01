@@ -38,7 +38,7 @@ Here
 {{</card>}}
 {{</cards>}}
 
-## ✍ Syntax
+## ✍ Syntax{id=syntax}
 
 String Template syntax support interpolation (Syntax `${expr}`) and each interpolation expression must have a type that is a subtype of `boolean|int|float|decimal|string`. You can use this expression in places where you use string concatenation, or you need to build multi-line string values.   
 
