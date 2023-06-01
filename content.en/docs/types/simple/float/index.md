@@ -37,7 +37,7 @@ The floating point type is written as `float`. You can use [Floating Point Liter
 
 Ballerina's float type provides several utility functions and constants through the `ballerina/lang.float` lang library module, such as `float:NaN`, `float:Infinity`, `isNaN()`, and `isFinite()`, to handle specific floating-point scenarios like infinity and "not a number" (NaN) values.
 
-```ballerina {filename="float_intro.bal" lines="5 6 10-11" result="output" title="Float Literal"} 
+```ballerina {filename="float_intro.bal" lines="5 6 10-11" result="output" title="Float Literal"}
 import ballerina/io; //!
 //!
 public function main() {
@@ -142,3 +142,16 @@ public function main() {
     io:println(output); //!
 }
 ```
+
+# Conclusion
+
+In this post, I have discussed the `float` data type in Ballerina. Here are the key points:
+
+{{<cards>}}
+{{<card col=6 text="text-left">}}
+* [Floating Point Literal](#syntax), e.g. `12.34`, `0xA1.2B`
+* Floating-point operations can produce NaN, infinity, and negative zero, which may have unexpected results in some expressions. 
+* No implicit conversion between numbers.
+* Lang Library : [*ballerina/lang.float*]({{% relref "/docs/langlib/float" %}}).
+{{</card>}}
+{{</cards>}}

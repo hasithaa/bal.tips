@@ -141,7 +141,7 @@ public function main() {
 
 # Conclusion
 
-In this post, I have discussed the `boolean` data type in Ballerina. Here are the key points:
+In this post, I have discussed the `decimal` data type in Ballerina. Here are the key points:
 
 {{<cards>}}
 {{<card col=6 text="text-left">}}

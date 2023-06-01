@@ -49,10 +49,12 @@
     {{ $codeOut := "" }}
     {{ $output := eq "output" (index .Attributes "result")}}
     {{ $error := eq "error" (index .Attributes "result")}}
-    {{ if $output }}
-        {{ $codeOut = highlight (readFile (print $sourceFilePath ".out")) "BashSession" "style=manni" -}} 
-    {{ else if $error }}
-        {{ $codeOut = highlight (readFile (print $sourceFilePath ".out")) "BashSession" "style=manni" -}} 
+    {{ if or $output $error }}
+        {{ $fileData := (readFile (print $sourceFilePath ".out"))}}
+        {{ $codeOut = highlight $fileData "BashSession" "style=manni" -}} 
+        {{ if eq (len $fileData) 0 }}
+            {{ warnf "Output file empty for %s" $sourceFilePath }}
+        {{end}}
     {{ end }}
 
 <div> 
