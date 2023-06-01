@@ -1,3 +1,4 @@
+// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() returns error? {

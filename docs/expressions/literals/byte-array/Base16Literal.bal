@@ -1,3 +1,4 @@
+// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -9,7 +10,7 @@ public function main() {
                       99 EF 00 AA
                     `;
 
-    io:println(a);  //!
-    io:println(b);  //!
-    io:println(c);  //!
+    io:println(a);
+    io:println(b);
+    io:println(c);
 }

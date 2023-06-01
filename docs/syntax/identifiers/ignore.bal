@@ -1,3 +1,4 @@
+// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -15,13 +16,12 @@ public function main() {
     io:println("Average: ", average / grades.length());
 
     foreach [string, string, int...] [firstName, lastName, _, _, _] in grades {
-        _ = printStudentName(firstName, lastName);
+        _ = printName(firstName, lastName);
     }
 }
 
-function printStudentName(string firstName, string lastName) returns boolean {
-    io:println(firstName, " ", lastName);
-
+function printName(string fname, string lname) returns boolean {
+    io:println(fname, " ", lname);
     // Return only to illustrate that the return value is not used by the caller.
     return true;
 }

@@ -1,3 +1,4 @@
+// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -8,8 +9,8 @@ public function main() {
     byte[] d = base64 `ABCD pqrs
                      5678 +/12`;
 
-    io:println(a);  //!
-    io:println(b);  //!
-    io:println(c);  //!
-    io:println(d);  //!
+    io:println(a);
+    io:println(b);
+    io:println(c);
+    io:println(d);
 }

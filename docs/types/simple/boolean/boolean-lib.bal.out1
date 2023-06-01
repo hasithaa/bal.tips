@@ -1,4 +1,0 @@
-Boolean Lang Library Functions:
-    fromString("TRUE"): true
-    fromString("FALSE"): false
-    
