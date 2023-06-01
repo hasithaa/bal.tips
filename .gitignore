@@ -3,7 +3,8 @@ public/
 resources
 .hugo_build.lock
 node_modules
-
+themes/baltips/node_modules
+themes/baltips/assets/scss/theme.css
 
 # Ignore Gradle project-specific cache directory
 .gradle

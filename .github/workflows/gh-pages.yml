@@ -67,6 +67,9 @@ jobs:
         id: test
         run: ./gradlew test --continue ${{ env.balBuild }}
       - name: Execute Gradle Hugo
+        id: clean
+        run: ./gradlew clean
+      - name: Execute Gradle Hugo
         id: build
         run: ./gradlew hugo
       - name: Deploy
