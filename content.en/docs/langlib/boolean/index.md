@@ -3,7 +3,6 @@ title : Boolean Lang Library
 description : The Ballerina Boolean lang library - `ballerina\lang.boolean` provides functions that operate on a `boolean` value.
 date: 2023-01-01
 weight : 11100
-type : docs
 ballerina_type : [boolean]
 ballerina_module : [boolean]
 menu:

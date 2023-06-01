@@ -3,7 +3,6 @@ title : Array Lang Library
 description : The Ballerina Array lang library - `ballerina/lang.array` provides functions that operate on list values, such as arrays and tuples.
 date: 2023-01-01
 weight : 11050
-type : docs
 ballerina_type : [list]
 ballerina_lang : []
 ballerina_module : [array]

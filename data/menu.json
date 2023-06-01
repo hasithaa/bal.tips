@@ -27,7 +27,12 @@
             "key": "literals",
             "name": "Literals",
             "pre": "<i class='bi bi-collection'></i>"
+        },{
+            "key": "templates",
+            "name": "Templates",
+            "pre": "<i class='bi bi-collection'></i>"
         }
+
     ],
     "video": [],
     "module": [

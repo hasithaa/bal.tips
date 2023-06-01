@@ -5,7 +5,6 @@ date: 2023-04-20
 weight : 6031
 images :
   - /docs/types/rules/numeric-literals/numeric-algo.svg
-type : docs
 ballerina_type : [int, float, decimal]
 ballerina_lang : [literal]
 menu:
