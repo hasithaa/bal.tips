@@ -27,8 +27,10 @@
                     {{end}}
                 {{end}}
                 <div class="card-body p-2">
-                    {{ with .Title}}
-                    <h5 class="card-title mb-2">{{ . | safeHTML | markdownify }}</h5>
+                    {{ if .Title}}
+                    <h5 class="card-title mb-2">{{ .Title | safeHTML | markdownify }}</h5>
+                    {{ else }}
+                        {{ errorf "No title for %s" .Permalink }}
                     {{ end }}
                     <p>
                         {{ .Description | safeHTML | markdownify }}
