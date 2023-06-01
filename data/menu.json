@@ -68,8 +68,18 @@
     ],
     "types": [
         {
+            "key": "basic",
+            "name": "Type System",
+            "pre": "<i class='bi bi-collection'></i>"
+        },
+        {
+            "key": "simple",
+            "name": "Simple Basic Types",
+            "pre": "<i class='bi bi-collection'></i>"
+        },
+        {
             "key": "rules",
-            "name": "Type System Rules",
+            "name": "Compiler Algorithms",
             "pre": "<i class='bi bi-collection'></i>"
         }
     ],

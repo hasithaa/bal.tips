@@ -57,6 +57,16 @@ publisher='bal.tips by Hasitha Aravinda'
 GoogleTag='G-T6DGTL873C'
 author='Hasitha Aravinda'
 
+[params.images]
+defaultArticle = [
+  '/images/mascot/m/m1.png',
+  '/images/mascot/m/m2.png',
+  '/images/mascot/m/m3.png',
+  '/images/mascot/m/m4.png',
+  '/images/mascot/m/m5.png',
+  '/images/mascot/m/m6.png'
+  ]
+
 [params.Copyright]
 startYear = 2022
 text = 'bal.tips by Hasitha Aravinda'
