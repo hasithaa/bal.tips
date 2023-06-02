@@ -2,6 +2,7 @@
 {{ $header := .Get "header" }}
 {{ $image := .Get "image" }}
 {{ $imageAlt := .Get "imageAlt"}}
+{{ $imageTitle := .Get "imageTitle"}}
 {{ $imagePos := default "left" (.Get "imagePos")}}
 {{ $col := default 5 (.Get "col")}}
 {{ $text := default "text-center" (.Get "text")}}
@@ -11,8 +12,9 @@
     {{ if eq $imagePos "left" }}
     <div class="col-md-4">
       <img
+        title = "{{ $imageTitle | safeHTMLAttr }}"
         src="{{ $image | safeURL }}"
-        alt="{{ $imageAlt | safeHTML | markdownify }}"
+        alt="{{ $imageAlt | safeHTMLAttr }}"
         class="img-fluid rounded-start"
       />
     </div>
@@ -26,6 +28,7 @@
     {{ if eq $imagePos "right" }}
     <div class="col-md-4">
       <img
+        title = "{{ $imageTitle | safeHTMLAttr }}"
         src="{{ $image | safeURL }}"
         alt="{{ $imageAlt | safeHTML | markdownify }}"
         class="img-fluid rounded-start"
@@ -50,7 +53,7 @@
   {{ .Inner | safeHTML | markdownify }}<br>
   </div>
   <div class="card-footer text-muted">
-    {{ with .Get "url" }}<a href="{{.}}" class="my-2 btn btn-primary btn-sm">Read More</a>{{end}}
+    {{ with .Get "url" }}<a href="{{.}}" class="my-2 btn btn-primary btn-sm" title="Follow {{ . }} for more details">Read More</a>{{end}}
   </div>
 </div>
 {{ end }}

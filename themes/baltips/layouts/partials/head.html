@@ -9,6 +9,9 @@
         content="{{ if $.Site.Params.Copyright.text}}{{ $.Site.Params.Copyright.text | plainify }}{{else}}{{ $.Site.Title | plainify }}{{end}} © {{with $.Site.Params.Copyright.startYear}}{{.}} - {{end}}{{ .Date | time.Format "2006" }}">
     <meta name="keywords" content={{ delimit .Keywords ", " }} />
     <meta name="description" content="{{ .Description }}">
+    {{ if and .Params.images (gt (len .Params.images) 0) }}
+    <link rel="{{index .Params.images 0}}" />
+    {{ end}}
     <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
     
     {{ if .Params.author }}
@@ -16,12 +19,8 @@
     {{ else }}
         <meta name="author" content="{{ .Site.Params.Head.author }}" />
     {{ end }}
-    {{ if .Site.Params.schema }}
-        {{ template "_internal/schema.html" . }}
-    {{ end }}
-    {{ if .Site.Params.twitter_cards }}
-    {   { template "_internal/twitter_cards.html" . }}
-    {{ end }}
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
     {{ if and .Params.images (gt (len .Params.images) 0) }}
         <link rel="image_src" href="{{ relURL (index .Params.images 0 )  }}" />
     {{ end }}

@@ -1,6 +1,6 @@
 ---
-title: Home
-description: Ballerina Coding Tips
+title: Ballerina Coding Tips
+description: 👋 Greetings, I'm [𝐇𝐚𝐬𝐢𝐭𝐡𝐚 𝐀𝐫𝐚𝐯𝐢𝐧𝐝𝐚](https://hasithaa.github.io), a member of the Ballerina language design and implementation team. Welcome to Bal.Tips, my technical blog where I share my thoughts on all things Ballerina, along with programming tips and related topics.
 weight: 10
 layout: "single"
 menu: 
@@ -13,7 +13,7 @@ menu:
 # Ballerina Coding Tips
 
 
-{{< card image="/images/mascot/welcome.png" imagePos="right" col="12">}}
+{{< card image="/images/mascot/welcome.png" imageTitle="Bal.Tip Logo" imageAlt="Bal.Tip Logo" imagePos="right" col="12">}}
 
 👋 Greetings, I'm [𝐇𝐚𝐬𝐢𝐭𝐡𝐚 𝐀𝐫𝐚𝐯𝐢𝐧𝐝𝐚](https://hasithaa.github.io), a member of the Ballerina language design and implementation team. Welcome to Bal.Tips, my technical blog where I share my thoughts on all things Ballerina, along with programming tips and related topics.
 {.card-text .drop-cap}

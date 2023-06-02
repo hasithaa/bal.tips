@@ -14,7 +14,7 @@ task develop() {
                 def output = true
                 def failed = false
                 if (file.name.endsWith("error.bal")) {
-                    cmd = "bal build ${file.name} 2> ${file.name}.out"
+                    cmd = "bal build ${file.name} &> ${file.name}.out"
                     output = false
                 }
                 try {
@@ -51,7 +51,7 @@ task testError() {
                 }
                 try {
                     exec {
-                        commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name} 2> build/${file.name}.out"
+                        commandLine "bash", "-c", "bal build -o ${file.name}.jar ${file.name} &> build/${file.name}.out"
                         workingDir currentDir
                     }
                 } catch (GradleException e) {
@@ -105,7 +105,7 @@ task testOutput() {
                 if (compile) {
                     try {
                         exec {
-                            commandLine "bash", "-c", "java -jar build/${file.name}.jar > build/${file.name}.out"
+                            commandLine "bash", "-c", "java -jar build/${file.name}.jar &> build/${file.name}.out"
                             workingDir currentDir
                         }
                     } catch (GradleException e) {

@@ -99,16 +99,21 @@ public function main() {
     int value = 100; //$
     string s3 = string `Price $${value}`; //$
 //!
+    string s4 = string `Some long text, but you need to break the source code ${""
+    } into multiple lines without affecting the string value.`; //$
+//!
     io:println(s1); //!
     io:println(s2); //!
     io:println(s3); //!
+    io:println(s4); //!
 }
 ```
 
 **Code Breakdown**
 {.tip-code-full}
 
-* Line 4 - Escape characters are not supported in String Template.
-* Line 5 - Use interpolation to type such characters like backtick character i.e. ``${"`"}``.
-* Line 8 - Additional `$` character doesn't have any special meaning in String Template.
+* Line 4: Escape characters are not supported in String Template.
+* Line 5: Use interpolation to type such characters like backtick character i.e. ``${"`"}``.
+* Line 8: Additional `$` character doesn't have any special meaning in String Template.
+* Line 10-11: You can break the source code into multiple lines without affecting the string value, by using an empty string interpolation expression. 
 {.tip-code-full}

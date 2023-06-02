@@ -5,6 +5,7 @@ resources
 node_modules
 themes/baltips/node_modules
 themes/baltips/assets/scss/theme.css
+.DS_Store
 
 # Ignore Gradle project-specific cache directory
 .gradle
