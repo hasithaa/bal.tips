@@ -1,10 +1,16 @@
+<meta name="twitter:card" content="summary_large_image"/>
+
 {{$pageFile := $.Page.File }}
 {{ with $pageFile}}
     {{ if eq .Ext "md" }}
         {{ $filePng := print $pageFile.Dir $pageFile.BaseFileName ".png" }}
         {{ if fileExists $filePng }}
-            <meta name="twitter:card" content="summary_large_image"/>
-            <meta name="twitter:image" content="{{ $filePng | absURL }}"/>
+            {{ with $.Params.images }}
+                <meta name="twitter:image" content="{{ index . 0 | absURL }}"/>
+            {{ else }}     
+                <meta name="twitter:image" content="{{ $filePng | absURL }}"/>
+            {{ end}}
+            <meta property="og:image" content="{{ $filePng | absURL }}"/>
             <link rel="image_src" href="{{ $filePng | absURL }}" />
         {{ else }}
             {{ errorf "image not found: %s" $filePng}}
