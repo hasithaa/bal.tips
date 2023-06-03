@@ -1,3 +1,5 @@
+Compiling source
+	variable_shadowing-error.bal
 ERROR [variable_shadowing-error.bal:(10:13,10:14)] redeclared symbol 'a'
 ERROR [variable_shadowing-error.bal:(12:13,12:17)] redeclared symbol 'num2'
 error: compilation contains errors

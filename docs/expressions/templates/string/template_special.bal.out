@@ -1,3 +1,4 @@
 \\ \n \t
 backtick - `
 Price $100
+Some long text, but you need to break the source code  into multiple lines without affecting the string value.

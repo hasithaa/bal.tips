@@ -8,7 +8,11 @@ public function main() {
     int value = 100;
     string s3 = string `Price $${value}`;
 
+    string s4 = string `Some long text, but you need to break the source code ${""
+    } into multiple lines without affecting the string value.`;
+
     io:println(s1);
     io:println(s2);
     io:println(s3);
+    io:println(s4);
 }
