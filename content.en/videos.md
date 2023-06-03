@@ -1,5 +1,5 @@
 ---
-title: Ballerina Tips Video Playlist
+title: Ballerina Tips Video
 description: Ballerina Coding Tips - Videos
 weight: 20000
 menu: 

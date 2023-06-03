@@ -6,7 +6,8 @@
     "pagefind": "^0.11.0"
   },
   "scripts": {
-    "buildsearch": "pagefind --source public"
+    "buildsearch": "pagefind --source public",
+    "buildsvg": "node create_image.js"
   },
   "author": "Hasitha Aravinda",
   "license": "MIT"
