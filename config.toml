@@ -50,6 +50,9 @@ footer = [
   { parent= 'links', params={ group = 'ballerina'}, name = 'Talk to Community', pre = '<i class="bi bi-discord"></i>', url = 'https://discord.gg/ballerinalang', weight = 300125}
 ]
 
+[social]
+twitter='HasithaAravinda'
+
 [params]
 
 [params.Head]

@@ -20,7 +20,8 @@
         <meta name="author" content="{{ .Site.Params.Head.author }}" />
     {{ end }}
     {{ template "_internal/schema.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ partial "twitter.html" . }}
     {{ if and .Params.images (gt (len .Params.images) 0) }}
         <link rel="image_src" href="{{ relURL (index .Params.images 0 )  }}" />
     {{ end }}
