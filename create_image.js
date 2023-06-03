@@ -35,10 +35,10 @@ function processMarkdownFile(filePath) {
       replaceTitleInSVG(svgFilePath, title);
       console.log(`${svgFilePath} : Replaced title in SVG file for "${title}"`);
     } else {
-      console.error(`${filePath} : <Error> No title Found:`);
+      throw new Error(`${filePath} : No title Found:`);
     }
   } catch (error) {
-    console.error(`${filePath} : Error processing file:`, error);
+    throw new(`${filePath} : Error processing file:`, error);
   }
 }
 
