@@ -1,13 +1,13 @@
 {{$pageFile := $.Page.File }}
 {{ with $pageFile}}
     {{ if eq .Ext "md" }}
-        {{ $pageSVG := print $pageFile.Dir $pageFile.BaseFileName ".svg" }}
-        {{ if fileExists $pageSVG }}
+        {{ $filePng := print $pageFile.Dir $pageFile.BaseFileName ".png" }}
+        {{ if fileExists $filePng }}
             <meta name="twitter:card" content="summary_large_image"/>
-            <meta name="twitter:image" content="{{ $pageSVG | absURL }}"/>
-            <link rel="image_src" href="{{ $pageSVG | absURL }}" />
+            <meta name="twitter:image" content="{{ $filePng | absURL }}"/>
+            <link rel="image_src" href="{{ $filePng | absURL }}" />
         {{ else }}
-            {{ errorf "image not found: %s" $pageSVG}}
+            {{ errorf "image not found: %s" $filePng}}
         {{ end}}
     {{ end}}
 {{end}}

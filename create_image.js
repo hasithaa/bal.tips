@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { convertFile}  = require('convert-svg-to-png');
 
 // Set the path to the "content.en" folder
 const folderPath = 'content.en';
@@ -70,6 +71,10 @@ function replaceTitleInSVG(svgFilePath, title) {
   const wrappedTitle = wrapSvgText(title, 30);
   const replacedSVG = svgTemplate.replace('REPLACE_TITLE', createTspanElements(wrappedTitle));
   fs.writeFileSync(svgFilePath, replacedSVG);
+  (async() => {
+  const outputFilePath = convertFile(svgFilePath);
+  console.log(`${outputFilePath} : Converted SVG to PNG`);
+  })();
 }
 
 // Wrap text if it exceeds the specified width

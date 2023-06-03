@@ -21,7 +21,7 @@
     {{ end }}
     {{ template "_internal/schema.html" . }}
     {{ template "_internal/opengraph.html" . }}
-    {{ partial "twitter.html" . }}
+    {{ partial "seo.html" . }}
     {{ if and .Params.images (gt (len .Params.images) 0) }}
         <link rel="image_src" href="{{ relURL (index .Params.images 0 )  }}" />
     {{ end }}
