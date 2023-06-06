@@ -2,6 +2,7 @@
 import ballerina/io;
 
 public function main() returns error? {
+
     boolean t1 = check boolean:fromString("true");
     boolean f1 = check boolean:fromString("false");
 

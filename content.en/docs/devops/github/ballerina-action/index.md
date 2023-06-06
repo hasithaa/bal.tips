@@ -25,7 +25,7 @@ The following code block shows how you can configure the GitHub Action to build 
 ![`setup-ballerina` in action](/docs/devops/github/ballerina-action/action.png)
 {.tip-50-frame}
 
-* The `setup-ballerina` GitHub Action `v1` release requires a mandatory input of the Ballerina Swan Lake distribution version in the form of "Swan Lake channel" as listed in the `bal dist list` command. i.e. `2201.3.0`, `2201.3.2`, etc. This will install Ballerina on workflow environment and `bal` command is added to the `PATH`.
+* The `setup-ballerina` GitHub Action `v1` release requires a mandatory input of the Ballerina Swan Lake distribution version in the form of "Swan Lake channel" as listed in the `bal dist list` command. i.e. `2201.5.0`, `2201.6.0`, etc. This will install Ballerina on workflow environment and `bal` command is added to the `PATH`.
 * This action is supported on Ubuntu, MacOS, and Windows, and facilitates easy integration of Ballerina into your GitHub workflow.
 * After you install Ballerina command, you can use `run` to execute the `bal` command.
 

@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       balVersion:
-        default: 2201.5.0
+        default: 2201.6.0
         description: "Ballerina Version"
       fullBuild:
         type: boolean
@@ -24,7 +24,7 @@ jobs:
           if [[${{ github.event.inputs.balVersion }}]]; then
             echo ${{ github.event.inputs.balVersion }}
           else
-            echo 2201.5.0   # There are two place to Update in this file
+            echo 2201.6.0   # There are two place to Update in this file
           fi
           )" >> $GITHUB_ENV
           echo "balBuild=$(

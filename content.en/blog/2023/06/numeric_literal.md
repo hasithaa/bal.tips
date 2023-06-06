@@ -76,7 +76,7 @@ For example, the following code would result in a compile-time error:
 ```ballerina {filename="numeric-error.bal" result="error"}
 float x = 10.0; //$
 decimal y = 10 + x; //error //$
-int x = 1.0; // floating point literal on the right-hand side. //$
+int z = 1.0; // error - floating point literal on the right-hand side. //$
 ```
 However, we do allow safe type inference from literals, as seen in float x = 1. This rationale is clarified in the earlier mentioned algorithm.
 
