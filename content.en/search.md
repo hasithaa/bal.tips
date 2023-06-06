@@ -3,6 +3,7 @@ title: 🔎 Search
 description: Search
 date : 2022-12-16
 weight : 40000
+type: internal
 ---
 
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">

@@ -3,6 +3,7 @@ title: 📰 Ballerina Language News
 description: News and updates related to Ballerina, such as new releases or upcoming events.
 date : 2022-12-16
 weight : 20050
+type: internal
 menu: 
   footer:
     name: 'Ballerina News'

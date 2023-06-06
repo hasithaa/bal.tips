@@ -13,7 +13,7 @@
             <div class="pt-2">
                 <!-- canonicalUrl -->
                 {{ if .Params.canonicalUrl }}
-                <div class="markdown" style="text-align:justify">
+                <div class="markdown">
                     <blockquote class="">
                         📃 This article was originally published on <a href="{{ .Params.canonicalUrl }}" title="See Original Article" target="_blank">{{ default "this blog" ($.Params.canonicalSite | markdownify) }}</a>.
                     </blockquote>

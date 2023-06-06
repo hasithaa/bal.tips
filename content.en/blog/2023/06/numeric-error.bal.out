@@ -1,0 +1,4 @@
+Compiling source
+	numeric-error.bal
+ERROR [numeric-error.bal:(4:5,4:6)] redeclared symbol 'x'
+error: compilation contains errors

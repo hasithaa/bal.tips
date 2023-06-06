@@ -6,6 +6,7 @@
  */ 
 rootProject.name = 'Bal.tips Website'
 include('buildTasks')
+include(':blog-2023-06')
 include(':docs-expressions-literals-boolean')
 include(':docs-expressions-literals-byte-array')
 include(':docs-expressions-literals-float')
@@ -27,6 +28,7 @@ include(':docs-types-rules-numeric-literals')
 include(':docs-types-simple-boolean')
 include(':docs-types-simple-decimal')
 include(':docs-types-simple-float')
+project(':blog-2023-06').projectDir = file('content.en/blog/2023/06/')
 project(':docs-expressions-literals-boolean').projectDir = file('content.en/docs/expressions/literals/boolean/')
 project(':docs-expressions-literals-byte-array').projectDir = file('content.en/docs/expressions/literals/byte-array/')
 project(':docs-expressions-literals-float').projectDir = file('content.en/docs/expressions/literals/float/')

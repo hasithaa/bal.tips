@@ -2,6 +2,7 @@
 title: Ballerina Tips Video
 description: Ballerina Coding Tips - Videos
 weight: 20000
+type: internal
 menu: 
   footer:
     name: 'Bal.Tips Videos'

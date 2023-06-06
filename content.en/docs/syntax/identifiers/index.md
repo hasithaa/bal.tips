@@ -1,7 +1,17 @@
 ---
 title: "Identifiers - Best Practices and Use Cases"
-description: "An identifier is a name given to an element in a program, such as a variable, function, or type. Identifiers allow programmers to identify and refer to specific elements in the source code."
-keywords: [identifiers, naming conventions, naming rules, naming guidelines]
+description: "An identifier is a name given to an element in a program, such as a variable, function, or type. Identifiers allow programmers to identify and refer to specific elements in the source code. Master the Ballerina Identifiers Syntax with this comprehensive guide. Perfect for beginners and advanced users alike, understand the nuances of Ballerina programming syntax and elevate your coding skills"
+keywords:
+  - Ballerina Identifiers Naming Conventions
+  - Ballerina Syntax and Naming Rules
+  - Understanding Ballerina Identifiers and Naming Guidelines
+  - Ballerina Language Syntax and Naming Conventions
+  - Ballerina Identifiers Tutorial with Naming Rules
+  - Ballerina Programming Syntax and Naming Guidelines
+  - Ballerina Identifiers and Naming Conventions Explained
+  - Ballerina Code Identifiers and Naming Rules
+  - Ballerina Syntax for Beginners - Identifiers and Naming Conventions
+  - Advanced Ballerina Syntax and Naming Guidelines
 images: [/docs/syntax/identifiers/Identifiers.png]
 date: 2023-03-14
 images: [/docs/syntax/identifiers/Identifiers.png]

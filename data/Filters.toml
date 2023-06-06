@@ -140,6 +140,9 @@ module = 'Modules'
 package = 'Packages'
 github = 'Github'
 cicd = 'CI / CD'
+compiler = 'Compiler'
+type-system = 'Type System'
+jballerina = 'JBallerina Runtime'
 
 [ballerina_module]
 array = 'ballerina/lang.array'

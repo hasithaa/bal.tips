@@ -24,6 +24,7 @@ As of now, it has only the `fromString` function.
 import ballerina/io; //!
 //!
 public function main() returns error? {
+
     boolean t1 = check boolean:fromString("true"); //$
     boolean f1 = check boolean:fromString("false"); //$
 //!

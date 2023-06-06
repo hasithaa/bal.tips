@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { convertFile}  = require('convert-svg-to-png');
+const { convertFile } = require('convert-svg-to-png');
 
 // Set the path to the "content.en" folder
 const folderPath = 'content.en';
@@ -36,10 +36,10 @@ function processMarkdownFile(filePath) {
       replaceTitleInSVG(svgFilePath, title);
       console.log(`${svgFilePath} : Replaced title in SVG file for "${title}"`);
     } else {
-      throw new Error(`${filePath} : No title Found:`);
+      console.error(`Error : ${filePath} : No title Found:`);
     }
   } catch (error) {
-    throw new(`${filePath} : Error processing file:`, error);
+    console.error(`Error : ${filePath} : Error processing file:`, error);
   }
 }
 
@@ -71,9 +71,9 @@ function replaceTitleInSVG(svgFilePath, title) {
   const wrappedTitle = wrapSvgText(title, 30);
   const replacedSVG = svgTemplate.replace('REPLACE_TITLE', createTspanElements(wrappedTitle));
   fs.writeFileSync(svgFilePath, replacedSVG);
-  (async() => {
-  const outputFilePath = convertFile(svgFilePath);
-  console.log(`${outputFilePath} : Converted SVG to PNG`);
+  (async () => {
+    const outputFilePath = convertFile(svgFilePath);
+    console.log(`${outputFilePath} : Converted SVG to PNG`);
   })();
 }
 

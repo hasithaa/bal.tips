@@ -6,7 +6,11 @@
         {{ .Content }}
         <div class="mt-5 row d-flex justify-content-center">
             {{ $images := default slice (shuffle $.Site.Params.images.defaultArticle)}}
-            {{ range $page:= .Pages.ByWeight }}
+            {{ $Paginator := .Paginator.Pages }}
+            {{ if eq .Params.sort "date"}}
+                {{ $Paginator = .Paginator.Pages.ByDate.Reverse }}
+            {{ end }}
+            {{ range $page:= $Paginator }}
             <div class="card m-1 col-md-3 text-center bg-transparent">
                 <h4 class="card-header"><i class="bi bi-newspaper"></i>&nbsp;Article</h4>
                 {{ if .Params.images}}
@@ -33,14 +37,36 @@
                         {{ errorf "No title for %s" .Permalink }}
                     {{ end }}
                     <p>
-                        {{ .Description | safeHTML | markdownify }}
+                        {{ .Description | safeHTML | markdownify | truncate 100 }}
                     </p>
+                    {{ .Date.Format "January 2, 2006"}}
                 </div>
                 <div class="card-footer text-muted">
                     <a href="{{.Permalink}}" class="my-2 btn btn-primary btn-sm" title="{{ .Title }}">Read More</a>
                 </div>
             </div>
             {{end}}
+            <div class="mt-5 row d-flex justify-content-center text-reset">
+                {{ if .Paginator.HasPrev }}
+                    <a href="{{ .Paginator.Prev.URL }}" class="btn btn-outline-primary btn-sm col-1 m-3" title="Go to previous page">Previous</a>
+                {{ else }}
+                    <a href="#" class="btn btn-outline-secondary btn-sm col-1 m-3 disabled" title="Go to previous page">Previous</a>
+                {{ end }}
+                
+                {{ range $index, $pager := .Paginator.Pagers }}
+                    {{ if eq (add $index 1) $.Paginator.PageNumber }}
+                        <a href="{{ .URL }}" class="btn btn-secondary btn-sm col-1 m-3 disabled" title="Current page {{ .PageNumber }}" ><strong>{{ .PageNumber }}</strong></a>
+                    {{ else }}
+                        <a href="{{ .URL }}" class="btn btn-outline-primary btn-sm col-1 m-3" title="Go to page {{ .PageNumber }}">{{ .PageNumber }}</a>
+                    {{ end }}
+                {{ end }}
+                
+                {{ if .Paginator.HasNext }}
+                    <a href="{{ .Paginator.Next.URL }}" class="btn btn-outline-primary btn-sm col-1 m-3" title="Go to next page">Next</a>
+                {{ else }}
+                    <a href="#" class="btn btn-outline-secondary btn-sm col-1 m-3 disabled" title="Go to next page">Next</a>
+                {{ end }}
+            </div>
         </div>
     {{ end}}
 {{ end }}

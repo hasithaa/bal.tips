@@ -66,7 +66,7 @@
             {{ if $output }}
                 <i class="bi bi-terminal"></i>&nbsp;<code>bal run&nbsp;{{- $filename -}}</code>
             {{ else if $error }}
-                <i class="bi bi-exclamation-triangle"></i> Compiler Error
+                <i class="bi bi-exclamation-triangle"></i> Compilation Error
             {{ end }}
         </a>
         <div class="collapse p-2" id="collapsibleDiv{{$anchor}}">
