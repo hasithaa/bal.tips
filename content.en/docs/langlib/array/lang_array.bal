@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 import ballerina/lang.array;
 
@@ -12,3 +11,4 @@ public function main() {
     io:println("index: ", index);
     io:println("sortedNumbers: ", sortedNumbers);
 }
+// Auto generated file from index.md, do not modify!

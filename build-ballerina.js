@@ -43,7 +43,7 @@ async function createGradleFile(buildGradlePath, buildGradleContent, filePath) {
 
 async function createBalfile(outputFilePath, content, filename, filePath) {
     try {
-        content = "// Auto generated file from index.md, do not modify!\n" + content;
+        content = content + "// Auto generated file from index.md, do not modify!\n" ;
         await fs.writeFile(outputFilePath, content.replace(/ *\/\/[!$].*$/gm, ''))
         console.log(`File ${filename} has been created with content from ${filePath}`);
     } catch (err) {

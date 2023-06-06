@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -10,3 +9,4 @@ public function main() {
     io:println(tmp.strings);
     io:println(tmp.insertions);
 }
+// Auto generated file from index.md, do not modify!

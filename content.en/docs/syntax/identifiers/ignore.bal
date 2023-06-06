@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -25,3 +24,4 @@ function printName(string fname, string lname) returns boolean {
     // Return only to illustrate that the return value is not used by the caller.
     return true;
 }
+// Auto generated file from index.md, do not modify!

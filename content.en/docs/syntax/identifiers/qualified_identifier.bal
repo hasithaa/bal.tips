@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/http;
 import ballerina/io;
 
@@ -12,3 +11,4 @@ public function main() returns error? {
     // Refers to io:println function
     io:println("Qualified Identifier");
 }
+// Auto generated file from index.md, do not modify!

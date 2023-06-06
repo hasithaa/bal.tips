@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() returns error? {
@@ -8,3 +7,4 @@ public function main() returns error? {
 
     io:println(string `Boolean fromString - True: ${fromStringTrue}, False: ${fromStringFalse}`);
 }
+// Auto generated file from index.md, do not modify!

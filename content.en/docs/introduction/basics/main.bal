@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -7,3 +6,4 @@ public function main() {
     string greeting = "👋🌏";
     io:println(greeting);
 }
+// Auto generated file from index.md, do not modify!

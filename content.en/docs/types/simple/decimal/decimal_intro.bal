@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -18,3 +17,4 @@ public function main() {
     io:println("Product of decimals:", product);
     io:println("Quotient of decimals:", quotient);
 }
+// Auto generated file from index.md, do not modify!
