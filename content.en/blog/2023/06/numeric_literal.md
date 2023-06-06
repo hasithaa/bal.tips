@@ -49,13 +49,13 @@ We ended up with three built-in basic types: `int`, `float`, and `decimal`.
 - `float` - Represents 64-bit IEEE 754-2008 binary floating-point numbers
 - `decimal` - Represents 128-bit IEEE 754-2008 decimal floating-point values
 
-It is simple to explain and supports Ballerina upcases (I will cover to Performance aspects later. :) ). With help of union types, we defined other types such as `byte`, `signed32`, `unsigned32`, `signed16`, `unsigned16`, `signed8`, and `unsigned8` as subtypes of `int`. This was done to reduce complexity and to still provide a range of types for different advanced use cases. For example, the `byte` type is defined as a union of integers between 0 and 255, inclusive. The same principle applies to the other integer subtypes. 
+It is simple to explain and supports common use cases (I will cover to Performance aspects later. :) ). With help of union types, we defined other types such as `byte`, `signed32`, `unsigned32`, `signed16`, `unsigned16`, `signed8`, and `unsigned8` as subtypes of `int`. This was done to reduce complexity and to still provide a range of types for different advanced use cases. For example, the `byte` type is defined as a union of integers between 0 and 255, inclusive. The same principle applies to the other integer subtypes. 
 
-This design facilitated better better support for JSON. Ballerina defines the json type as a union of `()|int|float|decimal|boolean|string|json[]|map<json>`, preferring `decimal` as the default numeric type when constructing a json value from a string.
+This design facilitated better support for JSON. Ballerina defines the json type as a union of `()|int|float|decimal|boolean|string|json[]|map<json>`, preferring `decimal` as the default numeric type when constructing a json value from a string.
 
-Another design decision we made was to not to support implicit conversion among numerical types. I will discuss this in details next. 
+Another design decision we made was to not to support implicit conversion among numerical types. I will discuss this in detail next.
 
-The basic idea is make the static typing simple and easy to understand. But at runtime, with enough information, we can represent a value in best optimized way, which is a implementation detail and mostly developers don't want to know. 
+The basic idea is to make the static typing simple and easy to understand. But at runtime, with enough information, we can represent a value in best optimized way, which is an implementation detail and mostly developers don't want to know. 
 
 ## Working with Literals 
 
@@ -75,7 +75,7 @@ For example, the following code would result in a compile-time error:
     
 ```ballerina {filename="numeric-error.bal" result="error"}
 float x = 10.0; //$
-decimal y = 10 + x; //error //$
+decimal y = 10 + x; // error //$
 int z = 1.0; // error - floating point literal on the right-hand side. //$
 ```
 However, we do allow safe type inference from literals, as seen in float x = 1. This rationale is clarified in the earlier mentioned algorithm.
