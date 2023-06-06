@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -19,3 +18,4 @@ public function main() {
     numbers.unshift(-1, 0);
     io:println("Numbers After Unshift: ", numbers);
 }
+// Auto generated file from index.md, do not modify!

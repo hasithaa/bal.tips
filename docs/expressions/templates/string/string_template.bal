@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 type Employee record {
@@ -20,3 +19,4 @@ Your salary is ${emp.salary}`;
     io:println(s1);
     io:println(s2);
 }
+// Auto generated file from index.md, do not modify!

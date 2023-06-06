@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -82,3 +81,4 @@ type 사람 record {
     int 나이;
     string 나라;
 };
+// Auto generated file from index.md, do not modify!

@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 function sumIf(int num1, int num2, int max) returns int {
@@ -21,3 +20,4 @@ public int max = 40; // module-scope and public
 public function main() {
     io:println(sumIf(a, a, 200));
 }
+// Auto generated file from index.md, do not modify!

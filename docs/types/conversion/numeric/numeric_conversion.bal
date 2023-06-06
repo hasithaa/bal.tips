@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -21,3 +20,4 @@ public function main() {
     io:println("v5:", v5);
     io:println("v6:", v6);
 }
+// Auto generated file from index.md, do not modify!

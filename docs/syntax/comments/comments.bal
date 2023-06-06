@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 // Hello world Ballerina Program.
 import ballerina/io;
 
@@ -11,3 +10,4 @@ public function main() {
 
 // End of this example.
 
+// Auto generated file from index.md, do not modify!

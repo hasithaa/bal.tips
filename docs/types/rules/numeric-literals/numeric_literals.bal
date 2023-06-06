@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 const int TEN = 10;
@@ -23,3 +22,4 @@ public function main() {
     io:println(a6 is int);
     io:println(a7 is float);
 }
+// Auto generated file from index.md, do not modify!

@@ -1,5 +1,5 @@
 Compiling source
 	numeric-error.bal
-ERROR [numeric-error.bal:(3:13,3:19)] operator '+' not defined for 'decimal' and 'float'
-ERROR [numeric-error.bal:(4:9,4:12)] incompatible types: expected 'int', found 'float'
+ERROR [numeric-error.bal:(2:13,2:19)] operator '+' not defined for 'decimal' and 'float'
+ERROR [numeric-error.bal:(3:9,3:12)] incompatible types: expected 'int', found 'float'
 error: compilation contains errors

@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 public function main() {
@@ -8,3 +7,4 @@ public function main() {
 
     io:println(string `Boolean Literal - Truth: ${truth}, False: ${falseValue}`);
 }
+// Auto generated file from index.md, do not modify!

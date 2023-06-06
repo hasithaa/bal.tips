@@ -1,4 +1,3 @@
-// Auto generated file from index.md, do not modify!
 import ballerina/io;
 
 function demoSupportedOperations() {
@@ -53,3 +52,4 @@ public function main() returns error? {
     demoSupportedOperations();
     demoLanguageUsage();
 }
+// Auto generated file from index.md, do not modify!
