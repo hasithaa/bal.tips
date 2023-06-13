@@ -11,7 +11,7 @@
                 {{ $Paginator = .Paginator.Pages.ByDate.Reverse }}
             {{ end }}
             {{ range $page:= $Paginator }}
-            <div class="card m-1 col-md-3 text-center bg-transparent">
+            <div class="card border-secondary m-1 col-md-3 text-center bg-transparent">
                 <h4 class="card-header"><i class="bi bi-newspaper"></i>&nbsp;Article</h4>
                 {{ if .Params.images}}
                     {{with .Params.images}}

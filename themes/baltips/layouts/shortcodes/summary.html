@@ -4,7 +4,7 @@
     {{ if not $page }}
         {{ errorf "No page found for summary shortcode %s" $url }}
     {{ else }}
-    <div class="card m-1 col-md-3 text-center bg-transparent">
+    <div class="card border-secondary m-1 col-md-3 text-center bg-transparent">
         {{ with .Get "header" }}
         <h4 class="card-header">
         {{ . | safeHTML | markdownify }}

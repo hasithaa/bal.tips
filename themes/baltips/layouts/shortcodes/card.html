@@ -7,7 +7,7 @@
 {{ $col := default 5 (.Get "col")}}
 {{ $text := default "text-center" (.Get "text")}}
 {{ if $image }}
-<div class="card col-md-{{ $col }} mb-3 {{ $text }} bg-transparent">
+<div class="card border-secondary col-md-{{ $col }} mb-3 {{ $text }} bg-transparent">
   <div class="row col-md-12">
     {{ if eq $imagePos "left" }}
     <div class="col-md-4">
@@ -38,7 +38,7 @@
   </div>
 </div>
 {{ else }}
-<div class="card m-3 col-md-{{ $col }} {{ $text }} bg-transparent">
+<div class="card border-secondary m-3 col-md-{{ $col }} {{ $text }} bg-transparent">
   
   {{ with $header }}
   <h4 class="card-header">
