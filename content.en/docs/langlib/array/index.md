@@ -51,38 +51,38 @@ The graphical examples are for illustration purposes only and provide a visual a
 ### Stack and Queue Operations
 
 {{<cards>}}
-{{<card title="Pop">}}
+{{<card header="Pop">}}
 
 Removes and returns the last element of the list. 
 
-`[🍎, 🍇, 🍌, 🍓].pop()` ➜ `🍓`
+`[🍎, 🍇, 🍌, 🍓].pop()` <br>↓<br> Return = `🍓`<br> List = `[🍎, 🍇, 🍌]`
 
 The `pop` function removes and returns the last member of a given list. The arr argument specifies the list from which to remove the last member. The function returns the removed member.
 
 {{</card>}}
-{{<card title="Push">}}
+{{<card header="Push">}}
 
 Adds values to the end of an array.
 
-`[🍎, 🍇, 🍌, 🍓].push(🍒, 🍉)` ➜ `[🍎, 🍌, 🍇, 🍓, 🍒, 🍉]`
+`[🍎, 🍇, 🍌, 🍓].push(🍒, 🍉)` <br>↓<br> Return = `()`<br>List = `[🍎, 🍇, 🍌, 🍓, 🍒, 🍉]`
 
 The `push` function adds one or more values to the end of a given list. The _arr_ argument specifies the list to which the values will be added, and the _vals_ argument is a variable-length argument that can contain one or more values to add to the list.
 
 {{</card>}}
-{{<card title="Shift">}}
+{{<card header="Shift">}}
 
-Removes and returns first member of an array.
+Removes and returns the first member of an array.
 
-`[🍎, 🍇, 🍌, 🍓].shift()` ➜ `🍎`
+`[🍎, 🍇, 🍌, 🍓].shift()` <br>↓<br> Return = `🍎`<br>List = `[🍇, 🍌, 🍓]`
 
 The `shift` function removes and returns the first member of a given list. The _arr_ argument specifies the list from which to remove the first member. The function returns the removed member.
 
 {{</card>}}
-{{<card title="Unshift">}}
+{{<card header="Unshift">}}
 
 Adds values to the start of an array. 
 
-`[🍎, 🍇, 🍌, 🍓].unshift(🍒, 🍉)` ➜ `[🍒, 🍉, 🍎, 🍌, 🍇, 🍓]`
+`[🍎, 🍇, 🍌, 🍓].unshift(🍒, 🍉)` <br>↓<br> Return = `()`<br> List = `[🍒, 🍉, 🍎, 🍇, 🍌, 🍓]`
 
 The `unshift` function adds one or more values to the start of a given list. The _arr_ argument specifies the list to which the values will be added, and the _vals_ argument is a variable-length argument that can contain one or more values to add to the list.
 
