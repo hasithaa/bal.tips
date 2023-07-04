@@ -51,4 +51,4 @@ public function main() {
 {.tip-code-full}
 
 💡 Note: Both `()` and `null` are equivalent to `nil` in Ballerina. However, `()` is the preferred way to assign **nil** value to a variable.
-{.note .note-primary}
+{.tip-note .note-primary}

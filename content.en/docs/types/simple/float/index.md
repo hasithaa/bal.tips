@@ -69,7 +69,7 @@ The `float` type supports the following operations and many more language featur
 * Type Cast expression            - `<int> x`, `<decimal> x`
 
 <i class="bi bi-exclamation-octagon text-warning"></i> Floating-point operations can produce NaN, infinity, and negative zero, which may have unexpected results in some expressions. Also it can generate rounding errors due to the limited precision of floating-point values. Be cautious when using floating-point arithmetic. 
-{.note .note-warning}
+{.tip-note .note-warning}
 
 <i class="bi bi-info text-primary"></i> Unlike some programming languages, there is no implicit conversion between Ballerina numerical types. [Learn more]({{< relref "/docs/types/conversion/numeric" >}}).
 {.tip-note}

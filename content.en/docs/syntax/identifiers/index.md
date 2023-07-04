@@ -98,7 +98,7 @@ After the `Initial_Char`, any combination of characters including digits (`0-9`)
 {.tip-table .text-center}
 
 Note: Ballerina Identifier follows the requirements of Unicode TR31 for immutable identifiers; the set of characters is immutable in the sense that it does not change between Unicode versions.
-{.note .note-primary}
+{.tip-note .note-primary}
 
 ### Quoted Identifier{id="quoted-identifier"}
 
@@ -128,7 +128,7 @@ Ballerina allows any valid Unicode code point in an identifier, escaped using th
 {.tip-syntax}
 
 Note: However, some restrictions apply to escape sequences in identifiers, as outlined in the [Ballerina Language Specifications](https://ballerina.io/spec/lang/master/#lexical_structure). For instance, `\u{0000}` to `\u{D800}` and (excluding) `\u{DFFF}` to `u{10FFFF}` are not allowed in identifiers.
-{.note .note-warning}
+{.tip-note .note-warning}
 
 | ❌ Invalid Identifiers | ✅ Valid Identifiers | ✅ Valid Identifiers |
 |-----------------------|---------------------|---------------------|
@@ -164,7 +164,7 @@ public function main() returns error? {
 ```
 
 With Ballerina platform, restrictions apply to organization and module names. They only support alphanumeric characters, and names must start with an ASCII letter (A-Z, a-z). Underscores _ can be used to separate words composed of ASCII letters and digits (0-9), but names shouldn't end with an underscore.
-{.note .note-warning}
+{.tip-note .note-warning}
 
 
 # 💡 Use-Cases 
@@ -351,7 +351,7 @@ function printName(string fname, string lname) returns boolean { //$ ... }
 
 
 Note: It's important to note that this technique only works for non-error values. Ignoring errors is generally considered bad practice, and the Ballerina compiler will generate an error if you try to ignore a value that could contain an error.
-{.note .note-primary}
+{.tip-note .note-primary}
 
 # 💡 Naming Conventions
 

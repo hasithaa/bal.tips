@@ -33,4 +33,4 @@ A literal is a value that is specified directly in the source code. Ballerina su
 # Inferring the Type of a Numeric Literal - The Algorithm.
 
 This topic has been moved to its [own page](/docs/types/rules/numeric-literals/) to make it easier to find.
-{.note .note-warning}
+{.tip-note .note-warning}
