@@ -83,11 +83,11 @@ Let's see how this works with different examples <select id="numericAlgoSelect">
   <option value="m-11110-0100-1111001-100-1000-000-0100"><code>float e1 = 10.0d; //Error</code></option>
   <option value="n-11111-0010-1111001-100-1000-000-1000"><code>int e1 = 10.0; //Error</code></option>
 </select>.
-Please note that, after deciding the basic type of the literal, precise type of a literal is applied by the type checking algorithm.
+Please note that, after deciding the basic type of the literal, the precise type of a literal is applied by the type checking algorithm.
 
 If image is not visible enough, please [click here](/docs/types/rules/numeric-literals/numeric-algo.svg) to view it.
 
-<figure class="img-fluid img-thumbnail img-responsive mx-auto d-block rounded shadow-3 border p-2 m-2 w-50"><?xml version="1.0" encoding="UTF-8"?>
+<figure class="img-fluid img-thumbnail img-responsive mx-auto d-block rounded shadow-3 border p-2 m-2 w-75"><?xml version="1.0" encoding="UTF-8"?>
 <svg width="100%" version="1.1" viewBox="0 0 207.4 262.96" xmlns="http://www.w3.org/2000/svg">
  <g transform="translate(-1.7576 -2.1356)">
   <rect x="1.8874" y="2.2654" width="207.14" height="262.7" rx="1.5372" ry="1.3435" fill="#fff" stop-color="#000000" stroke="#fff" stroke-width=".25966" style="paint-order:stroke fill markers"/>

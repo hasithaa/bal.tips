@@ -4,6 +4,7 @@ description: 👋 Greetings, I'm [𝐇𝐚𝐬𝐢𝐭𝐡𝐚 𝐀𝐫𝐚𝐯�
 weight: 10
 type: internal
 layout: "single"
+toc: false
 menu: 
   main:
     name: 'Home'

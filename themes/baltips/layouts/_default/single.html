@@ -1,4 +1,17 @@
 {{ define "main" }}
-{{ partial "metadata.html" . }}
-    {{ .Content }}
+    {{ partial "metadata.html" . }}
+    {{ if eq .Params.toc false }}
+    <div class="content">
+        {{ .Content }}
+    </div>
+    {{ else }}
+    <div class="row">
+        <div class="content col-lg-9">
+            {{ .Content }}
+        </div> 
+        <div class="d-md-none d-lg-block col-lg-3">
+            {{ partial "details.html" .}}
+        </div>
+    </div>
+    {{ end }}
 {{ end }}

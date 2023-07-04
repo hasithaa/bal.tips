@@ -11,18 +11,9 @@
     <div class="d-flex justify-content align-items-center">
         <div class="text-secondary text-reset">
             {{ if eq .Params.type "blog"}}
-            <span class="badge badge-primary">Blog Post</span>
+            <h4><span class="badge badge-primary">Blog Post</span></h4>
             {{ else }}
-            <span class="badge badge-primary">Post</span>
-            {{ end }}
-            {{ .Params.date.Format "January 2, 2006" }}
-            {{ with .Params.canonicalUrl }}
-            <div class="p-2">
-                <blockquote>
-                    📃 This post was originally published on <a href="{{ . }}" title="See Original Article" target="_blank">{{ default "this blog" ($.Params.canonicalSite | markdownify) }}</a>.
-                </blockquote>
-            </div>
-            <link rel="canonical" href="{{ . }}" title="{{ . }}">
+            <h4><span class="badge badge-primary">Post</span></h4>
             {{ end }}
         </div>
     </div>

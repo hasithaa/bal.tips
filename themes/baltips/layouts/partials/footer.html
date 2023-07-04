@@ -1,94 +1,20 @@
 <div class="position-fixed bottom-0 end-0 p-3 pb-5">
+    <button class="btn btn-primary" type="button" title="To Top"  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        <i class="bi bi-caret-up-fill me-2"></i>Top</a>
+    </button>
     <button class="btn btn-primary" type="button" data-mdb-toggle="offcanvas" data-mdb-target="#offcanvasRight"
         aria-controls="offcanvasRight">
-        <i class="bi bi-lightbulb-fill"></i> <i class="bi bi-sliders"></i></i>
+        <i class="bi bi-sliders"></i>
     </button>
-    <div class="offcanvas offcanvas-end bg-light text-dark" tabindex="-1" data-mdb-scroll="true" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end bg-light text-dark" data-mdb-backdrop="false" tabindex="-1" data-mdb-scroll="true" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel">{{ .Title }}</h5>
             <button type="button" class="btn-close" data-mdb-dismiss="offcanvas" aria-label="Close"></button>
             
         </div>
         <div class="offcanvas-body">
-            <div class="pt-2">
-                <!-- canonicalUrl -->
-                {{ if .Params.canonicalUrl }}
-                <div class="markdown">
-                    <blockquote class="">
-                        📃 This article was originally published on <a href="{{ .Params.canonicalUrl }}" title="See Original Article" target="_blank">{{ default "this blog" ($.Params.canonicalSite | markdownify) }}</a>.
-                    </blockquote>
-                </div>
-                <link rel="canonical" href="{{ .Params.canonicalUrl }}" title="{{ .Params.canonicalUrl }}">
-                {{ end }}
-                <!-- End of canonicalUrl -->
-                <!-- TOC -->
-                <h6 class="offcanvas-title py-3"><i class="bi bi-list-columns"></i> Table of Content</h6>
-                <div>
-                    <div class="toc text-muted text-dark p-2 sticky-top" id="scrollspy-collapsible">
-                        {{ .TableOfContents}}
-                    </div>
-                </div>
-                <!-- End of TOC -->
-                <!-- Key words -->
-                {{ if $.Page.File }}
-                    {{- $path := $.Page.File.Path}}                            
-                    {{ $keywords := slice }}       
-                    {{- with .Page.Params.ballerina_type }}
-                        {{- range .}}
-                            {{- if isset $.Site.Data.Filters.ballerina_type . }}
-                                {{- with (index $.Site.Data.Filters.ballerina_type .) }}
-                                    {{ $keywords = $keywords | append . }}
-                                {{- end}}
-                            {{- else}}
-                                {{- errorf "Failed to handle btype %q at %q" . $path }}
-                            {{- end}}
-                        {{- end}}
-                    {{- end}}
-                    {{- with .Page.Params.ballerina_lang }}
-                        {{- range .}}
-                            {{- if isset $.Site.Data.Filters.ballerina_lang . }}
-                                {{- with (index $.Site.Data.Filters.ballerina_lang .) }}
-                                    {{ $keywords = $keywords | append . }}
-                                {{- end}}
-                            {{- else}}
-                                {{- errorf "Failed to handle blang %q at %q" . $path }}
-                            {{- end}}
-                        {{- end}}
-                    {{- end}}
-                    {{- with .Page.Params.ballerina_feature }}
-                        {{- range .}}
-                            {{- if isset $.Site.Data.Filters.ballerina_feature . }}
-                                {{- with (index $.Site.Data.Filters.ballerina_feature .) }}
-                                    {{ $keywords = $keywords | append . }}
-                                {{- end}}
-                            {{- else}}
-                                {{- errorf "Failed to handle bfeature %q at %q" . $path }}
-                            {{- end}}
-                        {{- end}}
-                    {{- end}}
-                    {{- with .Page.Params.ballerina_module }}
-                        {{- range .}}
-                            {{- if isset $.Site.Data.Filters.ballerina_module . }}
-                                {{- with (index $.Site.Data.Filters.ballerina_module .) }}
-                                    {{ $keywords = $keywords | append . }}
-                                {{- end}}
-                            {{- else}}
-                                {{- errorf "Failed to handle bmodule %q at %q" . $path }}
-                            {{- end}}
-                        {{- end}}
-                    {{- end}}
-                    {{ if gt (len $keywords) 0}}
-                        <h6 class="py-3"><i class="bi bi-tags-fill"></i> Key Words</h6>
-                        <div class="text-reset text-dark p-2 d-flex justify-content-center justify-content-lg-between flex-wrap">
-                        {{ range $keywords }}
-                            <a role="button" class="btn btn-sm btn-secondary btn-text-transform-none" title="Search more on {{ . }}"
-                                href="{{- with $.Site.GetPage "/search" }}{{- .RelPermalink }}{{- end}}?q={{- . }}" >{{- . }}</a>
-                        {{ end }}
-                        </div>
-                    {{ end }}
-                {{end}}
-                <!-- End of keywords -->
-                
+            <div class="pt-2 d-md-block d-lg-none">
+                {{ partial "details.html" .}}
             </div>
             <hr>
             <!-- Navigation -->
@@ -106,8 +32,6 @@
             <div class="pt-2">
                 <h6 class="offcanvas-title"><i class="bi bi-bookmark"></i> Navigation</h6>
                 <div class="pt-1 m-2 d-flex justify-content-center justify-content-lg-between">
-                    <a role="button" class="btn btn-secondary btn-text-transform-none" href="javascript:void(0);" title="To Top"  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-                        <i class="bi bi-caret-up-fill me-2"></i> Go to top </a>
                     {{if $prev}}
                         {{with $prev}}<a role="button" class="btn btn-secondary btn-text-transform-none" href="{{.Permalink}}"  title="{{.Title}}">
                             <i class="bi bi-caret-left-fill me-2"></i> Back
